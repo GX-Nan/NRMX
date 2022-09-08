@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CurtainSystem_t {
-    QByteArrayData data[20];
-    char stringdata0[283];
+    QByteArrayData data[21];
+    char stringdata0[298];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -50,8 +50,9 @@ QT_MOC_LITERAL(14, 170, 14), // "SetInstruction"
 QT_MOC_LITERAL(15, 185, 29), // "on_Device_Slider_valueChanged"
 QT_MOC_LITERAL(16, 215, 5), // "value"
 QT_MOC_LITERAL(17, 221, 34), // "on_horizontalSlider_2_valueCh..."
-QT_MOC_LITERAL(18, 256, 11), // "ReceiveData"
-QT_MOC_LITERAL(19, 268, 14) // "BrightnessShow"
+QT_MOC_LITERAL(18, 256, 14), // "CurtainsStatus"
+QT_MOC_LITERAL(19, 271, 11), // "ReceiveData"
+QT_MOC_LITERAL(20, 283, 14) // "BrightnessShow"
 
     },
     "CurtainSystem\0SendClose\0\0RadioBroadcast\0"
@@ -61,7 +62,7 @@ QT_MOC_LITERAL(19, 268, 14) // "BrightnessShow"
     "on_Down_clicked\0ButtonStylePlan\0"
     "SetInstruction\0on_Device_Slider_valueChanged\0"
     "value\0on_horizontalSlider_2_valueChanged\0"
-    "ReceiveData\0BrightnessShow"
+    "CurtainsStatus\0ReceiveData\0BrightnessShow"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,7 +72,7 @@ static const uint qt_meta_data_CurtainSystem[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -79,21 +80,22 @@ static const uint qt_meta_data_CurtainSystem[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x06 /* Public */,
-       3,    1,   80,    2, 0x06 /* Public */,
+       1,    0,   84,    2, 0x06 /* Public */,
+       3,    1,   85,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   83,    2, 0x08 /* Private */,
-       5,    3,   84,    2, 0x08 /* Private */,
-      10,    0,   91,    2, 0x08 /* Private */,
-      11,    0,   92,    2, 0x08 /* Private */,
-      12,    0,   93,    2, 0x08 /* Private */,
-      13,    3,   94,    2, 0x08 /* Private */,
-      14,    1,  101,    2, 0x08 /* Private */,
-      15,    1,  104,    2, 0x08 /* Private */,
-      17,    1,  107,    2, 0x08 /* Private */,
-      18,    1,  110,    2, 0x0a /* Public */,
-      19,    1,  113,    2, 0x0a /* Public */,
+       4,    0,   88,    2, 0x08 /* Private */,
+       5,    3,   89,    2, 0x08 /* Private */,
+      10,    0,   96,    2, 0x08 /* Private */,
+      11,    0,   97,    2, 0x08 /* Private */,
+      12,    0,   98,    2, 0x08 /* Private */,
+      13,    3,   99,    2, 0x08 /* Private */,
+      14,    1,  106,    2, 0x08 /* Private */,
+      15,    1,  109,    2, 0x08 /* Private */,
+      17,    1,  112,    2, 0x08 /* Private */,
+      18,    1,  115,    2, 0x08 /* Private */,
+      19,    1,  118,    2, 0x0a /* Public */,
+      20,    1,  121,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -107,6 +109,7 @@ static const uint qt_meta_data_CurtainSystem[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Int,   16,
     QMetaType::Void, QMetaType::Int,   16,
     QMetaType::Void, QMetaType::Int,   16,
     QMetaType::Void, QMetaType::QString,    2,
@@ -132,8 +135,9 @@ void CurtainSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 8: _t->SetInstruction((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 9: _t->on_Device_Slider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 10: _t->on_horizontalSlider_2_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->ReceiveData((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 12: _t->BrightnessShow((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->CurtainsStatus((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->ReceiveData((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->BrightnessShow((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -184,13 +188,13 @@ int CurtainSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 14)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }

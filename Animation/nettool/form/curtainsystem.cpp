@@ -65,7 +65,7 @@ void CurtainSystem::on_Stop_clicked()
     ui->Stop->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Down->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
     ui->Up->setStyleSheet("background-color: rgb(255, 255,255 );color:black;border-radius:15px;");
-    SetInstruction(3);
+    SetInstruction(4);
 }
 
 void CurtainSystem::on_Down_clicked()
@@ -74,7 +74,7 @@ void CurtainSystem::on_Down_clicked()
     ui->Down->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Stop->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
     ui->Up->setStyleSheet("background-color: rgb(255, 255,255 );color:black;border-radius:15px;");
-    SetInstruction(2);
+    SetInstruction(0);
 }
 
 void CurtainSystem::ButtonStylePlan(int Up,int Down,int Stop)
@@ -86,22 +86,26 @@ void CurtainSystem::ButtonStylePlan(int Up,int Down,int Stop)
 
 void CurtainSystem::SetInstruction(int Order)
 {
-    QString OpenWindow="ZB1010011";
-    QString CloseWindow="ZB1010021";
-    QString StopWindow="ZB1010031";
-    switch (Order) {
-    case 1:
-        OpenWindow.insert(6,ui->CurrentNumber->text());
-        emit RadioBroadcast(OpenWindow);
-        break;
-    case 2:
-        CloseWindow.insert(6,ui->CurrentNumber->text());
-        emit RadioBroadcast(CloseWindow);
-        break;
-    case 3:
-        StopWindow.insert(6,ui->CurrentNumber->text());
-        emit RadioBroadcast(StopWindow);
-        break;
+    if(SingleFalg==1){
+        QString OpenWindow="ZB1010011";
+        QString CloseWindow="ZB1010021";
+        QString StopWindow="ZB1010031";
+        switch (Order) {
+        case 0:
+            OpenWindow.insert(6,ui->CurrentNumber->text());
+            emit RadioBroadcast(OpenWindow);
+            break;
+        case 1:
+            CloseWindow.insert(6,ui->CurrentNumber->text());
+            emit RadioBroadcast(CloseWindow);
+            break;
+        case 4:
+            StopWindow.insert(6,ui->CurrentNumber->text());
+            emit RadioBroadcast(StopWindow);
+            break;
+        }
+
+        status.MessageInsert(ui->CurrentNumber->text(),Order);
     }
 }
 
@@ -118,9 +122,29 @@ void CurtainSystem::BrightnessShow(QString Value)
 void CurtainSystem::on_Device_Slider_valueChanged(int value)
 {
     ui->CurrentNumber->setText(QString::number(value));
+    int Curtainstatus= status.GetMessage(QString::number(value));
+    CurtainsStatus(Curtainstatus);
 }
 
 void CurtainSystem::on_horizontalSlider_2_valueChanged(int value)
 {
     ui->CurtainStatus->setText(QString::number(value));
+}
+
+void CurtainSystem::CurtainsStatus(int value)
+{
+    SingleFalg=0;
+    switch(value)
+    {
+    case 0:
+        ui->Down->click();
+        break;
+    case 1:
+        ui->Up->click();
+        break;
+    case 4:
+        ui->Stop->click();
+        break;
+    }
+    SingleFalg=1;
 }

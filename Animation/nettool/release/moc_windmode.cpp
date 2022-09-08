@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WindMode_t {
-    QByteArrayData data[12];
-    char stringdata0[163];
+    QByteArrayData data[14];
+    char stringdata0[199];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,14 +43,17 @@ QT_MOC_LITERAL(7, 62, 23), // "on_SurroundMode_clicked"
 QT_MOC_LITERAL(8, 86, 22), // "on_NaturalMode_clicked"
 QT_MOC_LITERAL(9, 109, 27), // "on_StereoscopicMode_clicked"
 QT_MOC_LITERAL(10, 137, 9), // "Ui_Update"
-QT_MOC_LITERAL(11, 147, 15) // "ButtonStylePlan"
+QT_MOC_LITERAL(11, 147, 15), // "ButtonStylePlan"
+QT_MOC_LITERAL(12, 163, 14), // "BackgroundPlan"
+QT_MOC_LITERAL(13, 178, 20) // "on_CloseMode_clicked"
 
     },
     "WindMode\0RadioBroadcast\0\0Clear\0Enable\0"
     "Falg\0on_SeaMode_clicked\0on_SurroundMode_clicked\0"
     "on_NaturalMode_clicked\0"
     "on_StereoscopicMode_clicked\0Ui_Update\0"
-    "ButtonStylePlan"
+    "ButtonStylePlan\0BackgroundPlan\0"
+    "on_CloseMode_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,7 +63,7 @@ static const uint qt_meta_data_WindMode[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -68,17 +71,19 @@ static const uint qt_meta_data_WindMode[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   62,    2, 0x0a /* Public */,
-       4,    1,   63,    2, 0x0a /* Public */,
-       6,    0,   66,    2, 0x0a /* Public */,
-       7,    0,   67,    2, 0x0a /* Public */,
-       8,    0,   68,    2, 0x0a /* Public */,
-       9,    0,   69,    2, 0x0a /* Public */,
-      10,    1,   70,    2, 0x0a /* Public */,
-      11,    5,   73,    2, 0x0a /* Public */,
+       3,    0,   72,    2, 0x0a /* Public */,
+       4,    1,   73,    2, 0x0a /* Public */,
+       6,    0,   76,    2, 0x0a /* Public */,
+       7,    0,   77,    2, 0x0a /* Public */,
+       8,    0,   78,    2, 0x0a /* Public */,
+       9,    0,   79,    2, 0x0a /* Public */,
+      10,    1,   80,    2, 0x0a /* Public */,
+      11,    5,   83,    2, 0x0a /* Public */,
+      12,    5,   94,    2, 0x0a /* Public */,
+      13,    0,  105,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -92,6 +97,8 @@ static const uint qt_meta_data_WindMode[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -111,6 +118,8 @@ void WindMode::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 6: _t->on_StereoscopicMode_clicked(); break;
         case 7: _t->Ui_Update((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 8: _t->ButtonStylePlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 9: _t->BackgroundPlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
+        case 10: _t->on_CloseMode_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -154,13 +163,13 @@ int WindMode::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

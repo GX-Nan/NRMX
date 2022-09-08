@@ -8,7 +8,7 @@ LightSystem::LightSystem(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
-   // this->setAttribute(Qt::WA_TranslucentBackground);
+    // this->setAttribute(Qt::WA_TranslucentBackground);
     Shawdow();
     XprogressbarIfconfig();
     Switch_Ifconfig();
@@ -17,7 +17,6 @@ LightSystem::LightSystem(QWidget *parent) :
     connect(ui->Brightness_Slider,&QSlider::sliderReleased,this,&LightSystem::Trigger_BrightnessQslider);
     connect(ui->Color_Slider,&QSlider::sliderReleased,this,&LightSystem::Trigger_ColorQslider);
     connect(ui->Device_Slider,&QSlider::sliderReleased,this,&LightSystem::Trigger_DeviceQslider);
-    connect(ui->Led_Switch,&SwitchButton::checkedChanged,this,&LightSystem::Light_Switch);
     connect(ui->Lux_All,&SwitchButton::checkedChanged,this,[=]
     {
         LuxFalg=-LuxFalg;
@@ -46,20 +45,59 @@ void LightSystem::Shawdow()
     ButtonBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
     ButtonBox->setBlurRadius(25);
     ui->ButtonBox->setGraphicsEffect(ButtonBox);
-    ButtonStyle_Label(ui->InsidesBrightness,8,20);
+
+    QGraphicsDropShadowEffect *ChandelierBox = new QGraphicsDropShadowEffect(this);
+    ChandelierBox->setOffset(8);
+    ChandelierBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    ChandelierBox->setBlurRadius(25);
+    ui->ChandelierBox->setGraphicsEffect(ChandelierBox);
+
+    QGraphicsDropShadowEffect *LEDBox = new QGraphicsDropShadowEffect(this);
+    LEDBox->setOffset(8);
+    LEDBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    LEDBox->setBlurRadius(25);
+    ui->LEDBox->setGraphicsEffect(LEDBox);
+
+    QGraphicsDropShadowEffect *SpotBox = new QGraphicsDropShadowEffect(this);
+    SpotBox->setOffset(8);
+    SpotBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    SpotBox->setBlurRadius(25);
+    ui->SpotBox->setGraphicsEffect(SpotBox);//ChandeBottom
+
+    QGraphicsDropShadowEffect *ChanStackedWidget = new QGraphicsDropShadowEffect(this);
+    ChanStackedWidget->setOffset(8);
+    ChanStackedWidget->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    ChanStackedWidget->setBlurRadius(25);
+    ui->ChanStackedWidget->setGraphicsEffect(ChanStackedWidget);
+
+    QGraphicsDropShadowEffect *Frame = new QGraphicsDropShadowEffect(this);
+    Frame->setOffset(8);
+    Frame->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    Frame->setBlurRadius(25);
+    ui->frame->setGraphicsEffect(Frame);
+
+    QGraphicsDropShadowEffect *LedSpot = new QGraphicsDropShadowEffect(this);
+    LedSpot->setOffset(8);
+    LedSpot->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    LedSpot->setBlurRadius(25);
+    ui->LedSpot->setGraphicsEffect(LedSpot);
+
+    QGraphicsDropShadowEffect *SpotFrame = new QGraphicsDropShadowEffect(this);
+    SpotFrame->setOffset(8);
+    SpotFrame->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    SpotFrame->setBlurRadius(25);
+    ui->SpotFrame->setGraphicsEffect(SpotFrame);
+
+    QGraphicsDropShadowEffect *LedFrame = new QGraphicsDropShadowEffect(this);
+    LedFrame->setOffset(8);
+    LedFrame->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    LedFrame->setBlurRadius(25);
+    ui->LedFrame->setGraphicsEffect(LedFrame);
 }
 
 void LightSystem::Switch_Ifconfig()
 {
-    QList <SwitchButton*> Switch;
-    Switch<<ui->Led_Switch;
-    for(int i=0;i<Switch.length();i++)
-    {
-        Switch[i]->setSpace(8);
-        Switch[i]->setRectRadius(30);
-        Switch[i]->setShowText(false);
-        Switch[i]->setAnimation(true);
-    }
+
 }
 
 void LightSystem::XprogressbarIfconfig()
@@ -83,15 +121,8 @@ void LightSystem::on_BackMain_clicked()
     emit SendClose();
 }
 
-void LightSystem::on_AloneControl_clicked()
-{
-    ui->PageBottom->setCurrentIndex(1);
-}
 
-void LightSystem::on_ModeChoice_clicked()
-{
-    ui->PageBottom->setCurrentIndex(0);
-}
+
 
 void LightSystem::ButtonStyle_Label(QLabel *Name, int Offset, int BlurRadius)
 {
@@ -162,7 +193,7 @@ void LightSystem::Trigger_BrightnessQslider()
         SendData.insert(6,CurrentLed);
         break;
     case 1:
-        SendData.insert(6,0);
+        SendData.insert(6,"0");
         break;
     }
     if(SetTemp.toInt()<10)
@@ -186,7 +217,7 @@ void LightSystem::Trigger_ColorQslider()
         SendData.insert(6,CurrentLed);
         break;
     case 1:
-        SendData.insert(6,0);
+        SendData.insert(6,"0");
         break;
     }
     if(SetTemp.toInt()<10)
@@ -205,10 +236,8 @@ void LightSystem::Trigger_DeviceQslider()
     Status test=data.value(CurrentLed.toInt());
     int Lux =test.GetLux();
     int Color=test.GetColor();
-    int station=test.GetStation();
     ui->Brightness_Slider->setValue(Lux);
     ui->Color_Slider->setValue(Color);
-    ui->Led_Switch->setChecked(station);
     qDebug()<<"Current:"<<CurrentLed<<"lux:"<<Lux<<"Color:"<<Color;
 }
 
@@ -219,7 +248,7 @@ void LightSystem::on_AllLed_Status_clicked()
     if(AllLight_Status==0){
         ButtonStyle_Button(ui->AllLed_Status,1,20);
         ButtonStyle_Button(ui->AiMode,8,20);
-      //  AiMode_Falg=0;
+        //  AiMode_Falg=0;
         ui->AllLed_Status->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
         emit RadioBroadcast("ZB20300991");//需要增加 0位的设备位 ----->是控制全部灯光的亮度与色温
         AllLight_Status=1;
@@ -335,6 +364,451 @@ void LightSystem::Image_Init()
     QString filePath = ":/new/Led/Led/Brightness.png";//图标位置自行调整
     QIcon icon = QIcon(filePath);
     QPixmap m_pic = icon.pixmap(icon.actualSize(QSize(80, 80)));//size自行调整
-    ui->BrightnessP->setPixmap(m_pic);
     ui->BrightnessP2->setPixmap(m_pic);
+}
+
+void LightSystem::on_LedChoice_clicked()
+{
+    ui->LedSpot->setCurrentIndex(1);
+}
+
+void LightSystem::on_SpotChoice_clicked()
+{
+    ui->LedSpot->setCurrentIndex(0);
+}
+
+void LightSystem::on_ChandChoice_clicked()
+{
+    int Index=ui->ChanStackedWidget->currentIndex();
+    if(Index==1)
+    {
+        ui->ChanStackedWidget->setCurrentIndex(0);
+    }
+    else {
+        ui->ChanStackedWidget->setCurrentIndex(1);
+    }
+    ui->label_11->setText("吊灯--"+QString::number(Index));
+}
+
+void LightSystem::on_ChandeDown2_clicked()
+{
+    ButtonStyle_Chandelier_2("ChandeDown2",1);
+
+}
+
+void LightSystem::on_ChandeStop2_clicked()
+{
+    ButtonStyle_Chandelier_2("ChandeStop2",1);
+}
+
+void LightSystem::on_ChandeUp2_clicked()
+{
+    ButtonStyle_Chandelier_2("ChandeUp2",1);
+}
+
+
+void LightSystem::ButtonStyle_Chandelier_1(QString Name, int Falg)
+{
+    QMap<QString,QPushButton*> Chande1;
+    Chande1.insert("ChandeUp1",ui->ChandeUp1);
+    Chande1.insert("ChandeDown1",ui->ChandeDown1);
+    Chande1.insert("ChandeStop1",ui->ChandeStop1);
+
+
+    if(Falg==1){
+        QGraphicsDropShadowEffect *ButtonStyle = new QGraphicsDropShadowEffect(this);
+        ButtonStyle->setOffset(8);
+        ButtonStyle->setColor(/*Qt::gray*/QColor(43, 43, 43));
+        ButtonStyle->setBlurRadius(15);
+        Chande1.value(Name)->setGraphicsEffect(ButtonStyle);
+        Chande1.value(Name)->setStyleSheet("background-color: rgb(0, 0, 0);color:white; border-radius:15px;");
+        Chande1.remove(Name);
+
+        for (QMap<QString, QPushButton*>::const_iterator it = Chande1.constBegin(); it != Chande1.constEnd(); it++) {
+             it.value()->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
+        }
+    }
+}
+
+void LightSystem::ButtonStyle_Chandelier_2(QString Name, int Falg)
+{
+    QMap<QString,QPushButton*> Chande2;
+    Chande2.insert("ChandeUp2",ui->ChandeUp2);
+    Chande2.insert("ChandeDown2",ui->ChandeDown2);
+    Chande2.insert("ChandeStop2",ui->ChandeStop2);
+
+    if(Falg==1){
+        QGraphicsDropShadowEffect *ButtonStyle = new QGraphicsDropShadowEffect(this);
+        ButtonStyle->setOffset(8);
+        ButtonStyle->setColor(/*Qt::gray*/QColor(43, 43, 43));
+        ButtonStyle->setBlurRadius(15);
+        Chande2.value(Name)->setGraphicsEffect(ButtonStyle);
+        Chande2.value(Name)->setStyleSheet("background-color: rgb(0, 0, 0);color:white; border-radius:15px;");
+        Chande2.remove(Name);
+
+        for (QMap<QString, QPushButton*>::const_iterator it = Chande2.constBegin(); it != Chande2.constEnd(); it++) {
+             it.value()->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
+        }
+    }
+}
+
+void LightSystem::on_ChandeDown1_clicked()
+{
+    ButtonStyle_Chandelier_1("ChandeDown1",1);
+    emit RadioBroadcast("ZB20313021");
+}
+
+void LightSystem::on_ChandeStop1_clicked()
+{
+    ButtonStyle_Chandelier_1("ChandeStop1",1);
+    emit RadioBroadcast("ZB20313041");
+}
+
+void LightSystem::on_ChandeUp1_clicked()
+{
+    ButtonStyle_Chandelier_1("ChandeUp1",1);
+    emit RadioBroadcast("ZB20313031");
+}
+
+void LightSystem::on_ChandelierSwitch1_clicked()
+{
+    QString Status=status.GetMessage("Chandelier1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->ChandelierSwitch1,1,25);
+        ui->ChandelierSwitch1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("Chandelier1","1");
+        emit RadioBroadcast("ZB20313001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->ChandelierSwitch1,8,25);
+        ui->ChandelierSwitch1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("Chandelier1","0");
+        emit RadioBroadcast("ZB20313011");
+        break;
+    }
+}
+void LightSystem::on_ChandelierSwitch2_clicked()
+{
+    QString Status=status.GetMessage("Chandelier2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->ChandelierSwitch2,1,25);
+        ui->ChandelierSwitch2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("Chandelier2","1");
+        emit RadioBroadcast("ZB20314001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->ChandelierSwitch2,8,25);
+        ui->ChandelierSwitch2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("Chandelier2","0");
+        emit RadioBroadcast("ZB20314011");
+        break;
+    }
+}
+
+void LightSystem::on_SpotMeet1_clicked()
+{
+    QString Status=status.GetMessage("SpotMeet1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->SpotMeet1,1,25);
+        ui->SpotMeet1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("SpotMeet1","1");
+        emit RadioBroadcast("ZB20307001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->SpotMeet1,8,25);
+        ui->SpotMeet1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("SpotMeet1","0");
+        emit RadioBroadcast("ZB20307011");
+        break;
+    }
+}
+
+void LightSystem::on_SpotMeet2_clicked()
+{
+    QString Status=status.GetMessage("SpotMeet2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->SpotMeet2,1,25);
+        ui->SpotMeet2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("SpotMeet2","1");
+        emit RadioBroadcast("ZB20308001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->SpotMeet2,8,25);
+        ui->SpotMeet2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("SpotMeet2","0");
+        emit RadioBroadcast("ZB20308011");
+        break;
+    }
+}
+
+void LightSystem::on_SpotOffice1_clicked()
+{
+    QString Status=status.GetMessage("SpotOffice1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->SpotOffice1,1,25);
+        ui->SpotOffice1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("SpotOffice1","1");
+        emit RadioBroadcast("ZB20311001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->SpotOffice1,8,25);
+        ui->SpotOffice1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("SpotOffice1","0");
+        emit RadioBroadcast("ZB20311011");
+        break;
+    }
+}
+
+void LightSystem::on_SpotOffice2_clicked()
+{
+    QString Status=status.GetMessage("SpotOffice2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->SpotOffice2,1,25);
+        ui->SpotOffice2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("SpotOffice2","1");
+        emit RadioBroadcast("ZB20312001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->SpotOffice2,8,25);
+        ui->SpotOffice2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("SpotOffice2","0");
+        emit RadioBroadcast("ZB20312011");
+        break;
+    }
+}
+
+void LightSystem::on_SpotBar1_clicked()
+{
+    QString Status=status.GetMessage("SpotBar1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->SpotBar1,1,25);
+        ui->SpotBar1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("SpotBar1","1");
+        emit RadioBroadcast("ZB20309001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->SpotBar1,8,25);
+        ui->SpotBar1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("SpotBar1","0");
+        emit RadioBroadcast("ZB20309011");
+        break;
+    }
+}
+
+void LightSystem::on_SpotBar2_clicked()
+{
+    QString Status=status.GetMessage("SpotBar2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->SpotBar2,1,25);
+        ui->SpotBar2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("SpotBar2","1");
+        emit RadioBroadcast("ZB20310001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->SpotBar2,8,25);
+        ui->SpotBar2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("SpotBar2","0");
+        emit RadioBroadcast("ZB20310011");
+        break;
+    }
+}
+
+void LightSystem::on_LedMeet1_clicked()
+{
+    QString Status=status.GetMessage("LedMeet1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->LedMeet1,1,25);
+        ui->LedMeet1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("LedMeet1","1");
+        emit RadioBroadcast("ZB20315001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->LedMeet1,8,25);
+        ui->LedMeet1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("LedMeet1","0");
+        emit RadioBroadcast("ZB20315011");
+        break;
+    }
+}
+
+void LightSystem::on_LedMeet2_clicked()
+{
+    QString Status=status.GetMessage("LedMeet2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->LedMeet2,1,25);
+        ui->LedMeet2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("LedMeet2","1");
+        emit RadioBroadcast("ZB20316001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->LedMeet2,8,25);
+        ui->LedMeet2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("LedMeet2","0");
+        emit RadioBroadcast("ZB20316011");
+        break;
+    }
+}
+
+void LightSystem::on_LedBar1_clicked()
+{
+    QString Status=status.GetMessage("LedBar1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->LedBar1,1,25);
+        ui->LedBar1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("LedBar1","1");
+        emit RadioBroadcast("ZB20317001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->LedBar1,8,25);
+        ui->LedBar1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("LedBar1","0");
+        emit RadioBroadcast("ZB20317011");
+        break;
+    }
+}
+
+void LightSystem::on_LedBar2_clicked()
+{
+    QString Status=status.GetMessage("LedBar2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->LedBar2,1,25);
+        ui->LedBar2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("LedBar2","1");
+        emit RadioBroadcast("ZB20318001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->LedBar2,8,25);
+        ui->LedBar2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("LedBar2","0");
+        emit RadioBroadcast("ZB20318011");
+        break;
+    }
+}
+
+void LightSystem::on_LedOffice1_clicked()
+{
+    QString Status=status.GetMessage("LedOffice1");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->LedOffice1,1,25);
+        ui->LedOffice1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("LedOffice1","1");
+        emit RadioBroadcast("ZB20319001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->LedOffice1,8,25);
+        ui->LedOffice1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("LedOffice1","0");
+        emit RadioBroadcast("ZB20319011");
+        break;
+    }
+}
+
+void LightSystem::on_LedOffice2_clicked()
+{
+    QString Status=status.GetMessage("LedOffice2");
+    switch (Status.toInt()) {
+    case 0:
+        ButtonStyle_Button(ui->LedOffice2,1,25);
+        ui->LedOffice2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        status.InsertMessage("LedOffice2","1");
+        emit RadioBroadcast("ZB20320001");
+        break;
+    case 1:
+        ButtonStyle_Button(ui->LedOffice2,8,25);
+        ui->LedOffice2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
+        status.InsertMessage("LedOffice2","0");
+        emit RadioBroadcast("ZB20320011");
+        break;
+    }
+}
+
+void LightSystem::on_LedAll_clicked()
+{
+    ui->LedSpot->setCurrentIndex(1);
+    QString LedMeet1=status.GetMessage("LedMeet1");
+    QString LedMeet2=status.GetMessage("LedMeet2");
+    QString LedBar1=status.GetMessage("LedBar1");
+    QString LedBar2=status.GetMessage("LedBar2");
+    QString LedOffice1=status.GetMessage("LedOffice1");
+    QString LedOffice2=status.GetMessage("LedOffice2");
+
+    QList<QPushButton*> Button;//建立button的list
+    QMap<int,QPushButton*> List;//对应
+    Button<<ui->LedMeet1<<ui->LedMeet2<<ui->LedBar1<<ui->LedBar2<<ui->LedOffice1<<ui->LedOffice2;
+    QList<QString>Value ;
+    Value<<LedMeet1<<LedMeet2<<LedBar1<<LedBar2<<LedOffice1<<LedOffice2;
+
+    for(int i=0;i<6;i++){
+        List.insert(i,Button.at(i));
+    }
+
+    if(AllSpot_Status==0){
+        for(int i=0;i<6;i++){
+            if(Value.at(i)=="0"){
+                List.value(i)->click();
+            }
+        }
+        AllSpot_Status=1;
+    }
+    else if(AllSpot_Status==1)
+    {
+        for(int i=0;i<6;i++){
+            if(Value.at(i)=="1"){
+                List.value(i)->click();
+            }
+        }
+        AllSpot_Status=0;
+    }
+}
+
+void LightSystem::on_SpotAll_clicked()
+{
+    ui->LedSpot->setCurrentIndex(0);
+    QString SpotMeet1=status.GetMessage("SpotMeet1");
+    QString SpotMeet2=status.GetMessage("SpotMeet2");
+    QString SpotBar1=status.GetMessage("SpotBar1");
+    QString SpotBar2=status.GetMessage("SpotBar2");
+    QString SpotOffice1=status.GetMessage("SpotOffice1");
+    QString SpotOffice2=status.GetMessage("SpotOffice2");
+
+    QList<QPushButton*> Button;//建立button的list
+    QMap<int,QPushButton*> List;//对应
+    Button<<ui->SpotMeet1<<ui->SpotMeet2<<ui->SpotBar1<<ui->SpotBar2<<ui->SpotOffice1<<ui->SpotOffice2;
+    QList<QString>Value ;
+    Value<<SpotMeet1<<SpotMeet2<<SpotBar1<<SpotBar2<<SpotOffice1<<SpotOffice2;
+
+    for(int i=0;i<6;i++){
+        List.insert(i,Button.at(i));
+    }
+
+    if(AllSpot_Status==0){
+        for(int i=0;i<6;i++){
+            if(Value.at(i)=="0"){
+                List.value(i)->click();
+            }
+        }
+        AllSpot_Status=1;
+    }
+    else if(AllSpot_Status==1)
+    {
+        for(int i=0;i<6;i++){
+            if(Value.at(i)=="1"){
+                List.value(i)->click();
+            }
+        }
+        AllSpot_Status=0;
+    }
 }

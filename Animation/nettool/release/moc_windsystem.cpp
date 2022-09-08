@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WindSystem_t {
-    QByteArrayData data[25];
-    char stringdata0[298];
+    QByteArrayData data[31];
+    char stringdata0[335];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -55,8 +55,14 @@ QT_MOC_LITERAL(19, 203, 18), // "on_MinMode_clicked"
 QT_MOC_LITERAL(20, 222, 18), // "on_MidMode_clicked"
 QT_MOC_LITERAL(21, 241, 19), // "on_HighMode_clicked"
 QT_MOC_LITERAL(22, 261, 15), // "ButtonStylePlan"
-QT_MOC_LITERAL(23, 277, 11), // "ReceiveData"
-QT_MOC_LITERAL(24, 289, 8) // "VarValue"
+QT_MOC_LITERAL(23, 277, 10), // "Image_Init"
+QT_MOC_LITERAL(24, 288, 14), // "BackgroundPlan"
+QT_MOC_LITERAL(25, 303, 1), // "i"
+QT_MOC_LITERAL(26, 305, 2), // "i2"
+QT_MOC_LITERAL(27, 308, 2), // "i3"
+QT_MOC_LITERAL(28, 311, 2), // "i4"
+QT_MOC_LITERAL(29, 314, 11), // "ReceiveData"
+QT_MOC_LITERAL(30, 326, 8) // "VarValue"
 
     },
     "WindSystem\0SendClose\0\0Clear\0Enable\0"
@@ -67,6 +73,7 @@ QT_MOC_LITERAL(24, 289, 8) // "VarValue"
     "BlurRadius\0on_StopMode_clicked\0"
     "on_MinMode_clicked\0on_MidMode_clicked\0"
     "on_HighMode_clicked\0ButtonStylePlan\0"
+    "Image_Init\0BackgroundPlan\0i\0i2\0i3\0i4\0"
     "ReceiveData\0VarValue"
 };
 #undef QT_MOC_LITERAL
@@ -77,7 +84,7 @@ static const uint qt_meta_data_WindSystem[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -85,22 +92,24 @@ static const uint qt_meta_data_WindSystem[] = {
        6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   84,    2, 0x06 /* Public */,
-       3,    0,   85,    2, 0x06 /* Public */,
-       4,    1,   86,    2, 0x06 /* Public */,
-       6,    1,   89,    2, 0x06 /* Public */,
-       7,    1,   92,    2, 0x06 /* Public */,
-      10,    1,   95,    2, 0x06 /* Public */,
+       1,    0,   94,    2, 0x06 /* Public */,
+       3,    0,   95,    2, 0x06 /* Public */,
+       4,    1,   96,    2, 0x06 /* Public */,
+       6,    1,   99,    2, 0x06 /* Public */,
+       7,    1,  102,    2, 0x06 /* Public */,
+      10,    1,  105,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,   98,    2, 0x08 /* Private */,
-      13,    3,   99,    2, 0x08 /* Private */,
-      18,    0,  106,    2, 0x08 /* Private */,
-      19,    0,  107,    2, 0x08 /* Private */,
-      20,    0,  108,    2, 0x08 /* Private */,
-      21,    0,  109,    2, 0x08 /* Private */,
-      22,    4,  110,    2, 0x08 /* Private */,
-      23,    1,  119,    2, 0x0a /* Public */,
+      12,    0,  108,    2, 0x08 /* Private */,
+      13,    3,  109,    2, 0x08 /* Private */,
+      18,    0,  116,    2, 0x08 /* Private */,
+      19,    0,  117,    2, 0x08 /* Private */,
+      20,    0,  118,    2, 0x08 /* Private */,
+      21,    0,  119,    2, 0x08 /* Private */,
+      22,    4,  120,    2, 0x08 /* Private */,
+      23,    0,  129,    2, 0x08 /* Private */,
+      24,    4,  130,    2, 0x08 /* Private */,
+      29,    1,  139,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -118,7 +127,9 @@ static const uint qt_meta_data_WindSystem[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 8,   24,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,   25,   26,   27,   28,
+    QMetaType::Void, 0x80000000 | 8,   30,
 
        0        // eod
 };
@@ -142,7 +153,9 @@ void WindSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->on_MidMode_clicked(); break;
         case 11: _t->on_HighMode_clicked(); break;
         case 12: _t->ButtonStylePlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 13: _t->ReceiveData((*reinterpret_cast< const Wind_Data(*)>(_a[1]))); break;
+        case 13: _t->Image_Init(); break;
+        case 14: _t->BackgroundPlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 15: _t->ReceiveData((*reinterpret_cast< const Wind_Data(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -221,13 +234,13 @@ int WindSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        _id -= 16;
     }
     return _id;
 }

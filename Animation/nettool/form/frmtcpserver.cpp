@@ -31,6 +31,7 @@ void frmTcpServer::initForm()
     Door_handle=new Analysis_Door(this);
     connect(this,&frmTcpServer::Server_Receive_Data,Door_handle,&Analysis_Door::Receive_Data);
     Wind_handle=new Analysis_Wind(this);
+
     connect(this,&frmTcpServer::Server_Receive_Data,Wind_handle,&Analysis_Wind::Receive_Data);
 
     //    ui->cboxInterval->addItems(App::Intervals);
