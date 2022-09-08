@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>511</width>
-    <height>844</height>
+    <width>1332</width>
+    <height>893</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,10 +21,10 @@ background-color:rgb(178,178,178,255);
   <widget class="QFrame" name="bottom">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>30</x>
      <y>20</y>
-     <width>491</width>
-     <height>811</height>
+     <width>1111</width>
+     <height>841</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -42,121 +42,777 @@ background-color:rgb(178,178,178,255);
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QStackedWidget" name="PageBottom">
+   <widget class="QLabel" name="BrightnessP2">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>491</width>
-      <height>811</height>
+      <x>120</x>
+      <y>340</y>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
-    <widget class="QWidget" name="LightMain">
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>320</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
-      </property>
-      <property name="text">
-       <string>室内亮度</string>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="BrightnessP2">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>280</y>
-        <width>100</width>
-        <height>100</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="CurtainNumber">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>10</y>
-        <width>351</width>
-        <height>321</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>PibotoLt</family>
-        <pointsize>150</pointsize>
-        <weight>75</weight>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>100</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="ButtonBox">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>380</y>
-        <width>331</width>
-        <height>351</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox#ButtonBox{
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BackMain">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>20</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">max-width:50px;
+ max-height:50px;
+ min-width:50px;
+ min-height:50px;
+border-radius:25px;
+background-color: white;
+ border-style: solid;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../other/main.qrc">
+      <normaloff>:/new/Main/Air/Back.png</normaloff>:/new/Main/Air/Back.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CurtainNumber">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>371</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>PibotoLt</family>
+      <pointsize>170</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>100</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>380</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 黑体 Std R</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:#282A49</string>
+    </property>
+    <property name="text">
+     <string>室内亮度</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="ButtonBox">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>490</y>
+      <width>401</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox#ButtonBox{
 border:none;
 }</string>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-      <widget class="QPushButton" name="AllLed_Status">
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="AllLed_Status">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>371</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../other/main.qrc">
+       <normaloff>:/new/Led/Led/All_Light_OFF.png</normaloff>
+       <normalon>:/new/Led/Led/AirSwitch-ON.png</normalon>:/new/Led/Led/All_Light_OFF.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AiMode">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>371</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../other/main.qrc">
+       <normaloff>:/new/Led/Led/AI_ON.png</normaloff>
+       <normalon>:/new/Led/Led/AI_OFF.png</normalon>:/new/Led/Led/AI_ON.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>70</width>
+       <height>70</height>
+      </size>
+     </property>
+     <property name="autoRepeatDelay">
+      <number>300</number>
+     </property>
+     <property name="autoRepeatInterval">
+      <number>200</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>440</y>
+      <width>551</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#frame
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QSlider" name="Brightness_Slider">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>100</y>
+       <width>351</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="SelectedLed">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>275</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>7</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>60</y>
+       <width>91</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>亮度：</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="SwitchButton" name="Color_All" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>220</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="XProgressBar" name="Color_Xprogress" native="true">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>150</y>
+       <width>441</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="XProgressBar" name="Brightness_Xprogress" native="true">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>441</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Brightness_Text">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>60</y>
+       <width>31</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>80</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="SwitchButton" name="Lux_All" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>90</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>190</y>
+       <width>91</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>色温：</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Color_Text">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>190</y>
+       <width>31</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>80</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QSlider" name="Device_Slider">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>320</y>
+       <width>441</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>7</number>
+     </property>
+     <property name="maximum">
+      <number>12</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QSlider" name="Color_Slider">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>230</y>
+       <width>351</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>280</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>当前灯光:</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>270</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="ChandelierBox">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>250</y>
+      <width>551</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox#ChandelierBox
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>110</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>吊灯--1</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChandChoice">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>0</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+    <widget class="QStackedWidget" name="ChanStackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>491</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="ChandelierFrame1">
+      <widget class="QWidget" name="ChandeBottom" native="true">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>210</y>
-         <width>291</width>
-         <height>91</height>
+         <x>0</x>
+         <y>5</y>
+         <width>391</width>
+         <height>101</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Adobe 黑体 Std R</family>
-         <pointsize>15</pointsize>
-        </font>
+       <widget class="QPushButton" name="ChandeUp1">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Up_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Up_ON.png</normalon>:/new/Curtain/Curtain/Up_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ChandeDown1">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ChandeStop1">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Stop_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Stop_ON.png</normalon>:/new/Curtain/Curtain/Stop_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="ChandelierSwitch1">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>20</y>
+         <width>91</width>
+         <height>81</height>
+        </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton
@@ -170,36 +826,38 @@ border:none;
        </property>
        <property name="icon">
         <iconset resource="../other/main.qrc">
-         <normaloff>:/new/Led/Led/All_Light_OFF.png</normaloff>
-         <normalon>:/new/Led/Led/AirSwitch-ON.png</normalon>:/new/Led/Led/All_Light_OFF.png</iconset>
+         <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
+         <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>100</width>
+         <width>50</width>
          <height>50</height>
         </size>
        </property>
        <property name="checkable">
         <bool>true</bool>
        </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
        <property name="autoExclusive">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="AiMode">
+     </widget>
+     <widget class="QWidget" name="ChandelierFrame2">
+      <widget class="QPushButton" name="ChandelierSwitch2">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>50</y>
-         <width>291</width>
-         <height>91</height>
+         <x>390</x>
+         <y>20</y>
+         <width>91</width>
+         <height>81</height>
         </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Adobe 黑体 Std R</family>
-         <pointsize>15</pointsize>
-        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton
@@ -213,470 +871,903 @@ border:none;
        </property>
        <property name="icon">
         <iconset resource="../other/main.qrc">
-         <normaloff>:/new/Led/Led/AI_ON.png</normaloff>
-         <normalon>:/new/Led/Led/AI_OFF.png</normalon>:/new/Led/Led/AI_ON.png</iconset>
+         <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
+         <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>70</width>
-         <height>70</height>
+         <width>50</width>
+         <height>50</height>
         </size>
        </property>
-       <property name="autoRepeatDelay">
-        <number>300</number>
+       <property name="checkable">
+        <bool>true</bool>
        </property>
-       <property name="autoRepeatInterval">
-        <number>200</number>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="BackMain">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>10</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">max-width:50px;
- max-height:50px;
- min-width:50px;
- min-height:50px;
-border-radius:25px;
-background-color: white;
- border-style: solid;</string>
-      </property>
-      <property name="text">
-       <string>B</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="ModeChoice_2">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>750</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">max-width:50px;
- max-height:50px;
- min-width:50px;
- min-height:50px;
-border-radius:25px;
-background-color: white;
- border-style: solid;</string>
-      </property>
-      <property name="text">
-       <string>Mode</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="AloneControl">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>750</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">max-width:50px;
- max-height:50px;
- min-width:50px;
- min-height:50px;
-border-radius:25px;
-background-color: white;
- border-style: solid;</string>
-      </property>
-      <property name="text">
-       <string>N</string>
-      </property>
+      <widget class="QWidget" name="ChandeBottom_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>5</y>
+         <width>391</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <widget class="QPushButton" name="ChandeUp2">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Up_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Up_ON.png</normalon>:/new/Curtain/Curtain/Up_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ChandeDown2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ChandeStop2">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Stop_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Stop_ON.png</normalon>:/new/Curtain/Curtain/Stop_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="AloneLight">
-     <widget class="SwitchButton" name="Led_Switch" native="true">
+    <zorder>ChandChoice</zorder>
+    <zorder>ChanStackedWidget</zorder>
+    <zorder>label_11</zorder>
+   </widget>
+   <widget class="QGroupBox" name="LEDBox">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>80</y>
+      <width>251</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox#LEDBox
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="LedAll">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>20</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../other/main.qrc">
+       <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
+       <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>60</width>
+       <height>60</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>90</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>LED</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="LedChoice">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>10</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="SpotBox">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>80</y>
+      <width>251</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox#SpotBox
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="SpotAll">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>20</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../other/main.qrc">
+       <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
+       <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>60</width>
+       <height>60</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>90</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>射灯</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SpotChoice">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>10</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStackedWidget" name="LedSpot">
+   <property name="geometry">
+    <rect>
+     <x>1180</x>
+     <y>20</y>
+     <width>131</width>
+     <height>841</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QStackedWidget#LedSpot
+{
+	background-color:#ffffff;
+	border:none;
+	border-radius:15px;
+}</string>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="LED">
+    <widget class="QFrame" name="SpotFrame">
+     <property name="geometry">
+      <rect>
+       <x>-15</x>
+       <y>-11</y>
+       <width>161</width>
+       <height>871</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="SpotMeet1">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>760</y>
+        <x>36</x>
+        <y>30</y>
         <width>91</width>
-        <height>31</height>
+        <height>91</height>
        </rect>
-      </property>
-     </widget>
-     <widget class="QSlider" name="Brightness_Slider">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>510</y>
-        <width>351</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="XProgressBar" name="Brightness_Xprogress" native="true">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>435</y>
-        <width>441</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QSlider" name="Color_Slider">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>630</y>
-        <width>351</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="XProgressBar" name="Color_Xprogress" native="true">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>560</y>
-        <width>441</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="InsidesBrightness">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>70</y>
-        <width>371</width>
-        <height>241</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>PibotoLt</family>
-        <pointsize>150</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:white;
-border-radius:15px;</string>
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
       </property>
       <property name="text">
-       <string>832</string>
+       <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Meeting_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Meeting_ON.png</normalon>:/new/Led/Led/Meeting_OFF.png</iconset>
       </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>340</y>
-        <width>161</width>
-        <height>31</height>
-       </rect>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
       </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>20</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
-      </property>
-      <property name="text">
-       <string>室内亮度</string>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
+      <property name="checkable">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QSlider" name="Device_Slider">
+     <widget class="QPushButton" name="SpotOffice1">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>720</y>
-        <width>441</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>6</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>680</y>
-        <width>111</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
-      </property>
-      <property name="text">
-       <string>当前灯光:</string>
-      </property>
-      <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>460</y>
+        <x>36</x>
+        <y>570</y>
         <width>91</width>
-        <height>29</height>
+        <height>91</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
       </property>
       <property name="text">
-       <string>亮度：</string>
+       <string/>
       </property>
-      <property name="scaledContents">
-       <bool>false</bool>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Office_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Office_ON.png</normalon>:/new/Led/Led/Office_OFF.png</iconset>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
       </property>
-      <property name="wordWrap">
+      <property name="checkable">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="Brightness_Text">
+     <widget class="QPushButton" name="SpotMeet2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>460</y>
-        <width>31</width>
-        <height>29</height>
+        <x>36</x>
+        <y>170</y>
+        <width>91</width>
+        <height>91</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
       </property>
       <property name="text">
-       <string>80</string>
+       <string/>
       </property>
-      <property name="scaledContents">
-       <bool>false</bool>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Meeting_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Meeting_ON.png</normalon>
+        <disabledoff>:/new/Led/Led/Meeting_ON.png</disabledoff>:/new/Led/Led/Meeting_OFF.png</iconset>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
       </property>
-      <property name="wordWrap">
+      <property name="checkable">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="SwitchButton" name="Lux_All" native="true">
+     <widget class="QPushButton" name="SpotBar2">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>500</y>
-        <width>81</width>
-        <height>31</height>
+        <x>36</x>
+        <y>440</y>
+        <width>91</width>
+        <height>91</height>
        </rect>
       </property>
-     </widget>
-     <widget class="SwitchButton" name="Color_All" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>620</y>
-        <width>81</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="BrightnessP">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>320</y>
-        <width>81</width>
-        <height>71</height>
-       </rect>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Bar_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Bar_ON.png</normalon>:/new/Led/Led/Bar_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QPushButton" name="SpotOffice2">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>670</y>
-        <width>41</width>
+        <x>36</x>
+        <y>700</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Office_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Office_ON.png</normalon>:/new/Led/Led/Office_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SpotBar1">
+      <property name="geometry">
+       <rect>
+        <x>36</x>
+        <y>310</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Bar_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Bar_ON.png</normalon>:/new/Led/Led/Bar_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>800</y>
+        <width>91</width>
         <height>41</height>
        </rect>
       </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="ModeChoice">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>20</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
+      <property name="font">
+       <font>
+        <family>Adobe 黑体 Std R</family>
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">max-width:50px;
- max-height:50px;
- min-width:50px;
- min-height:50px;
-border-radius:25px;
-background-color: white;
- border-style: solid;</string>
+       <string notr="true">color:#282A49</string>
       </property>
       <property name="text">
-       <string>Main</string>
+       <string>射灯</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+    </widget>
+   </widget>
+   <widget class="QWidget" name="SpotLight">
+    <widget class="QFrame" name="LedFrame">
+     <property name="geometry">
+      <rect>
+       <x>-5</x>
+       <y>-10</y>
+       <width>151</width>
+       <height>871</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="LedMeet1">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>590</y>
+        <x>26</x>
+        <y>30</y>
         <width>91</width>
-        <height>29</height>
+        <height>91</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
       </property>
       <property name="text">
-       <string>色温：</string>
+       <string/>
       </property>
-      <property name="scaledContents">
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Meeting_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Meeting_ON.png</normalon>:/new/Led/Led/Meeting_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
        <bool>false</bool>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+     </widget>
+     <widget class="QPushButton" name="LedOffice1">
+      <property name="geometry">
+       <rect>
+        <x>26</x>
+        <y>570</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
       </property>
-      <property name="wordWrap">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Office_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Office_ON.png</normalon>:/new/Led/Led/Office_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="Color_Text">
+     <widget class="QPushButton" name="LedMeet2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>590</y>
-        <width>31</width>
-        <height>29</height>
+        <x>26</x>
+        <y>170</y>
+        <width>91</width>
+        <height>91</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Adobe 黑体 Std R</family>
-        <pointsize>15</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color:#282A49</string>
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
       </property>
       <property name="text">
-       <string>80</string>
+       <string/>
       </property>
-      <property name="scaledContents">
-       <bool>false</bool>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Meeting_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Meeting_ON.png</normalon>
+        <disabledoff>:/new/Led/Led/Meeting_ON.png</disabledoff>:/new/Led/Led/Meeting_OFF.png</iconset>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
       </property>
-      <property name="wordWrap">
+      <property name="checkable">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="SelectedLed">
+     <widget class="QPushButton" name="LedBar2">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>675</y>
-        <width>31</width>
-        <height>31</height>
+        <x>26</x>
+        <y>440</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Bar_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Bar_ON.png</normalon>:/new/Led/Led/Bar_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LedOffice2">
+      <property name="geometry">
+       <rect>
+        <x>26</x>
+        <y>700</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Office_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Office_ON.png</normalon>:/new/Led/Led/Office_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LedBar1">
+      <property name="geometry">
+       <rect>
+        <x>26</x>
+        <y>310</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/Bar_OFF.png</normaloff>
+        <normalon>:/new/Led/Led/Bar_ON.png</normalon>:/new/Led/Led/Bar_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>810</y>
+        <width>91</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -691,7 +1782,7 @@ background-color: white;
        <string notr="true">color:#282A49</string>
       </property>
       <property name="text">
-       <string>1</string>
+       <string>LED</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>

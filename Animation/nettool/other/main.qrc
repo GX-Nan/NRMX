@@ -26,12 +26,12 @@
         <file>Air/Mid_ON.png</file>
     </qresource>
     <qresource prefix="/new/Curtain">
-        <file>Curtain/Down_OFF.png</file>
         <file>Curtain/Down_ON.png</file>
         <file>Curtain/Stop_OFF.png</file>
         <file>Curtain/Stop_ON.png</file>
         <file>Curtain/Up_OFF.png</file>
         <file>Curtain/Up_ON.png</file>
+        <file>Curtain/Down_OFF.png</file>
     </qresource>
     <qresource prefix="/new/Led">
         <file>Led/AI_OFF.png</file>
@@ -39,6 +39,12 @@
         <file>Led/AirSwitch-ON.png</file>
         <file>Led/All_Light_OFF.png</file>
         <file>Led/Brightness.png</file>
+        <file>Led/Bar_OFF.png</file>
+        <file>Led/Bar_ON.png</file>
+        <file>Led/Meeting_OFF.png</file>
+        <file>Led/Meeting_ON.png</file>
+        <file>Led/Office_OFF.png</file>
+        <file>Led/Office_ON.png</file>
     </qresource>
     <qresource prefix="/new/Wind">
         <file>Wind/High_OFF.png</file>
@@ -69,5 +75,8 @@
         <file>Window/Home.png</file>
         <file>Window/Humi.png</file>
         <file>Window/OutDoor.png</file>
+    </qresource>
+    <qresource prefix="/new/Main">
+        <file>Air/Back.png</file>
     </qresource>
 </RCC>

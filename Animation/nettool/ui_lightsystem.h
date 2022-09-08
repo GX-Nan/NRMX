@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'lightsystem.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.3
+** Created by: Qt User Interface Compiler version 5.14.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,50 +29,84 @@ class Ui_LightSystem
 {
 public:
     QFrame *bottom;
-    QStackedWidget *PageBottom;
-    QWidget *LightMain;
-    QLabel *label_3;
     QLabel *BrightnessP2;
+    QPushButton *BackMain;
     QLabel *CurtainNumber;
+    QLabel *label_3;
     QGroupBox *ButtonBox;
     QPushButton *AllLed_Status;
     QPushButton *AiMode;
-    QPushButton *BackMain;
-    QPushButton *ModeChoice_2;
-    QPushButton *AloneControl;
-    QWidget *AloneLight;
-    SwitchButton *Led_Switch;
+    QFrame *frame;
     QSlider *Brightness_Slider;
-    XProgressBar *Brightness_Xprogress;
-    QSlider *Color_Slider;
-    XProgressBar *Color_Xprogress;
-    QLabel *InsidesBrightness;
-    QLabel *label_4;
-    QSlider *Device_Slider;
-    QLabel *label_5;
+    QLabel *SelectedLed;
     QLabel *label_7;
+    SwitchButton *Color_All;
+    XProgressBar *Color_Xprogress;
+    XProgressBar *Brightness_Xprogress;
     QLabel *Brightness_Text;
     SwitchButton *Lux_All;
-    SwitchButton *Color_All;
-    QLabel *BrightnessP;
-    QLabel *label_6;
-    QPushButton *ModeChoice;
     QLabel *label_8;
     QLabel *Color_Text;
-    QLabel *SelectedLed;
+    QSlider *Device_Slider;
+    QSlider *Color_Slider;
+    QLabel *label_5;
+    QLabel *label_6;
+    QGroupBox *ChandelierBox;
+    QLabel *label_11;
+    QPushButton *ChandChoice;
+    QStackedWidget *ChanStackedWidget;
+    QWidget *ChandelierFrame1;
+    QWidget *ChandeBottom;
+    QPushButton *ChandeUp1;
+    QPushButton *ChandeDown1;
+    QPushButton *ChandeStop1;
+    QPushButton *ChandelierSwitch1;
+    QWidget *ChandelierFrame2;
+    QPushButton *ChandelierSwitch2;
+    QWidget *ChandeBottom_2;
+    QPushButton *ChandeUp2;
+    QPushButton *ChandeDown2;
+    QPushButton *ChandeStop2;
+    QGroupBox *LEDBox;
+    QPushButton *LedAll;
+    QLabel *label_9;
+    QPushButton *LedChoice;
+    QGroupBox *SpotBox;
+    QPushButton *SpotAll;
+    QLabel *label_10;
+    QPushButton *SpotChoice;
+    QStackedWidget *LedSpot;
+    QWidget *LED;
+    QFrame *SpotFrame;
+    QPushButton *SpotMeet1;
+    QPushButton *SpotOffice1;
+    QPushButton *SpotMeet2;
+    QPushButton *SpotBar2;
+    QPushButton *SpotOffice2;
+    QPushButton *SpotBar1;
+    QLabel *label_13;
+    QWidget *SpotLight;
+    QFrame *LedFrame;
+    QPushButton *LedMeet1;
+    QPushButton *LedOffice1;
+    QPushButton *LedMeet2;
+    QPushButton *LedBar2;
+    QPushButton *LedOffice2;
+    QPushButton *LedBar1;
+    QLabel *label_12;
 
     void setupUi(QDialog *LightSystem)
     {
         if (LightSystem->objectName().isEmpty())
-            LightSystem->setObjectName(QStringLiteral("LightSystem"));
-        LightSystem->resize(511, 844);
-        LightSystem->setStyleSheet(QLatin1String("QDialog#LightSystem{\n"
+            LightSystem->setObjectName(QString::fromUtf8("LightSystem"));
+        LightSystem->resize(1332, 893);
+        LightSystem->setStyleSheet(QString::fromUtf8("QDialog#LightSystem{\n"
 "background-color:rgb(178,178,178,255);\n"
 "}"));
         bottom = new QFrame(LightSystem);
-        bottom->setObjectName(QStringLiteral("bottom"));
-        bottom->setGeometry(QRect(10, 20, 491, 811));
-        bottom->setStyleSheet(QLatin1String("QFrame#bottom\n"
+        bottom->setObjectName(QString::fromUtf8("bottom"));
+        bottom->setGeometry(QRect(30, 20, 1111, 841));
+        bottom->setStyleSheet(QString::fromUtf8("QFrame#bottom\n"
 "{\n"
 "	background-color:#ffffff;\n"
 " \n"
@@ -81,262 +115,665 @@ public:
 "}"));
         bottom->setFrameShape(QFrame::StyledPanel);
         bottom->setFrameShadow(QFrame::Raised);
-        PageBottom = new QStackedWidget(bottom);
-        PageBottom->setObjectName(QStringLiteral("PageBottom"));
-        PageBottom->setGeometry(QRect(0, 0, 491, 811));
-        LightMain = new QWidget();
-        LightMain->setObjectName(QStringLiteral("LightMain"));
-        label_3 = new QLabel(LightMain);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(250, 320, 101, 31));
+        BrightnessP2 = new QLabel(bottom);
+        BrightnessP2->setObjectName(QString::fromUtf8("BrightnessP2"));
+        BrightnessP2->setGeometry(QRect(120, 340, 100, 100));
+        BackMain = new QPushButton(bottom);
+        BackMain->setObjectName(QString::fromUtf8("BackMain"));
+        BackMain->setGeometry(QRect(1040, 20, 50, 50));
+        BackMain->setStyleSheet(QString::fromUtf8("max-width:50px;\n"
+" max-height:50px;\n"
+" min-width:50px;\n"
+" min-height:50px;\n"
+"border-radius:25px;\n"
+"background-color: white;\n"
+" border-style: solid;"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/new/Main/Air/Back.png"), QSize(), QIcon::Normal, QIcon::Off);
+        BackMain->setIcon(icon);
+        BackMain->setIconSize(QSize(50, 50));
+        CurtainNumber = new QLabel(bottom);
+        CurtainNumber->setObjectName(QString::fromUtf8("CurtainNumber"));
+        CurtainNumber->setGeometry(QRect(50, 50, 371, 281));
         QFont font;
-        font.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font.setPointSize(15);
+        font.setFamily(QString::fromUtf8("PibotoLt"));
+        font.setPointSize(170);
         font.setBold(true);
+        font.setItalic(false);
         font.setWeight(75);
-        label_3->setFont(font);
-        label_3->setStyleSheet(QStringLiteral("color:#282A49"));
+        CurtainNumber->setFont(font);
+        CurtainNumber->setStyleSheet(QString::fromUtf8(""));
+        CurtainNumber->setAlignment(Qt::AlignCenter);
+        label_3 = new QLabel(bottom);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(260, 380, 101, 31));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
+        font1.setPointSize(15);
+        font1.setBold(true);
+        font1.setWeight(75);
+        label_3->setFont(font1);
+        label_3->setStyleSheet(QString::fromUtf8("color:#282A49"));
         label_3->setScaledContents(false);
         label_3->setAlignment(Qt::AlignCenter);
         label_3->setWordWrap(true);
-        BrightnessP2 = new QLabel(LightMain);
-        BrightnessP2->setObjectName(QStringLiteral("BrightnessP2"));
-        BrightnessP2->setGeometry(QRect(140, 280, 100, 100));
-        CurtainNumber = new QLabel(LightMain);
-        CurtainNumber->setObjectName(QStringLiteral("CurtainNumber"));
-        CurtainNumber->setGeometry(QRect(60, 10, 351, 321));
-        QFont font1;
-        font1.setFamily(QStringLiteral("PibotoLt"));
-        font1.setPointSize(150);
-        font1.setBold(true);
-        font1.setItalic(false);
-        font1.setWeight(75);
-        CurtainNumber->setFont(font1);
-        CurtainNumber->setStyleSheet(QStringLiteral(""));
-        CurtainNumber->setAlignment(Qt::AlignCenter);
-        ButtonBox = new QGroupBox(LightMain);
-        ButtonBox->setObjectName(QStringLiteral("ButtonBox"));
-        ButtonBox->setGeometry(QRect(90, 380, 331, 351));
-        ButtonBox->setStyleSheet(QLatin1String("QGroupBox#ButtonBox{\n"
+        ButtonBox = new QGroupBox(bottom);
+        ButtonBox->setObjectName(QString::fromUtf8("ButtonBox"));
+        ButtonBox->setGeometry(QRect(60, 490, 401, 291));
+        ButtonBox->setStyleSheet(QString::fromUtf8("QGroupBox#ButtonBox{\n"
 "border:none;\n"
 "}"));
         AllLed_Status = new QPushButton(ButtonBox);
-        AllLed_Status->setObjectName(QStringLiteral("AllLed_Status"));
-        AllLed_Status->setGeometry(QRect(20, 210, 291, 91));
+        AllLed_Status->setObjectName(QString::fromUtf8("AllLed_Status"));
+        AllLed_Status->setGeometry(QRect(20, 170, 371, 91));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
         font2.setPointSize(15);
         AllLed_Status->setFont(font2);
-        AllLed_Status->setStyleSheet(QLatin1String("QPushButton\n"
-"{\n"
-"	border-radius:15px;\n"
-"	background:#FFFFFF;\n"
-"}"));
-        QIcon icon;
-        icon.addFile(QStringLiteral(":/new/Led/Led/All_Light_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon.addFile(QStringLiteral(":/new/Led/Led/AirSwitch-ON.png"), QSize(), QIcon::Normal, QIcon::On);
-        AllLed_Status->setIcon(icon);
-        AllLed_Status->setIconSize(QSize(100, 50));
-        AllLed_Status->setCheckable(true);
-        AllLed_Status->setAutoExclusive(true);
-        AiMode = new QPushButton(ButtonBox);
-        AiMode->setObjectName(QStringLiteral("AiMode"));
-        AiMode->setGeometry(QRect(20, 50, 291, 91));
-        AiMode->setFont(font2);
-        AiMode->setStyleSheet(QLatin1String("QPushButton\n"
+        AllLed_Status->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	border-radius:15px;\n"
 "	background:#FFFFFF;\n"
 "}"));
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon1.addFile(QStringLiteral(":/new/Led/Led/AI_OFF.png"), QSize(), QIcon::Normal, QIcon::On);
-        AiMode->setIcon(icon1);
+        icon1.addFile(QString::fromUtf8(":/new/Led/Led/All_Light_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/new/Led/Led/AirSwitch-ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        AllLed_Status->setIcon(icon1);
+        AllLed_Status->setIconSize(QSize(100, 50));
+        AllLed_Status->setCheckable(true);
+        AllLed_Status->setAutoExclusive(true);
+        AiMode = new QPushButton(ButtonBox);
+        AiMode->setObjectName(QString::fromUtf8("AiMode"));
+        AiMode->setGeometry(QRect(20, 20, 371, 91));
+        AiMode->setFont(font2);
+        AiMode->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8(":/new/Led/Led/AI_OFF.png"), QSize(), QIcon::Normal, QIcon::On);
+        AiMode->setIcon(icon2);
         AiMode->setIconSize(QSize(70, 70));
         AiMode->setAutoRepeatDelay(300);
         AiMode->setAutoRepeatInterval(200);
-        BackMain = new QPushButton(LightMain);
-        BackMain->setObjectName(QStringLiteral("BackMain"));
-        BackMain->setGeometry(QRect(430, 10, 50, 50));
-        BackMain->setStyleSheet(QLatin1String("max-width:50px;\n"
-" max-height:50px;\n"
-" min-width:50px;\n"
-" min-height:50px;\n"
-"border-radius:25px;\n"
-"background-color: white;\n"
-" border-style: solid;"));
-        ModeChoice_2 = new QPushButton(LightMain);
-        ModeChoice_2->setObjectName(QStringLiteral("ModeChoice_2"));
-        ModeChoice_2->setGeometry(QRect(380, 750, 50, 50));
-        ModeChoice_2->setStyleSheet(QLatin1String("max-width:50px;\n"
-" max-height:50px;\n"
-" min-width:50px;\n"
-" min-height:50px;\n"
-"border-radius:25px;\n"
-"background-color: white;\n"
-" border-style: solid;"));
-        AloneControl = new QPushButton(LightMain);
-        AloneControl->setObjectName(QStringLiteral("AloneControl"));
-        AloneControl->setGeometry(QRect(60, 750, 50, 50));
-        AloneControl->setStyleSheet(QLatin1String("max-width:50px;\n"
-" max-height:50px;\n"
-" min-width:50px;\n"
-" min-height:50px;\n"
-"border-radius:25px;\n"
-"background-color: white;\n"
-" border-style: solid;"));
-        PageBottom->addWidget(LightMain);
-        AloneLight = new QWidget();
-        AloneLight->setObjectName(QStringLiteral("AloneLight"));
-        Led_Switch = new SwitchButton(AloneLight);
-        Led_Switch->setObjectName(QStringLiteral("Led_Switch"));
-        Led_Switch->setGeometry(QRect(210, 760, 91, 31));
-        Brightness_Slider = new QSlider(AloneLight);
-        Brightness_Slider->setObjectName(QStringLiteral("Brightness_Slider"));
-        Brightness_Slider->setGeometry(QRect(30, 510, 351, 21));
+        frame = new QFrame(bottom);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setGeometry(QRect(520, 440, 551, 361));
+        frame->setStyleSheet(QString::fromUtf8("QFrame#frame\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        Brightness_Slider = new QSlider(frame);
+        Brightness_Slider->setObjectName(QString::fromUtf8("Brightness_Slider"));
+        Brightness_Slider->setGeometry(QRect(50, 100, 351, 21));
         Brightness_Slider->setOrientation(Qt::Horizontal);
-        Brightness_Xprogress = new XProgressBar(AloneLight);
-        Brightness_Xprogress->setObjectName(QStringLiteral("Brightness_Xprogress"));
-        Brightness_Xprogress->setGeometry(QRect(30, 435, 441, 21));
-        Color_Slider = new QSlider(AloneLight);
-        Color_Slider->setObjectName(QStringLiteral("Color_Slider"));
-        Color_Slider->setGeometry(QRect(30, 630, 351, 21));
-        Color_Slider->setOrientation(Qt::Horizontal);
-        Color_Xprogress = new XProgressBar(AloneLight);
-        Color_Xprogress->setObjectName(QStringLiteral("Color_Xprogress"));
-        Color_Xprogress->setGeometry(QRect(30, 560, 441, 21));
-        InsidesBrightness = new QLabel(AloneLight);
-        InsidesBrightness->setObjectName(QStringLiteral("InsidesBrightness"));
-        InsidesBrightness->setGeometry(QRect(60, 70, 371, 241));
-        QFont font3;
-        font3.setFamily(QStringLiteral("PibotoLt"));
-        font3.setPointSize(150);
-        font3.setBold(true);
-        font3.setWeight(75);
-        InsidesBrightness->setFont(font3);
-        InsidesBrightness->setStyleSheet(QLatin1String("background-color:white;\n"
-"border-radius:15px;"));
-        InsidesBrightness->setAlignment(Qt::AlignCenter);
-        label_4 = new QLabel(AloneLight);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(200, 340, 161, 31));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font4.setPointSize(20);
-        font4.setBold(true);
-        font4.setWeight(75);
-        label_4->setFont(font4);
-        label_4->setStyleSheet(QStringLiteral("color:#282A49"));
-        label_4->setScaledContents(false);
-        label_4->setAlignment(Qt::AlignCenter);
-        label_4->setWordWrap(true);
-        Device_Slider = new QSlider(AloneLight);
-        Device_Slider->setObjectName(QStringLiteral("Device_Slider"));
-        Device_Slider->setGeometry(QRect(30, 720, 441, 20));
-        Device_Slider->setMinimum(1);
-        Device_Slider->setMaximum(6);
-        Device_Slider->setOrientation(Qt::Horizontal);
-        label_5 = new QLabel(AloneLight);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(200, 680, 111, 21));
-        label_5->setFont(font);
-        label_5->setStyleSheet(QStringLiteral("color:#282A49"));
-        label_5->setScaledContents(false);
-        label_5->setAlignment(Qt::AlignCenter);
-        label_5->setWordWrap(true);
-        label_7 = new QLabel(AloneLight);
-        label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(190, 460, 91, 29));
-        label_7->setFont(font);
-        label_7->setStyleSheet(QStringLiteral("color:#282A49"));
-        label_7->setScaledContents(false);
-        label_7->setAlignment(Qt::AlignCenter);
-        label_7->setWordWrap(true);
-        Brightness_Text = new QLabel(AloneLight);
-        Brightness_Text->setObjectName(QStringLiteral("Brightness_Text"));
-        Brightness_Text->setGeometry(QRect(270, 460, 31, 29));
-        Brightness_Text->setFont(font);
-        Brightness_Text->setStyleSheet(QStringLiteral("color:#282A49"));
-        Brightness_Text->setScaledContents(false);
-        Brightness_Text->setAlignment(Qt::AlignCenter);
-        Brightness_Text->setWordWrap(true);
-        Lux_All = new SwitchButton(AloneLight);
-        Lux_All->setObjectName(QStringLiteral("Lux_All"));
-        Lux_All->setGeometry(QRect(390, 500, 81, 31));
-        Color_All = new SwitchButton(AloneLight);
-        Color_All->setObjectName(QStringLiteral("Color_All"));
-        Color_All->setGeometry(QRect(390, 620, 81, 31));
-        BrightnessP = new QLabel(AloneLight);
-        BrightnessP->setObjectName(QStringLiteral("BrightnessP"));
-        BrightnessP->setGeometry(QRect(120, 320, 81, 71));
-        BrightnessP->setAlignment(Qt::AlignCenter);
-        label_6 = new QLabel(AloneLight);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(150, 670, 41, 41));
-        ModeChoice = new QPushButton(AloneLight);
-        ModeChoice->setObjectName(QStringLiteral("ModeChoice"));
-        ModeChoice->setGeometry(QRect(440, 20, 50, 50));
-        ModeChoice->setStyleSheet(QLatin1String("max-width:50px;\n"
-" max-height:50px;\n"
-" min-width:50px;\n"
-" min-height:50px;\n"
-"border-radius:25px;\n"
-"background-color: white;\n"
-" border-style: solid;"));
-        label_8 = new QLabel(AloneLight);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(190, 590, 91, 29));
-        label_8->setFont(font);
-        label_8->setStyleSheet(QStringLiteral("color:#282A49"));
-        label_8->setScaledContents(false);
-        label_8->setAlignment(Qt::AlignCenter);
-        label_8->setWordWrap(true);
-        Color_Text = new QLabel(AloneLight);
-        Color_Text->setObjectName(QStringLiteral("Color_Text"));
-        Color_Text->setGeometry(QRect(270, 590, 31, 29));
-        Color_Text->setFont(font);
-        Color_Text->setStyleSheet(QStringLiteral("color:#282A49"));
-        Color_Text->setScaledContents(false);
-        Color_Text->setAlignment(Qt::AlignCenter);
-        Color_Text->setWordWrap(true);
-        SelectedLed = new QLabel(AloneLight);
-        SelectedLed->setObjectName(QStringLiteral("SelectedLed"));
-        SelectedLed->setGeometry(QRect(320, 675, 31, 31));
-        SelectedLed->setFont(font);
-        SelectedLed->setStyleSheet(QStringLiteral("color:#282A49"));
+        SelectedLed = new QLabel(frame);
+        SelectedLed->setObjectName(QString::fromUtf8("SelectedLed"));
+        SelectedLed->setGeometry(QRect(340, 275, 31, 31));
+        SelectedLed->setFont(font1);
+        SelectedLed->setStyleSheet(QString::fromUtf8("color:#282A49"));
         SelectedLed->setScaledContents(false);
         SelectedLed->setAlignment(Qt::AlignCenter);
         SelectedLed->setWordWrap(true);
-        PageBottom->addWidget(AloneLight);
+        label_7 = new QLabel(frame);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(210, 60, 91, 29));
+        label_7->setFont(font1);
+        label_7->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_7->setScaledContents(false);
+        label_7->setAlignment(Qt::AlignCenter);
+        label_7->setWordWrap(true);
+        Color_All = new SwitchButton(frame);
+        Color_All->setObjectName(QString::fromUtf8("Color_All"));
+        Color_All->setGeometry(QRect(410, 220, 81, 31));
+        Color_Xprogress = new XProgressBar(frame);
+        Color_Xprogress->setObjectName(QString::fromUtf8("Color_Xprogress"));
+        Color_Xprogress->setGeometry(QRect(50, 150, 441, 21));
+        Brightness_Xprogress = new XProgressBar(frame);
+        Brightness_Xprogress->setObjectName(QString::fromUtf8("Brightness_Xprogress"));
+        Brightness_Xprogress->setGeometry(QRect(50, 30, 441, 21));
+        Brightness_Text = new QLabel(frame);
+        Brightness_Text->setObjectName(QString::fromUtf8("Brightness_Text"));
+        Brightness_Text->setGeometry(QRect(290, 60, 31, 29));
+        Brightness_Text->setFont(font1);
+        Brightness_Text->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        Brightness_Text->setScaledContents(false);
+        Brightness_Text->setAlignment(Qt::AlignCenter);
+        Brightness_Text->setWordWrap(true);
+        Lux_All = new SwitchButton(frame);
+        Lux_All->setObjectName(QString::fromUtf8("Lux_All"));
+        Lux_All->setGeometry(QRect(410, 90, 81, 31));
+        label_8 = new QLabel(frame);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(210, 190, 91, 29));
+        label_8->setFont(font1);
+        label_8->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_8->setScaledContents(false);
+        label_8->setAlignment(Qt::AlignCenter);
+        label_8->setWordWrap(true);
+        Color_Text = new QLabel(frame);
+        Color_Text->setObjectName(QString::fromUtf8("Color_Text"));
+        Color_Text->setGeometry(QRect(290, 190, 31, 29));
+        Color_Text->setFont(font1);
+        Color_Text->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        Color_Text->setScaledContents(false);
+        Color_Text->setAlignment(Qt::AlignCenter);
+        Color_Text->setWordWrap(true);
+        Device_Slider = new QSlider(frame);
+        Device_Slider->setObjectName(QString::fromUtf8("Device_Slider"));
+        Device_Slider->setGeometry(QRect(50, 320, 441, 20));
+        Device_Slider->setMinimum(7);
+        Device_Slider->setMaximum(12);
+        Device_Slider->setOrientation(Qt::Horizontal);
+        Color_Slider = new QSlider(frame);
+        Color_Slider->setObjectName(QString::fromUtf8("Color_Slider"));
+        Color_Slider->setGeometry(QRect(50, 230, 351, 21));
+        Color_Slider->setOrientation(Qt::Horizontal);
+        label_5 = new QLabel(frame);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(220, 280, 111, 21));
+        label_5->setFont(font1);
+        label_5->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_5->setScaledContents(false);
+        label_5->setAlignment(Qt::AlignCenter);
+        label_5->setWordWrap(true);
+        label_6 = new QLabel(frame);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(170, 270, 41, 41));
+        ChandelierBox = new QGroupBox(bottom);
+        ChandelierBox->setObjectName(QString::fromUtf8("ChandelierBox"));
+        ChandelierBox->setGeometry(QRect(520, 250, 551, 151));
+        ChandelierBox->setStyleSheet(QString::fromUtf8("QGroupBox#ChandelierBox\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        ChandelierBox->setAlignment(Qt::AlignCenter);
+        label_11 = new QLabel(ChandelierBox);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(460, 110, 91, 41));
+        label_11->setFont(font1);
+        label_11->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_11->setScaledContents(false);
+        label_11->setAlignment(Qt::AlignCenter);
+        label_11->setWordWrap(true);
+        ChandChoice = new QPushButton(ChandelierBox);
+        ChandChoice->setObjectName(QString::fromUtf8("ChandChoice"));
+        ChandChoice->setGeometry(QRect(490, 0, 51, 41));
+        QFont font3;
+        font3.setPointSize(20);
+        font3.setBold(true);
+        font3.setWeight(75);
+        ChandChoice->setFont(font3);
+        ChandChoice->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        ChanStackedWidget = new QStackedWidget(ChandelierBox);
+        ChanStackedWidget->setObjectName(QString::fromUtf8("ChanStackedWidget"));
+        ChanStackedWidget->setGeometry(QRect(10, 20, 491, 121));
+        ChandelierFrame1 = new QWidget();
+        ChandelierFrame1->setObjectName(QString::fromUtf8("ChandelierFrame1"));
+        ChandeBottom = new QWidget(ChandelierFrame1);
+        ChandeBottom->setObjectName(QString::fromUtf8("ChandeBottom"));
+        ChandeBottom->setGeometry(QRect(0, 5, 391, 101));
+        ChandeUp1 = new QPushButton(ChandeBottom);
+        ChandeUp1->setObjectName(QString::fromUtf8("ChandeUp1"));
+        ChandeUp1->setGeometry(QRect(270, 15, 91, 81));
+        ChandeUp1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/new/Curtain/Curtain/Up_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8(":/new/Curtain/Curtain/Up_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        ChandeUp1->setIcon(icon3);
+        ChandeUp1->setIconSize(QSize(80, 80));
+        ChandeUp1->setCheckable(true);
+        ChandeUp1->setChecked(false);
+        ChandeUp1->setAutoRepeat(true);
+        ChandeUp1->setAutoExclusive(true);
+        ChandeDown1 = new QPushButton(ChandeBottom);
+        ChandeDown1->setObjectName(QString::fromUtf8("ChandeDown1"));
+        ChandeDown1->setGeometry(QRect(30, 15, 91, 81));
+        ChandeDown1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/new/Curtain/Curtain/Down_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8(":/new/Curtain/Curtain/Down_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        ChandeDown1->setIcon(icon4);
+        ChandeDown1->setIconSize(QSize(80, 80));
+        ChandeDown1->setCheckable(true);
+        ChandeDown1->setChecked(false);
+        ChandeDown1->setAutoRepeat(true);
+        ChandeDown1->setAutoExclusive(true);
+        ChandeStop1 = new QPushButton(ChandeBottom);
+        ChandeStop1->setObjectName(QString::fromUtf8("ChandeStop1"));
+        ChandeStop1->setGeometry(QRect(150, 15, 91, 81));
+        ChandeStop1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/new/Curtain/Curtain/Stop_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8(":/new/Curtain/Curtain/Stop_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        ChandeStop1->setIcon(icon5);
+        ChandeStop1->setIconSize(QSize(60, 60));
+        ChandeStop1->setCheckable(true);
+        ChandeStop1->setChecked(false);
+        ChandeStop1->setAutoRepeat(true);
+        ChandeStop1->setAutoExclusive(true);
+        ChandelierSwitch1 = new QPushButton(ChandelierFrame1);
+        ChandelierSwitch1->setObjectName(QString::fromUtf8("ChandelierSwitch1"));
+        ChandelierSwitch1->setGeometry(QRect(390, 20, 91, 81));
+        ChandelierSwitch1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/new/Air/Air/AirSwitch.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8(":/new/Air/Air/AirSwitch-ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        ChandelierSwitch1->setIcon(icon6);
+        ChandelierSwitch1->setIconSize(QSize(50, 50));
+        ChandelierSwitch1->setCheckable(true);
+        ChandelierSwitch1->setChecked(false);
+        ChandelierSwitch1->setAutoRepeat(false);
+        ChandelierSwitch1->setAutoExclusive(false);
+        ChanStackedWidget->addWidget(ChandelierFrame1);
+        ChandelierFrame2 = new QWidget();
+        ChandelierFrame2->setObjectName(QString::fromUtf8("ChandelierFrame2"));
+        ChandelierSwitch2 = new QPushButton(ChandelierFrame2);
+        ChandelierSwitch2->setObjectName(QString::fromUtf8("ChandelierSwitch2"));
+        ChandelierSwitch2->setGeometry(QRect(390, 20, 91, 81));
+        ChandelierSwitch2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        ChandelierSwitch2->setIcon(icon6);
+        ChandelierSwitch2->setIconSize(QSize(50, 50));
+        ChandelierSwitch2->setCheckable(true);
+        ChandelierSwitch2->setChecked(false);
+        ChandelierSwitch2->setAutoRepeat(false);
+        ChandelierSwitch2->setAutoExclusive(false);
+        ChandeBottom_2 = new QWidget(ChandelierFrame2);
+        ChandeBottom_2->setObjectName(QString::fromUtf8("ChandeBottom_2"));
+        ChandeBottom_2->setGeometry(QRect(0, 5, 391, 121));
+        ChandeUp2 = new QPushButton(ChandeBottom_2);
+        ChandeUp2->setObjectName(QString::fromUtf8("ChandeUp2"));
+        ChandeUp2->setGeometry(QRect(270, 15, 91, 81));
+        ChandeUp2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        ChandeUp2->setIcon(icon3);
+        ChandeUp2->setIconSize(QSize(80, 80));
+        ChandeUp2->setCheckable(true);
+        ChandeUp2->setChecked(false);
+        ChandeUp2->setAutoRepeat(true);
+        ChandeUp2->setAutoExclusive(true);
+        ChandeDown2 = new QPushButton(ChandeBottom_2);
+        ChandeDown2->setObjectName(QString::fromUtf8("ChandeDown2"));
+        ChandeDown2->setGeometry(QRect(30, 15, 91, 81));
+        ChandeDown2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        ChandeDown2->setIcon(icon4);
+        ChandeDown2->setIconSize(QSize(80, 80));
+        ChandeDown2->setCheckable(true);
+        ChandeDown2->setChecked(false);
+        ChandeDown2->setAutoRepeat(true);
+        ChandeDown2->setAutoExclusive(true);
+        ChandeStop2 = new QPushButton(ChandeBottom_2);
+        ChandeStop2->setObjectName(QString::fromUtf8("ChandeStop2"));
+        ChandeStop2->setGeometry(QRect(150, 15, 91, 81));
+        ChandeStop2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        ChandeStop2->setIcon(icon5);
+        ChandeStop2->setIconSize(QSize(60, 60));
+        ChandeStop2->setCheckable(true);
+        ChandeStop2->setChecked(false);
+        ChandeStop2->setAutoRepeat(true);
+        ChandeStop2->setAutoExclusive(true);
+        ChanStackedWidget->addWidget(ChandelierFrame2);
+        ChandChoice->raise();
+        ChanStackedWidget->raise();
+        label_11->raise();
+        LEDBox = new QGroupBox(bottom);
+        LEDBox->setObjectName(QString::fromUtf8("LEDBox"));
+        LEDBox->setGeometry(QRect(520, 80, 251, 131));
+        LEDBox->setStyleSheet(QString::fromUtf8("QGroupBox#LEDBox\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedAll = new QPushButton(LEDBox);
+        LedAll->setObjectName(QString::fromUtf8("LedAll"));
+        LedAll->setGeometry(QRect(70, 20, 91, 91));
+        LedAll->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedAll->setIcon(icon6);
+        LedAll->setIconSize(QSize(60, 60));
+        label_9 = new QLabel(LEDBox);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(170, 90, 91, 41));
+        label_9->setFont(font1);
+        label_9->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_9->setScaledContents(false);
+        label_9->setAlignment(Qt::AlignCenter);
+        label_9->setWordWrap(true);
+        LedChoice = new QPushButton(LEDBox);
+        LedChoice->setObjectName(QString::fromUtf8("LedChoice"));
+        LedChoice->setGeometry(QRect(190, 10, 51, 41));
+        LedChoice->setFont(font3);
+        LedChoice->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        SpotBox = new QGroupBox(bottom);
+        SpotBox->setObjectName(QString::fromUtf8("SpotBox"));
+        SpotBox->setGeometry(QRect(820, 80, 251, 131));
+        SpotBox->setStyleSheet(QString::fromUtf8("QGroupBox#SpotBox\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        SpotAll = new QPushButton(SpotBox);
+        SpotAll->setObjectName(QString::fromUtf8("SpotAll"));
+        SpotAll->setGeometry(QRect(80, 20, 91, 91));
+        SpotAll->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        SpotAll->setIcon(icon6);
+        SpotAll->setIconSize(QSize(60, 60));
+        label_10 = new QLabel(SpotBox);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setGeometry(QRect(170, 90, 91, 41));
+        label_10->setFont(font1);
+        label_10->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_10->setScaledContents(false);
+        label_10->setAlignment(Qt::AlignCenter);
+        label_10->setWordWrap(true);
+        SpotChoice = new QPushButton(SpotBox);
+        SpotChoice->setObjectName(QString::fromUtf8("SpotChoice"));
+        SpotChoice->setGeometry(QRect(190, 10, 51, 41));
+        SpotChoice->setFont(font3);
+        SpotChoice->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedSpot = new QStackedWidget(LightSystem);
+        LedSpot->setObjectName(QString::fromUtf8("LedSpot"));
+        LedSpot->setGeometry(QRect(1180, 20, 131, 841));
+        LedSpot->setStyleSheet(QString::fromUtf8("QStackedWidget#LedSpot\n"
+"{\n"
+"	background-color:#ffffff;\n"
+"	border:none;\n"
+"	border-radius:15px;\n"
+"}"));
+        LED = new QWidget();
+        LED->setObjectName(QString::fromUtf8("LED"));
+        SpotFrame = new QFrame(LED);
+        SpotFrame->setObjectName(QString::fromUtf8("SpotFrame"));
+        SpotFrame->setGeometry(QRect(-15, -11, 161, 871));
+        SpotFrame->setFrameShape(QFrame::StyledPanel);
+        SpotFrame->setFrameShadow(QFrame::Raised);
+        SpotMeet1 = new QPushButton(SpotFrame);
+        SpotMeet1->setObjectName(QString::fromUtf8("SpotMeet1"));
+        SpotMeet1->setGeometry(QRect(36, 30, 91, 91));
+        SpotMeet1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/new/Led/Led/Meeting_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8(":/new/Led/Led/Meeting_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        SpotMeet1->setIcon(icon7);
+        SpotMeet1->setIconSize(QSize(60, 60));
+        SpotMeet1->setCheckable(true);
+        SpotOffice1 = new QPushButton(SpotFrame);
+        SpotOffice1->setObjectName(QString::fromUtf8("SpotOffice1"));
+        SpotOffice1->setGeometry(QRect(36, 570, 91, 91));
+        SpotOffice1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/new/Led/Led/Office_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8(":/new/Led/Led/Office_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        SpotOffice1->setIcon(icon8);
+        SpotOffice1->setIconSize(QSize(60, 60));
+        SpotOffice1->setCheckable(true);
+        SpotMeet2 = new QPushButton(SpotFrame);
+        SpotMeet2->setObjectName(QString::fromUtf8("SpotMeet2"));
+        SpotMeet2->setGeometry(QRect(36, 170, 91, 91));
+        SpotMeet2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/new/Led/Led/Meeting_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QString::fromUtf8(":/new/Led/Led/Meeting_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon9.addFile(QString::fromUtf8(":/new/Led/Led/Meeting_ON.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        SpotMeet2->setIcon(icon9);
+        SpotMeet2->setIconSize(QSize(60, 60));
+        SpotMeet2->setCheckable(true);
+        SpotBar2 = new QPushButton(SpotFrame);
+        SpotBar2->setObjectName(QString::fromUtf8("SpotBar2"));
+        SpotBar2->setGeometry(QRect(36, 440, 91, 91));
+        SpotBar2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/new/Led/Led/Bar_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon10.addFile(QString::fromUtf8(":/new/Led/Led/Bar_ON.png"), QSize(), QIcon::Normal, QIcon::On);
+        SpotBar2->setIcon(icon10);
+        SpotBar2->setIconSize(QSize(60, 60));
+        SpotBar2->setCheckable(true);
+        SpotOffice2 = new QPushButton(SpotFrame);
+        SpotOffice2->setObjectName(QString::fromUtf8("SpotOffice2"));
+        SpotOffice2->setGeometry(QRect(36, 700, 91, 91));
+        SpotOffice2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        SpotOffice2->setIcon(icon8);
+        SpotOffice2->setIconSize(QSize(60, 60));
+        SpotOffice2->setCheckable(true);
+        SpotBar1 = new QPushButton(SpotFrame);
+        SpotBar1->setObjectName(QString::fromUtf8("SpotBar1"));
+        SpotBar1->setGeometry(QRect(36, 310, 91, 91));
+        SpotBar1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        SpotBar1->setIcon(icon10);
+        SpotBar1->setIconSize(QSize(60, 60));
+        SpotBar1->setCheckable(true);
+        label_13 = new QLabel(SpotFrame);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setGeometry(QRect(40, 800, 91, 41));
+        label_13->setFont(font1);
+        label_13->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_13->setScaledContents(false);
+        label_13->setAlignment(Qt::AlignCenter);
+        label_13->setWordWrap(true);
+        LedSpot->addWidget(LED);
+        SpotLight = new QWidget();
+        SpotLight->setObjectName(QString::fromUtf8("SpotLight"));
+        LedFrame = new QFrame(SpotLight);
+        LedFrame->setObjectName(QString::fromUtf8("LedFrame"));
+        LedFrame->setGeometry(QRect(-5, -10, 151, 871));
+        LedFrame->setFrameShape(QFrame::StyledPanel);
+        LedFrame->setFrameShadow(QFrame::Raised);
+        LedMeet1 = new QPushButton(LedFrame);
+        LedMeet1->setObjectName(QString::fromUtf8("LedMeet1"));
+        LedMeet1->setGeometry(QRect(26, 30, 91, 91));
+        LedMeet1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedMeet1->setIcon(icon7);
+        LedMeet1->setIconSize(QSize(60, 60));
+        LedMeet1->setCheckable(true);
+        LedMeet1->setAutoExclusive(false);
+        LedOffice1 = new QPushButton(LedFrame);
+        LedOffice1->setObjectName(QString::fromUtf8("LedOffice1"));
+        LedOffice1->setGeometry(QRect(26, 570, 91, 91));
+        LedOffice1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedOffice1->setIcon(icon8);
+        LedOffice1->setIconSize(QSize(60, 60));
+        LedOffice1->setCheckable(true);
+        LedMeet2 = new QPushButton(LedFrame);
+        LedMeet2->setObjectName(QString::fromUtf8("LedMeet2"));
+        LedMeet2->setGeometry(QRect(26, 170, 91, 91));
+        LedMeet2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedMeet2->setIcon(icon9);
+        LedMeet2->setIconSize(QSize(60, 60));
+        LedMeet2->setCheckable(true);
+        LedBar2 = new QPushButton(LedFrame);
+        LedBar2->setObjectName(QString::fromUtf8("LedBar2"));
+        LedBar2->setGeometry(QRect(26, 440, 91, 91));
+        LedBar2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedBar2->setIcon(icon10);
+        LedBar2->setIconSize(QSize(60, 60));
+        LedBar2->setCheckable(true);
+        LedOffice2 = new QPushButton(LedFrame);
+        LedOffice2->setObjectName(QString::fromUtf8("LedOffice2"));
+        LedOffice2->setGeometry(QRect(26, 700, 91, 91));
+        LedOffice2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedOffice2->setIcon(icon8);
+        LedOffice2->setIconSize(QSize(60, 60));
+        LedOffice2->setCheckable(true);
+        LedBar1 = new QPushButton(LedFrame);
+        LedBar1->setObjectName(QString::fromUtf8("LedBar1"));
+        LedBar1->setGeometry(QRect(26, 310, 91, 91));
+        LedBar1->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        LedBar1->setIcon(icon10);
+        LedBar1->setIconSize(QSize(60, 60));
+        LedBar1->setCheckable(true);
+        label_12 = new QLabel(LedFrame);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setGeometry(QRect(30, 810, 91, 41));
+        label_12->setFont(font1);
+        label_12->setStyleSheet(QString::fromUtf8("color:#282A49"));
+        label_12->setScaledContents(false);
+        label_12->setAlignment(Qt::AlignCenter);
+        label_12->setWordWrap(true);
+        LedSpot->addWidget(SpotLight);
 
         retranslateUi(LightSystem);
+
+        ChanStackedWidget->setCurrentIndex(1);
+        LedSpot->setCurrentIndex(1);
+
 
         QMetaObject::connectSlotsByName(LightSystem);
     } // setupUi
 
     void retranslateUi(QDialog *LightSystem)
     {
-        LightSystem->setWindowTitle(QApplication::translate("LightSystem", "Dialog", nullptr));
-        label_3->setText(QApplication::translate("LightSystem", "\345\256\244\345\206\205\344\272\256\345\272\246", nullptr));
-        BrightnessP2->setText(QApplication::translate("LightSystem", "TextLabel", nullptr));
-        CurtainNumber->setText(QApplication::translate("LightSystem", "100", nullptr));
+        LightSystem->setWindowTitle(QCoreApplication::translate("LightSystem", "Dialog", nullptr));
+        BrightnessP2->setText(QCoreApplication::translate("LightSystem", "TextLabel", nullptr));
+        BackMain->setText(QString());
+        CurtainNumber->setText(QCoreApplication::translate("LightSystem", "100", nullptr));
+        label_3->setText(QCoreApplication::translate("LightSystem", "\345\256\244\345\206\205\344\272\256\345\272\246", nullptr));
         ButtonBox->setTitle(QString());
         AllLed_Status->setText(QString());
         AiMode->setText(QString());
-        BackMain->setText(QApplication::translate("LightSystem", "B", nullptr));
-        ModeChoice_2->setText(QApplication::translate("LightSystem", "Mode", nullptr));
-        AloneControl->setText(QApplication::translate("LightSystem", "N", nullptr));
-        InsidesBrightness->setText(QApplication::translate("LightSystem", "832", nullptr));
-        label_4->setText(QApplication::translate("LightSystem", "\345\256\244\345\206\205\344\272\256\345\272\246", nullptr));
-        label_5->setText(QApplication::translate("LightSystem", "\345\275\223\345\211\215\347\201\257\345\205\211:", nullptr));
-        label_7->setText(QApplication::translate("LightSystem", "\344\272\256\345\272\246\357\274\232", nullptr));
-        Brightness_Text->setText(QApplication::translate("LightSystem", "80", nullptr));
-        BrightnessP->setText(QApplication::translate("LightSystem", "TextLabel", nullptr));
-        label_6->setText(QApplication::translate("LightSystem", "TextLabel", nullptr));
-        ModeChoice->setText(QApplication::translate("LightSystem", "Main", nullptr));
-        label_8->setText(QApplication::translate("LightSystem", "\350\211\262\346\270\251\357\274\232", nullptr));
-        Color_Text->setText(QApplication::translate("LightSystem", "80", nullptr));
-        SelectedLed->setText(QApplication::translate("LightSystem", "1", nullptr));
+        SelectedLed->setText(QCoreApplication::translate("LightSystem", "7", nullptr));
+        label_7->setText(QCoreApplication::translate("LightSystem", "\344\272\256\345\272\246\357\274\232", nullptr));
+        Brightness_Text->setText(QCoreApplication::translate("LightSystem", "80", nullptr));
+        label_8->setText(QCoreApplication::translate("LightSystem", "\350\211\262\346\270\251\357\274\232", nullptr));
+        Color_Text->setText(QCoreApplication::translate("LightSystem", "80", nullptr));
+        label_5->setText(QCoreApplication::translate("LightSystem", "\345\275\223\345\211\215\347\201\257\345\205\211:", nullptr));
+        label_6->setText(QCoreApplication::translate("LightSystem", "TextLabel", nullptr));
+        ChandelierBox->setTitle(QString());
+        label_11->setText(QCoreApplication::translate("LightSystem", "\345\220\212\347\201\257--1", nullptr));
+        ChandChoice->setText(QCoreApplication::translate("LightSystem", "...", nullptr));
+        ChandeUp1->setText(QString());
+        ChandeDown1->setText(QString());
+        ChandeStop1->setText(QString());
+        ChandelierSwitch1->setText(QString());
+        ChandelierSwitch2->setText(QString());
+        ChandeUp2->setText(QString());
+        ChandeDown2->setText(QString());
+        ChandeStop2->setText(QString());
+        LEDBox->setTitle(QString());
+        LedAll->setText(QString());
+        label_9->setText(QCoreApplication::translate("LightSystem", "LED", nullptr));
+        LedChoice->setText(QCoreApplication::translate("LightSystem", "...", nullptr));
+        SpotBox->setTitle(QString());
+        SpotAll->setText(QString());
+        label_10->setText(QCoreApplication::translate("LightSystem", "\345\260\204\347\201\257", nullptr));
+        SpotChoice->setText(QCoreApplication::translate("LightSystem", "...", nullptr));
+        SpotMeet1->setText(QString());
+        SpotOffice1->setText(QString());
+        SpotMeet2->setText(QString());
+        SpotBar2->setText(QString());
+        SpotOffice2->setText(QString());
+        SpotBar1->setText(QString());
+        label_13->setText(QCoreApplication::translate("LightSystem", "\345\260\204\347\201\257", nullptr));
+        LedMeet1->setText(QString());
+        LedOffice1->setText(QString());
+        LedMeet2->setText(QString());
+        LedBar2->setText(QString());
+        LedOffice2->setText(QString());
+        LedBar1->setText(QString());
+        label_12->setText(QCoreApplication::translate("LightSystem", "LED", nullptr));
     } // retranslateUi
 
 };
