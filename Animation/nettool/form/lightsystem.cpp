@@ -1,3 +1,6 @@
+//Lightsysten.cpp
+//Author: Y.PENG
+
 #include "lightsystem.h"
 #include "ui_lightsystem.h"
 #include<QGraphicsDropShadowEffect>
