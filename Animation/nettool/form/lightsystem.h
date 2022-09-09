@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QDebug>
 
+
 class Status{
 
 private:

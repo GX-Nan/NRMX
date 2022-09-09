@@ -455,19 +455,19 @@ void LightSystem::ButtonStyle_Chandelier_2(QString Name, int Falg)
 void LightSystem::on_ChandeDown1_clicked()
 {
     ButtonStyle_Chandelier_1("ChandeDown1",1);
-    emit RadioBroadcast("ZB20313021");
+    emit RadioBroadcast("ZB20401021");
 }
 
 void LightSystem::on_ChandeStop1_clicked()
 {
     ButtonStyle_Chandelier_1("ChandeStop1",1);
-    emit RadioBroadcast("ZB20313041");
+    emit RadioBroadcast("ZB20401031");
 }
 
 void LightSystem::on_ChandeUp1_clicked()
 {
     ButtonStyle_Chandelier_1("ChandeUp1",1);
-    emit RadioBroadcast("ZB20313031");
+    emit RadioBroadcast("ZB20401011");
 }
 
 void LightSystem::on_ChandelierSwitch1_clicked()
@@ -478,13 +478,13 @@ void LightSystem::on_ChandelierSwitch1_clicked()
         ButtonStyle_Button(ui->ChandelierSwitch1,1,25);
         ui->ChandelierSwitch1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("Chandelier1","1");
-        emit RadioBroadcast("ZB20313001");
+        emit RadioBroadcast("ZB20401051");
         break;
     case 1:
         ButtonStyle_Button(ui->ChandelierSwitch1,8,25);
         ui->ChandelierSwitch1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("Chandelier1","0");
-        emit RadioBroadcast("ZB20313011");
+        emit RadioBroadcast("ZB20401041");
         break;
     }
 }
@@ -496,13 +496,13 @@ void LightSystem::on_ChandelierSwitch2_clicked()
         ButtonStyle_Button(ui->ChandelierSwitch2,1,25);
         ui->ChandelierSwitch2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("Chandelier2","1");
-        emit RadioBroadcast("ZB20314001");
+        emit RadioBroadcast("ZB20402051");
         break;
     case 1:
         ButtonStyle_Button(ui->ChandelierSwitch2,8,25);
         ui->ChandelierSwitch2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("Chandelier2","0");
-        emit RadioBroadcast("ZB20314011");
+        emit RadioBroadcast("ZB20402041");
         break;
     }
 }
@@ -515,13 +515,13 @@ void LightSystem::on_SpotMeet1_clicked()
         ButtonStyle_Button(ui->SpotMeet1,1,25);
         ui->SpotMeet1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("SpotMeet1","1");
-        emit RadioBroadcast("ZB20307001");
+        emit RadioBroadcast("ZB20501011");
         break;
     case 1:
         ButtonStyle_Button(ui->SpotMeet1,8,25);
         ui->SpotMeet1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("SpotMeet1","0");
-        emit RadioBroadcast("ZB20307011");
+        emit RadioBroadcast("ZB20501001");
         break;
     }
 }
@@ -534,13 +534,13 @@ void LightSystem::on_SpotMeet2_clicked()
         ButtonStyle_Button(ui->SpotMeet2,1,25);
         ui->SpotMeet2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("SpotMeet2","1");
-        emit RadioBroadcast("ZB20308001");
+        emit RadioBroadcast("ZB20502011");
         break;
     case 1:
         ButtonStyle_Button(ui->SpotMeet2,8,25);
         ui->SpotMeet2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("SpotMeet2","0");
-        emit RadioBroadcast("ZB20308011");
+        emit RadioBroadcast("ZB20502001");
         break;
     }
 }
@@ -553,13 +553,13 @@ void LightSystem::on_SpotOffice1_clicked()
         ButtonStyle_Button(ui->SpotOffice1,1,25);
         ui->SpotOffice1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("SpotOffice1","1");
-        emit RadioBroadcast("ZB20311001");
+        emit RadioBroadcast("ZB20505011");
         break;
     case 1:
         ButtonStyle_Button(ui->SpotOffice1,8,25);
         ui->SpotOffice1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("SpotOffice1","0");
-        emit RadioBroadcast("ZB20311011");
+        emit RadioBroadcast("ZB20505001");
         break;
     }
 }
@@ -572,13 +572,13 @@ void LightSystem::on_SpotOffice2_clicked()
         ButtonStyle_Button(ui->SpotOffice2,1,25);
         ui->SpotOffice2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("SpotOffice2","1");
-        emit RadioBroadcast("ZB20312001");
+        emit RadioBroadcast("ZB20506011");
         break;
     case 1:
         ButtonStyle_Button(ui->SpotOffice2,8,25);
         ui->SpotOffice2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("SpotOffice2","0");
-        emit RadioBroadcast("ZB20312011");
+        emit RadioBroadcast("ZB20506001");
         break;
     }
 }
@@ -591,13 +591,13 @@ void LightSystem::on_SpotBar1_clicked()
         ButtonStyle_Button(ui->SpotBar1,1,25);
         ui->SpotBar1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("SpotBar1","1");
-        emit RadioBroadcast("ZB20309001");
+        emit RadioBroadcast("ZB20503011");
         break;
     case 1:
         ButtonStyle_Button(ui->SpotBar1,8,25);
         ui->SpotBar1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("SpotBar1","0");
-        emit RadioBroadcast("ZB20309011");
+        emit RadioBroadcast("ZB20503001");
         break;
     }
 }
@@ -610,13 +610,13 @@ void LightSystem::on_SpotBar2_clicked()
         ButtonStyle_Button(ui->SpotBar2,1,25);
         ui->SpotBar2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("SpotBar2","1");
-        emit RadioBroadcast("ZB20310001");
+        emit RadioBroadcast("ZB20504011");
         break;
     case 1:
         ButtonStyle_Button(ui->SpotBar2,8,25);
         ui->SpotBar2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("SpotBar2","0");
-        emit RadioBroadcast("ZB20310011");
+        emit RadioBroadcast("ZB20504001");
         break;
     }
 }
@@ -629,13 +629,13 @@ void LightSystem::on_LedMeet1_clicked()
         ButtonStyle_Button(ui->LedMeet1,1,25);
         ui->LedMeet1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("LedMeet1","1");
-        emit RadioBroadcast("ZB20315001");
+        emit RadioBroadcast("ZB20601011");
         break;
     case 1:
         ButtonStyle_Button(ui->LedMeet1,8,25);
         ui->LedMeet1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("LedMeet1","0");
-        emit RadioBroadcast("ZB20315011");
+        emit RadioBroadcast("ZB20601001");
         break;
     }
 }
@@ -648,13 +648,13 @@ void LightSystem::on_LedMeet2_clicked()
         ButtonStyle_Button(ui->LedMeet2,1,25);
         ui->LedMeet2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("LedMeet2","1");
-        emit RadioBroadcast("ZB20316001");
+        emit RadioBroadcast("ZB20602011");
         break;
     case 1:
         ButtonStyle_Button(ui->LedMeet2,8,25);
         ui->LedMeet2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("LedMeet2","0");
-        emit RadioBroadcast("ZB20316011");
+        emit RadioBroadcast("ZB20602001");
         break;
     }
 }
@@ -667,13 +667,13 @@ void LightSystem::on_LedBar1_clicked()
         ButtonStyle_Button(ui->LedBar1,1,25);
         ui->LedBar1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("LedBar1","1");
-        emit RadioBroadcast("ZB20317001");
+        emit RadioBroadcast("ZB20603011");
         break;
     case 1:
         ButtonStyle_Button(ui->LedBar1,8,25);
         ui->LedBar1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("LedBar1","0");
-        emit RadioBroadcast("ZB20317011");
+        emit RadioBroadcast("ZB20603001");
         break;
     }
 }
@@ -686,13 +686,13 @@ void LightSystem::on_LedBar2_clicked()
         ButtonStyle_Button(ui->LedBar2,1,25);
         ui->LedBar2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("LedBar2","1");
-        emit RadioBroadcast("ZB20318001");
+        emit RadioBroadcast("ZB20604011");
         break;
     case 1:
         ButtonStyle_Button(ui->LedBar2,8,25);
         ui->LedBar2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("LedBar2","0");
-        emit RadioBroadcast("ZB20318011");
+        emit RadioBroadcast("ZB20604001");
         break;
     }
 }
@@ -705,13 +705,13 @@ void LightSystem::on_LedOffice1_clicked()
         ButtonStyle_Button(ui->LedOffice1,1,25);
         ui->LedOffice1->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("LedOffice1","1");
-        emit RadioBroadcast("ZB20319001");
+        emit RadioBroadcast("ZB20605011");
         break;
     case 1:
         ButtonStyle_Button(ui->LedOffice1,8,25);
         ui->LedOffice1->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("LedOffice1","0");
-        emit RadioBroadcast("ZB20319011");
+        emit RadioBroadcast("ZB20605001");
         break;
     }
 }
@@ -724,13 +724,13 @@ void LightSystem::on_LedOffice2_clicked()
         ButtonStyle_Button(ui->LedOffice2,1,25);
         ui->LedOffice2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("LedOffice2","1");
-        emit RadioBroadcast("ZB20320001");
+        emit RadioBroadcast("ZB20606011");
         break;
     case 1:
         ButtonStyle_Button(ui->LedOffice2,8,25);
         ui->LedOffice2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("LedOffice2","0");
-        emit RadioBroadcast("ZB20320011");
+        emit RadioBroadcast("ZB20606001");
         break;
     }
 }
@@ -762,6 +762,7 @@ void LightSystem::on_LedAll_clicked()
             }
         }
         AllSpot_Status=1;
+
     }
     else if(AllSpot_Status==1)
     {
@@ -771,6 +772,7 @@ void LightSystem::on_LedAll_clicked()
             }
         }
         AllSpot_Status=0;
+
     }
 }
 
@@ -801,6 +803,7 @@ void LightSystem::on_SpotAll_clicked()
             }
         }
         AllSpot_Status=1;
+        emit RadioBroadcast("ZB20500011");
     }
     else if(AllSpot_Status==1)
     {
@@ -810,5 +813,6 @@ void LightSystem::on_SpotAll_clicked()
             }
         }
         AllSpot_Status=0;
+        emit RadioBroadcast("ZB20500001");
     }
 }

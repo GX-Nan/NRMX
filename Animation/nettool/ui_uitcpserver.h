@@ -1,7 +1,7 @@
 /********************************************************************************
-** Form generated from reading UI file 'uiTcpServer.ui'
+** Form generated from reading UI file 'uitcpserver.ui'
 **
-** Created by: Qt User Interface Compiler version 5.14.2
+** Created by: Qt User Interface Compiler version 5.11.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -46,26 +46,26 @@ public:
     void setupUi(QDialog *uiTcpServer)
     {
         if (uiTcpServer->objectName().isEmpty())
-            uiTcpServer->setObjectName(QString::fromUtf8("uiTcpServer"));
+            uiTcpServer->setObjectName(QStringLiteral("uiTcpServer"));
         uiTcpServer->resize(536, 469);
         txtMain = new QTextEdit(uiTcpServer);
-        txtMain->setObjectName(QString::fromUtf8("txtMain"));
+        txtMain->setObjectName(QStringLiteral("txtMain"));
         txtMain->setGeometry(QRect(30, 30, 211, 341));
         txtMain->setReadOnly(true);
         SendText = new QLineEdit(uiTcpServer);
-        SendText->setObjectName(QString::fromUtf8("SendText"));
+        SendText->setObjectName(QStringLiteral("SendText"));
         SendText->setGeometry(QRect(30, 390, 211, 31));
         SendData = new QPushButton(uiTcpServer);
-        SendData->setObjectName(QString::fromUtf8("SendData"));
+        SendData->setObjectName(QStringLiteral("SendData"));
         SendData->setGeometry(QRect(330, 390, 121, 31));
         layoutWidget_2 = new QWidget(uiTcpServer);
-        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
+        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
         layoutWidget_2->setGeometry(QRect(300, 10, 191, 371));
         verticalLayout = new QVBoxLayout(layoutWidget_2);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         cboxListenIP = new QComboBox(layoutWidget_2);
-        cboxListenIP->setObjectName(QString::fromUtf8("cboxListenIP"));
+        cboxListenIP->setObjectName(QStringLiteral("cboxListenIP"));
 
         verticalLayout->addWidget(cboxListenIP);
 
@@ -74,7 +74,7 @@ public:
         verticalLayout->addItem(verticalSpacer);
 
         txtListenPort = new QLineEdit(layoutWidget_2);
-        txtListenPort->setObjectName(QString::fromUtf8("txtListenPort"));
+        txtListenPort->setObjectName(QStringLiteral("txtListenPort"));
 
         verticalLayout->addWidget(txtListenPort);
 
@@ -83,7 +83,7 @@ public:
         verticalLayout->addItem(verticalSpacer_2);
 
         listWidget = new QListWidget(layoutWidget_2);
-        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setObjectName(QStringLiteral("listWidget"));
 
         verticalLayout->addWidget(listWidget);
 
@@ -92,7 +92,7 @@ public:
         verticalLayout->addItem(verticalSpacer_3);
 
         labCount = new QLabel(layoutWidget_2);
-        labCount->setObjectName(QString::fromUtf8("labCount"));
+        labCount->setObjectName(QStringLiteral("labCount"));
         labCount->setMinimumSize(QSize(0, 25));
         labCount->setFrameShape(QFrame::Box);
         labCount->setFrameShadow(QFrame::Sunken);
@@ -101,17 +101,17 @@ public:
         verticalLayout->addWidget(labCount);
 
         Listen = new QPushButton(layoutWidget_2);
-        Listen->setObjectName(QString::fromUtf8("Listen"));
+        Listen->setObjectName(QStringLiteral("Listen"));
 
         verticalLayout->addWidget(Listen);
 
         DisListen = new QPushButton(layoutWidget_2);
-        DisListen->setObjectName(QString::fromUtf8("DisListen"));
+        DisListen->setObjectName(QStringLiteral("DisListen"));
 
         verticalLayout->addWidget(DisListen);
 
         Close_Ui = new QPushButton(uiTcpServer);
-        Close_Ui->setObjectName(QString::fromUtf8("Close_Ui"));
+        Close_Ui->setObjectName(QStringLiteral("Close_Ui"));
         Close_Ui->setGeometry(QRect(210, 430, 121, 31));
 
         retranslateUi(uiTcpServer);
@@ -121,12 +121,12 @@ public:
 
     void retranslateUi(QDialog *uiTcpServer)
     {
-        uiTcpServer->setWindowTitle(QCoreApplication::translate("uiTcpServer", "Dialog", nullptr));
-        SendData->setText(QCoreApplication::translate("uiTcpServer", "\345\217\221\351\200\201", nullptr));
-        labCount->setText(QCoreApplication::translate("uiTcpServer", "\345\205\261 0 \344\270\252\345\256\242\346\210\267\347\253\257", nullptr));
-        Listen->setText(QCoreApplication::translate("uiTcpServer", "\345\274\200\345\247\213\347\233\221\345\220\254", nullptr));
-        DisListen->setText(QCoreApplication::translate("uiTcpServer", "\346\226\255\345\274\200", nullptr));
-        Close_Ui->setText(QCoreApplication::translate("uiTcpServer", "\345\205\263\351\227\255", nullptr));
+        uiTcpServer->setWindowTitle(QApplication::translate("uiTcpServer", "Dialog", nullptr));
+        SendData->setText(QApplication::translate("uiTcpServer", "\345\217\221\351\200\201", nullptr));
+        labCount->setText(QApplication::translate("uiTcpServer", "\345\205\261 0 \344\270\252\345\256\242\346\210\267\347\253\257", nullptr));
+        Listen->setText(QApplication::translate("uiTcpServer", "\345\274\200\345\247\213\347\233\221\345\220\254", nullptr));
+        DisListen->setText(QApplication::translate("uiTcpServer", "\346\226\255\345\274\200", nullptr));
+        Close_Ui->setText(QApplication::translate("uiTcpServer", "\345\205\263\351\227\255", nullptr));
     } // retranslateUi
 
 };

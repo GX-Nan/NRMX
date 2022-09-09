@@ -308,7 +308,7 @@ border:none;
       <string notr="true">color:#282A49</string>
      </property>
      <property name="text">
-      <string>7</string>
+      <string>1</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -502,10 +502,10 @@ border:none;
       </rect>
      </property>
      <property name="minimum">
-      <number>7</number>
+      <number>1</number>
      </property>
      <property name="maximum">
-      <number>12</number>
+      <number>6</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -738,7 +738,7 @@ border:none;
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../other/main.qrc">
           <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
           <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
         </property>
@@ -965,7 +965,7 @@ border:none;
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../other/main.qrc">
           <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
           <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
         </property>
