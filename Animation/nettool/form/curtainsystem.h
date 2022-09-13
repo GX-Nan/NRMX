@@ -14,7 +14,6 @@ private:
     QMap<QString,int> MessageCurtains;
 public:
     StatusCurtains(){
-        MessageCurtains.insert("0",0);
         MessageCurtains.insert("1",0);
         MessageCurtains.insert("2",0);
         MessageCurtains.insert("3",0);

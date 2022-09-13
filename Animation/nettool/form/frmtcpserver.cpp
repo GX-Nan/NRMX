@@ -8,6 +8,7 @@ frmTcpServer::frmTcpServer(QWidget *parent) : QObject(parent)
     this->initIP();
     this->initConfig();
     qDebug()<<"服务器界面线程ID"<<QThread::currentThread();
+    StopTcp=0;//初始化
 }
 
 frmTcpServer::~frmTcpServer()
@@ -125,7 +126,7 @@ void frmTcpServer::receiveData(const QString &ip, int port, const QString &data)
     App::StopReturn=true;
     qDebug()<<"App::StopReturn:"<<App::StopReturn;
     QString str = QString("[%1:%2] %3").arg(ip).arg(port).arg(data);
-   // QVector<QString>(Manage);
+    // QVector<QString>(Manage);
     QMultiMap<int,QString>(System);
     bool Judge =(data.length())%10;
     qDebug()<<"data------------------------:"<<data<<"data.length()"<<data.length();
@@ -197,13 +198,15 @@ void frmTcpServer::on_btnClose_clicked()
 
 void frmTcpServer::RadioBroadcast(QString data)//广播
 {
-    if (!isOk) {
-        return;
-    }
-    else
-    {
-        tcpServer->writeData(data);
-        append(0,data);
+    if(StopTcp==0){
+        if (!isOk) {
+            return;
+        }
+        else
+        {
+            tcpServer->writeData(data);
+            append(0,data);
+        }
     }
 }
 

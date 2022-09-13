@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WindowSystem_t {
-    QByteArrayData data[26];
-    char stringdata0[371];
+    QByteArrayData data[27];
+    char stringdata0[385];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -54,10 +54,11 @@ QT_MOC_LITERAL(18, 258, 5), // "Clear"
 QT_MOC_LITERAL(19, 264, 20), // "XprogressbarIfconfig"
 QT_MOC_LITERAL(20, 285, 15), // "ButtonStylePlan"
 QT_MOC_LITERAL(21, 301, 10), // "Image_Init"
-QT_MOC_LITERAL(22, 312, 17), // "AirQuality_Status"
-QT_MOC_LITERAL(23, 330, 13), // "Window_Status"
-QT_MOC_LITERAL(24, 344, 14), // "SetInstruction"
-QT_MOC_LITERAL(25, 359, 11) // "Button_Init"
+QT_MOC_LITERAL(22, 312, 13), // "WindowsStatus"
+QT_MOC_LITERAL(23, 326, 17), // "AirQuality_Status"
+QT_MOC_LITERAL(24, 344, 13), // "Window_Status"
+QT_MOC_LITERAL(25, 358, 14), // "SetInstruction"
+QT_MOC_LITERAL(26, 373, 11) // "Button_Init"
 
     },
     "WindowSystem\0SendClose\0\0RadioBroadcast\0"
@@ -68,8 +69,8 @@ QT_MOC_LITERAL(25, 359, 11) // "Button_Init"
     "ButtonStyle_Button\0on_Device_Qslider_valueChanged\0"
     "value\0Tigger_Device\0Clear\0"
     "XprogressbarIfconfig\0ButtonStylePlan\0"
-    "Image_Init\0AirQuality_Status\0Window_Status\0"
-    "SetInstruction\0Button_Init"
+    "Image_Init\0WindowsStatus\0AirQuality_Status\0"
+    "Window_Status\0SetInstruction\0Button_Init"
 };
 #undef QT_MOC_LITERAL
 
@@ -79,7 +80,7 @@ static const uint qt_meta_data_WindowSystem[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,27 +88,28 @@ static const uint qt_meta_data_WindowSystem[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x06 /* Public */,
-       3,    1,  110,    2, 0x06 /* Public */,
-       4,    3,  113,    2, 0x06 /* Public */,
+       1,    0,  114,    2, 0x06 /* Public */,
+       3,    1,  115,    2, 0x06 /* Public */,
+       4,    3,  118,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,  120,    2, 0x08 /* Private */,
-       6,    3,  121,    2, 0x08 /* Private */,
-      11,    0,  128,    2, 0x08 /* Private */,
-      12,    0,  129,    2, 0x08 /* Private */,
-      13,    0,  130,    2, 0x08 /* Private */,
-      14,    3,  131,    2, 0x08 /* Private */,
-      15,    1,  138,    2, 0x08 /* Private */,
-      17,    0,  141,    2, 0x08 /* Private */,
-      18,    0,  142,    2, 0x08 /* Private */,
-      19,    0,  143,    2, 0x08 /* Private */,
-      20,    3,  144,    2, 0x08 /* Private */,
-      21,    0,  151,    2, 0x08 /* Private */,
-      22,    3,  152,    2, 0x0a /* Public */,
-      23,    3,  159,    2, 0x0a /* Public */,
-      24,    1,  166,    2, 0x0a /* Public */,
-      25,    0,  169,    2, 0x0a /* Public */,
+       5,    0,  125,    2, 0x08 /* Private */,
+       6,    3,  126,    2, 0x08 /* Private */,
+      11,    0,  133,    2, 0x08 /* Private */,
+      12,    0,  134,    2, 0x08 /* Private */,
+      13,    0,  135,    2, 0x08 /* Private */,
+      14,    3,  136,    2, 0x08 /* Private */,
+      15,    1,  143,    2, 0x08 /* Private */,
+      17,    0,  146,    2, 0x08 /* Private */,
+      18,    0,  147,    2, 0x08 /* Private */,
+      19,    0,  148,    2, 0x08 /* Private */,
+      20,    3,  149,    2, 0x08 /* Private */,
+      21,    0,  156,    2, 0x08 /* Private */,
+      22,    1,  157,    2, 0x08 /* Private */,
+      23,    3,  160,    2, 0x0a /* Public */,
+      24,    3,  167,    2, 0x0a /* Public */,
+      25,    1,  174,    2, 0x0a /* Public */,
+      26,    0,  177,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -127,6 +129,7 @@ static const uint qt_meta_data_WindowSystem[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   16,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -156,10 +159,11 @@ void WindowSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 12: _t->XprogressbarIfconfig(); break;
         case 13: _t->ButtonStylePlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 14: _t->Image_Init(); break;
-        case 15: _t->AirQuality_Status((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 16: _t->Window_Status((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 17: _t->SetInstruction((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 18: _t->Button_Init(); break;
+        case 15: _t->WindowsStatus((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->AirQuality_Status((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 17: _t->Window_Status((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 18: _t->SetInstruction((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: _t->Button_Init(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -217,13 +221,13 @@ int WindowSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 20)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 20;
     }
     return _id;
 }

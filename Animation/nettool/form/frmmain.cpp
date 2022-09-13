@@ -325,6 +325,9 @@ void frmMain::initConfig()//配置
     //----Led
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_light,&Analysis_Light::Receive_Data);//Tcp链接数据分析
     connect(LightUi,&LightSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
+    connect(LightUi,&LightSystem::StopTcp,TaskTcpServer,[=](int value){
+        TaskTcpServer->StopTcp=value;
+    });
     connect(Analysis_light,&Analysis_Light::StatusSignals,LightUi,&LightSystem::Light_Status);
     //----Window-------------
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_window,&Analysis_Window::Receive_Data);//Tcp链接数据分析

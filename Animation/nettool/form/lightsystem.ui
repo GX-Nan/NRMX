@@ -614,7 +614,7 @@ border:none;
       <string notr="true">color:#282A49</string>
      </property>
      <property name="text">
-      <string>吊灯--1</string>
+      <string>吊灯--0</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -630,7 +630,7 @@ border:none;
      <property name="geometry">
       <rect>
        <x>490</x>
-       <y>0</y>
+       <y>10</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -666,190 +666,6 @@ border:none;
       <number>1</number>
      </property>
      <widget class="QWidget" name="ChandelierFrame1">
-      <widget class="QWidget" name="ChandeBottom" native="true">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>5</y>
-         <width>391</width>
-         <height>101</height>
-        </rect>
-       </property>
-       <widget class="QPushButton" name="ChandeUp1">
-        <property name="geometry">
-         <rect>
-          <x>270</x>
-          <y>15</y>
-          <width>91</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	border-radius:15px;
-	background:#FFFFFF;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../other/main.qrc">
-          <normaloff>:/new/Curtain/Curtain/Up_OFF.png</normaloff>
-          <normalon>:/new/Curtain/Curtain/Up_ON.png</normalon>:/new/Curtain/Curtain/Up_OFF.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>80</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <property name="autoRepeat">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="ChandeDown1">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>15</y>
-          <width>91</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	border-radius:15px;
-	background:#FFFFFF;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../other/main.qrc">
-          <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
-          <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>80</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <property name="autoRepeat">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="ChandeStop1">
-        <property name="geometry">
-         <rect>
-          <x>150</x>
-          <y>15</y>
-          <width>91</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	border-radius:15px;
-	background:#FFFFFF;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="../other/main.qrc">
-          <normaloff>:/new/Curtain/Curtain/Stop_OFF.png</normaloff>
-          <normalon>:/new/Curtain/Curtain/Stop_ON.png</normalon>:/new/Curtain/Curtain/Stop_OFF.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>60</width>
-          <height>60</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <property name="autoRepeat">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QPushButton" name="ChandelierSwitch1">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>20</y>
-         <width>91</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-	border-radius:15px;
-	background:#FFFFFF;
-}</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../other/main.qrc">
-         <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
-         <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>50</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-       <property name="checked">
-        <bool>false</bool>
-       </property>
-       <property name="autoRepeat">
-        <bool>false</bool>
-       </property>
-       <property name="autoExclusive">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="ChandelierFrame2">
       <widget class="QPushButton" name="ChandelierSwitch2">
        <property name="geometry">
         <rect>
@@ -1031,6 +847,190 @@ border:none;
          <bool>true</bool>
         </property>
        </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="ChandelierFrame2">
+      <widget class="QWidget" name="ChandeBottom" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>5</y>
+         <width>391</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <widget class="QPushButton" name="ChandeUp1">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Up_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Up_ON.png</normalon>:/new/Curtain/Curtain/Up_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ChandeDown1">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>80</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ChandeStop1">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>15</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../other/main.qrc">
+          <normaloff>:/new/Curtain/Curtain/Stop_OFF.png</normaloff>
+          <normalon>:/new/Curtain/Curtain/Stop_ON.png</normalon>:/new/Curtain/Curtain/Stop_OFF.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoRepeat">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="ChandelierSwitch1">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>20</y>
+         <width>91</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../other/main.qrc">
+         <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
+         <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
      </widget>
     </widget>

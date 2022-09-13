@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'doorsystem.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.3
+** Created by: Qt User Interface Compiler version 5.14.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -35,15 +35,15 @@ public:
     void setupUi(QDialog *DoorSystem)
     {
         if (DoorSystem->objectName().isEmpty())
-            DoorSystem->setObjectName(QStringLiteral("DoorSystem"));
+            DoorSystem->setObjectName(QString::fromUtf8("DoorSystem"));
         DoorSystem->resize(369, 821);
-        DoorSystem->setStyleSheet(QLatin1String("QDialog#DoorSystem{\n"
+        DoorSystem->setStyleSheet(QString::fromUtf8("QDialog#DoorSystem{\n"
 "background-color:rgb(178,178,178,255);\n"
 "}"));
         bottom = new QFrame(DoorSystem);
-        bottom->setObjectName(QStringLiteral("bottom"));
+        bottom->setObjectName(QString::fromUtf8("bottom"));
         bottom->setGeometry(QRect(10, 10, 351, 801));
-        bottom->setStyleSheet(QLatin1String("QFrame#bottom\n"
+        bottom->setStyleSheet(QString::fromUtf8("QFrame#bottom\n"
 "{\n"
 "	background-color:#ffffff;\n"
 " \n"
@@ -53,7 +53,7 @@ public:
         bottom->setFrameShape(QFrame::StyledPanel);
         bottom->setFrameShadow(QFrame::Raised);
         label_3 = new QLabel(bottom);
-        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(175, 300, 101, 31));
         QFont font;
         font.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
@@ -61,18 +61,18 @@ public:
         font.setBold(true);
         font.setWeight(75);
         label_3->setFont(font);
-        label_3->setStyleSheet(QStringLiteral("color:#282A49"));
+        label_3->setStyleSheet(QString::fromUtf8("color:#282A49"));
         label_3->setAlignment(Qt::AlignCenter);
         label_4 = new QLabel(bottom);
-        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(175, 330, 101, 31));
         label_4->setFont(font);
-        label_4->setStyleSheet(QStringLiteral("color:#282A49"));
+        label_4->setStyleSheet(QString::fromUtf8("color:#282A49"));
         label_4->setAlignment(Qt::AlignCenter);
         BackMain = new QPushButton(bottom);
-        BackMain->setObjectName(QStringLiteral("BackMain"));
+        BackMain->setObjectName(QString::fromUtf8("BackMain"));
         BackMain->setGeometry(QRect(155, 740, 50, 50));
-        BackMain->setStyleSheet(QLatin1String("max-width:50px;\n"
+        BackMain->setStyleSheet(QString::fromUtf8("max-width:50px;\n"
 " max-height:50px;\n"
 " min-width:50px;\n"
 " min-height:50px;\n"
@@ -80,11 +80,11 @@ public:
 "background-color: white;\n"
 " border-style: solid;"));
         QIcon icon;
-        icon.addFile(QStringLiteral(":/new/Main/Air/Back.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/new/Main/Air/Back.png"), QSize(), QIcon::Normal, QIcon::Off);
         BackMain->setIcon(icon);
         BackMain->setIconSize(QSize(50, 50));
         PassTimes = new QLabel(bottom);
-        PassTimes->setObjectName(QStringLiteral("PassTimes"));
+        PassTimes->setObjectName(QString::fromUtf8("PassTimes"));
         PassTimes->setGeometry(QRect(75, 60, 211, 211));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
@@ -92,37 +92,37 @@ public:
         PassTimes->setFont(font1);
         PassTimes->setAlignment(Qt::AlignCenter);
         label_2 = new QLabel(bottom);
-        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(65, 280, 100, 100));
         frame = new QFrame(bottom);
-        frame->setObjectName(QStringLiteral("frame"));
+        frame->setObjectName(QString::fromUtf8("frame"));
         frame->setGeometry(QRect(50, 410, 261, 321));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         OpenDoor = new QPushButton(frame);
-        OpenDoor->setObjectName(QStringLiteral("OpenDoor"));
+        OpenDoor->setObjectName(QString::fromUtf8("OpenDoor"));
         OpenDoor->setGeometry(QRect(40, 40, 181, 81));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
         font2.setPointSize(15);
         OpenDoor->setFont(font2);
-        OpenDoor->setStyleSheet(QLatin1String("QPushButton\n"
+        OpenDoor->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	border-radius:15px;\n"
 "	background:#FFFFFF;\n"
 "}"));
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/C:/Users/Alumer/Desktop/SystemOp.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/C:/Users/Alumer/Desktop/SystemOp.png"), QSize(), QIcon::Normal, QIcon::Off);
         OpenDoor->setIcon(icon1);
         OpenDoor->setIconSize(QSize(100, 50));
         OpenDoor->setCheckable(true);
         OpenDoor->setChecked(true);
         OpenDoor->setAutoExclusive(true);
         CloseDoor = new QPushButton(frame);
-        CloseDoor->setObjectName(QStringLiteral("CloseDoor"));
+        CloseDoor->setObjectName(QString::fromUtf8("CloseDoor"));
         CloseDoor->setGeometry(QRect(40, 190, 181, 81));
         CloseDoor->setFont(font2);
-        CloseDoor->setStyleSheet(QLatin1String("QPushButton\n"
+        CloseDoor->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	border-radius:15px;\n"
 "	background:#FFFFFF;\n"
@@ -137,14 +137,14 @@ public:
 
     void retranslateUi(QDialog *DoorSystem)
     {
-        DoorSystem->setWindowTitle(QApplication::translate("DoorSystem", "Dialog", nullptr));
-        label_3->setText(QApplication::translate("DoorSystem", "\345\256\211\345\205\250\346\211\253\346\217\217", nullptr));
-        label_4->setText(QApplication::translate("DoorSystem", "\351\200\232\350\277\207\344\272\272\346\225\260", nullptr));
+        DoorSystem->setWindowTitle(QCoreApplication::translate("DoorSystem", "Dialog", nullptr));
+        label_3->setText(QCoreApplication::translate("DoorSystem", "\345\256\211\345\205\250\346\211\253\346\217\217", nullptr));
+        label_4->setText(QCoreApplication::translate("DoorSystem", "\351\200\232\350\277\207\344\272\272\346\225\260", nullptr));
         BackMain->setText(QString());
-        PassTimes->setText(QApplication::translate("DoorSystem", "33", nullptr));
-        label_2->setText(QApplication::translate("DoorSystem", "TextLabel", nullptr));
-        OpenDoor->setText(QApplication::translate("DoorSystem", "s", nullptr));
-        CloseDoor->setText(QApplication::translate("DoorSystem", "s", nullptr));
+        PassTimes->setText(QCoreApplication::translate("DoorSystem", "33", nullptr));
+        label_2->setText(QCoreApplication::translate("DoorSystem", "TextLabel", nullptr));
+        OpenDoor->setText(QCoreApplication::translate("DoorSystem", "s", nullptr));
+        CloseDoor->setText(QCoreApplication::translate("DoorSystem", "s", nullptr));
     } // retranslateUi
 
 };

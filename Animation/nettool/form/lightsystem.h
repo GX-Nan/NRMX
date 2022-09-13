@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QLabel>
 #include <QDebug>
+#include <app.h>
 
 
 class Status{
@@ -93,6 +94,7 @@ public:
 signals:
     void SendClose();
     void RadioBroadcast(QString);
+    void StopTcp(int);
 private slots:
     void on_BackMain_clicked();
     void ButtonStyle_Label(QLabel* Name,int Offset,int BlurRadius);

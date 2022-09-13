@@ -258,7 +258,7 @@ border:none;
       <string/>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../other/main.qrc">
        <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
        <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
      </property>
@@ -564,7 +564,7 @@ border:none;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="SuitableP">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -577,7 +577,7 @@ border:none;
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="SuitableP2">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -603,7 +603,7 @@ border:none;
      <number>0</number>
     </property>
     <property name="maximum">
-     <number>6</number>
+     <number>2</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -658,7 +658,7 @@ border:none;
      <string notr="true">color:#282A49</string>
     </property>
     <property name="text">
-     <string>1</string>
+     <string>0</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

@@ -26,6 +26,7 @@ class frmTcpServer : public QObject
 public:
     explicit frmTcpServer(QWidget *parent = 0);
     ~frmTcpServer();
+    int StopTcp;
 
 
 
@@ -40,6 +41,7 @@ private:
     Analysis_Light *Light_handle=nullptr;
     Analysis_Window *Window_hanle=nullptr;
     Analysis_Cutarin *Cutarin_hanle=nullptr;
+
 
 private slots:
     void initForm();
