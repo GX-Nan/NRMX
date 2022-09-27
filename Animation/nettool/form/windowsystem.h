@@ -9,6 +9,28 @@ namespace Ui {
 class WindowSystem;
 }
 
+class StatusWindow{
+private:
+    QMap<QString,int> MessageCurtains;
+public:
+    StatusWindow(){
+        MessageCurtains.insert("1",0);
+        MessageCurtains.insert("2",0);
+    };
+    void MessageInsert(QString Key,int Value)
+    {
+       MessageCurtains.insert(Key,Value);
+    }
+    int GetMessage(QString Key)
+    {
+        return MessageCurtains.value(Key);
+    }
+    QList<int> Values()
+    {
+        return MessageCurtains.values();
+    }
+};
+
 class WindowSystem : public QDialog
 {
     Q_OBJECT
@@ -18,6 +40,9 @@ public:
     ~WindowSystem();
     int WindowStatus=0;
     QMap<int,int>data;
+    StatusWindow status;
+private:
+    int SingleFalg=1;
 signals:
     void SendClose();
     void RadioBroadcast(QString);
@@ -37,6 +62,7 @@ private slots:
     void XprogressbarIfconfig();
     void ButtonStylePlan(int,int,int);
     void Image_Init();
+    void WindowsStatus(int value);
 
 public slots:
     void AirQuality_Status(int,int,int);

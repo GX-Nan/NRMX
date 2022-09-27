@@ -68,7 +68,7 @@ public:
     static QStringList Values;
     static void readSendData();
     static void readDeviceData();
-    static bool StopReturn;
+    static int StopReturn;
     static bool TcpStation;
 
 

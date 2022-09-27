@@ -9,7 +9,7 @@ WindowSystem::WindowSystem(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
-   // this->setAttribute(Qt::WA_TranslucentBackground);
+    // this->setAttribute(Qt::WA_TranslucentBackground);
     Shadow();
     connect(ui->Device_Qslider,&QSlider::sliderReleased,this,&WindowSystem::Tigger_Device);
     Button_Init();
@@ -149,27 +149,39 @@ void WindowSystem::Window_Status(int Function, int Sub , int Value)
 
 void WindowSystem::SetInstruction(int Order)
 {
-    QString Open="ZB1010011";
-    QString Close="ZB1010021";
-    QString Stop="ZB1010031";
-    int Sub=ui->CurrentWindow->text().toInt();
-    WindowStatus=Order;
-    switch(Order)
-    {
-    case 1:
-        Open.insert(6,QString::number(Sub));
-        emit RadioBroadcast(Open);
-        break;
-    case 2:
-        Close.insert(6,QString::number(Sub));
-        emit RadioBroadcast(Close);
-        break;
-    case 3:
-        Stop.insert(6,QString::number(Sub));
-        emit RadioBroadcast(Stop);
-        break;
+    if(SingleFalg==1){
+        QString Open="ZB1010011";
+        QString Close="ZB1010021";
+        QString Stop="ZB1010031";
+        int Sub=ui->CurrentWindow->text().toInt();
+        WindowStatus=Order;
+        switch(Order)
+        {
+        case 1:
+            Open.insert(6,QString::number(Sub));
+            emit RadioBroadcast(Open);
+            break;
+        case 2:
+            Close.insert(6,QString::number(Sub));
+            emit RadioBroadcast(Close);
+            break;
+        case 3:
+            Stop.insert(6,QString::number(Sub));
+            emit RadioBroadcast(Stop);
+            break;
+        }
+        data.insert(Sub,WindowStatus);
+
+        if(ui->CurrentWindow->text()=="0"){
+            status.MessageInsert("1",Order);
+            status.MessageInsert("2",Order);
+            status.MessageInsert("3",Order);
+        }
+        else {
+            status.MessageInsert(ui->CurrentWindow->text(),Order);
+        }
+        qDebug()<<"Values:"<<status.Values();
     }
-    data.insert(Sub,WindowStatus);
 }
 
 void WindowSystem::Button_Init()
@@ -182,6 +194,8 @@ void WindowSystem::Button_Init()
 void WindowSystem::on_Device_Qslider_valueChanged(int value)
 {
     ui->CurrentWindow->setText(QString::number(value));
+    int Windowstatus= status.GetMessage(QString::number(value));
+    WindowsStatus(Windowstatus);
 }
 
 void WindowSystem::Tigger_Device()
@@ -254,4 +268,32 @@ void WindowSystem::Image_Init()
     QIcon icon3 = QIcon(filePath3);
     QPixmap m_pic3 = icon3.pixmap(icon3.actualSize(QSize(80, 80)));//size自行调整
     ui->HumiP->setPixmap(m_pic3);
+
+    QString filePath4 = ":/new/Window/Window/Hanger.png";//图标位置自行调整
+    QIcon icon4 = QIcon(filePath4);
+    QPixmap m_pic4 = icon4.pixmap(icon4.actualSize(QSize(80, 80)));//size自行调整
+    ui->SuitableP->setPixmap(m_pic4);
+
+    QString filePath5 = ":/new/Window/Window/Home.png";//图标位置自行调整
+    QIcon icon5 = QIcon(filePath5);
+    QPixmap m_pic5 = icon5.pixmap(icon5.actualSize(QSize(80, 80)));//size自行调整
+    ui->SuitableP2->setPixmap(m_pic5);
+}
+
+void WindowSystem::WindowsStatus(int value)
+{
+    SingleFalg=0;
+    switch(value)
+    {
+    case 1:
+        ui->WindowOpen->click();
+        break;
+    case 2:
+        ui->WindowClose->click();
+        break;
+    case 3:
+        ui->WindowStop->click();
+        break;
+    }
+    SingleFalg=1;
 }

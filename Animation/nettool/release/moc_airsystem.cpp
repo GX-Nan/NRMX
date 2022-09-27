@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AirSystem_t {
-    QByteArrayData data[36];
-    char stringdata0[460];
+    QByteArrayData data[39];
+    char stringdata0[497];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -67,7 +67,10 @@ QT_MOC_LITERAL(31, 413, 12), // "QPushButton*"
 QT_MOC_LITERAL(32, 426, 4), // "Name"
 QT_MOC_LITERAL(33, 431, 6), // "Offset"
 QT_MOC_LITERAL(34, 438, 10), // "BlurRadius"
-QT_MOC_LITERAL(35, 449, 10) // "StyleSheet"
+QT_MOC_LITERAL(35, 449, 17), // "ButtonStyle_Label"
+QT_MOC_LITERAL(36, 467, 7), // "QLabel*"
+QT_MOC_LITERAL(37, 475, 10), // "StyleSheet"
+QT_MOC_LITERAL(38, 486, 10) // "Image_Init"
 
     },
     "AirSystem\0SendClose\0\0RadioBroadcast\0"
@@ -82,7 +85,8 @@ QT_MOC_LITERAL(35, 449, 10) // "StyleSheet"
     "on_Dry_clicked\0on_Fan_clicked\0"
     "on_TempQslider_valueChanged\0value\0"
     "ButtonStyle_Button\0QPushButton*\0Name\0"
-    "Offset\0BlurRadius\0StyleSheet"
+    "Offset\0BlurRadius\0ButtonStyle_Label\0"
+    "QLabel*\0StyleSheet\0Image_Init"
 };
 #undef QT_MOC_LITERAL
 
@@ -92,7 +96,7 @@ static const uint qt_meta_data_AirSystem[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      25,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -100,31 +104,33 @@ static const uint qt_meta_data_AirSystem[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  129,    2, 0x06 /* Public */,
-       3,    1,  130,    2, 0x06 /* Public */,
-       4,    1,  133,    2, 0x06 /* Public */,
+       1,    0,  139,    2, 0x06 /* Public */,
+       3,    1,  140,    2, 0x06 /* Public */,
+       4,    1,  143,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    1,  136,    2, 0x0a /* Public */,
-       9,    1,  139,    2, 0x0a /* Public */,
-      11,    0,  142,    2, 0x0a /* Public */,
-      12,    1,  143,    2, 0x0a /* Public */,
-      14,    1,  146,    2, 0x0a /* Public */,
-      15,    1,  149,    2, 0x0a /* Public */,
-      17,    0,  152,    2, 0x0a /* Public */,
-      18,    0,  153,    2, 0x0a /* Public */,
-      19,    0,  154,    2, 0x08 /* Private */,
-      20,    0,  155,    2, 0x08 /* Private */,
-      21,    0,  156,    2, 0x08 /* Private */,
-      22,    0,  157,    2, 0x08 /* Private */,
-      23,    0,  158,    2, 0x08 /* Private */,
-      24,    0,  159,    2, 0x08 /* Private */,
-      25,    0,  160,    2, 0x08 /* Private */,
-      26,    0,  161,    2, 0x08 /* Private */,
-      27,    0,  162,    2, 0x08 /* Private */,
-      28,    1,  163,    2, 0x08 /* Private */,
-      30,    3,  166,    2, 0x08 /* Private */,
-      35,    4,  173,    2, 0x08 /* Private */,
+       7,    1,  146,    2, 0x0a /* Public */,
+       9,    1,  149,    2, 0x0a /* Public */,
+      11,    0,  152,    2, 0x0a /* Public */,
+      12,    1,  153,    2, 0x0a /* Public */,
+      14,    1,  156,    2, 0x0a /* Public */,
+      15,    1,  159,    2, 0x0a /* Public */,
+      17,    0,  162,    2, 0x0a /* Public */,
+      18,    0,  163,    2, 0x0a /* Public */,
+      19,    0,  164,    2, 0x08 /* Private */,
+      20,    0,  165,    2, 0x08 /* Private */,
+      21,    0,  166,    2, 0x08 /* Private */,
+      22,    0,  167,    2, 0x08 /* Private */,
+      23,    0,  168,    2, 0x08 /* Private */,
+      24,    0,  169,    2, 0x08 /* Private */,
+      25,    0,  170,    2, 0x08 /* Private */,
+      26,    0,  171,    2, 0x08 /* Private */,
+      27,    0,  172,    2, 0x08 /* Private */,
+      28,    1,  173,    2, 0x08 /* Private */,
+      30,    3,  176,    2, 0x08 /* Private */,
+      35,    3,  183,    2, 0x08 /* Private */,
+      37,    4,  190,    2, 0x08 /* Private */,
+      38,    0,  199,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -151,7 +157,9 @@ static const uint qt_meta_data_AirSystem[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   29,
     QMetaType::Void, 0x80000000 | 31, QMetaType::Int, QMetaType::Int,   32,   33,   34,
+    QMetaType::Void, 0x80000000 | 36, QMetaType::Int, QMetaType::Int,   32,   33,   34,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -184,7 +192,9 @@ void AirSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 19: _t->on_Fan_clicked(); break;
         case 20: _t->on_TempQslider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 21: _t->ButtonStyle_Button((*reinterpret_cast< QPushButton*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 22: _t->StyleSheet((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 22: _t->ButtonStyle_Label((*reinterpret_cast< QLabel*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 23: _t->StyleSheet((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 24: _t->Image_Init(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -209,6 +219,13 @@ void AirSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QPushButton* >(); break;
+            }
+            break;
+        case 22:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
+            case 0:
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< QLabel* >(); break;
             }
             break;
         }
@@ -267,13 +284,13 @@ int AirSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 25;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 25;
     }
     return _id;
 }

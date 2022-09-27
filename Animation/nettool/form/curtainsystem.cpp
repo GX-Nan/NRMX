@@ -104,8 +104,15 @@ void CurtainSystem::SetInstruction(int Order)
             emit RadioBroadcast(StopWindow);
             break;
         }
-
-        status.MessageInsert(ui->CurrentNumber->text(),Order);
+        if(ui->CurrentNumber->text()=="0"){
+            status.MessageInsert("1",Order);
+            status.MessageInsert("2",Order);
+            status.MessageInsert("3",Order);
+        }
+        else {
+            status.MessageInsert(ui->CurrentNumber->text(),Order);
+        }
+        qDebug()<<"Values:"<<status.Values();
     }
 }
 

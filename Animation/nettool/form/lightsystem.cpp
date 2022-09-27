@@ -1,6 +1,3 @@
-//Lightsysten.cpp
-//Author: Y.PENG
-
 #include "lightsystem.h"
 #include "ui_lightsystem.h"
 #include<QGraphicsDropShadowEffect>
@@ -759,23 +756,27 @@ void LightSystem::on_LedAll_clicked()
     }
 
     if(AllSpot_Status==0){
+        emit StopTcp(1);
         for(int i=0;i<6;i++){
             if(Value.at(i)=="0"){
                 List.value(i)->click();
             }
         }
         AllSpot_Status=1;
-
+        emit StopTcp(0);
+        emit RadioBroadcast("ZB20600011");
     }
     else if(AllSpot_Status==1)
     {
+        emit StopTcp(1);
         for(int i=0;i<6;i++){
             if(Value.at(i)=="1"){
                 List.value(i)->click();
             }
         }
         AllSpot_Status=0;
-
+        emit StopTcp(0);
+        emit RadioBroadcast("ZB20600001");
     }
 }
 
@@ -800,22 +801,26 @@ void LightSystem::on_SpotAll_clicked()
     }
 
     if(AllSpot_Status==0){
+        emit StopTcp(1);
         for(int i=0;i<6;i++){
             if(Value.at(i)=="0"){
                 List.value(i)->click();
             }
         }
+        emit StopTcp(0);
         AllSpot_Status=1;
         emit RadioBroadcast("ZB20500011");
     }
     else if(AllSpot_Status==1)
     {
+        emit StopTcp(1);
         for(int i=0;i<6;i++){
             if(Value.at(i)=="1"){
                 List.value(i)->click();
             }
         }
         AllSpot_Status=0;
+        emit StopTcp(0);
         emit RadioBroadcast("ZB20500001");
     }
 }

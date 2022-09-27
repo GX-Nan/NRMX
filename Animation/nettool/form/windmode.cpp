@@ -130,4 +130,5 @@ void WindMode::Enable(bool Falg)
 void WindMode::on_CloseMode_clicked()
 {
     BackgroundPlan(4,1,2,3,0);
+    emit RadioBroadcast("ZB60101041");
 }

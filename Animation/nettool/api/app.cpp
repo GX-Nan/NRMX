@@ -45,7 +45,7 @@ QString App::UdpListenIP = "127.0.0.1";
 int App::UdpListenPort = 6000;
 bool App::SelectAllUdpServer = false;
 
-bool App::StopReturn=false;
+int App::StopReturn=0;
 bool App::TcpStation=false;
 
 
