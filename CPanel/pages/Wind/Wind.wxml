@@ -1,0 +1,56 @@
+<view class="element" style="position: relative; left: 77rpx; top: 102rpx; display: block; box-sizing: border-box; width: 593rpx; height: 593rpx; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <text style="position: relative; left: 124rpx; top: 72rpx; font-size: 150px; font-weight: bold">25</text>
+    <text style="position: relative; left: -131rpx; top: 162rpx; font-size: 20px; font-weight: bold">空气质量</text>
+    <text style="position: relative; left: 234rpx; top: 110rpx; font-size: 15px">AirQuality</text>
+</view>
+
+
+<view style="position: relative; width: 210rpx; background: #d3d3d3; height: 222rpx; left: 49rpx; top: 160rpx; display: block; box-sizing: border-box;border-radius: 10px;background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <view class="iconfont icon-tianqiyintian " style="position: relative; width: 139rpx; background: #d3d3d3; height: 139rpx; left: 33rpx; top: 41rpx; display: block; box-sizing: border-box;background: transparent;"></view>
+</view>
+
+
+<view style="position: relative; width: 379rpx; background: #d3d3d3; height: 91rpx; left: 324rpx; top: -62rpx; display: block; box-sizing: border-box;background-color: #ffff; box-shadow: 0px 1px 12px -6px black;border-radius: 10px;">
+    <text style="position: relative; left: 129rpx; top: 26rpx; font-weight: bold">CO2: 37mg/c</text>
+    <view class="iconfont icon-eryanghuatan "style="position: relative; width: 64rpx; background: #d3d3d3; height: 66rpx; display: block; box-sizing: border-box; left: 29rpx; top: -28rpx; background-color: #ffff; "></view>
+</view>
+
+
+<view style="position: relative; width: 379rpx; background: #d3d3d3; height: 91rpx; left: 324rpx; top: -22rpx; display: block; box-sizing: border-box;background-color: #ffff; box-shadow: 0px 1px 12px -6px black;border-radius: 10px;">
+    <text style="position: relative; left: 122rpx; top: 28rpx; font-weight: bold">Pm2.5:  37mg/c</text>
+    <view class="iconfont icon-a-PM25 " style="position: relative; width: 64rpx; background: #d3d3d3; height: 66rpx; display: block; box-sizing: border-box; left: 27rpx; top: -26rpx; background-color: #ffff;"></view>
+</view>
+
+
+<view style="position: relative; width: 658rpx; background: #d3d3d3; height: 193rpx; left: 45rpx; top: 31rpx; display: block; box-sizing: border-box; background-color: #ffff; box-shadow: 0px 1px 12px -6px black; border-radius: 10px">
+    <view  class="iconfont icon-fengliang " style="position: relative; width: 95rpx; background: #d3d3d3; height: 83rpx; display: block; box-sizing: border-box; left: 20rpx; top: 17rpx; background-color: #ffff"></view>
+    <slider class="slider-light"  step="10" min="0"  max="40"  style="position: relative; left: 10rpx; top: 16rpx; width: 593rpx; height: 60rpx; display: block; box-sizing: border-box"></slider>
+    <text style="position: relative; left: 149rpx; top: -147rpx;font-size:18px;font-weight: bold;">当前风力：{{}}</text>
+</view>
+
+
+
+<view style="position: relative; width: 658rpx; background: #d3d3d3; height: 308rpx; left: 45rpx; top: 91rpx; display: block; box-sizing: border-box; background-color: #ffff; box-shadow: 0px 1px 12px -6px black; border-radius: 10px">
+    <view class="iconfont icon-zhongtumoshi "style="position: relative; width: 145rpx; background: #d3d3d3; height: 120rpx; left: 29rpx; top: 16rpx; display: block; box-sizing: border-box;background-color: #ffff; " style="position: relative; left: 41rpx; top: 29rpx; width: 97rpx; height: 99rpx; display: block; box-sizing: border-box">
+    </view>
+    <view  bindtap="Button_Sea"  style="position: relative; width: 120rpx; background: #d3d3d3; height: 120rpx; display: block; box-sizing: border-box; left: 29rpx; top: 72rpx; background-color: {{Sea_Background}};color: {{Sea_color}}; box-shadow: 0px 1px 12px -6px black; border-radius: 10px">
+        <view class="iconfont icon-haitan " style="position: relative; width: 99rpx; background: #d3d3d3; height: 97rpx; display: block; box-sizing: border-box; left: 12rpx; top: 14rpx;background: transparent;"></view>
+    </view>
+    <view bindtap="Buttion_Arround" style="position: relative; width: 120rpx; background: #d3d3d3; height: 120rpx; display: block; box-sizing: border-box; left: 189rpx; top: -49rpx; background-color: {{Arround_Background}};color: {{Arround_color}}; box-shadow: 0px 1px 12px -6px black; border-radius: 10px">
+        <view class="iconfont icon-weiraogoujianxuanzhuan " style="position: relative; width: 99rpx; background: #d3d3d3; height: 97rpx; display: block; box-sizing: border-box; left: 12rpx; top: 12rpx;background: transparent;"></view>
+    </view>
+    <view bindtap="Buttion_Natural" style="position: relative; width: 120rpx; background: #d3d3d3; height: 120rpx; display: block; box-sizing: border-box; left: 360rpx; top: -168rpx; background-color: {{Natural_Background}};color: {{Natural_color}};box-shadow: 0px 1px 12px -6px black; border-radius: 10px">
+        <view class="iconfont icon-shuye " style="position: relative; width: 99rpx; background: #d3d3d3; height: 97rpx; display: block; box-sizing: border-box; left: 12rpx; top: 12rpx;background: transparent;"></view>
+    </view>
+    <view bindtap="Buttion_Solid" style="position: relative; width: 120rpx; background: #d3d3d3; height: 120rpx; display: block; box-sizing: border-box; left: 525rpx; top: -287rpx; background-color: {{Solid_Background}};color: {{Solid_color}}; box-shadow: 0px 1px 12px -6px black; border-radius: 10px">
+        <view  class="iconfont icon-lifangtilitiduomiantifangkuai2 " style="position: relative; width: 99rpx; background: #d3d3d3; height: 97rpx; display: block; box-sizing: border-box; left: 12rpx; top: 12rpx;background: transparent;"></view>
+    </view>
+</view>
+<text style="position: relative; left: 220rpx; top: -170rpx; font-weight: bold; font-size: 20px">模式选择</text>
+
+
+
+
+
+
+

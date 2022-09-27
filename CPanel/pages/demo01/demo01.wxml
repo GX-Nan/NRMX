@@ -1,0 +1,9 @@
+<view>
+    <view class="container">
+      <view class="switch_info">
+        <switch class="switch_style" id="ZC20101" checked="{{switch_One_checked}}" bindchange="change">前灯</switch>
+        <switch class="switch_style" id="ZC20102" checked="{{switch_Two_checked}}" bindchange="change">后灯</switch>
+      </view>
+    </view>
+    <!-- <switch class='switch_style' id="switch_One" checked="switch_One_true" bindchange="change"/></switch> -->
+</view>
