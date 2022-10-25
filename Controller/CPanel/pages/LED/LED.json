@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "slider-vertical": "/components/sliderVertical/SliderVertical",
+    "slider-vertical_B": "/components/sliderVertical_Brightness/SliderVertical"
+  }
+}

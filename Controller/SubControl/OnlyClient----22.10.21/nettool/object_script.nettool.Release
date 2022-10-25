@@ -1,0 +1,17 @@
+release/main.o
+release/app.o
+release/quiwidget.o
+release/tcpserver.o
+release/frmmain.o
+release/frmtcpclient.o
+release/qlistwidgetmouse.o
+release/serversreach.o
+release/uiipsreach.o
+release/qrc_main.o
+release/moc_quiwidget.o
+release/moc_tcpserver.o
+release/moc_frmmain.o
+release/moc_frmtcpclient.o
+release/moc_qlistwidgetmouse.o
+release/moc_serversreach.o
+release/moc_uiipsreach.o

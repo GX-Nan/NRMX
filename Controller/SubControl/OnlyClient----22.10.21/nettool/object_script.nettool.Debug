@@ -1,0 +1,17 @@
+debug/main.o
+debug/app.o
+debug/quiwidget.o
+debug/tcpserver.o
+debug/frmmain.o
+debug/frmtcpclient.o
+debug/qlistwidgetmouse.o
+debug/serversreach.o
+debug/uiipsreach.o
+debug/qrc_main.o
+debug/moc_quiwidget.o
+debug/moc_tcpserver.o
+debug/moc_frmmain.o
+debug/moc_frmtcpclient.o
+debug/moc_qlistwidgetmouse.o
+debug/moc_serversreach.o
+debug/moc_uiipsreach.o
