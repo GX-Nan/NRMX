@@ -1,0 +1,243 @@
+<!-- 显示亮度 -->
+<view style="position: relative; width: 433rpx; background: #d3d3d3; height: 731rpx; left: 25rpx; top: 122rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <text style="position: relative; left: 39rpx; top: -22rpx; font-size: 300rpx">29</text>
+    <text style="position: relative; left: -214rpx; top: 154rpx; height: 100px; font-size: 30rpx; font-weight: bold">Brightness</text>
+    <text style="position: relative; top: -62rpx; height: 100px; font-size: 50rpx; font-weight: bold; left: 166rpx">亮度</text>
+    <view class=" iconfont icon-yonghu-yuan" style="position: relative; width: 97rpx; background: transparent; height: 106rpx; display: block; box-sizing: border-box; left: 39rpx; top: 74rpx; background-size: 100% 100%"></view>
+</view>
+
+<!-- 射灯 -->
+<view style="position: relative; width: 324rpx; background: #d3d3d3; height: 200rpx; left: 25rpx; top: 168rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <view bindtap="Spotlight_Sub" class=" iconfont icon--Spotlight" style="position: relative; width: 80rpx; background: transparent; height: 80rpx; display: block; box-sizing: border-box; left: 20rpx; top: 25rpx; background-size: 100% 100%"></view>
+    <switch bindchange="SpotLight_All" checked="{{Spotlight_All}}" style="position: relative; left: 183rpx; top: -54rpx"></switch>
+    <text style="position: relative; left: 35rpx; top: 27rpx; height: 100px; font-size: 30rpx; font-weight: bold">Spotlights</text>
+</view>
+
+<!-- 办公模式   #d3d3d3 背景颜色 -->
+<view bindtap="OfficeChange" style="position: relative; width: 229rpx; height: 200rpx; left: 495rpx; top: -810rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: {{Office_BackgroundColor}}; box-shadow: 0px 1px 12px -6px black">
+    <view class=" iconfont icon-bangongzhuo" style="position: relative; width: 120rpx; background: transparent; height: 120rpx; display: block; box-sizing: border-box; left: 25rpx; top: 31rpx; background-size: 100% 100%;color: {{Office_FontColor}}"></view>
+    <text style="position: relative; left: 54rpx; top: -91rpx; height: 100px; font-size: 30rpx; font-weight: bold ;color: {{Office_FontColor}};">办公</text>
+    <text style="position: relative; left: 106rpx; top: -83rpx; height: 145rpx; font-size: 35rpx; font-weight: bold; writing-mode: vertical-lr; width: 49rpx; display: inline-block; box-sizing: border-box;color: {{Office_FontColor}};">OFFICE</text>
+</view>
+
+<!-- 休闲模式 -->
+<view bindtap="LsisureChange" style="position: relative; width: 229rpx; background-color: {{Leisure_BackgroundColor}}; height: 200rpx; left: 491rpx; top: -745rpx; display: block; box-sizing: border-box; border-radius: 15px; box-shadow: 0px 1px 12px -6px black">
+    <view class=" iconfont icon-mn_xiuxi" style="position: relative; width: 102rpx; background: transparent; height: 116rpx; display: block; box-sizing: border-box; left: 42rpx; top: 22rpx; background-size: 100% 100%;color: {{Leisure_FontColor}}"></view>
+    <text style="position: relative; left: 58rpx; top: -110rpx; height: 100px; font-size: 30rpx; font-weight: bold;color: {{Leisure_FontColor}};">休闲</text>
+    <text style="position: relative; left: 106rpx; top: -95rpx; height: 160rpx; font-size: 35rpx; font-weight: bold; writing-mode: vertical-lr; width: 45rpx; display: inline-block; box-sizing: border-box;color: {{Leisure_FontColor}};">LEISURE</text>
+</view>
+
+<!-- 酒吧模式 -->
+<view bindtap="BarChange" style="position: relative; width: 229rpx; background-color: {{Bar_BackgroundColor}}; height: 200rpx; left: 491rpx; top: -679rpx; display: block; box-sizing: border-box; border-radius: 15px; box-shadow: 0px 1px 12px -6px black">
+    <view class=" iconfont icon-jiuba" style="position: relative; width: 120rpx; background: transparent; height: 120rpx; display: block; box-sizing: border-box; left: 43rpx; top: 33rpx; background-size: 100% 100%;color: {{Bar_FontColor}}"></view>
+    <text style="position: relative; left: 62rpx; top: -41rpx; height: 100px; font-size: 30rpx; font-weight: bold;color: {{Bar_FontColor}};">酒吧</text>
+    <text style="position: relative; left: 104rpx; top: -56rpx; height: 93rpx; font-size: 35rpx; font-weight: bold; writing-mode: vertical-lr; width: 45rpx; display: inline-block; box-sizing: border-box;color: {{Bar_FontColor}};">BAR</text>
+</view>
+
+<!-- 吊灯 -->
+<view style="position: relative; width: 324rpx; background: #641a1a; height: 200rpx; left: 25rpx; top: -396rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <view bindtap="Chandelier_Sub" class=" iconfont icon-diaodeng" style="position: relative; width: 80rpx; background: transparent; height: 80rpx; display: block; box-sizing: border-box; left: 24rpx; top: 25rpx; background-size: 100% 100%" style="position: relative; left: 16rpx; top: 24rpx; width: 110rpx; height: 97rpx; display: block; box-sizing: border-box"></view>
+    <switch bindchange="Chandelier_All" checked="{{Chandelier_All}}" style="position: relative; left: 177rpx; top: -75rpx"></switch>
+    <text style="position: relative; left: 37rpx; top: 15rpx; height: 100px; font-size: 30rpx; font-weight: bold">Droplight</text>
+</view>
+<!-- LED灯 -->
+<view style="position: relative; width: 324rpx; background: #d3d3d3; height: 200rpx; left: 25rpx; top: -358rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <view bindtap="Led_Sub" class=" iconfont icon-gaoliangtoujingdadeng" style="position: relative; width: 80rpx; background: transparent; height: 80rpx; display: block; box-sizing: border-box; left: 20rpx; top: 25rpx; background-size: 100% 100%"></view>
+    <switch bindchange="Led_All" checked="{{Led_All}}" style="position: relative; left: 177rpx; top: -54rpx"></switch>
+    <text style="position: relative; left: 89rpx; top: 49rpx; height: 100px; font-size: 30rpx; font-weight: bold">LED</text>
+</view>
+
+<!-- 辅灯 -->
+<view style="position: relative; width: 324rpx; background: #d3d3d3; height: 675rpx; left: 400rpx; top: -1033rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
+    <view bindtap="Auxiliary_Sub" class=" iconfont icon-gaoliangtoujingdadeng" style="position: relative; width: 100rpx; background: transparent; height: 100rpx; display: block; box-sizing: border-box; left: 35rpx; top: 20rpx; background-size: 100% 100%"></view>
+    <switch bindchange="Swtich_AuxiliaryLight_All" checked="{{AuxiliaryLight_All}}" style="position: relative; left: 199rpx; top: -79rpx"></switch>
+    <text style="position: relative; left: 25rpx; top: 0rpx; height: 100px; font-size: 30rpx; font-weight: bold">Brightness</text>
+</view>
+
+<!-- 滚动条---color -->
+<view style="position: absolute; top: 952rpx; height: 452rpx; margin: 20px; display: flex; justify-content: space-around; width: 91rpx; box-sizing: border-box; left: 362rpx; z-index: 9000">
+    <slider-vertical  block-color="#ffffff" block-size="28" backgroundColor="#e9e9e9" activeColor="#1aad19" bindchange="slider1change_Color" step="5" min="0" max="100" value="{{AuxiliaryLight_AllColor}}" disabled="{{false}}" show-value="{{true}}" style="position: relative; left: 199rpx; top: 37rpx; width: 56rpx; height: 587rpx; display: block; box-sizing: border-box"></slider-vertical>
+</view>
+
+<!-- 滚动条 ---Brightness-->
+<view style="position: absolute; top: 952rpx; height: 452rpx; margin: 20px; display: flex; justify-content: space-around; width: 91rpx; box-sizing: border-box; left: 362rpx; z-index: 9000">
+    <slider-vertical_B  block-color="#ffffff" block-size="28" activeColor="linear-gradient(to top, #ffffee 0%, #f0e04e 100%)" bindchange="slider1change_Brightness" step="5" min="0" max="100" value="{{AuxiliaryLight_AllBright}}" disabled="{{false}}" show-value="{{true}}" style="position: relative; left: 32rpx; top: 37rpx; width: 64rpx; height: 587rpx; display: block; box-sizing: border-box"></slider-vertical_B>
+</view>
+
+
+
+<!-- 弹窗 ----射灯-->
+<view class="mask" bindtap="Spotlight_Sub_Close" catchtouchmove="preventTouchMove" wx:if="{{Spotlight_Sub}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{Spotlight_Sub}}">
+    <!-- 图标 -->
+    <view class="{{SpotIcon}}" style="position: relative;margin-top: 50px; width: 150rpx; background: transparent; height: 150rpx; display: block; box-sizing: border-box; left: -70rpx;  background-size: 100% 100%;font-size: 150px;"></view>
+    <text style="position: relative;  margin-top: 100px; height: 100px; font-size: 40rpx; font-weight: bold">{{SpotText}}</text>
+    <text style="position: relative;  margin-top: 10px; height: 100px; font-size: 25rpx; font-weight: bold">Missing</text>
+    <!-- switch 开关  判断滚动条在哪个位置-->
+    <block wx:if="{{selectItemIndex==0}}">
+        <switch bindchange="Judge" checked="{{SpotLight_Missing_1}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{selectItemIndex==1}}">
+        <switch bindchange="Judge" checked="{{SpotLight_Missing_2}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{selectItemIndex==2}}">
+        <switch bindchange="Judge" checked="{{SpotLight_Bar_1}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{selectItemIndex==3}}">
+        <switch bindchange="Judge" checked="{{SpotLight_Bar_2}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{selectItemIndex==4}}">
+        <switch bindchange="Judge" checked="{{SpotLight_Office_1}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{selectItemIndex==5}}">
+        <switch bindchange="Judge" checked="{{SpotLight_Office_2}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <!-- 滚动条 -->
+    <scroll-view id="scroll-view" scroll-into-view="{{itemview}}" scroll-x class="scroll-x" scroll-left="{{scrollLeft}}" scroll-with-animation="true" bindscroll="scrollMove" style="position: relative;margin-top: 30px; width: 404rpx; height: 158rpx; display: flex; box-sizing: border-box;">
+        <view wx:for="{{datalist}}" wx:key="index" class="view-parent">
+            <block wx:if="{{index<2}}">
+                <view id="{{'item'+index}}" bindtap="dianji" class="iconfont .view-Missing{{selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+            <block wx:if="{{index>=2&&index<4}}">
+                <view id="{{'item'+index}}" bindtap="dianji" class="iconfont .view-Bar{{selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+            <block wx:if="{{index>=4}}">
+                <view id="{{'item'+index}}" bindtap="dianji" class="iconfont ..view-Office{{selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+
+<!-- 弹窗 ----LED-->
+<view class="mask" bindtap="Led_Sub_Close" catchtouchmove="preventTouchMove" wx:if="{{Led_Sub}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{Led_Sub}}">
+    <!-- 图标 -->
+    <view class="{{SpotIcon}}" style="position: relative;margin-top: 50px; width: 150rpx; background: transparent; height: 150rpx; display: block; box-sizing: border-box; left: -70rpx;  background-size: 100% 100%;font-size: 150px;"></view>
+    <text style="position: relative;  margin-top: 100px; height: 100px; font-size: 40rpx; font-weight: bold">{{LedText}}</text>
+    <text style="position: relative;  margin-top: 10px; height: 100px; font-size: 25rpx; font-weight: bold">Missing</text>
+    <!-- switch 开关  判断滚动条在哪个位置-->
+    <block wx:if="{{Led_selectItemIndex==0}}">
+        <switch bindchange="Led_Judge" checked="{{Led_Missing_1}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{Led_selectItemIndex==1}}">
+        <switch bindchange="Led_Judge" checked="{{Led_Missing_2}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{Led_selectItemIndex==2}}">
+        <switch bindchange="Led_Judge" checked="{{Led_Bar_1}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{Led_selectItemIndex==3}}">
+        <switch bindchange="Led_Judge" checked="{{Led_Bar_2}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{Led_selectItemIndex==4}}">
+        <switch bindchange="Led_Judge" checked="{{Led_Office_1}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <block wx:elif="{{Led_selectItemIndex==5}}">
+        <switch bindchange="Led_Judge" checked="{{Led_Office_2}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+    </block>
+    <!-- 滚动条 -->
+    <scroll-view id="scroll-view" scroll-into-view="{{Led_itemview}}" scroll-x class="scroll-x" scroll-left="{{Led_scrollLeft}}" scroll-with-animation="true" bindscroll="scrollMove" style="position: relative;margin-top: 30px; width: 404rpx; height: 158rpx; display: flex; box-sizing: border-box;">
+        <view wx:for="{{Led_datalist}}" wx:key="index" class="view-parent">
+            <block wx:if="{{index<2}}">
+                <view id="{{'item'+index}}" bindtap="Led_Checked" class="iconfont .view-Missing{{Led_selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+            <block wx:if="{{index>=2&&index<4}}">
+                <view id="{{'item'+index}}" bindtap="Led_Checked" class="iconfont .view-Bar{{Led_selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+            <block wx:if="{{index>=4}}">
+                <view id="{{'item'+index}}" bindtap="Led_Checked" class="iconfont ..view-Office{{Led_selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+<!-- 辅灯 弹窗-->
+<view class="mask" bindtap="Auxiliary_Sub_Close" catchtouchmove="preventTouchMove" wx:if="{{Auxiliary_Sub}}"></view>
+<!-- 弹出层 -->
+<view class="Auxiliary_modalDlg" wx:if="{{Auxiliary_Sub}}"> 
+    <!-- 图标 -->
+    <view class="{{AuxiliaryIcon}}" style="position: relative;margin-top: 50px; width: 150rpx; background: transparent; height: 150rpx; display: block; box-sizing: border-box; left: -70rpx;  background-size: 100% 100%;font-size: 150px;"></view>
+    <text style="position: relative;  margin-top: 100px; height: 100px; font-size: 40rpx; font-weight: bold">{{AuxiliaryText}}</text>
+    <text style="position: relative;  margin-top: 10px; height: 100px; font-size: 25rpx; font-weight: bold">Missing</text>
+    <!-- 进度条   判断滚动条在哪个位置 -->
+    <block wx:if="{{Auxiliary_selectItemIndex==0}}">
+        <slider class="slider-light_Bright" bindchange="Auxiliary_Slider_Bright_ToRasp" bindchanging="Auxiliary_Slider_Bright" value="{{AuxiliaryLight_MissingBright_1}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 30rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_MissingBright_1}}</text>
+        <slider class="slider-light_Color" bindchange="Auxiliary_Slider_Color_ToRasp" bindchanging="Auxiliary_Slider_Color" value="{{AuxiliaryLight_MissingColor_1}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 0rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">色温数值：{{AuxiliaryLight_MissingColor_1}}</text>
+    </block>
+    <block wx:elif="{{Auxiliary_selectItemIndex==1}}">
+        <slider class="slider-light_Bright" bindchange="Auxiliary_Slider_Bright_ToRasp"  bindchanging="Auxiliary_Slider_Bright" value="{{AuxiliaryLight_MissingBright_2}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 30rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_MissingBright_2}}</text>
+        <slider class="slider-light_Color" bindchange="Auxiliary_Slider_Color_ToRasp"  bindchanging="Auxiliary_Slider_Color" value="{{AuxiliaryLight_MissingColor_2}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 0rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">色温数值：{{AuxiliaryLight_MissingColor_2}}</text>
+    </block>
+    <block wx:elif="{{Auxiliary_selectItemIndex==2}}">
+        <slider class="slider-light_Bright" bindchange="Auxiliary_Slider_Bright_ToRasp" bindchanging="Auxiliary_Slider_Bright" value="{{AuxiliaryLight_MissingBright_3}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 30rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_MissingBright_3}}</text>
+        <slider class="slider-light_Color" bindchange="Auxiliary_Slider_Color_ToRasp"  bindchanging="Auxiliary_Slider_Color" value="{{AuxiliaryLight_MissingColor_3}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 0rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_MissingColor_3}}</text>
+    </block>
+    <block wx:elif="{{Auxiliary_selectItemIndex==3}}">
+        <slider class="slider-light_Bright" bindchange="Auxiliary_Slider_Bright_ToRasp"  bindchanging="Auxiliary_Slider_Bright" value="{{AuxiliaryLight_OfficeBright_1}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 30rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_OfficeBright_1}}</text>
+        <slider class="slider-light_Color" bindchange="Auxiliary_Slider_Color_ToRasp" bindchanging="Auxiliary_Slider_Color" value="{{AuxiliaryLight_OfficeColor_1}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 0rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_OfficeColor_1}}</text>
+    </block>
+    <block wx:elif="{{Auxiliary_selectItemIndex==4}}">
+        <slider class="slider-light_Bright" bindchange="Auxiliary_Slider_Bright_ToRasp"  bindchanging="Auxiliary_Slider_Bright" value="{{AuxiliaryLight_OfficeBright_2}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 30rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_OfficeBright_2}}</text>
+        <slider class="slider-light_Color" bindchange="Auxiliary_Slider_Color_ToRasp" bindchanging="Auxiliary_Slider_Color" value="{{AuxiliaryLight_OfficeColor_2}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 0rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_OfficeColor_2}}</text>
+    </block>
+    <block wx:elif="{{Auxiliary_selectItemIndex==5}}">
+        <slider class="slider-light_Bright" bindchange="Auxiliary_Slider_Bright_ToRasp" bindchanging="Auxiliary_Slider_Bright" value="{{AuxiliaryLight_OfficeBright_3}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 30rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_OfficeBright_3}}</text>
+        <slider class="slider-light_Color" bindchange="Auxiliary_Slider_Color_ToRasp"  bindchanging="Auxiliary_Slider_Color" value="{{AuxiliaryLight_OfficeColor_3}}" style="position: relative; width: 350rpx; height: 0rpx; display: block; box-sizing: border-box; left: 5rpx; margin-top: 0rpx; background-color: rgb(187, 31, 31)"></slider>
+        <text style="position: relative;  margin-top: 40px; height: 100px; font-size: 25rpx; font-weight: bold">亮度数值：{{AuxiliaryLight_OfficeColor_3}}</text>
+    </block>
+
+    <!-- 滚动条 -->
+    <scroll-view id="scroll-view" scroll-into-view="{{Auxiliary_itemview}}" scroll-x class="scroll-x" scroll-left="{{Auxiliary_scrollLeft}}" scroll-with-animation="true" bindscroll="scrollMove" style="position: relative;margin-top: 30px; width: 404rpx; height: 158rpx; display: flex; box-sizing: border-box;">
+        <view wx:for="{{Auxiliary_datalist}}" wx:key="index" class="view-parent">
+            <block wx:if="{{index<3}}">
+                <view id="{{'item'+index}}" bindtap="Auxiliary_Checked" class="iconfont .view-Missing{{Auxiliary_selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+            <block wx:if="{{index>=3}}">
+                <view id="{{'item'+index}}" bindtap="Auxiliary_Checked" class="iconfont ..view-Office{{Auxiliary_selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+<!-- =-------------------------------------------------吊灯弹窗 -->
+
+<view class="mask" bindtap="Chandelier_Sub_Close" catchtouchmove="preventTouchMove" wx:if="{{Chandelier_Sub}}"></view>
+<!-- 弹出层 -->
+<view class="Auxiliary_modalDlg" wx:if="{{Chandelier_Sub}}">
+    <!-- 图标 -->
+    <view class="{{ChandelierIcon}}" style="position: relative;margin-top: 50px; width: 150rpx; background: transparent; height: 150rpx; display: block; box-sizing: border-box; left: -70rpx;  background-size: 100% 100%;font-size: 150px;"></view>
+    <text style="position: relative;  margin-top: 100px; height: 100px; font-size: 40rpx; font-weight: bold">{{ChandelierText}}</text>
+    <text style="position: relative;  margin-top: 10px; height: 100px; font-size: 25rpx; font-weight: bold">Missing</text>
+    <!-- switch 开关  判断滚动条在哪个位置-->
+    <block wx:if="{{Chandelier_selectItemIndex==0}}">
+        <switch bindchange="Chandelier_Judge" checked="{{Chandelier_Missing}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+        <view id="MissingUp" bindtap="Chandelier_Status_Judge" class="iconfont .icon-xiangshang " style="position: relative;margin-top: 35px; width: 100rpx; background-color: {{ChandelierBackgroundColor_Up}};  color:{{ChandelierColor_Font_Up}};height: 100rpx; display: block; margin-left: -50px;box-sizing: border-box; left: -90rpx;  background-size: 100% 100%;font-size: 50px;box-shadow: 0px 1px 12px -6px black;border-radius: 8px;"></view>
+        <view id="MissingStop" bindtap="Chandelier_Status_Judge" class="iconfont .icon-24gf-stopSquare" style="position: relative; margin-top: -50px;width: 100rpx; background-color: {{ChandelierBackgroundColor_Stop}};  color:{{ChandelierColor_Font_Stop}}; height: 100rpx; display: block; box-sizing: border-box; margin-left: -0rpx;  background-size: 100% 100%;font-size: 50px;box-shadow: 0px 1px 12px -6px black;border-radius: 8px;"></view>
+        <view id="MissingDown" bindtap="Chandelier_Status_Judge" class="iconfont .icon-xiangxia" style="position: relative;margin-top: -50px; width: 100rpx; background-color: {{ChandelierBackgroundColor_Down}};  color:{{ChandelierColor_Font_Down}}; height: 100rpx; display: block; box-sizing: border-box; margin-right: -270rpx;  background-size: 100% 100%;font-size: 50px;box-shadow: 0px 1px 12px -6px black;border-radius: 8px;"></view>
+    </block>
+    <block wx:elif="{{Chandelier_selectItemIndex==1}}">
+        <switch bindchange="Chandelier_Judge" checked="{{Chandelier_Bar}}" style="position: relative; left: 10rpx; margin-top: 20px"></switch>
+        <view id="BarUp" bindtap="Chandelier_Status_Judge" class="iconfont .icon-xiangshang " style="position: relative;margin-top: 35px; width: 100rpx; background-color: {{ChandelierBackgroundColor_Up}};  color:{{ChandelierColor_Font_Up}};height: 100rpx; display: block; margin-left: -50px;box-sizing: border-box; left: -90rpx;  background-size: 100% 100%;font-size: 50px;box-shadow: 0px 1px 12px -6px black;border-radius: 8px;"></view>
+        <view id="BarStop" bindtap="Chandelier_Status_Judge" class="iconfont .icon-24gf-stopSquare" style="position: relative; margin-top: -50px;width: 100rpx; background-color: {{ChandelierBackgroundColor_Stop}};  color:{{ChandelierColor_Font_Stop}}; height: 100rpx; display: block; box-sizing: border-box; margin-left: -0rpx;  background-size: 100% 100%;font-size: 50px;box-shadow: 0px 1px 12px -6px black;border-radius: 8px;"></view>
+        <view id="BarDown" bindtap="Chandelier_Status_Judge" class="iconfont .icon-xiangxia" style="position: relative;margin-top: -50px; width: 100rpx; background-color: {{ChandelierBackgroundColor_Down}};  color:{{ChandelierColor_Font_Down}}; height: 100rpx; display: block; box-sizing: border-box; margin-right: -270rpx;  background-size: 100% 100%;font-size: 50px;box-shadow: 0px 1px 12px -6px black;border-radius: 8px;"></view>
+    </block>
+    <!-- 滚动条 -->
+    <scroll-view id="scroll-view" scroll-into-view="{{Chandelier_itemview}}" scroll-x class="scroll-x" scroll-left="{{Chandelier_scrollLeft}}" scroll-with-animation="true" bindscroll="scrollMove" style="position: relative;margin-top: 50px; left: 30px;width: 404rpx; height: 158rpx; display: flex; box-sizing: border-box;">
+        <view wx:for="{{Chandelier_datalist}}" wx:key="index" class="view-parent">
+            <view id="{{'item'+index}}" bindtap="Chandelier_Checked" class="iconfont .view-Missing{{Chandelier_selectItemIndex == index?'On':''}}" data-index="{{index}}"> </view>
+        </view>
+    </scroll-view>
+</view>

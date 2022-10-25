@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmUdpServer</class>
+ <widget class="QWidget" name="frmUdpServer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>433</width>
+    <height>612</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTextEdit" name="txtMain">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>211</width>
+     <height>511</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>10</y>
+     <width>200</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>170</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <widget class="QCheckBox" name="ckHexReceive">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>1</y>
+      <width>171</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Encrypted reception</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ckHexSend">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>34</y>
+      <width>161</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Encrypted send</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ckAscii">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>67</y>
+      <width>129</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ascii控制字符</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ckShow">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>100</y>
+      <width>95</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>暂停显示</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ckDebug">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>133</y>
+      <width>95</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>模拟设备</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ckAutoSend">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>166</y>
+      <width>95</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>定时发送</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cboxInterval">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>160</y>
+      <width>83</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labCount">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>448</y>
+      <width>178</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>25</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string>共 0 个客户端</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>479</y>
+      <width>178</width>
+      <height>75</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ckSelectAll">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>560</y>
+      <width>159</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>对所有客户端发送</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>181</width>
+      <height>128</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="labListenIP">
+       <property name="text">
+        <string>监听地址</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QComboBox" name="cboxListenIP"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labListenPort">
+       <property name="text">
+        <string>监听端口</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="txtListenPort"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>338</y>
+      <width>181</width>
+      <height>104</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="btnListen">
+       <property name="text">
+        <string>监听</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSave">
+       <property name="text">
+        <string>保存</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClear">
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
+     <width>191</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSend">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>570</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>80</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>80</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cboxData">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>530</y>
+     <width>211</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtMain</tabstop>
+  <tabstop>ckHexReceive</tabstop>
+  <tabstop>ckHexSend</tabstop>
+  <tabstop>ckAscii</tabstop>
+  <tabstop>ckShow</tabstop>
+  <tabstop>ckDebug</tabstop>
+  <tabstop>ckAutoSend</tabstop>
+  <tabstop>cboxInterval</tabstop>
+  <tabstop>cboxListenIP</tabstop>
+  <tabstop>txtListenPort</tabstop>
+  <tabstop>btnListen</tabstop>
+  <tabstop>btnSave</tabstop>
+  <tabstop>btnClear</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

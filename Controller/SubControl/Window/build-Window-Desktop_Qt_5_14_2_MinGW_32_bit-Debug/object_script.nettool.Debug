@@ -1,0 +1,11 @@
+debug/main.o
+debug/app.o
+debug/quiwidget.o
+debug/tcpserver.o
+debug/frmmain.o
+debug/frmtcpclient.o
+debug/qrc_main.o
+debug/moc_quiwidget.o
+debug/moc_tcpserver.o
+debug/moc_frmmain.o
+debug/moc_frmtcpclient.o
