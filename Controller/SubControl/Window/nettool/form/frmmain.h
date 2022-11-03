@@ -4,7 +4,8 @@
 #include <QWidget>
 #include"frmtcpclient.h"
 #include <QMouseEvent>
-
+#include <curtainsbox.h>
+#include <windowbox.h>
 namespace Ui {
 class frmMain;
 }
@@ -16,6 +17,9 @@ class frmMain : public QWidget
 public:
     explicit frmMain(QWidget *parent = 0);
     ~frmMain();
+    QWidget *shade = nullptr;
+    CurtainsBox *Curtains=nullptr;
+    WindowBox *Windows=nullptr;
 private slots:
     void on_tabWidget_currentChanged(int index);
     void saveConfig();
@@ -23,8 +27,12 @@ private slots:
     void on_UISreachIP_clicked();
     void ClientConfig();
     void ShadowInit();
-    void BackgroundInit();
     void paintEvent(QPaintEvent *);
+    void ProgressInit();
+    void on_WindowBox_clicked();
+    void on_CurtainsBox_clicked();
+    void BackdropInit();
+
 signals:
     void ShowUiSreachIP();
     void ExecUiSreachIP();

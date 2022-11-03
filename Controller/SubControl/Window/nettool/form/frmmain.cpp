@@ -12,8 +12,8 @@ frmMain::frmMain(QWidget *parent) : QWidget(parent,Qt::WindowTitleHint | Qt::Cus
     ClientConfig();
     qDebug()<<"main线程ID"<<QThread::currentThread();
     ShadowInit();
-    BackgroundInit();
-
+    ProgressInit();
+    BackdropInit();
 }
 
 frmMain::~frmMain()
@@ -37,7 +37,7 @@ void frmMain::saveConfig()
 void frmMain::initConfig()//配置
 {
     frmTcpClient *client=new frmTcpClient();//不允许有父对象 不然无法放入子线程内执行
-//    connect(this,&UiIPSreach::clientConnect,client,&frmTcpClient::ClientRecv);//接受
+    //    connect(this,&UiIPSreach::clientConnect,client,&frmTcpClient::ClientRecv);//接受
     connect(this,&frmMain::ClientConnect,client,&frmTcpClient::ClientConnect);//连接
     QThread *Task1=new QThread();
     client->moveToThread(Task1);
@@ -112,17 +112,37 @@ void frmMain::ShadowInit()
     frame_2->setBlurRadius(25);
     ui->frame_2->setGraphicsEffect(frame_2);//优化按钮
 
-    QGraphicsDropShadowEffect *frame = new QGraphicsDropShadowEffect(this);
-    frame->setOffset(4);
-    frame->setColor(/*Qt::gray*/QColor(43, 43, 43));
-    frame->setBlurRadius(25);
-    ui->frame->setGraphicsEffect(frame);//优化按钮
+//    QGraphicsDropShadowEffect *frame = new QGraphicsDropShadowEffect(this);
+//    frame->setOffset(4);
+//    frame->setColor(/*Qt::gray*/QColor(43, 43, 43));
+//    frame->setBlurRadius(25);
+//    ui->frame->setGraphicsEffect(frame);//优化按钮
+
+    //    QGraphicsDropShadowEffect *AirQualityBox = new QGraphicsDropShadowEffect(this);
+    //    AirQualityBox->setOffset(4);
+    //    AirQualityBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    //    AirQualityBox->setBlurRadius(25);
+    //    ui->AirQualityBox->setGraphicsEffect(AirQualityBox);//优化按钮
+
+    QGraphicsDropShadowEffect *OutAirQuality = new QGraphicsDropShadowEffect(this);
+    OutAirQuality->setOffset(4);
+    OutAirQuality->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    OutAirQuality->setBlurRadius(25);
+    ui->OutAirQuality->setGraphicsEffect(OutAirQuality);//优化按钮
+
+    QGraphicsDropShadowEffect *SuitableBox = new QGraphicsDropShadowEffect(this);
+    SuitableBox->setOffset(4);
+    SuitableBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    SuitableBox->setBlurRadius(25);
+    ui->SuitableBox->setGraphicsEffect(SuitableBox);//优化按钮 SuitableBox
     //}
 }
 
-void frmMain::BackgroundInit()
-{
 
+
+void frmMain::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush(QColor(41,43,74));//
     painter.setPen(Qt::NoPen);//设置no pen
@@ -135,4 +155,38 @@ void frmMain::BackgroundInit()
     painter.drawEllipse(1100,600,900,900);
 }
 
+void frmMain::ProgressInit()
+{
+    QList<QProgressBar*> progress;
+    progress<<ui->After_1<<ui->After_2<<ui->After_3<<ui->After_4<<ui->After_5<<ui->After_6<<ui->After_7<<ui->After_8<<ui->After_9<<ui->After_10<<ui->After_11;
+    for(int i=0;i<11;i++)
+    {
+        progress[i]->setOrientation(Qt::Vertical);
+        progress[i]->setValue(40);
+        progress[i]->setTextVisible(false);
+    }
+}
 
+
+
+void frmMain::on_WindowBox_clicked()
+{
+    shade->setGeometry(0,0,this->width(),this->height());
+    shade->show();
+}
+
+void frmMain::on_CurtainsBox_clicked()
+{
+
+}
+
+void frmMain::BackdropInit()
+{
+    shade = new QWidget(this);
+    QPalette palette = shade->palette();
+    palette.setColor(QPalette::Window,QColor(125,125,125,150));
+    shade->setAutoFillBackground(true);
+    shade->setPalette(palette);
+    shade->hide();
+    shade->raise();
+}
