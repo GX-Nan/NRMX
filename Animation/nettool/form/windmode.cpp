@@ -138,5 +138,6 @@ void WindMode::on_CloseMode_clicked()
 {
     //Clear();
     BackgroundPlan(4,1,2,3,0);
+    emit RadioBroadcast("ZB60101041");
     emit SendToWx("WindMode",0);
 }

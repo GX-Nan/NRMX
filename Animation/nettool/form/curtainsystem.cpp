@@ -113,6 +113,7 @@ void CurtainSystem::SetInstruction(int Order)
             emit RadioBroadcast(Down);
         }
         else {
+            emit RadioBroadcast("ZB10200011");
             Timer->stop();
             AllCurtainsFalg=1;
             Timer->start(800);
@@ -125,6 +126,7 @@ void CurtainSystem::SetInstruction(int Order)
             emit RadioBroadcast(Up);
         }
         else {
+            emit RadioBroadcast("ZB10200001");
             Timer->stop();
             AllCurtainsFalg=0;
             Timer->start(800);
@@ -137,6 +139,7 @@ void CurtainSystem::SetInstruction(int Order)
             emit RadioBroadcast(Stop);
         }
         else {
+            emit RadioBroadcast("ZB10200041");
             Timer->stop();
             AllCurtainsFalg=4;
             Timer->start(800);

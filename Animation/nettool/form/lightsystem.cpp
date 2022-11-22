@@ -269,6 +269,7 @@ void LightSystem::on_AllLed_Status_clicked()
         ButtonStyle_Button(ui->AllLed_Status,1,20);
         ButtonStyle_Button(ui->AiMode,8,20);
         ui->AllLed_Status->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
+        ui->AllLed_Status->setIcon(QIcon(":/new/Led/Led/AirSwitch-ON.png"));
         ui->Brightness_Slider->setValue(99);
         ui->Lux_All->setChecked(1);
         Trigger_BrightnessQslider();//发送信息去微信
@@ -288,6 +289,7 @@ void LightSystem::on_AllLed_Status_clicked()
         ButtonStyle_Button(ui->AllLed_Status,8,20);
         ButtonStyle_Button(ui->AiMode,8,20);
         ui->AllLed_Status->setStyleSheet("background-color: rgb(255, 255, 255);color:white;border-radius:15px;");
+        ui->AllLed_Status->setIcon(QIcon(":/new/Led/Led/All_Light_OFF.png"));
         ui->Brightness_Slider->setValue(0);
         Trigger_BrightnessQslider();//发送信息去微信
         qDebug()<<"Lux----all";
@@ -491,7 +493,7 @@ void LightSystem::Light_Status(int Function, int Sub, int Value)
             switch (Sub) {
             case 0:
                 LedStopFlag=1;
-                if(AllLight_Status==0){
+                if(AllLed_Status==0){
                     for(int i=0;i<6;i++){
                         if(LedValue.at(i)=="0"){
                             LedList.value(i)->click();
@@ -499,9 +501,9 @@ void LightSystem::Light_Status(int Function, int Sub, int Value)
                     }
                     emit RadioBroadcast("ZB20600011");
                     emit SendToWx("All_Led_0",1);
-                    AllLight_Status=1;
+                    AllLed_Status=1;
                 }
-                else if(AllLight_Status==1)
+                else if(AllLed_Status==1)
                 {
                     for(int i=0;i<6;i++){
                         if(LedValue.at(i)=="1"){
@@ -510,7 +512,7 @@ void LightSystem::Light_Status(int Function, int Sub, int Value)
                     }
                     emit RadioBroadcast("ZB20600001");
                     emit SendToWx("All_Led_0",0);
-                    AllLight_Status=0;
+                    AllLed_Status=0;
                 }
                 LedStopFlag=0;
                 break;
@@ -1120,7 +1122,7 @@ void LightSystem::on_LedAll_clicked()
         List.insert(i,Button.at(i));
     }
     LedStopFlag=1;
-    if(AllLight_Status==0){
+    if(AllLed_Status==0){
         for(int i=0;i<6;i++){
             if(Value.at(i)=="0"){
                 List.value(i)->click();
@@ -1128,9 +1130,9 @@ void LightSystem::on_LedAll_clicked()
         }
         emit RadioBroadcast("ZB20600011");
         emit SendToWx("All_Led_0",1);
-        AllLight_Status=1;
+        AllLed_Status=1;
     }
-    else if(AllLight_Status==1)
+    else if(AllLed_Status==1)
     {
         for(int i=0;i<6;i++){
             if(Value.at(i)=="1"){
@@ -1139,7 +1141,7 @@ void LightSystem::on_LedAll_clicked()
         }
         emit RadioBroadcast("ZB20600001");
         emit SendToWx("All_Led_0",0);
-        AllLight_Status=0;
+        AllLed_Status=0;
     }
     LedStopFlag=0;
 }
