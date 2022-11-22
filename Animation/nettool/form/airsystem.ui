@@ -144,7 +144,7 @@ background-color:rgb(178,178,178,255);
     <property name="font">
      <font>
       <family>Adobe 黑体 Std R</family>
-      <pointsize>300</pointsize>
+      <pointsize>280</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -441,8 +441,7 @@ background-color: white;
       <property name="icon">
        <iconset resource="../other/main.qrc">
         <normaloff>:/new/Air/Air/High_OFF.png</normaloff>
-        <normalon>:/new/Air/Air/High_ON.png</normalon>
-        <disabledon>:/new/Air/Air/High_OFF.png</disabledon>:/new/Air/Air/High_OFF.png</iconset>
+        <normalon>:/new/Air/Air/High_ON.png</normalon>:/new/Air/Air/High_OFF.png</iconset>
       </property>
       <property name="iconSize">
        <size>

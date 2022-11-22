@@ -70,67 +70,81 @@ void AirSystem::Shawdow()
     ui->Group_Fan->setGraphicsEffect(Group_Fan);
 }
 
-void AirSystem::ReceiveData(Data VarValue)
+void AirSystem::ReceiveData(Data VarValue,int Value)//从分控接受后--界面更新
 {
     data=VarValue;
-    if(data.Station==1){
-        QString Temp=QString::number(data.Temp);
-        ui->AirTemp->setText(Temp);//大字显示
-        ui->TempQslider->setValue(Temp.toInt());//进度条
-        switch (data.Fan) {
-        case 0:  break; //自动
+//    qDebug()<<"AirReceiveData";
+//    if(data.Station==1){
+
+//        if(Falg_AirSwitch!=0){
+//            on_AirSwitch_clicked();//按下按钮---做阴影特性
+//        }
+//    }
+//    else if(data.Station==0)
+//    {
+//        if(Falg_AirSwitch!=1){
+//            on_AirSwitch_clicked();
+//        }
+//        ButtonClear(3);
+//    }
+    qDebug()<<"Air---station";
+    if(Value<16){
+        switch (Value) {
+        case 0:
+            if(Falg_AirSwitch==0){
+                ui->AirSwitch->click();
+            }
+            break;
         case 1:
-            ui->Fan_Low->setStyleSheet("background-color: rgb(0, 0, 0);color:white;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            ui->Fan_Mid->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            ui->Fan_High->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            break; //低档
-        case 2:
-            ui->Fan_Mid->setStyleSheet("background-color: rgb(0, 0, 0);color:white;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            ui->Fan_Low->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            ui->Fan_High->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            break; //中档
-        case 3:
-            ui->Fan_High->setStyleSheet("background-color: rgb(0, 0, 0);color:white;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            ui->Fan_Low->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            ui->Fan_Mid->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
-            break; //高档
-        }
-        switch(data.Swing_L_R)
-        {
-        case 0: ui->SwingLeftRight->setChecked(0); break;
-        case 1: ui->SwingLeftRight->setChecked(1); break;
-        }
-        switch(data.Swing_U_D)
-        {
-        case 0: ui->SwingUpDown->setChecked(0); break;
-        case 1: ui->SwingUpDown->setChecked(1); break;
-        }
-        switch(data.Mode)
-        {
-        case 0:  break; //自动
-        case 1:
-            StyleSheet(2,1,3,0);
-            break; //制冷
-        case 2:
-            StyleSheet(1,2,3,0);
-            break; //制热
-        case 3:
-            StyleSheet(3,2,0,1);
-            break; //除湿
-        case 4:
-            StyleSheet(0,2,3,1);
-            break; //送风
-        }
-        if(Falg_AirSwitch!=0){
-            on_AirSwitch_clicked();//按下按钮---做阴影特性
+            if(Falg_AirSwitch==1){
+                ui->AirSwitch->click();
+            }
+            break;
+        case 2://"Low"
+            ui->Fan_Low->click();
+            break;
+        case 3://"Mid"
+            ui->Fan_Mid->click();
+            break;
+        case 4://"High"
+            ui->Fan_High->click();
+            break;
+        case 5:
+            ui->SwingLeftRight->setChecked(1);
+            break;
+        case 6:
+            ui->SwingLeftRight->setChecked(0);
+            break;
+        case 7:
+            ui->SwingUpDown->setChecked(1);
+            break;
+        case 8:
+            ui->SwingUpDown->setChecked(0);
+            break;
+        case 9://"Cool"
+            ui->Cold->click();
+            break;
+        case 10://"Dry"
+            ui->Dry->click();
+            break;
+        case 11://"Heat"
+            ui->Heat->click();
+            break;
+        case 12://"Auto"
+            //data.Mode=0;
+            break;
+        case 13://"Auto"
+            //data.Fan=0;
+            break;
+        case 14:
+            ui->Fan->click();
+        case 15:
+            break;
         }
     }
-    else if(data.Station==0)
-    {
-        if(Falg_AirSwitch!=1){
-            on_AirSwitch_clicked();
-        }
-        ButtonClear(3);
+    else {
+        ui->TempQslider->setValue(Value);
+        Trigger_TempQslider();
     }
 }
 
@@ -162,9 +176,8 @@ void AirSystem::ButtonClear(int Switch)
     }
 }
 
-void AirSystem::Ui_Update()
+void AirSystem::Ui_Update()//界面更新
 {
-    qDebug()<<"App::StopReturn:"<<App::StopReturn;
     QString Temp=QString::number(data.Temp);
     ui->AirTemp->setText(Temp);//大字显示
     ui->TempQslider->setValue(Temp.toInt());//进度条
@@ -253,67 +266,83 @@ void AirSystem::SetInstruction(int Order)
 {
     if(Falg_AirSwitch==0){
         switch (Order) {
-        case 0:
+        case 0://开关
             emit RadioBroadcast("ZB20201001");
+            emit SendToWx("AirStation",0);
             break;
         case 1:
             emit RadioBroadcast("ZB20201011");
+            emit SendToWx("AirStation",1);
             break;
-        case 2:
+        case 2://低速
             emit RadioBroadcast("ZB20201021");
             data.Fan=1;
+            emit SendToWx("AirFan",1);
             break;
-        case 3:
+        case 3://中速
             emit RadioBroadcast("ZB20201031");
+            emit SendToWx("AirFan",2);
             data.Fan=2;
             break;
-        case 4:
+        case 4://高速
             emit RadioBroadcast("ZB20201041");
+            emit SendToWx("AirFan",3);
             data.Fan=3;
             break;
-        case 5:
+        case 5://左右摆风
             emit RadioBroadcast("ZB20201051");
+            emit SendToWx("Air_LR",1);
             data.Swing_L_R=1;
             break;
         case 6:
             emit RadioBroadcast("ZB20201061");
+            emit SendToWx("Air_LR",0);
             data.Swing_L_R=0;
             break;
-        case 7:
+        case 7://上下摆风
             emit RadioBroadcast("ZB20201071");
+            emit SendToWx("Air_UD",1);
             data.Swing_U_D=1;
             break;
         case 8:
             emit RadioBroadcast("ZB20201081");
+            emit SendToWx("Air_UD",0);
             data.Swing_U_D=0;
             break;
-        case 9:
+        case 9://制冷
             emit RadioBroadcast("ZB20201091");
+            emit SendToWx("Air_Mode",1);
             data.Mode=1;
             break;
-        case 10:
+        case 10://除湿
             emit RadioBroadcast("ZB20201101");
+            emit SendToWx("Air_Mode",3);
             data.Mode=3;
             break;
-        case 11:
+        case 11://暖气
             emit RadioBroadcast("ZB20201111");
+            emit SendToWx("Air_Mode",2);
             data.Mode=2;
             break;
-        case 12:
+        case 12://智能
             emit RadioBroadcast("ZB20201121");
+            emit SendToWx("Air_Mode",0);
             data.Mode=0;
             break;
-        case 13:
+        case 13://风速--自动
             emit RadioBroadcast("ZB20201131");
+            emit SendToWx("AirFan",0);
             data.Fan=0;
             break;
-        case 14:
+        case 14://送风
             emit RadioBroadcast("ZB20201141");
+            emit SendToWx("Air_Mode",4);
             data.Mode=4;
             break;
         }
     }
-    emit Class_Update(data);
+
+    // emit Class_Update(data);
     //    QString SendData="ZB202011";
     //    SendData.insert(Order,6);
     //    qDebug()<<"SendData:"<<SendData;
@@ -326,62 +355,77 @@ void AirSystem::Trigger_TempQslider()
     SendData.insert(7,SetTemp);
     data.Temp=SetTemp.toInt();
     emit RadioBroadcast(SendData);
+    emit SendToWx("AirTemp",SetTemp.toInt());
 }
 
-void AirSystem::Implement()
+void AirSystem::Implement()//保存传过来数据，并执行
 {
     switch(data.Station){
     case 0:
         emit RadioBroadcast("ZB20201001");
+        emit SendToWx("AirStation",0);
         break;
     case 1:
         emit RadioBroadcast("ZB20201011");
+        emit SendToWx("AirStation",1);
         break;
     }
     switch(data.Fan){
     case 0:
         break;
-    case 1:
+    case 1://低
         emit RadioBroadcast("ZB20201021");
+        emit SendToWx("AirFan",1);
         break;
-    case 2:
+    case 2://中
         emit RadioBroadcast("ZB20201031");
+        emit SendToWx("AirFan",2);
         break;
-    case 3:
+    case 3://高
         emit RadioBroadcast("ZB20201041");
+        emit SendToWx("AirFan",3);
         break;
     }
     switch(data.Swing_L_R){
-    case 0:
+    case 0://左右摆风--关
         emit RadioBroadcast("ZB20201061");
+        emit SendToWx("Air_LR",0);
         break;
-    case 1:
+    case 1://--开
         emit RadioBroadcast("ZB20201051");
+        emit SendToWx("Air_LR",1);
         break;
     }
     switch(data.Swing_U_D){
-    case 0:
+    case 0://上下摆风--关
         emit RadioBroadcast("ZB20201081");
+        emit SendToWx("Air_UD",0);
         break;
-    case 1:
+    case 1://--开
         emit RadioBroadcast("ZB20201071");
+        emit SendToWx("Air_UD",1);
         break;
     }
     switch(data.Mode){
-    case 0:
+    case 0://智能
         emit RadioBroadcast("ZB20201121");
+        emit SendToWx("Air_Mode",0);
         break;
-    case 1:
+    case 1://制冷
         emit RadioBroadcast("ZB20201091");
+        emit SendToWx("Air_Mode",1);
         break;
-    case 2:
+    case 2://暖气
         emit RadioBroadcast("ZB20201111");
+        emit SendToWx("Air_Mode",2);
         break;
-    case 3:
+    case 3://除湿
         emit RadioBroadcast("ZB20201101");
+        emit SendToWx("Air_Mode",3);
         break;
-    case 4:
+    case 4://送风
         emit RadioBroadcast("ZB20201141");
+        emit SendToWx("Air_Mode",4);
         break;
     }
     QString SendData="ZB202011";
@@ -415,6 +459,7 @@ void AirSystem::on_AirSwitch_clicked()
         Ui_Update();
         //------重置------
         Falg_AirSwitch=0;
+
     }
     else if(Falg_AirSwitch==0)
     {
@@ -429,7 +474,7 @@ void AirSystem::on_AirSwitch_clicked()
         ButtonClear(3);
         //-----发到执行器上---
         emit RadioBroadcast("ZB20201001");
-
+        emit SendToWx("AirStation",0);
     }
 }
 
@@ -527,8 +572,5 @@ void AirSystem::Image_Init()
     QIcon icon3 = QIcon(filePath3);
     QPixmap m_pic3 = icon3.pixmap(icon.actualSize(QSize(71, 71)));//size自行调整
     ui->SwingUD_P->setPixmap(m_pic3);
-
-
-
 }
 

@@ -18,7 +18,7 @@ public slots:
     void Handle_Data(QString Data);
     void Handle_Data_Esp(QString Data);
 signals:
-    void StatusSignals();
+    void StatusSignals(int,int);
     void BrightnessSignals(QString);
 };
 

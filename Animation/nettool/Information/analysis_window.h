@@ -12,7 +12,6 @@ private:
     int Humi=0;
     int AQi=0;
     int Co2=0;
-
     QList<int>test;
 public:
      void SetStatus(int Temp,int PM25,int Humi,int AQi)
@@ -63,7 +62,7 @@ public slots:
     void Handle_Air(QString Data);
     void AirQuality_Decode(int Function,int Sub,int Value);
 signals:
-    void Window_Data(int,int,int);
+    void Window_Data(int,int);
     void AirQuality_Data(int,int,int);
 };
 

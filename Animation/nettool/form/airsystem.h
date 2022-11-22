@@ -7,6 +7,7 @@
 #include "app.h"
 #include <QTimer>
 #include <analysis_air.h>
+
 namespace Ui {
 class AirSystem;
 }
@@ -23,10 +24,11 @@ public:
 private:
     int Falg_Update=0;
     int Falg_AirSwitch=1;
+    int StopFalg=0;
 
 public slots:
     //-----UiData
-    void ReceiveData(const Data VarValue);
+    void ReceiveData(const Data VarValue,int);
     void ButtonClear(int Switch);
     void Ui_Update();
     void SwitchButton_U_D(int Falg);
@@ -37,7 +39,7 @@ public slots:
 signals:
     void SendClose();
     void RadioBroadcast(QString);
-    void Class_Update(Data data);
+    void SendToWx(QString,int);
 
 private slots:
     void on_BackMain_clicked();

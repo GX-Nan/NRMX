@@ -9,7 +9,7 @@ WindMode::WindMode(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
-   // this->setAttribute(Qt::WA_TranslucentBackground);
+    // this->setAttribute(Qt::WA_TranslucentBackground);
     ShawDowm();
 }
 
@@ -47,6 +47,7 @@ void WindMode::on_SeaMode_clicked()
     ButtonStylePlan(8,1,8,8,8);
     BackgroundPlan(1,3,0,2,4);
     emit RadioBroadcast("ZB60101071");
+    emit SendToWx("WindMode",7);
 }
 
 void WindMode::on_SurroundMode_clicked()
@@ -54,6 +55,7 @@ void WindMode::on_SurroundMode_clicked()
     ButtonStylePlan(8,8,8,1,8);
     BackgroundPlan(3,1,0,2,4);
     emit RadioBroadcast("ZB60101081");
+    emit SendToWx("WindMode",8);
 }
 
 void WindMode::on_NaturalMode_clicked()
@@ -61,6 +63,7 @@ void WindMode::on_NaturalMode_clicked()
     ButtonStylePlan(8,8,1,8,8);
     BackgroundPlan(2,1,0,3,4);
     emit RadioBroadcast("ZB60101051");
+    emit SendToWx("WindMode",5);
 }
 
 void WindMode::on_StereoscopicMode_clicked()
@@ -68,29 +71,10 @@ void WindMode::on_StereoscopicMode_clicked()
     ButtonStylePlan(1,8,8,8,8);
     BackgroundPlan(0,1,2,3,4);
     emit RadioBroadcast("ZB60101061");
+    emit SendToWx("WindMode",6);
 }
 
-void WindMode::Ui_Update(int Falg)
-{
-    switch(Falg)
-    {
-    case 0:
-        Clear();
-        break;
-    case 1:
-        ButtonStylePlan(8,8,1,8,8);
-        break;
-    case 2:
-        ButtonStylePlan(1,8,8,8,8);
-        break;
-    case 3:
-        ButtonStylePlan(8,1,8,8,8);
-        break;
-    case 4:
-        ButtonStylePlan(8,8,8,1,8);
-        break;
-    }
-}
+
 
 void WindMode::ButtonStylePlan(int i, int i2, int i3, int i4,int i5)
 {
@@ -112,6 +96,29 @@ void WindMode::BackgroundPlan(int i, int i2, int i3, int i4,int i5)
     list[i5]->setStyleSheet("background-color: rgb(255, 255, 255);border-radius:15px;");
 }
 
+void WindMode::ModeCtrl(int value)
+{
+    switch(value)
+    {
+    case 0:
+        ui->CloseMode->click();
+        break;
+    case 1:
+        ui->NaturalMode->click();
+        break;
+    case 2:
+        ui->StereoscopicMode->click();
+        break;
+    case 3:
+        ui->SeaMode->click();
+        break;
+    case 4:
+        ui->SurroundMode->click();
+        break;
+    }
+
+}
+
 void WindMode::Clear()
 {
     ButtonStyle(ui->StereoscopicMode,8,35);
@@ -129,6 +136,7 @@ void WindMode::Enable(bool Falg)
 
 void WindMode::on_CloseMode_clicked()
 {
+    //Clear();
     BackgroundPlan(4,1,2,3,0);
-    emit RadioBroadcast("ZB60101041");
+    emit SendToWx("WindMode",0);
 }

@@ -70,18 +70,18 @@ static const uint qt_meta_data_Analysis_Wind[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   49,    2, 0x06 /* Public */,
-       5,    1,   52,    2, 0x06 /* Public */,
+       1,    2,   49,    2, 0x06 /* Public */,
+       5,    1,   54,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    1,   55,    2, 0x0a /* Public */,
-       9,    1,   58,    2, 0x0a /* Public */,
-      10,    1,   61,    2, 0x0a /* Public */,
-      11,    1,   64,    2, 0x0a /* Public */,
-      13,    1,   67,    2, 0x0a /* Public */,
+       7,    1,   57,    2, 0x0a /* Public */,
+       9,    1,   60,    2, 0x0a /* Public */,
+      10,    1,   63,    2, 0x0a /* Public */,
+      11,    1,   66,    2, 0x0a /* Public */,
+      13,    1,   69,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    4,    2,
     QMetaType::Void, 0x80000000 | 6,    4,
 
  // slots: parameters
@@ -100,7 +100,7 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         Analysis_Wind *_t = static_cast<Analysis_Wind *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->Wind_UiData((*reinterpret_cast< const Wind_Data(*)>(_a[1]))); break;
+        case 0: _t->Wind_UiData((*reinterpret_cast< const Wind_Data(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->AirQuality_Data((*reinterpret_cast< const AirQuality(*)>(_a[1]))); break;
         case 2: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
         case 3: _t->Handle_Data_Wind((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -112,7 +112,7 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Analysis_Wind::*)(const Wind_Data );
+            using _t = void (Analysis_Wind::*)(const Wind_Data , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Analysis_Wind::Wind_UiData)) {
                 *result = 0;
                 return;
@@ -165,9 +165,9 @@ int Analysis_Wind::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Analysis_Wind::Wind_UiData(const Wind_Data _t1)
+void Analysis_Wind::Wind_UiData(const Wind_Data _t1, int _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 

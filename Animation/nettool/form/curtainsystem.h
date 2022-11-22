@@ -4,6 +4,9 @@
 #include <QDialog>
 #include <QMap>
 #include <QDebug>
+#include <QCoreApplication>
+#include <unistd.h>
+#include <QTimer>
 
 namespace Ui {
 class CurtainSystem;
@@ -14,6 +17,7 @@ private:
     QMap<QString,int> MessageCurtains;
 public:
     StatusCurtains(){
+        MessageCurtains.insert("0",0);
         MessageCurtains.insert("1",0);
         MessageCurtains.insert("2",0);
         MessageCurtains.insert("3",0);
@@ -40,10 +44,14 @@ public:
     ~CurtainSystem();
     void Shawdow();
     StatusCurtains status;
-    int SingleFalg=1;
+    int SingleFalg=0;
+    QTimer *Timer;
+    int AllCurtainsFalg=0;
+    int AllCurtainsStop=1;
 signals:
     void SendClose();
     void RadioBroadcast(QString);
+    void SendToWx(QString,int);
 private slots:
     void on_BackMain_clicked();
     void ButtonStyle(QPushButton* Name,int Offset,int BlurRadius);
@@ -55,10 +63,12 @@ private slots:
     void on_Device_Slider_valueChanged(int value);
     void on_horizontalSlider_2_valueChanged(int value);
     void CurtainsStatus(int value);
+    void AllCurtains();
 
 public slots:
     void ReceiveData(QString);
     void BrightnessShow(QString);
+    void Ui_Update(int,int);
 
 private:
     Ui::CurtainSystem *ui;

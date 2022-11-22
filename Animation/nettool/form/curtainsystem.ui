@@ -164,7 +164,7 @@ background-color: white;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="Down">
+   <widget class="QPushButton" name="Stop">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -207,7 +207,7 @@ background-color: white;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="Stop">
+   <widget class="QPushButton" name="Down">
     <property name="geometry">
      <rect>
       <x>630</x>

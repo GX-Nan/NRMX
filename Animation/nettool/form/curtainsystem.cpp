@@ -9,7 +9,8 @@ CurtainSystem::CurtainSystem(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
-    //this->setAttribute(Qt::WA_TranslucentBackground);
+    Timer=new QTimer(this);
+    connect(Timer,&QTimer::timeout,this,&CurtainSystem::AllCurtains);
     Shawdow();
 }
 
@@ -56,7 +57,7 @@ void CurtainSystem::on_Up_clicked()
     ui->Up->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Down->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
     ui->Stop->setStyleSheet("background-color: rgb(255, 255,255 );color:black;border-radius:15px;");
-    SetInstruction(1);
+    SetInstruction(0);
 }
 
 void CurtainSystem::on_Stop_clicked()
@@ -74,7 +75,7 @@ void CurtainSystem::on_Down_clicked()
     ui->Down->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Stop->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
     ui->Up->setStyleSheet("background-color: rgb(255, 255,255 );color:black;border-radius:15px;");
-    SetInstruction(0);
+    SetInstruction(1);
 }
 
 void CurtainSystem::ButtonStylePlan(int Up,int Down,int Stop)
@@ -86,51 +87,91 @@ void CurtainSystem::ButtonStylePlan(int Up,int Down,int Stop)
 
 void CurtainSystem::SetInstruction(int Order)
 {
-    if(SingleFalg==1){
-        QString OpenWindow="ZB1010011";
-        QString CloseWindow="ZB1010021";
-        QString StopWindow="ZB1010031";
-        switch (Order) {
-        case 0:
-            OpenWindow.insert(6,ui->CurrentNumber->text());
-            emit RadioBroadcast(OpenWindow);
-            break;
-        case 1:
-            CloseWindow.insert(6,ui->CurrentNumber->text());
-            emit RadioBroadcast(CloseWindow);
-            break;
-        case 4:
-            StopWindow.insert(6,ui->CurrentNumber->text());
-            emit RadioBroadcast(StopWindow);
-            break;
+    QString Up="ZB1020001";
+    QString Down="ZB1020011";
+    QString Stop="ZB1020041";
+    QString WxData="Curtain_";
+    if(ui->CurrentNumber->text()=="0")
+    {
+        for(int i=0;i<=3;i++){
+            WxData.insert(WxData.length(),QString::number(i));
+            qDebug()<<WxData;
+            emit SendToWx(WxData,Order);
+            WxData.remove(WxData.length()-1,WxData.length());
         }
-        if(ui->CurrentNumber->text()=="0"){
-            status.MessageInsert("1",Order);
-            status.MessageInsert("2",Order);
-            status.MessageInsert("3",Order);
+    }
+    else {
+        WxData.insert(8,ui->CurrentNumber->text());
+        emit SendToWx(WxData,Order);
+        qDebug()<<"Order:"<<Order<<"WxData:"<<WxData;
+    }
+
+    switch (Order) {
+    case 1:
+        if(ui->CurrentNumber->text()!="0"){
+            Down.insert(6,ui->CurrentNumber->text());
+            emit RadioBroadcast(Down);
         }
         else {
-            status.MessageInsert(ui->CurrentNumber->text(),Order);
+            Timer->stop();
+            AllCurtainsFalg=1;
+            Timer->start(800);
         }
-        qDebug()<<"Values:"<<status.Values();
+        emit SendToWx(WxData,1);
+        break;
+    case 0:
+        if(ui->CurrentNumber->text()!="0"){
+            Up.insert(6,ui->CurrentNumber->text());
+            emit RadioBroadcast(Up);
+        }
+        else {
+            Timer->stop();
+            AllCurtainsFalg=0;
+            Timer->start(800);
+        }
+        emit SendToWx(WxData,0);
+        break;
+    case 4:
+        if(ui->CurrentNumber->text()!="0"){
+            Stop.insert(6,ui->CurrentNumber->text());
+            emit RadioBroadcast(Stop);
+        }
+        else {
+            Timer->stop();
+            AllCurtainsFalg=4;
+            Timer->start(800);
+        }
+        emit SendToWx(WxData,4);
+        break;
     }
+    status.MessageInsert(ui->CurrentNumber->text(),Order);
 }
 
-void CurtainSystem::ReceiveData(QString)
+void CurtainSystem::ReceiveData(QString)//貌似没有用
 {
 
 }
 
-void CurtainSystem::BrightnessShow(QString Value)
+void CurtainSystem::BrightnessShow(QString Value)//室内光照强度
 {
     ui->InsideBrightness->setText(Value);
 }
 
+void CurtainSystem::Ui_Update(int Sub, int Value)
+{
+    ui->Device_Slider->setValue(Sub);
+    CurtainsStatus(Value);
+    qDebug()<<"Curtain--Update";
+}
+
 void CurtainSystem::on_Device_Slider_valueChanged(int value)
 {
+    SingleFalg=0;
     ui->CurrentNumber->setText(QString::number(value));
     int Curtainstatus= status.GetMessage(QString::number(value));
     CurtainsStatus(Curtainstatus);
+
+    qDebug()<<"Curtain--Device";
 }
 
 void CurtainSystem::on_horizontalSlider_2_valueChanged(int value)
@@ -140,18 +181,49 @@ void CurtainSystem::on_horizontalSlider_2_valueChanged(int value)
 
 void CurtainSystem::CurtainsStatus(int value)
 {
-    SingleFalg=0;
-    switch(value)
-    {
-    case 0:
-        ui->Down->click();
-        break;
-    case 1:
-        ui->Up->click();
-        break;
-    case 4:
-        ui->Stop->click();
-        break;
+    if(SingleFalg==1){
+        switch(value)
+        {
+        case 1:
+            ui->Down->click();
+            qDebug()<<"down-------------Curtains";
+            break;
+        case 0:
+            ui->Up->click();
+            qDebug()<<"Up-------------Curtains";
+            break;
+        case 4:
+            ui->Stop->click();
+            break;
+        }
     }
     SingleFalg=1;
+}
+
+void CurtainSystem::AllCurtains()
+{
+    QString Up="ZB1020001";
+    QString Down="ZB1020011";
+    QString Stop="ZB1020041";
+
+    if(AllCurtainsStop!=4){
+        if(AllCurtainsFalg==1){
+            Down.insert(6,QString::number(AllCurtainsStop));
+            emit RadioBroadcast(Down);
+            qDebug()<<"Down:"<<Down;
+        }
+        else if(AllCurtainsFalg==0){
+            Up.insert(6,QString::number(AllCurtainsStop));
+            emit RadioBroadcast(Up);
+        }
+        else if(AllCurtainsFalg==4){
+            Stop.insert(6,QString::number(AllCurtainsStop));
+            emit RadioBroadcast(Stop);
+        }
+        AllCurtainsStop=AllCurtainsStop+1;
+    }
+    else {
+        AllCurtainsStop=1;
+        Timer->stop();
+    }
 }

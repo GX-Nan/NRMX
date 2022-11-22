@@ -8,7 +8,6 @@ frmTcpServer::frmTcpServer(QWidget *parent) : QObject(parent)
     this->initIP();
     this->initConfig();
     qDebug()<<"服务器界面线程ID"<<QThread::currentThread();
-    StopTcp=0;//初始化
 }
 
 frmTcpServer::~frmTcpServer()
@@ -28,13 +27,6 @@ void frmTcpServer::initForm()
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(on_btnSend_clicked()));
     //----------------
-
-    Door_handle=new Analysis_Door(this);
-    connect(this,&frmTcpServer::Server_Receive_Data,Door_handle,&Analysis_Door::Receive_Data);
-    Wind_handle=new Analysis_Wind(this);
-
-    connect(this,&frmTcpServer::Server_Receive_Data,Wind_handle,&Analysis_Wind::Receive_Data);
-
     //    ui->cboxInterval->addItems(App::Intervals);
     //    ui->cboxData->addItems(App::Datas);
     //    QUIHelper::setLabStyle(ui->labCount, 3);
@@ -123,10 +115,11 @@ void frmTcpServer::sendData(const QString &ip, int port, const QString &data)
 
 void frmTcpServer::receiveData(const QString &ip, int port, const QString &data)
 {
-    App::StopReturn=true;
+    qDebug()<<"服务器线程ID"<<QThread::currentThread();
+//    App::StopReturn=true;
     qDebug()<<"App::StopReturn:"<<App::StopReturn;
     QString str = QString("[%1:%2] %3").arg(ip).arg(port).arg(data);
-    // QVector<QString>(Manage);
+   // QVector<QString>(Manage);
     QMultiMap<int,QString>(System);
     bool Judge =(data.length())%10;
     qDebug()<<"data------------------------:"<<data<<"data.length()"<<data.length();
@@ -145,6 +138,9 @@ void frmTcpServer::receiveData(const QString &ip, int port, const QString &data)
                 }
                 else if(Transition.at(2)=="3"){
                     System.insert(3,Transition);
+                    tcpServer->writeData(Transition);
+                    qDebug()<<"innnnnn------RadioBroadcast-----3";
+                    qDebug()<<"Transition"<<Transition;
                 }
                 else if(Transition.at(2)=="4"){
                     System.insert(4,Transition);
@@ -198,15 +194,13 @@ void frmTcpServer::on_btnClose_clicked()
 
 void frmTcpServer::RadioBroadcast(QString data)//广播
 {
-    if(StopTcp==0){
-        if (!isOk) {
-            return;
-        }
-        else
-        {
-            tcpServer->writeData(data);
-            append(0,data);
-        }
+    if (!isOk) {
+        return;
+    }
+    else
+    {
+        tcpServer->writeData(data);
+        append(0,data);
     }
 }
 

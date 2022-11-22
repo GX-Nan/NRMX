@@ -54,15 +54,15 @@ function getDeviceInfo(that) {
                         duration: 900 // 提示窗停留时间，默认1500ms
                     })
                     ControlConnect = true
-                }
-            }
-        },
+                } 
+            }  
+        }, 
 
         fail(res) {
             console.log("请求失败---2")
             wx.showToast({
                 title: '设备未连接', // 标题
-                icon: 'success', // 图标类型，默认success
+                icon: 'false', // 图标类型，默认success
                 duration: 900 // 提示窗停留时间，默认1500ms
             })
             deviceConnected = false
@@ -97,6 +97,7 @@ function deviceInit(that) //对信息的回传
         success(res) {
             var datattest
             datattest = res.data.data[2].current_value
+            //console.log(res.data.data);
             let LightData = [{
                 Chandelier1: res.data.data[6].current_value, //吊灯开灯状态
                 Chandelier2: res.data.data[7].current_value,
@@ -139,6 +140,8 @@ function deviceInit(that) //对信息的回传
                 Air_UD: res.data.data[4].current_value,
                 AirMode: res.data.data[5].current_value,
                 AirTemp: res.data.data[19].current_value,
+                OutSideTemp:res.data.data[47].current_value,
+                OutSideTemp:res.data.data[48].current_value,
             }]
             let CurtainsData = [{
                 Curtain_Status_1: res.data.data[14].current_value,
@@ -154,6 +157,7 @@ function deviceInit(that) //对信息的回传
             let WindData = [{ 
                 WindSpeed: res.data.data[17].current_value,
                 WindMode: res.data.data[18].current_value,
+                Weather:res.data.data[49].current_value,
             }] 
             //--------------------------------主界面赋值--灯光
             that.setData({ 
@@ -252,7 +256,7 @@ function SendData(hardware_id) //发送指令
         url: sendCommandURL + "?device_id=" + deviceid,
         method: 'POST',
         header: {
-            'content-type': 'application/x-www-form-urlencoded',
+            'content-type': 'application/x-www-form-urlencoded', 
             "api-key": apikey
         },
         // data: hardware_id + ":{" + switch_value + "}",      //TODO 设计自定义语言 blueled:{V}, 预感这边可能会有问题
@@ -314,7 +318,7 @@ Page({
     },
     Air_NavigateTo: function () {
         wx.navigateTo({
-            url: '../Air/Air?id='
+            url: '../Air/Air?id=' 
         })
     },
     Wind_NavigateTo: function () {
@@ -329,28 +333,22 @@ Page({
             this.setData({
                 AllAuxiliary_Bright: 100
             }) 
-            SendToRasp = "2030" + this.data.AllAuxiliary_Bright - 1
-            // SendData(2060001) //主燈
-            // SendData(2050001) //射灯
-            // SendData(2040104) //吊灯 
+            SendToRasp = "20300" + "99"
         } else { 
             this.setData({
                 AllAuxiliary_Bright: 0
             })
             SendToRasp = "20300" + "00"
-            // SendData(2060000) //主燈
-            // SendData(2050000) //射灯
-            // SendData(2040105) //吊灯
         }
         SendData(SendToRasp)
     },
 
-    //---
+    //--- 
     AuxiliaryLight_All(e) {
         var data = e.detail.value - 1
         var SendToRasp
         if (0 < data && data < 10) {
-            data = "0" + data
+            data = "0" + data 
         } else if (data <= 0) {
             data = "00"
         }
@@ -374,16 +372,12 @@ Page({
     Switch_Curtains(e) {
         var data = e.detail.value ? 1 : 0
         var SendToRasp
-        SendToRasp = "102010" + data
-        SendData(SendToRasp)
-        SendToRasp = "102020" + data
-        SendData(SendToRasp)
-        SendToRasp = "102030" + data
+        SendToRasp = "102000" + data
         SendData(SendToRasp)
     },
     Switch_Window(e) {
         var data = e.detail.value ? 1 : 0
-        if (data != 0) {
+        if (data != 0) { 
             SendData(1010101)
         } else { 
             SendData(1010102)

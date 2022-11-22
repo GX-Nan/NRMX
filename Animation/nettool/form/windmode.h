@@ -25,12 +25,12 @@ public slots://回头改成友元函数
     void on_SurroundMode_clicked();
     void on_NaturalMode_clicked();
     void on_StereoscopicMode_clicked();
-    void Ui_Update(int);
     void ButtonStylePlan(int,int,int,int,int);
     void BackgroundPlan(int,int,int,int,int);
-
+    void ModeCtrl(int);
 signals:
     void RadioBroadcast(QString);
+    void SendToWx(QString,int);
 private slots:
     void on_CloseMode_clicked();
 

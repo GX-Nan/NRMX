@@ -44,7 +44,7 @@ public slots:
     void Data_Update(Wind_Data Lastest);
     void Wind_Decode(int Value);
 signals:
-    void Wind_UiData(const Wind_Data Data);
+    void Wind_UiData(const Wind_Data Data,int);
     void AirQuality_Data(const AirQuality Data);
 };
 

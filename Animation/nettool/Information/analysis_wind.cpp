@@ -75,20 +75,20 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     //------------------
     switch(Function.toInt())
     {
+    case 2:
+         Air.Co2=Value.toInt();
+        break;
     case 4:
         Air.PM25=Value.toInt();
         break;
     case 5:
-         Air.Co2=Value.toInt();
+         Air.PM10=Value.toInt();
         break;
-    case 6:
-        Air.TVCO=Value.toInt();
-        break;
-    case 7:
+       case 6:
         Air.HCHO=Value.toInt();
         break;
-    case 8:
-        Air.PM10=Value.toInt();
+    case 9:
+         Air.TVCO=Value.toInt();
         break;
     }
     emit AirQuality_Data(Air);
@@ -108,5 +108,5 @@ void Analysis_Wind::Wind_Decode(int Value)
     else {
         data.Mode=Value-4;
     }
-    emit Wind_UiData(data);
+    emit Wind_UiData(data,Value);
 }

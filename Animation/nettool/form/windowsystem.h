@@ -2,34 +2,13 @@
 #define WINDOWSYSTEM_H
 
 #include <QDialog>
-
 #include <analysis_window.h>
-
+#include <weathercrawler.h>
+#include <QMetaType>
+#include <QVariant>
 namespace Ui {
 class WindowSystem;
 }
-
-class StatusWindow{
-private:
-    QMap<QString,int> MessageCurtains;
-public:
-    StatusWindow(){
-        MessageCurtains.insert("1",0);
-        MessageCurtains.insert("2",0);
-    };
-    void MessageInsert(QString Key,int Value)
-    {
-       MessageCurtains.insert(Key,Value);
-    }
-    int GetMessage(QString Key)
-    {
-        return MessageCurtains.value(Key);
-    }
-    QList<int> Values()
-    {
-        return MessageCurtains.values();
-    }
-};
 
 class WindowSystem : public QDialog
 {
@@ -39,16 +18,16 @@ public:
     explicit WindowSystem(QWidget *parent = nullptr);
     ~WindowSystem();
     int WindowStatus=0;
-    QMap<int,int>data;
-    StatusWindow status;
-private:
     int SingleFalg=1;
+    QMap<int,int>data;
 signals:
     void SendClose();
     void RadioBroadcast(QString);
     void OutsideStatus(int,int,int);
+    void SendToWx(QString,int);
 public:
     void Shadow();
+
 private slots:
     void on_BackMain_clicked();
     void ButtonStyle(QPushButton* Name,int Offset,int BlurRadius);
@@ -62,13 +41,18 @@ private slots:
     void XprogressbarIfconfig();
     void ButtonStylePlan(int,int,int);
     void Image_Init();
-    void WindowsStatus(int value);
 
 public slots:
     void AirQuality_Status(int,int,int);
-    void Window_Status(int,int,int);
+    void Window_Status(int,int);
     void SetInstruction(int);
     void Button_Init();
+    void CrawlAir(QMap<QString,QString>);
+    void CrawlWeather(QMap<QString,QString>);
+    void CrawlActive(QMap<QString,QString>);
+    void testVoid(const CrawlMessage);
+
+
 private:
     Ui::WindowSystem *ui;
 };

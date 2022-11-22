@@ -186,7 +186,6 @@ void tcp_client_select_task(void *arg)
                     {
                         for (int i = 0; i <= strlen(CatchNumber) / 10; i++)
                         {
-
                             strncpy(TopNumber, CatchNumber, 10); //拷贝副本
 
                             strncpy(TopNumber_2, CatchNumber, 10);
@@ -199,7 +198,7 @@ void tcp_client_select_task(void *arg)
                             //26--->up 27---->stop  25----》down
                             if (strcmp(Main, "102") == 0)
                             {
-                                if (strcmp(Sub, "1") == 0||strcmp(Sub, "0") == 0) //尝试匹配字符
+                                if (strcmp(Sub, "2") == 0||strcmp(Sub, "0") == 0) //尝试匹配字符
                                 {
                                     int Addtion = (atoi(Data));
                                     switch (Addtion)

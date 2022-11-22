@@ -4,8 +4,6 @@
 #include <QDialog>
 #include <QLabel>
 #include <QDebug>
-#include <app.h>
-
 
 class Status{
 
@@ -30,7 +28,9 @@ public:
         MessageLight.insert("LedMeet2","0");
         MessageLight.insert("Chandelier1","0");
         MessageLight.insert("Chandelier2","0");
-        qDebug()<<"Messagelight";
+    }
+    ~Status(){
+
     }
     void SetColor(int color)
     {
@@ -91,10 +91,12 @@ public:
     int AllLight_Status=0;
     int AllSpot_Status=0;
     int AllLed_Status=0;
+    int SpotStopFalg=0;
+    int LedStopFlag=0;
 signals:
     void SendClose();
     void RadioBroadcast(QString);
-    void StopTcp(int);
+    void SendToWx(QString,int);
 private slots:
     void on_BackMain_clicked();
     void ButtonStyle_Label(QLabel* Name,int Offset,int BlurRadius);
@@ -111,6 +113,8 @@ private slots:
     void on_Device_Slider_valueChanged(int value);
     void Light_Switch(int Falg);
     void Image_Init();
+    void SpotInstructionSet(int,int);
+    void LedInstructionSet(int,int);
 
 
     void on_LedChoice_clicked();

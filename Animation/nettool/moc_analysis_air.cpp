@@ -62,15 +62,15 @@ static const uint qt_meta_data_Analysis_Air[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   34,    2, 0x06 /* Public */,
+       1,    2,   34,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   37,    2, 0x0a /* Public */,
-       6,    1,   40,    2, 0x0a /* Public */,
-       7,    1,   43,    2, 0x0a /* Public */,
+       4,    1,   39,    2, 0x0a /* Public */,
+       6,    1,   42,    2, 0x0a /* Public */,
+       7,    1,   45,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, 0x80000000 | 3,    3,
+    QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    3,    2,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 5,    3,
@@ -86,7 +86,7 @@ void Analysis_Air::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Analysis_Air *_t = static_cast<Analysis_Air *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->Air_UiValue((*reinterpret_cast< const Data(*)>(_a[1]))); break;
+        case 0: _t->Air_UiValue((*reinterpret_cast< const Data(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
         case 2: _t->Handle_Data((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 3: _t->Data_Update((*reinterpret_cast< Data(*)>(_a[1]))); break;
@@ -113,7 +113,7 @@ void Analysis_Air::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Analysis_Air::*)(const Data );
+            using _t = void (Analysis_Air::*)(const Data , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Analysis_Air::Air_UiValue)) {
                 *result = 0;
                 return;
@@ -161,9 +161,9 @@ int Analysis_Air::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Analysis_Air::Air_UiValue(const Data _t1)
+void Analysis_Air::Air_UiValue(const Data _t1, int _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

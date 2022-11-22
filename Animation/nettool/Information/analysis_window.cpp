@@ -12,19 +12,26 @@ Analysis_Window::~Analysis_Window()
 
 void Analysis_Window::Receive_Data(QMultiMap<int, QString> Data)
 {
-
     QStringList StringList_Window=Data.values(1);
-    QStringList StringList_AirQuality=Data.values(7);
+    QStringList StringList_AirQuality=Data.values(3);
     qDebug()<<"StringList_AirQuality:"<<StringList_AirQuality;
     /*
     --1 窗帘
 //*/
-    QString HandleData_2;
-    int Number_2 =StringList_AirQuality.count();
-    for(int i=0;i<Number_2;i++)
+    QString HandleData;
+    int Number =StringList_Window.count();
+    for(int i=0;i<Number;i++)
     {
-        HandleData_2=StringList_AirQuality.at(i);
-        Handle_Air(HandleData_2);
+        HandleData=StringList_Window.at(i);
+        Handle_Data(HandleData);
+    }
+    //---空气质量
+    QString HandleData_Air;
+    int Number_Air =StringList_AirQuality.count();
+    for(int i=0;i<Number_Air;i++)
+    {
+        HandleData_Air=StringList_AirQuality.at(i);
+        Handle_Air(HandleData_Air);
     }
 }
 
@@ -48,8 +55,9 @@ void Analysis_Window::Handle_Data(QString Data)
     }
     //------------------
     //----得写转了多少 窗户的状态是多少
+    qDebug()<<"Function---window:"<<Function;
     if(Function.toInt()==1){
-        emit Window_Data(Function.toInt(),Sub.toInt(),Value.toInt());
+        emit Window_Data(Sub.toInt(),Value.toInt());
     }
 }
 
@@ -80,22 +88,22 @@ void Analysis_Window::Handle_Air(QString Data)
 void Analysis_Window::AirQuality_Decode(int Function, int Sub, int Value)//sub 是地区---> 1---珠海
 {
     qDebug()<<"AirQuality:"<<Value;
-    switch (Function) {
-    case 1:
-        setTemp(Value);
-        break;
-    case 2:
-        setPM25(Value);
-        break;
-    case 3:
-        setHumi(Value);
-        break;
-    case 4:
-        setCo2(Value);
-        break;
-    case 5:
-        setAQi(Value);
-        break;
-    }
+//    switch (Function) {
+//    case 1:
+//        setTemp(Value);
+//        break;
+//    case 2:
+//        setPM25(Value);
+//        break;
+//    case 3:
+//        setHumi(Value);
+//        break;
+//    case 4:
+//        setCo2(Value);
+//        break;
+//    case 5:
+//        setAQi(Value);
+//        break;
+//    }
     emit AirQuality_Data(Function,Sub,Value);
 }

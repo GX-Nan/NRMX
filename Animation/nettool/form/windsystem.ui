@@ -179,7 +179,7 @@ border:none;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="HighMode">
+    <widget class="QPushButton" name="MixMode">
      <property name="geometry">
       <rect>
        <x>20</x>

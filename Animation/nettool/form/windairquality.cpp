@@ -13,8 +13,6 @@ WindAirQuality::WindAirQuality(QWidget *parent) :
     ShawDowm();
     Xprogressbar_Init();
     Image_Init();
-
-
     //this->move(200,0);
 }
 
@@ -44,17 +42,26 @@ void WindAirQuality::Xprogressbar_Init()
         lineGradient.setColorAt(1.0, QColor("#338763"));
         XprogressList[i]->setValueBrush(lineGradient);
         XprogressList[i]->setValue(50);
-        XprogressList[i]->setRange(0,2000);
+        XprogressList[i]->setRange(0,100);
     }
+    XprogressList[0]->setRange(0,1000);
+    XprogressList[2]->setRange(0,1000);
 }
 
 void WindAirQuality::Xprogressbar_Update(AirQuality Data)
 {
+    qDebug()<<"Data.Co2:"<<Data.Co2;
     ui->Co2_Xprogress->setValue(Data.Co2);
     ui->HCHO_Xprogress->setValue(Data.HCHO);
     ui->TVCO_Xprogress->setValue(Data.TVCO);
     ui->PM25_Xprogress->setValue(Data.PM25);
     ui->PM10_Xprogress->setValue(Data.PM10);
+
+    ui->Co2_Label->setText(QString::number(Data.Co2)+"/mg");
+    ui->HCHO_Label->setText(QString::number(Data.HCHO)+"/mg");
+    ui->Tvco_Label->setText(QString::number(Data.TVCO)+"/mg");
+    ui->Pm25_Label->setText(QString::number(Data.PM25)+"/mg");
+    ui->Pm10_Label->setText(QString::number(Data.PM10)+"/mg");
     qDebug()<<"test----------update";
 }
 

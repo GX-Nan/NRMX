@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.ico</file>
+        <file>qt_zh_CN.qm</file>
+        <file>widgets.qm</file>
+        <file>Rain.png</file>
+        <file>Sun.png</file>
+        <file>Cloudy.png</file>
+        <file>Window/Mode.png</file>
+        <file>Suitable/Clothes.png</file>
+        <file>Suitable/home.png</file>
+        <file>Suitable/Sport.png</file>
+        <file>Suitable/WashCar.png</file>
+        <file>Suitable/Temp.png</file>
+        <file>Suitable/Hum.png</file>
+    </qresource>
+    <qresource prefix="/new/Window">
+        <file>Window/Close_White.png</file>
+        <file>Window/Close.png</file>
+        <file>Window/Open_White.png</file>
+        <file>Window/Open.png</file>
+    </qresource>
+    <qresource prefix="/new/Curtains">
+        <file>Curtains/Down_OFF.png</file>
+        <file>Curtains/Down_ON.png</file>
+        <file>Curtains/Stop_OFF.png</file>
+        <file>Curtains/Stop_ON.png</file>
+        <file>Curtains/Up_OFF.png</file>
+        <file>Curtains/Up_ON.png</file>
+    </qresource>
+</RCC>

@@ -16,6 +16,7 @@ void Analysis_Light::Receive_Data(QMultiMap<int, QString> Data)
     /*
     --2 窗帘
 */
+    qDebug()<<"DataStringList:"<<DataStringList;
     QString HandleData;
     int Number =DataStringList.count();
     for(int i=0;i<Number;i++)
@@ -27,7 +28,6 @@ void Analysis_Light::Receive_Data(QMultiMap<int, QString> Data)
 
 void Analysis_Light::Handle_Data(QString Data)
 {
-    qDebug()<<"处理";
     QString Sub;
     QString Value;
     QString Function;
@@ -45,7 +45,7 @@ void Analysis_Light::Handle_Data(QString Data)
         Value.append(Data.at(b));
     }
     //------------------
-    if(Function.toInt()==1||Function.toInt()==3){
+    if(Function.toInt()==0||Function.toInt()==1||Function.toInt()==3||Function.toInt()==4||Function.toInt()==5||Function.toInt()==6){
         emit StatusSignals(Function.toInt(),Sub.toInt(),Value.toInt());
         qDebug()<<"Function:"<<Function;
     }
