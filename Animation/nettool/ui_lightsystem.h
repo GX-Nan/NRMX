@@ -177,7 +177,6 @@ public:
 "}"));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/new/Led/Led/All_Light_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon1.addFile(QStringLiteral(":/new/Led/Led/AirSwitch-ON.png"), QSize(), QIcon::Normal, QIcon::On);
         AllLed_Status->setIcon(icon1);
         AllLed_Status->setIconSize(QSize(100, 50));
         AllLed_Status->setCheckable(true);

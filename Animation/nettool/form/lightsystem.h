@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QLabel>
 #include <QDebug>
+#include <QTime>
+#include<QTimer>
 
 class Status{
 
@@ -91,8 +93,18 @@ public:
     int AllLight_Status=0;
     int AllSpot_Status=0;
     int AllLed_Status=0;
-    int SpotStopFalg=0;
-    int LedStopFlag=0;
+    int SpotStopFalg=0;//停止射灯回传
+    int LedStopFlag=0;//停止Led灯回传
+    //------自动化数据
+    int IndoorLux=0;
+    QTimer *AutoTime;
+    int OutsideWeather=0;//1---晴天 2---多云 3---下雨
+    int location=0; //0---没有人 1---会议 2----吧台 3----办公
+    int ControlParameters=6;//P---->1:6 参数
+    int MiddayFalg=0;
+    int WorkTime=0;
+    int AllSpotStatus=0;
+
 signals:
     void SendClose();
     void RadioBroadcast(QString);
@@ -158,9 +170,15 @@ private slots:
     void on_LedAll_clicked();
 
     void on_SpotAll_clicked();
+    //----自动化
+    void AutoMode();
+    void AuxiliaryLightLogic();
+    void SpotLightLogic();
+
 
 public slots:
     void Light_Status(int Function,int Sub,int Value);
+    void GetWeather(int);
 
 private:
     Ui::LightSystem *ui;

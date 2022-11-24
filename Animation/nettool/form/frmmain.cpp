@@ -380,6 +380,7 @@ void frmMain::initConfig()//配置
     connect(WindowUi,&WindowSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
     connect(Analysis_window,&Analysis_Window::AirQuality_Data,WindowUi,&WindowSystem::AirQuality_Status);
     connect(Analysis_window,&Analysis_Window::Window_Data,WindowUi,&WindowSystem::Window_Status);
+    connect(WindowUi,&WindowSystem::SendWeather,LightUi,&LightSystem::GetWeather);
     //--Curtain----
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_cutarin,&Analysis_Cutarin::Receive_Data);//Tcp链接数据分析
     connect(CurtainUi,&CurtainSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);

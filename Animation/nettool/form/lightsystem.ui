@@ -192,8 +192,7 @@ border:none;
      </property>
      <property name="icon">
       <iconset resource="../other/main.qrc">
-       <normaloff>:/new/Led/Led/All_Light_OFF.png</normaloff>
-       <normalon>:/new/Led/Led/AirSwitch-ON.png</normalon>:/new/Led/Led/All_Light_OFF.png</iconset>
+       <normaloff>:/new/Led/Led/All_Light_OFF.png</normaloff>:/new/Led/Led/All_Light_OFF.png</iconset>
      </property>
      <property name="iconSize">
       <size>

@@ -25,9 +25,9 @@ signals:
     void RadioBroadcast(QString);
     void OutsideStatus(int,int,int);
     void SendToWx(QString,int);
+    void SendWeather(int);
 public:
     void Shadow();
-
 private slots:
     void on_BackMain_clicked();
     void ButtonStyle(QPushButton* Name,int Offset,int BlurRadius);
