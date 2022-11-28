@@ -16,6 +16,8 @@ AirSystem::AirSystem(QWidget *parent) :
     connect(ui->SwingUpDown,&SwitchButton::checkedChanged,this,&AirSystem::SwitchButton_U_D);
     connect(ui->SwingLeftRight,&SwitchButton::checkedChanged,this,&AirSystem::SwitchButton_L_R);
     connect(ui->TempQslider,&QSlider::sliderReleased,this,&AirSystem::Trigger_TempQslider);
+    AutoTime=new QTimer(this);
+    connect(AutoTime,&QTimer::timeout,this,&AirSystem::AutoMode);
     ui->FunctionPanel->setEnabled(0);
     Image_Init();
 }
@@ -36,7 +38,6 @@ void AirSystem::Switch_Ifconfig()
         Switch[i]->setShowText(false);
         Switch[i]->setAnimation(true);
     }
-
 }
 
 void AirSystem::Shawdow()
@@ -68,35 +69,41 @@ void AirSystem::Shawdow()
     Group_Fan->setColor(/*Qt::gray*/QColor(43, 43, 43));
     Group_Fan->setBlurRadius(35);
     ui->Group_Fan->setGraphicsEffect(Group_Fan);
+
+    QGraphicsDropShadowEffect *AutoMode = new QGraphicsDropShadowEffect(this);
+    AutoMode->setOffset(8);
+    AutoMode->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    AutoMode->setBlurRadius(35);
+    ui->AutoSwitch->setGraphicsEffect(AutoMode);
 }
 
 void AirSystem::ReceiveData(Data VarValue,int Value)//从分控接受后--界面更新
 {
     data=VarValue;
-//    qDebug()<<"AirReceiveData";
-//    if(data.Station==1){
+    //    qDebug()<<"AirReceiveData";
+    //    if(data.Station==1){
 
-//        if(Falg_AirSwitch!=0){
-//            on_AirSwitch_clicked();//按下按钮---做阴影特性
-//        }
-//    }
-//    else if(data.Station==0)
-//    {
-//        if(Falg_AirSwitch!=1){
-//            on_AirSwitch_clicked();
-//        }
-//        ButtonClear(3);
-//    }
+    //        if(Flag_AirSwitch!=0){
+    //            on_AirSwitch_clicked();//按下按钮---做阴影特性
+    //        }
+    //    }
+    //    else if(data.Station==0)
+    //    {
+    //        if(Flag_AirSwitch!=1){
+    //            on_AirSwitch_clicked();
+    //        }
+    //        ButtonClear(3);
+    //    }
     qDebug()<<"Air---station";
     if(Value<16){
         switch (Value) {
         case 0:
-            if(Falg_AirSwitch==0){
+            if(Flag_AirSwitch==0){
                 ui->AirSwitch->click();
             }
             break;
         case 1:
-            if(Falg_AirSwitch==1){
+            if(Flag_AirSwitch==1){
                 ui->AirSwitch->click();
             }
             break;
@@ -264,7 +271,7 @@ void AirSystem::SwitchButton_L_R(int Falg)
 
 void AirSystem::SetInstruction(int Order)
 {
-    if(Falg_AirSwitch==0){
+    if(Flag_AirSwitch==0){
         switch (Order) {
         case 0://开关
             emit RadioBroadcast("ZB20201001");
@@ -434,6 +441,12 @@ void AirSystem::Implement()//保存传过来数据，并执行
     emit RadioBroadcast(SendData);
 }
 
+void AirSystem::GetIndoorAirQuality(int Temp, int Hum)
+{
+    IndoorTemp=Temp;
+    IndoorHum=Hum;
+}
+
 void AirSystem::on_BackMain_clicked()
 {
     this->close();
@@ -445,7 +458,7 @@ void AirSystem::on_AirSwitch_clicked()
     //--------按键效果
     QGraphicsDropShadowEffect *SetAirSwitch = new QGraphicsDropShadowEffect(this);
     SetAirSwitch->setColor(/*Qt::gray*/QColor(43, 43, 43));
-    if(Falg_AirSwitch==1)
+    if(Flag_AirSwitch==0)
     {
         //------阴影---------
         SetAirSwitch->setOffset(1);
@@ -458,17 +471,17 @@ void AirSystem::on_AirSwitch_clicked()
         ui->FunctionPanel->setEnabled(1);
         Ui_Update();
         //------重置------
-        Falg_AirSwitch=0;
+        Flag_AirSwitch=1;
 
     }
-    else if(Falg_AirSwitch==0)
+    else if(Flag_AirSwitch==1)
     {
         //----阴影
         SetAirSwitch->setOffset(8);
         SetAirSwitch->setBlurRadius(35);
         ui->AirSwitch->setGraphicsEffect(SetAirSwitch);
         //-----界面更新--------
-        Falg_AirSwitch=1;
+        Flag_AirSwitch=0;
         data.Station=0;
         ui->FunctionPanel->setEnabled(0);
         ButtonClear(3);
@@ -480,6 +493,7 @@ void AirSystem::on_AirSwitch_clicked()
 
 void AirSystem::on_Fan_Low_clicked()
 {
+    Icon_FanPlan(1);
     ui->Fan_Low->setStyleSheet("background-color: rgb(0, 0, 0);color:white;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
     ui->Fan_Mid->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
     ui->Fan_High->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
@@ -488,6 +502,7 @@ void AirSystem::on_Fan_Low_clicked()
 
 void AirSystem::on_Fan_Mid_clicked()
 {
+    Icon_FanPlan(2);
     ui->Fan_Mid->setStyleSheet("background-color: rgb(0, 0, 0);color:white;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
     ui->Fan_Low->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
     ui->Fan_High->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
@@ -496,6 +511,7 @@ void AirSystem::on_Fan_Mid_clicked()
 
 void AirSystem::on_Fan_High_clicked()
 {
+    Icon_FanPlan(3);
     ui->Fan_High->setStyleSheet("background-color: rgb(0, 0, 0);color:white;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
     ui->Fan_Mid->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
     ui->Fan_Low->setStyleSheet("background-color: rgb(255, 255, 255);color:black;max-width:60px;max-height:60px; min-width:60px; min-height:60px; border-radius:30px;");
@@ -503,21 +519,25 @@ void AirSystem::on_Fan_High_clicked()
 }
 void AirSystem::on_Cold_clicked()
 {
+    Icon_ModePlan(1);
     StyleSheet(2,1,3,0);
     SetInstruction(9);
 }
 void AirSystem::on_Heat_clicked()
 {
+    Icon_ModePlan(4);
     StyleSheet(1,2,3,0);
     SetInstruction(11);
 }
 void AirSystem::on_Dry_clicked()
 {
+    Icon_ModePlan(2);
     StyleSheet(3,2,0,1);
     SetInstruction(10);
 }
 void AirSystem::on_Fan_clicked()
 {
+    Icon_ModePlan(3);
     StyleSheet(0,2,3,1);
     SetInstruction(14);
 }
@@ -574,3 +594,107 @@ void AirSystem::Image_Init()
     ui->SwingUD_P->setPixmap(m_pic3);
 }
 
+void AirSystem::AutoMode()
+{
+    if(IndoorHum<=65){
+        if(IndoorTemp<23){
+            //关闭空调
+            qDebug()<<"湿度---适宜---温度过低---关闭空调";
+            if(Flag_AirSwitch==1){
+                on_AirSwitch_clicked();
+            }
+        }
+        else {
+            qDebug()<<"湿度---适宜---温度适宜---开启空调";
+            //开启空调
+            if(Flag_AirSwitch==0){
+                on_AirSwitch_clicked();
+                ui->TempQslider->setValue(23);
+                Trigger_TempQslider();
+            }
+        }
+    }
+    else {
+        //关闭空调
+        if(Flag_AirSwitch==0){
+            ui->AirSwitch->click();
+        }
+    }
+}
+
+
+void AirSystem::on_AutoSwitch_clicked()
+{
+    if(AutoFlag==0){
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        AutoTime->start(1000);
+        AutoFlag=1;
+        ui->FunctionPanel->setEnabled(0);
+        ui->TempQslider->setEnabled(0);
+        ui->AirSwitch->setEnabled(0);
+    }
+    else {
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_ON.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
+        AutoTime->stop();
+        AutoFlag=0;
+        ui->FunctionPanel->setEnabled(1);
+        ui->TempQslider->setEnabled(1);
+        ui->AirSwitch->setEnabled(1);
+
+    }
+}
+
+void AirSystem::Icon_FanPlan(int Order)
+{
+    switch(Order){
+    case 0:
+        break;
+    case 1:
+        ui->Fan_Low->setIcon(QIcon(":/new/Air/Air/Low_ON.png"));
+        ui->Fan_Mid->setIcon(QIcon(":/new/Air/Air/Mid_OFF.png"));
+        ui->Fan_High->setIcon(QIcon(":/new/Air/Air/High_OFF.png"));
+        break;
+    case 2:
+        ui->Fan_Low->setIcon(QIcon(":/new/Air/Air/Low_OFF.png"));
+        ui->Fan_Mid->setIcon(QIcon(":/new/Air/Air/Mid_ON.png"));
+        ui->Fan_High->setIcon(QIcon(":/new/Air/Air/High_OFF.png"));
+        break;
+    case 3:
+        ui->Fan_Low->setIcon(QIcon(":/new/Air/Air/Low_OFF.png"));
+        ui->Fan_Mid->setIcon(QIcon(":/new/Air/Air/Mid_OFF.png"));
+        ui->Fan_High->setIcon(QIcon(":/new/Air/Air/High_ON.png"));
+        break;
+    }
+}
+
+void AirSystem::Icon_ModePlan(int Order)
+{
+    switch (Order) {
+    case 1:
+        ui->Cold->setIcon(QIcon(":/new/Air/Air/Cold_ON.png"));
+        ui->Dry->setIcon(QIcon(":/new/Air/Air/Dry_OFF.png"));
+        ui->Fan->setIcon(QIcon(":/new/Air/Air/Fan_OFF.png"));
+        ui->Heat->setIcon(QIcon(":/new/Air/Air/Heat_OFF.png"));
+        break;
+    case 2:
+        ui->Cold->setIcon(QIcon(":/new/Air/Air/Cold_OFF.png"));
+        ui->Dry->setIcon(QIcon(":/new/Air/Air/Dry_ON.png"));
+        ui->Fan->setIcon(QIcon(":/new/Air/Air/Fan_OFF.png"));
+        ui->Heat->setIcon(QIcon(":/new/Air/Air/Heat_OFF.png"));
+        break;
+    case 3:
+        ui->Cold->setIcon(QIcon(":/new/Air/Air/Cold_OFF.png"));
+        ui->Dry->setIcon(QIcon(":/new/Air/Air/Dry_OFF.png"));
+        ui->Fan->setIcon(QIcon(":/new/Air/Air/Fan_ON.png"));
+        ui->Heat->setIcon(QIcon(":/new/Air/Air/Heat_OFF.png"));
+        break;
+    case 4:
+        ui->Cold->setIcon(QIcon(":/new/Air/Air/Cold_OFF.png"));
+        ui->Dry->setIcon(QIcon(":/new/Air/Air/Dry_OFF.png"));
+        ui->Fan->setIcon(QIcon(":/new/Air/Air/Fan_OFF.png"));
+        ui->Heat->setIcon(QIcon(":/new/Air/Air/Heat_ON.png"));
+        break;
+    }
+}

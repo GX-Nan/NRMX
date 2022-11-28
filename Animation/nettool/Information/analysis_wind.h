@@ -28,6 +28,9 @@ public:
     int Co2=0;
     int TVCO=0;
     int HCHO=0;
+    int Temp=0;
+    int Hum=0;
+    int Brightness=0;
 };
 class Analysis_Wind : public QObject
 {
@@ -46,6 +49,9 @@ public slots:
 signals:
     void Wind_UiData(const Wind_Data Data,int);
     void AirQuality_Data(const AirQuality Data);
+    void IndoorAirJudge(int);
+    void SendToAir(int,int);//发给空调 温度和湿度
+    void SendToLight(int);//发给灯光 亮度 ---不过应该要分区域?
 };
 
 #endif // ANALYSIS_WIND_H

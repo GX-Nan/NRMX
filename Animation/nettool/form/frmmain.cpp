@@ -414,36 +414,12 @@ void frmMain::initConfig()//配置
     connect(LightUi,&LightSystem::SendToWx,WxSd,&WxSend::SendData);
     connect(WindUi,&WindSystem::SendToWx,WxSd,&WxSend::SendData);
     connect(WindowUi,&WindowSystem::SendToWx,WxSd,&WxSend::SendData);
-    //-------
-
-//    Crawler=new WeatherCrawler();
-//    qDebug()<<"1-------------";
-//    //-----爬虫传送
-//    QThread *CrawlTask= new QThread();
-//    Crawler->moveToThread(CrawlTask);
-//    connect(this,&frmMain::StartCrawl,Crawler,&WeatherCrawler::TimeCatch);
-//    connect(Crawler,&WeatherCrawler::SendMessage,this,[=](const CrawlMessage* test)
-//    {
-//        qDebug()<<"test";
-//        qDebug()<<test->Activity;
-//    });
-//    CrawlTask->start();
-//    emit StartCrawl();
-
-
-//    qDebug()<<"2-------------";
-
-//    qDebug()<<"3-------------";
-//    QThread *CrawlerTask=new QThread();
-//    Crawler->moveToThread(CrawlerTask);;
-//    CrawlerTask->start();
-
-//    connect(Crawler,&WeatherCrawler::AirMes,this,[=]
-//    {
-//        qDebug()<<"innnn---crawlAir";
-//    });
-//    connect(Crawler,&WeatherCrawler::WeatherMes,WindowUi,&WindowSystem::CrawlWeather);
-//    connect(Crawler,&WeatherCrawler::ActivityMes,WindowUi,&WindowSystem::CrawlActive);
+    //-------空气智能触发
+    connect(Analysis_wind,&Analysis_Wind::IndoorAirJudge,WindowUi,&WindowSystem::AirAutoTigger);//发到windowsystem里面与户外判断
+    connect(WindowUi,&WindowSystem::SendToWind,WindUi,&WindSystem::AirAutoTigger);//window部分判断然后控制新风开关
+    connect(WindowUi,&WindowSystem::AutoMode_Sync,WindUi,&WindSystem::Auto_Sync);//同步智能的按钮按下
+    connect(WindUi,&WindSystem::AutoMode_Sync,WindowUi,&WindowSystem::Auto_Sync);//同上
+    connect(Analysis_wind,&Analysis_Wind::SendToAir,AirUi,&AirSystem::GetIndoorAirQuality);
 
     //------------------
     connect(this,&frmMain::Show_SubUi,WindUi,&WindSystem::ShowSubUi);

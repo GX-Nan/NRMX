@@ -192,7 +192,6 @@ public:
 "}"));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon2.addFile(QStringLiteral(":/new/Led/Led/AI_OFF.png"), QSize(), QIcon::Normal, QIcon::On);
         AiMode->setIcon(icon2);
         AiMode->setIconSize(QSize(70, 70));
         AiMode->setAutoRepeatDelay(300);

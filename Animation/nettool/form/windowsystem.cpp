@@ -14,6 +14,11 @@ WindowSystem::WindowSystem(QWidget *parent) :
     Shadow();
 
     connect(ui->Device_Qslider,&QSlider::sliderReleased,this,&WindowSystem::Tigger_Device);
+    AutoTime=new QTimer(this);
+    connect(AutoTime,&QTimer::timeout,this,[=]{
+        AutoMode();
+        qDebug()<<"innnn----AutoMode";
+    });
     Button_Init();
     XprogressbarIfconfig();
     Image_Init();
@@ -42,11 +47,11 @@ void WindowSystem::Shadow()
     ButtonStyle_Button(ui->WindowOpen,8,25);
     ButtonStyle_Button(ui->WindowStop,8,25);
 
-    //    QGraphicsDropShadowEffect *LocalArea = new QGraphicsDropShadowEffect(this);
-    //    LocalArea->setOffset(2);
-    //    LocalArea->setColor(/*Qt::gray*/QColor(43, 43, 43));
-    //    LocalArea->setBlurRadius(15);
-    //    ui->LocalArea->setGraphicsEffect(LocalArea);
+    QGraphicsDropShadowEffect *AutoSwitch = new QGraphicsDropShadowEffect(this);
+    AutoSwitch->setOffset(2);
+    AutoSwitch->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    AutoSwitch->setBlurRadius(15);
+    ui->AutoSwitch->setGraphicsEffect(AutoSwitch);
 }
 
 
@@ -69,7 +74,7 @@ void WindowSystem::ButtonStyle(QPushButton *Name, int Offset, int BlurRadius)
 
 void WindowSystem::on_WindowClose_clicked()
 {
-
+    Icon_Plan(0);
     ButtonStylePlan(8,8,1);
     ui->WindowClose->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->WindowOpen->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
@@ -79,7 +84,7 @@ void WindowSystem::on_WindowClose_clicked()
 
 void WindowSystem::on_WindowOpen_clicked()
 {
-
+    Icon_Plan(1);
     ButtonStylePlan(8,1,8);
     ui->WindowOpen->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->WindowClose->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
@@ -89,6 +94,7 @@ void WindowSystem::on_WindowOpen_clicked()
 
 void WindowSystem::on_WindowStop_clicked()
 {
+    Icon_Plan(2);
     ButtonStylePlan(1,8,8);
     ui->WindowStop->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->WindowClose->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
@@ -113,12 +119,14 @@ void WindowSystem::AirQuality_Status(int Function, int Sub, int Value)//Sub---->
     case 1:
         ui->CurrentTemp->setText(QString::number(Value));
         ui->TempRange_Xprogress->setValue(Value);
+
         emit SendToWx("OutTemp",Value);
         qDebug()<<"Temp:"<<Value;
         break;
     case 2:
         ui->OutsideHum_XprogressBar->setValue(Value);
         emit SendToWx("OutHum",Value);
+        OutSideHum=Value;
         qDebug()<<"Humi:"<<Value;
         break;
     case 4:
@@ -151,16 +159,20 @@ void WindowSystem::AirQuality_Status(int Function, int Sub, int Value)//Sub---->
             ui->WeatherStatus->setText("雨天");
             emit SendToWx("Weather",3);
         }
+        Weather=Value;
         break;
     case 11:
         if(Value<=50){//良好
             ui->AirAqi->setText("良好");
+            AQI=1;
         }
         else if(Value>50&&Value<=100){//较好
             ui->AirAqi->setText("较好");
+            AQI=2;
         }
         else if(Value>100){//差
             ui->AirAqi->setText("较差");
+            AQI=3;
         }
         break;
     }
@@ -256,10 +268,45 @@ void WindowSystem::CrawlActive(QMap<QString, QString> data )
     qDebug()<<"CrawlActive---------------------:"<<data;
 }
 
-void WindowSystem::testVoid(CrawlMessage data)
+void WindowSystem::AirAutoTigger(int data)
 {
-    qDebug()<<"data:"<<data.Activity;
+    if (data==1&&location!=0) {
+        if(AQI!=3){//户外空气良好--开窗户
+            if(AutoFlag==0){
+                AutoTime->start(1000);
+                AutoFlag=1;
+            }
+            else if(AutoFlag==1){
+                AutoTime->stop();
+                AutoFlag=0;
+            }
+        }else{
+            if(AutoFlag==0){
+                emit SendToWind(3);//户外空气差---开新风
+                emit AutoMode_Sync(1);
+            }else{
+                emit SendToWind(0);
+                emit AutoMode_Sync(0);
+            }
+        }
+    }else {//如果没人或者室内空气良好则保持？
+
+    }
 }
+
+void WindowSystem::Auto_Sync(int data)
+{
+    switch(data){
+    case 0:
+        AutoFlag=1;
+        break;
+    case 1:
+        AutoFlag=0;
+        break;
+    }
+    ui->AutoSwitch->click();
+}
+
 
 void WindowSystem::on_Device_Qslider_valueChanged(int value)
 {
@@ -347,4 +394,83 @@ void WindowSystem::Image_Init()
     QIcon icon5 = QIcon(filePath5);
     QPixmap m_pic5 = icon5.pixmap(icon5.actualSize(QSize(80, 80)));//size自行调整
     ui->SuitableP2->setPixmap(m_pic5);
+}
+
+void WindowSystem::AutoMode()
+{
+    if(OutSideHum<=65){
+        if(IndoorTemp<=23&&IndoorTemp>=16){
+            if(Weather!=1){
+                if(WindowStopFlag==0){
+                    ui->Device_Qslider->setValue(1);
+                    ui->WindowClose->click();
+                    WindowStopFlag=1;
+                }
+            }
+            else {
+                if(WindowStopFlag==1){
+                    ui->Device_Qslider->setValue(0);
+                    ui->WindowClose->click();
+                    WindowStopFlag=0;
+                }
+            }
+        }
+        else {
+            if(WindowStopFlag==1){
+                ui->Device_Qslider->setValue(0);
+                ui->WindowClose->click();
+                WindowStopFlag=0;
+            }
+        }
+    }
+    else {//高于65关窗
+        if(WindowStopFlag==1){
+            ui->Device_Qslider->setValue(0);
+            ui->WindowClose->click();
+            WindowStopFlag=0;
+        }
+    }
+}
+
+void WindowSystem::on_AutoSwitch_clicked()
+{
+    if(AutoFlag==0){
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        AutoFlag=1;
+        ui->Device_Qslider->setEnabled(0);
+        ui->WindowOpen->setEnabled(0);
+        ui->WindowStop->setEnabled(0);
+        ui->WindowClose->setEnabled(0);
+    }
+    else {
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_ON.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
+        AutoFlag=0;
+        ui->Device_Qslider->setEnabled(1);
+        ui->WindowOpen->setEnabled(1);
+        ui->WindowStop->setEnabled(1);
+        ui->WindowClose->setEnabled(1);
+    }
+}
+
+void WindowSystem::Icon_Plan(int Order)
+{
+    switch(Order){
+    case 0:
+        ui->WindowClose->setIcon(QIcon(":/new/Window/Window/Close_White.png"));
+        ui->WindowOpen->setIcon(QIcon(":/new/Window/Window/Open.png"));
+        ui->WindowStop->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        break;
+    case 1:
+        ui->WindowClose->setIcon(QIcon(":/new/Window/Window/Close.png"));
+        ui->WindowOpen->setIcon(QIcon(":/new/Window/Window/Open_White.png"));
+        ui->WindowStop->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        break;
+    case 2:
+        ui->WindowClose->setIcon(QIcon(":/new/Window/Window/Close.png"));
+        ui->WindowOpen->setIcon(QIcon(":/new/Window/Window/Open.png"));
+        ui->WindowStop->setIcon(QIcon(":/new/Curtain/Curtain/Stop_ON.png"));
+        break;
+    }
 }

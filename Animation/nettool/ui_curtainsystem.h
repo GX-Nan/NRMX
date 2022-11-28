@@ -17,7 +17,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
-#include "switchbutton.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -33,13 +32,10 @@ public:
     QPushButton *Down;
     QLabel *label_5;
     QLabel *label_6;
-    QSlider *horizontalSlider_2;
-    QLabel *label_8;
-    QLabel *CurtainStatus;
     QLabel *CurrentNumber;
     QSlider *Device_Slider;
-    SwitchButton *SwingLeftRight;
     QLabel *CurrentNumber_2;
+    QPushButton *AutoSwitch;
 
     void setupUi(QDialog *CurtainSystem)
     {
@@ -88,7 +84,7 @@ public:
         BackMain->setIconSize(QSize(50, 50));
         InsideBrightness = new QLabel(bottom);
         InsideBrightness->setObjectName(QStringLiteral("InsideBrightness"));
-        InsideBrightness->setGeometry(QRect(100, 60, 481, 361));
+        InsideBrightness->setGeometry(QRect(80, 30, 481, 361));
         QFont font;
         font.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
         font.setPointSize(250);
@@ -110,7 +106,6 @@ public:
 "}"));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/new/Curtain/Curtain/Up_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon1.addFile(QStringLiteral(":/new/Curtain/Curtain/Up_ON.png"), QSize(), QIcon::Normal, QIcon::On);
         Up->setIcon(icon1);
         Up->setIconSize(QSize(300, 300));
         Up->setCheckable(true);
@@ -126,7 +121,6 @@ public:
 "}"));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/new/Curtain/Curtain/Stop_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon2.addFile(QStringLiteral(":/new/Curtain/Curtain/Stop_ON.png"), QSize(), QIcon::Normal, QIcon::On);
         Stop->setIcon(icon2);
         Stop->setIconSize(QSize(200, 100));
         Stop->setCheckable(true);
@@ -142,7 +136,6 @@ public:
 "}"));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/new/Curtain/Curtain/Down_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon3.addFile(QStringLiteral(":/new/Curtain/Curtain/Down_ON.png"), QSize(), QIcon::Normal, QIcon::On);
         icon3.addFile(QStringLiteral(":/new/Curtain/Curtain/Down_ON.png"), QSize(), QIcon::Selected, QIcon::On);
         Down->setIcon(icon3);
         Down->setIconSize(QSize(200, 120));
@@ -170,37 +163,15 @@ public:
         label_6->setFont(font3);
         label_6->setStyleSheet(QStringLiteral("color:#282A49"));
         label_6->setAlignment(Qt::AlignCenter);
-        horizontalSlider_2 = new QSlider(bottom);
-        horizontalSlider_2->setObjectName(QStringLiteral("horizontalSlider_2"));
-        horizontalSlider_2->setGeometry(QRect(90, 640, 461, 22));
-        horizontalSlider_2->setMaximum(100);
-        horizontalSlider_2->setOrientation(Qt::Horizontal);
-        label_8 = new QLabel(bottom);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(240, 600, 101, 31));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font4.setPointSize(20);
-        font4.setBold(true);
-        font4.setWeight(75);
-        label_8->setFont(font4);
-        label_8->setStyleSheet(QStringLiteral("color:#282A49"));
-        label_8->setAlignment(Qt::AlignCenter);
-        CurtainStatus = new QLabel(bottom);
-        CurtainStatus->setObjectName(QStringLiteral("CurtainStatus"));
-        CurtainStatus->setGeometry(QRect(330, 600, 71, 31));
-        CurtainStatus->setFont(font4);
-        CurtainStatus->setStyleSheet(QStringLiteral("color:#282A49"));
-        CurtainStatus->setAlignment(Qt::AlignCenter);
         CurrentNumber = new QLabel(bottom);
         CurrentNumber->setObjectName(QStringLiteral("CurrentNumber"));
         CurrentNumber->setGeometry(QRect(300, 490, 61, 51));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font5.setPointSize(25);
-        font5.setBold(true);
-        font5.setWeight(75);
-        CurrentNumber->setFont(font5);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
+        font4.setPointSize(25);
+        font4.setBold(true);
+        font4.setWeight(75);
+        CurrentNumber->setFont(font4);
         CurrentNumber->setStyleSheet(QStringLiteral("color:#282A49"));
         CurrentNumber->setAlignment(Qt::AlignCenter);
         Device_Slider = new QSlider(bottom);
@@ -208,15 +179,27 @@ public:
         Device_Slider->setGeometry(QRect(90, 550, 461, 22));
         Device_Slider->setMaximum(3);
         Device_Slider->setOrientation(Qt::Horizontal);
-        SwingLeftRight = new SwitchButton(bottom);
-        SwingLeftRight->setObjectName(QStringLiteral("SwingLeftRight"));
-        SwingLeftRight->setGeometry(QRect(380, 500, 121, 41));
         CurrentNumber_2 = new QLabel(bottom);
         CurrentNumber_2->setObjectName(QStringLiteral("CurrentNumber_2"));
         CurrentNumber_2->setGeometry(QRect(80, 490, 241, 51));
-        CurrentNumber_2->setFont(font5);
+        CurrentNumber_2->setFont(font4);
         CurrentNumber_2->setStyleSheet(QStringLiteral("color:#282A49"));
         CurrentNumber_2->setAlignment(Qt::AlignCenter);
+        AutoSwitch = new QPushButton(bottom);
+        AutoSwitch->setObjectName(QStringLiteral("AutoSwitch"));
+        AutoSwitch->setGeometry(QRect(90, 600, 461, 71));
+        AutoSwitch->setFont(font1);
+        AutoSwitch->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
+        AutoSwitch->setIcon(icon4);
+        AutoSwitch->setIconSize(QSize(50, 80));
+        AutoSwitch->setCheckable(true);
+        AutoSwitch->setAutoExclusive(true);
 
         retranslateUi(CurtainSystem);
 
@@ -234,10 +217,9 @@ public:
         Down->setText(QString());
         label_5->setText(QApplication::translate("CurtainSystem", "\345\256\244\345\206\205\344\272\256\345\272\246", nullptr));
         label_6->setText(QApplication::translate("CurtainSystem", "Lux", nullptr));
-        label_8->setText(QApplication::translate("CurtainSystem", "\346\211\207\345\217\266\357\274\232", nullptr));
-        CurtainStatus->setText(QApplication::translate("CurtainSystem", "60%", nullptr));
         CurrentNumber->setText(QApplication::translate("CurtainSystem", "0", nullptr));
         CurrentNumber_2->setText(QApplication::translate("CurtainSystem", "\345\275\223\345\211\215\347\252\227\345\270\230\357\274\232", nullptr));
+        AutoSwitch->setText(QString());
     } // retranslateUi
 
 };

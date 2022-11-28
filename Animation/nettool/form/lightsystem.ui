@@ -234,8 +234,7 @@ border:none;
      </property>
      <property name="icon">
       <iconset resource="../other/main.qrc">
-       <normaloff>:/new/Led/Led/AI_ON.png</normaloff>
-       <normalon>:/new/Led/Led/AI_OFF.png</normalon>:/new/Led/Led/AI_ON.png</iconset>
+       <normaloff>:/new/Led/Led/AI_ON.png</normaloff>:/new/Led/Led/AI_ON.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1808,15 +1807,15 @@ border:none;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SwitchButton</class>
-   <extends>QWidget</extends>
-   <header>switchbutton.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>XProgressBar</class>
    <extends>QWidget</extends>
    <header>xprogressbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SwitchButton</class>
+   <extends>QWidget</extends>
+   <header>switchbutton.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

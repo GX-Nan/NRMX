@@ -60,6 +60,12 @@ void WindSystem::Shadow()
     Bottom->setColor(/*Qt::gray*/QColor(43, 43, 43));
     Bottom->setBlurRadius(15);
     ui->bottom->setGraphicsEffect(Bottom);
+
+    QGraphicsDropShadowEffect *AutoSwitch = new QGraphicsDropShadowEffect(this);
+    AutoSwitch->setOffset(8);
+    AutoSwitch->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    AutoSwitch->setBlurRadius(15);
+    ui->AutoSwitch->setGraphicsEffect(AutoSwitch);
 }
 
 void WindSystem::ReceiveData(const Wind_Data VarValue,int Value)
@@ -80,7 +86,7 @@ void WindSystem::ReceiveData(const Wind_Data VarValue,int Value)
         ui->MidMode->click();
         break;
     case 3:
-        ui->MixMode->click();
+        ui->MaxMode->click();
         break;
     case 4:
         emit ModeCtrl(0);
@@ -101,10 +107,50 @@ void WindSystem::ReceiveData(const Wind_Data VarValue,int Value)
     //SetInstruction(data.Station);
 }
 
+void WindSystem::AirAutoTigger(int data)
+{
+    if(AutoFlag==0){
+        switch(data){
+        case 0:
+            ui->StopMode->click();
+            break;
+        case 1:
+            ui->MaxMode->click();
+            break;
+        }
+        AutoFlag=1;
+    }else{
+        switch(data){
+        case 0:
+            ui->StopMode->click();
+            break;
+        case 1:
+            ui->MaxMode->click();
+            break;
+        }
+        AutoFlag=0;
+    }
+}
+
+void WindSystem::Auto_Sync(int data)
+{
+    switch(data){
+    case 0:
+        AutoFlag=1;
+        ui->AutoSwitch->click();
+        break;
+    case 1:
+        AutoFlag=0;
+        ui->AutoSwitch->click();
+        break;
+    }
+}
+
 
 
 void WindSystem::on_StopMode_clicked()
 {
+    Icon_Plan(0);//图标
     ButtonStylePlan(1,8,8,8);
     emit ModeCtrl(0);
     ModeSubUi->Clear();
@@ -117,6 +163,7 @@ void WindSystem::on_StopMode_clicked()
 
 void WindSystem::on_MinMode_clicked()
 {
+    Icon_Plan(1);//图标
     ButtonStylePlan(8,1,8,8);
     emit Enable(1);
     BackgroundPlan(1,0,2,3);
@@ -127,6 +174,7 @@ void WindSystem::on_MinMode_clicked()
 
 void WindSystem::on_MidMode_clicked()
 {
+    Icon_Plan(2);//图标
     ButtonStylePlan(8,8,1,8);
     BackgroundPlan(2,0,1,3);
     emit Enable(1);
@@ -134,8 +182,9 @@ void WindSystem::on_MidMode_clicked()
     emit SendToWx("WindSpeed",2);
 }
 
-void WindSystem::on_MixMode_clicked()
+void WindSystem::on_MaxMode_clicked()
 {
+    Icon_Plan(3);//图标
     ButtonStylePlan(8,8,8,1);
     BackgroundPlan(3,2,1,0);
     emit Enable(1);
@@ -148,7 +197,7 @@ void WindSystem::ButtonStylePlan(int i, int i2, int i3,int i4)
     ButtonStyle(ui->StopMode,i,35);
     ButtonStyle(ui->MinMode,i2,35);
     ButtonStyle(ui->MidMode,i3,35);
-    ButtonStyle(ui->MixMode,i4,35);
+    ButtonStyle(ui->MaxMode,i4,35);
 }
 
 void WindSystem::Image_Init()
@@ -161,7 +210,7 @@ void WindSystem::Image_Init()
 void WindSystem::BackgroundPlan(int i, int i2, int i3, int i4)
 {
     QList <QPushButton *>list;
-    list<<ui->StopMode<<ui->MinMode<<ui->MidMode<<ui->MixMode;
+    list<<ui->StopMode<<ui->MinMode<<ui->MidMode<<ui->MaxMode;
     list[i]->setStyleSheet("background-color: rgb(0, 0, 0);border-radius:15px;");
     list[i2]->setStyleSheet("background-color: rgb(255, 255, 255);border-radius:15px;");
     list[i3]->setStyleSheet("background-color: rgb(255, 255, 255);border-radius:15px;");
@@ -176,5 +225,50 @@ void WindSystem::SetInstruction(int Order)
         data.insert(8,QString::number(Order));
         qDebug()<<"Order:"<<data;
         emit RadioBroadcast(data);
+    }
+}
+
+void WindSystem::on_AutoSwitch_clicked()
+{
+    if(AutoFlag==0){
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        ui->ButtonBox->setEnabled(0);
+        AutoFlag=1;
+    }else{
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_ON.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
+        ui->ButtonBox->setEnabled(1);
+        AutoFlag=0;
+    }
+}
+
+void WindSystem::Icon_Plan(int Order)
+{
+    switch(Order){
+    case 0:
+        ui->StopMode->setIcon(QIcon(":/new/Curtain/Curtain/Stop_ON.png"));
+        ui->MinMode->setIcon(QIcon(":/new/Wind/Wind/Low_OFF.png"));
+        ui->MidMode->setIcon(QIcon(":/new/Wind/Wind/Mid_OFF.png"));
+        ui->MaxMode->setIcon(QIcon(":/new/Wind/Wind/High_OFF.png"));
+        break;
+    case 1:
+        ui->StopMode->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        ui->MinMode->setIcon(QIcon(":/new/Wind/Wind/Low_ON.png"));
+        ui->MidMode->setIcon(QIcon(":/new/Wind/Wind/Mid_OFF.png"));
+        ui->MaxMode->setIcon(QIcon(":/new/Wind/Wind/High_OFF.png"));
+        break;
+    case 2:
+        ui->StopMode->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        ui->MinMode->setIcon(QIcon(":/new/Wind/Wind/Low_OFF.png"));
+        ui->MidMode->setIcon(QIcon(":/new/Wind/Wind/Mid_ON.png"));
+        ui->MaxMode->setIcon(QIcon(":/new/Wind/Wind/High_OFF.png"));
+        break;
+    case 3:
+        ui->StopMode->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        ui->MinMode->setIcon(QIcon(":/new/Wind/Wind/Low_OFF.png"));
+        ui->MidMode->setIcon(QIcon(":/new/Wind/Wind/Mid_OFF.png"));
+        ui->MaxMode->setIcon(QIcon(":/new/Wind/Wind/High_ON.png"));
+        break;
     }
 }

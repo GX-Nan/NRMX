@@ -22,6 +22,10 @@ public:
     WindMode *ModeSubUi=nullptr;
     Wind_Data data;
     int SingleFalg=1;
+    //----智能模式
+    int AutoFlag=0;
+    int location=0;//0----没人  1-----会议 2----吧台 3-----办公
+
 signals:
     void SendClose();
     void Clear();
@@ -31,6 +35,7 @@ signals:
     void Xprogress_Update(const AirQuality data);
     void SendToWx(QString,int);
     void ModeCtrl(int);//控制模式
+    void AutoMode_Sync(int);
 
 
 
@@ -40,17 +45,21 @@ private slots:
     void on_StopMode_clicked();
     void on_MinMode_clicked();
     void on_MidMode_clicked();
-    void on_MixMode_clicked();
+    void on_MaxMode_clicked();
     void ButtonStylePlan(int,int,int,int);
     void Image_Init();
     void BackgroundPlan(int i, int i2, int i3, int i4);
     void SetInstruction(int);
+    void on_AutoSwitch_clicked();
+    void Icon_Plan(int);
 
 public:
     void ShowSubUi();
     void Shadow();
 public slots:
     void ReceiveData(const Wind_Data VarValue,int);
+    void AirAutoTigger(int);
+    void Auto_Sync(int);
 
 
 private:

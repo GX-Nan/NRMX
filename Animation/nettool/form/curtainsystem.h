@@ -7,6 +7,7 @@
 #include <QCoreApplication>
 #include <unistd.h>
 #include <QTimer>
+#include <QTime>
 
 namespace Ui {
 class CurtainSystem;
@@ -48,6 +49,9 @@ public:
     QTimer *Timer;
     int AllCurtainsFalg=0;
     int AllCurtainsStop=1;
+    //----自动模式
+    QTimer *AutoTimer;
+    int AutoFlag=0;
 signals:
     void SendClose();
     void RadioBroadcast(QString);
@@ -64,6 +68,9 @@ private slots:
     void on_horizontalSlider_2_valueChanged(int value);
     void CurtainsStatus(int value);
     void AllCurtains();
+    void on_AutoSwitch_clicked();
+    void AutoMode();
+    void IconPlan(int);
 
 public slots:
     void ReceiveData(QString);

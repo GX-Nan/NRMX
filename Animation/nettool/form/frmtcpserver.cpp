@@ -120,16 +120,18 @@ void frmTcpServer::receiveData(const QString &ip, int port, const QString &data)
     qDebug()<<"App::StopReturn:"<<App::StopReturn;
     QString str = QString("[%1:%2] %3").arg(ip).arg(port).arg(data);
    // QVector<QString>(Manage);
+    QString QStringData=data;
+    QStringData=QStringData.remove(QChar('\n'),Qt::CaseInsensitive);//消除空格
     QMultiMap<int,QString>(System);
-    bool Judge =(data.length())%10;
-    qDebug()<<"data------------------------:"<<data<<"data.length()"<<data.length();
+    bool Judge =(QStringData.length())%10;
+    qDebug()<<"data------------------------:"<<QStringData<<"data.length()"<<QStringData.length();
     QString Transition;
     if(Judge==false){
-        for(int i=0;i<(data.length())/10;i++){
+        for(int i=0;i<(QStringData.length())/10;i++){
             for(int a=0;a<10;a++){
-                Transition.append(data.at(i*10+a));
+                Transition.append(QStringData.at(i*10+a));
             }
-            if(data.at(0)=="Z"){
+            if(QStringData.at(0)=="Z"){
                 if(Transition.at(2)=="1"){
                     System.insert(1,Transition);
                 }
@@ -158,7 +160,7 @@ void frmTcpServer::receiveData(const QString &ip, int port, const QString &data)
                 Transition.clear();
                 emit Server_Receive_Data(System);
             }
-            else if(data.at(0)=="E")
+            else if(QStringData.at(0)=="E")
             {
                 emit Esp_Data(Transition);
             }

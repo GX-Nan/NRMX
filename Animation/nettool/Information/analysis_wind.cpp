@@ -63,6 +63,7 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
 {
     QString Value;
     QString Function;
+    int PM25Flag=0,Co2Flag=0,TvcoFlag=0,HCHOFlag=0,PM10Flag=0;
     //-----截取------------
     for(int i=4;i<=5;i++)
     {
@@ -75,23 +76,64 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     //------------------
     switch(Function.toInt())
     {
+    case 1:
+        Air.Brightness=Value.toInt();
+        break;
     case 2:
-         Air.Co2=Value.toInt();
+        Air.Temp=Value.toInt();
+        break;
+    case 3:
+        Air.Hum=Value.toInt();
         break;
     case 4:
         Air.PM25=Value.toInt();
+        if(Value>=75){
+            PM25Flag=1;
+        }else {
+            PM25Flag=0;
+        }
         break;
     case 5:
-         Air.PM10=Value.toInt();
+        Air.Co2=Value.toInt();
+        if(Value>=700){
+            Co2Flag=1;
+        }else {
+            Co2Flag=0;
+        }
         break;
-       case 6:
+    case 6:
+        Air.TVCO=Value.toInt();
+        if(Value>=2){
+            TvcoFlag=1;
+        }else {
+            TvcoFlag=0;
+        }
+        break;
+    case 7:
         Air.HCHO=Value.toInt();
+        if(Value>=12){
+            HCHOFlag=1;
+        }else {
+            HCHOFlag=0;
+        }
         break;
-    case 9:
-         Air.TVCO=Value.toInt();
+    case 8:
+        Air.PM10=Value.toInt();
+        if(Value>=18){
+            PM10Flag=1;
+        }else {
+            PM10Flag=0;
+        }
         break;
     }
-    emit AirQuality_Data(Air);
+    emit AirQuality_Data(Air);//新风显示
+    emit SendToAir(Air.Temp,Air.Hum);//给空调判断
+    //-----先在这里判断室内是否需要通风透气---然后再判断是否要开窗户或者新风
+    if(PM25Flag==1||PM10Flag==1||HCHOFlag==1||TvcoFlag==1||Co2Flag==1){
+        emit IndoorAirJudge(1);
+    }else {
+        emit IndoorAirJudge(0);
+    }
 }
 
 void Analysis_Wind::Data_Update(Wind_Data Lastest)

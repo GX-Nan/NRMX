@@ -313,10 +313,14 @@ void LightSystem::on_AllLed_Status_clicked()
 void LightSystem::on_AiMode_clicked()
 {
     if(AiMode_Falg==0){
+        ui->AiMode->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
+        ui->AiMode->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         AutoTime->start(1000);
         AiMode_Falg=1;
     }
     else {
+        ui->AiMode->setIcon(QIcon(":/new/Led/Led/AI_ON.png"));
+        ui->AiMode->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
         AutoTime->stop();
         AiMode_Falg=0;
     }
@@ -1229,6 +1233,9 @@ void LightSystem::AutoMode()
         WorkTime=1;
         AuxiliaryLightLogic();
         SpotLightLogic();
+        //--------色温
+        ui->Color_All->setChecked(1);
+        ui->Color_Slider->setValue(10);
     }
     else {//下班
         WorkTime=0;
@@ -1239,6 +1246,9 @@ void LightSystem::AutoMode()
         }
         ui->Lux_All->setChecked(1);
         ui->Brightness_Slider->setValue(0);//关闭所有副灯
+        //--------色温
+        ui->Color_All->setChecked(1);
+        ui->Color_Slider->setValue(80);
     }
 }
 
@@ -1342,7 +1352,7 @@ void LightSystem::SpotLightLogic()
             }
             if(AllSpotStatus==0){
                 emit SendToWx("SpotLight_0",1);
-                emit RadioBroadcast("ZB20500011");
+                emit RadioBroadcast("ZB20500011 ");
                 AllSpotStatus=1;
             }
         }
@@ -1353,8 +1363,11 @@ void LightSystem::SpotLightLogic()
                 SpotList.value(i)->click();
             }
         }
-        emit RadioBroadcast("ZB20500001");
-        emit SendToWx("SpotLight_0",0);
+        if(AllSpotStatus==0){
+            emit SendToWx("SpotLight_0",1);
+            emit RadioBroadcast("ZB20500011");
+            AllSpotStatus=1;
+        }
     }
     SpotStopFalg=0;
 }

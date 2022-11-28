@@ -50,6 +50,7 @@ public:
     QLabel *AirMode;
     QLabel *SwingUD_P;
     QLabel *SwingLR_P;
+    QPushButton *AutoSwitch;
 
     void setupUi(QDialog *AirSystem)
     {
@@ -78,7 +79,7 @@ public:
         bottom->setFrameShadow(QFrame::Raised);
         AirSwitch = new QPushButton(bottom);
         AirSwitch->setObjectName(QStringLiteral("AirSwitch"));
-        AirSwitch->setGeometry(QRect(100, 570, 441, 91));
+        AirSwitch->setGeometry(QRect(70, 570, 341, 91));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
         font1.setPointSize(15);
@@ -354,6 +355,20 @@ public:
         SwingLR_P->setObjectName(QStringLiteral("SwingLR_P"));
         SwingLR_P->setGeometry(QRect(30, 360, 81, 81));
         SwingLR_P->setAlignment(Qt::AlignCenter);
+        AutoSwitch = new QPushButton(bottom);
+        AutoSwitch->setObjectName(QStringLiteral("AutoSwitch"));
+        AutoSwitch->setGeometry(QRect(450, 570, 141, 91));
+        AutoSwitch->setFont(font1);
+        AutoSwitch->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon9;
+        icon9.addFile(QStringLiteral(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QStringLiteral(":/new/Led/Led/AI_OFF.png"), QSize(), QIcon::Normal, QIcon::On);
+        AutoSwitch->setIcon(icon9);
+        AutoSwitch->setIconSize(QSize(100, 50));
 
         retranslateUi(AirSystem);
 
@@ -383,6 +398,7 @@ public:
         AirMode->setText(QString());
         SwingUD_P->setText(QApplication::translate("AirSystem", "Mode", nullptr));
         SwingLR_P->setText(QApplication::translate("AirSystem", "Mode", nullptr));
+        AutoSwitch->setText(QString());
     } // retranslateUi
 
 };

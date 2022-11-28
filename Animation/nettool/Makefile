@@ -2949,6 +2949,7 @@ moc_frmmain.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/switchbutton.h \
 		form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/windowsystem.h \
 		form/weathercrawler.h \
 		/usr/include/python3.7/Python.h \
@@ -3946,6 +3947,11 @@ moc_lightsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QDebug \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qdatetime.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTimer \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtimer.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasictimer.h \
 		form/lightsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -9094,6 +9100,7 @@ main.o: main.cpp form/frmmain.h \
 		form/switchbutton.h \
 		form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/windowsystem.h \
 		form/weathercrawler.h \
 		/usr/include/python3.7/Python.h \
@@ -11226,13 +11233,6 @@ airsystem.o: form/airsystem.cpp form/airsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QThread \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QMultiMap \
 		ui_airsystem.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGroupBox \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QSlider \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o airsystem.o form/airsystem.cpp
 
@@ -11350,26 +11350,6 @@ curtainsystem.o: form/curtainsystem.cpp form/curtainsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtimer.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasictimer.h \
 		ui_curtainsystem.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QVariant \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QSlider \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qslider.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractslider.h \
-		form/switchbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o curtainsystem.o form/curtainsystem.cpp
@@ -11480,23 +11460,6 @@ doorsystem.o: form/doorsystem.cpp form/doorsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qvector2d.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h \
 		ui_doorsystem.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QVariant \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcoreapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qeventloop.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o doorsystem.o form/doorsystem.cpp
@@ -12045,6 +12008,7 @@ frmmain.o: form/frmmain.cpp form/frmmain.h \
 		form/switchbutton.h \
 		form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/windowsystem.h \
 		form/weathercrawler.h \
 		/usr/include/python3.7/Python.h \
@@ -12124,10 +12088,6 @@ frmmain.o: form/frmmain.cpp form/frmmain.h \
 		form/wxreceive.h \
 		form/wxsend.h \
 		ui_frmmain.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGroupBox \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QStackedWidget \
 		api/quiwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o frmmain.o form/frmmain.cpp
 
@@ -13302,33 +13262,12 @@ lightsystem.o: form/lightsystem.cpp form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QDebug \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qdatetime.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTimer \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtimer.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasictimer.h \
 		ui_lightsystem.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QVariant \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcoreapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qeventloop.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGroupBox \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgroupbox.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QSlider \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qslider.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractslider.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QStackedWidget \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qstackedwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
-		form/switchbutton.h \
-		form/xprogressbar.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QProgressBar \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qprogressbar.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lightsystem.o form/lightsystem.cpp
@@ -14158,12 +14097,7 @@ uiTcpClient.o: form/uiTcpClient.cpp form/uiTcpClient.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QMouseEvent \
 		form/frmtcpclient.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QThread \
-		ui_uiTcpClient.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLineEdit \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QTextEdit
+		ui_uiTcpClient.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o uiTcpClient.o form/uiTcpClient.cpp
 
 uitcpserver.o: form/uitcpserver.cpp form/uitcpserver.h \
@@ -14811,17 +14745,6 @@ windairquality.o: form/windairquality.cpp form/windairquality.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
 		ui_windairquality.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QVariant \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcoreapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qeventloop.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o windairquality.o form/windairquality.cpp
@@ -14933,23 +14856,6 @@ windmode.o: form/windmode.cpp form/windmode.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QDebug \
 		ui_windmode.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QVariant \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcoreapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qeventloop.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o windmode.o form/windmode.cpp
@@ -15150,28 +15056,6 @@ windowsystem.o: form/windowsystem.cpp form/windowsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QThread \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qthread.h \
 		ui_windowsystem.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIcon \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGroupBox \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgroupbox.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QSlider \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qslider.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractslider.h \
-		form/xprogressbar.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QProgressBar \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qprogressbar.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o windowsystem.o form/windowsystem.cpp
@@ -15297,22 +15181,6 @@ windsystem.o: form/windsystem.cpp form/windsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qicon.h \
 		form/windmode.h \
 		ui_windsystem.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QVariant \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QApplication \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcoreapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qeventloop.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qguiapplication.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qinputmethod.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QFrame \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGroupBox \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgroupbox.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o windsystem.o form/windsystem.cpp

@@ -11,6 +11,8 @@ CurtainSystem::CurtainSystem(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
     Timer=new QTimer(this);
     connect(Timer,&QTimer::timeout,this,&CurtainSystem::AllCurtains);
+    AutoTimer=new QTimer(this);
+    connect(AutoTimer,&QTimer::timeout,this,&CurtainSystem::AutoMode);
     Shawdow();
 }
 
@@ -27,11 +29,11 @@ void CurtainSystem::Shawdow()
     Bottom->setBlurRadius(35);
     ui->bottom->setGraphicsEffect(Bottom);
 
-    //    QGraphicsDropShadowEffect *ShowBottom = new QGraphicsDropShadowEffect(this);
-    //    ShowBottom->setOffset(10);
-    //    ShowBottom->setColor(/*Qt::gray*/QColor(43, 43, 43));
-    //    ShowBottom->setBlurRadius(35);
-    //    ui->ShowBottom->setGraphicsEffect(ShowBottom);
+    QGraphicsDropShadowEffect *AutoSwitch = new QGraphicsDropShadowEffect(this);
+    AutoSwitch->setOffset(10);
+    AutoSwitch->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    AutoSwitch->setBlurRadius(35);
+    ui->AutoSwitch->setGraphicsEffect(AutoSwitch);
 
     ButtonStylePlan(8,8,8);
 }
@@ -53,6 +55,8 @@ void CurtainSystem::ButtonStyle(QPushButton *Name, int Offset, int BlurRadius)
 
 void CurtainSystem::on_Up_clicked()
 {
+    qDebug()<<"innn---up";
+    IconPlan(0);
     ButtonStylePlan(1,8,8);
     ui->Up->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Down->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
@@ -62,6 +66,7 @@ void CurtainSystem::on_Up_clicked()
 
 void CurtainSystem::on_Stop_clicked()
 {
+    IconPlan(4);
     ButtonStylePlan(8,8,1);
     ui->Stop->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Down->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
@@ -71,6 +76,9 @@ void CurtainSystem::on_Stop_clicked()
 
 void CurtainSystem::on_Down_clicked()
 {
+
+
+    IconPlan(1);
     ButtonStylePlan(8,1,8);
     ui->Down->setStyleSheet("background-color: rgb(0, 0, 0);color:white;border-radius:15px;");
     ui->Stop->setStyleSheet("background-color: rgb(255, 255, 255);color:black;border-radius:15px;");
@@ -179,7 +187,7 @@ void CurtainSystem::on_Device_Slider_valueChanged(int value)
 
 void CurtainSystem::on_horizontalSlider_2_valueChanged(int value)
 {
-    ui->CurtainStatus->setText(QString::number(value));
+    // ui->CurtainStatus->setText(QString::number(value));
 }
 
 void CurtainSystem::CurtainsStatus(int value)
@@ -228,5 +236,80 @@ void CurtainSystem::AllCurtains()
     else {
         AllCurtainsStop=1;
         Timer->stop();
+    }
+}
+
+void CurtainSystem::on_AutoSwitch_clicked()
+{
+    if(AutoFlag==0){
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
+        AutoTimer->start(1000);
+        ui->Device_Slider->setEnabled(0);
+        ui->Up->setEnabled(0);
+        ui->Down->setEnabled(0);
+        ui->Stop->setEnabled(0);
+        AutoFlag=1;
+    }
+    else{
+        ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_ON.png"));
+        ui->AutoSwitch->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
+        AutoTimer->stop();
+        ui->Device_Slider->setEnabled(1);
+        ui->Up->setEnabled(1);
+        ui->Down->setEnabled(1);
+        ui->Stop->setEnabled(1);
+        AutoFlag=0;
+    }
+}
+
+void CurtainSystem::AutoMode()
+{
+    QTime CurrentTime = QTime::currentTime();
+    int Hour=CurrentTime.hour();
+    int Status=status.GetMessage("0");
+    qDebug()<<"当前时间："<<Hour;
+    ui->Device_Slider->setValue(0);
+    if (Hour<12&&Hour>=7) {//上天
+        qDebug()<<"上午"<<Hour;
+        if(Status!=0){
+            on_Up_clicked();
+        }
+    }
+    else if(Hour>=12&&Hour<14){//中午
+        if(Status!=1){
+            on_Down_clicked();
+        }
+    }
+    else if(Hour>=14&&Hour<20){//下午
+        if(Status!=0){
+            on_Up_clicked();
+        }
+    }
+    else {//下班
+        if(Status!=1){
+            on_Down_clicked();
+        }
+    }
+}
+
+void CurtainSystem::IconPlan(int Order)
+{
+    switch(Order){
+    case 0:
+        ui->Up->setIcon(QIcon(":/new/Curtain/Curtain/Up_ON.png"));
+        ui->Down->setIcon(QIcon(":/new/Curtain/Curtain/Down_OFF.png"));
+        ui->Stop->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        break;
+    case 1:
+        ui->Up->setIcon(QIcon(":/new/Curtain/Curtain/Up_OFF.png"));
+        ui->Down->setIcon(QIcon(":/new/Curtain/Curtain/Down_ON.png"));
+        ui->Stop->setIcon(QIcon(":/new/Curtain/Curtain/Stop_OFF.png"));
+        break;
+    case 4:
+        ui->Up->setIcon(QIcon(":/new/Curtain/Curtain/Up_OFF.png"));
+        ui->Down->setIcon(QIcon(":/new/Curtain/Curtain/Down_OFF.png"));
+        ui->Stop->setIcon(QIcon(":/new/Curtain/Curtain/Stop_ON.png"));
+        break;
     }
 }

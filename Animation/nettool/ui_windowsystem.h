@@ -55,6 +55,7 @@ public:
     QLabel *CurrentWindow;
     QLabel *WeatherStatus_6;
     QLabel *AirAqi;
+    QPushButton *AutoSwitch;
 
     void setupUi(QDialog *WindowSystem)
     {
@@ -237,25 +238,30 @@ public:
         MaxTemp_4->setAlignment(Qt::AlignCenter);
         TempHumi = new QLabel(bottom);
         TempHumi->setObjectName(QStringLiteral("TempHumi"));
-        TempHumi->setGeometry(QRect(70, 490, 231, 121));
+        TempHumi->setGeometry(QRect(60, 490, 151, 41));
         QFont font5;
         font5.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font5.setPointSize(60);
+        font5.setPointSize(34);
         TempHumi->setFont(font5);
         TempHumi->setAlignment(Qt::AlignCenter);
         WeatherStatus_3 = new QLabel(bottom);
         WeatherStatus_3->setObjectName(QStringLiteral("WeatherStatus_3"));
-        WeatherStatus_3->setGeometry(QRect(120, 620, 121, 31));
-        WeatherStatus_3->setFont(font);
+        WeatherStatus_3->setGeometry(QRect(70, 540, 121, 31));
+        QFont font6;
+        font6.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
+        font6.setPointSize(13);
+        font6.setBold(true);
+        font6.setWeight(75);
+        WeatherStatus_3->setFont(font6);
         WeatherStatus_3->setStyleSheet(QStringLiteral("color:#282A49"));
         WeatherStatus_3->setAlignment(Qt::AlignCenter);
         SuitableP = new QLabel(bottom);
         SuitableP->setObjectName(QStringLiteral("SuitableP"));
-        SuitableP->setGeometry(QRect(350, 470, 81, 81));
+        SuitableP->setGeometry(QRect(240, 480, 81, 81));
         SuitableP->setAlignment(Qt::AlignCenter);
         SuitableP2 = new QLabel(bottom);
         SuitableP2->setObjectName(QStringLiteral("SuitableP2"));
-        SuitableP2->setGeometry(QRect(350, 570, 81, 81));
+        SuitableP2->setGeometry(QRect(360, 480, 81, 81));
         SuitableP2->setAlignment(Qt::AlignCenter);
         Device_Qslider = new QSlider(bottom);
         Device_Qslider->setObjectName(QStringLiteral("Device_Qslider"));
@@ -272,13 +278,13 @@ public:
         CurrentWindow = new QLabel(bottom);
         CurrentWindow->setObjectName(QStringLiteral("CurrentWindow"));
         CurrentWindow->setGeometry(QRect(760, 280, 41, 31));
-        QFont font6;
-        font6.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font6.setPointSize(15);
-        font6.setBold(true);
-        font6.setWeight(75);
-        font6.setKerning(true);
-        CurrentWindow->setFont(font6);
+        QFont font7;
+        font7.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
+        font7.setPointSize(15);
+        font7.setBold(true);
+        font7.setWeight(75);
+        font7.setKerning(true);
+        CurrentWindow->setFont(font7);
         CurrentWindow->setStyleSheet(QStringLiteral("color:#282A49"));
         CurrentWindow->setAlignment(Qt::AlignCenter);
         WeatherStatus_6 = new QLabel(bottom);
@@ -293,6 +299,20 @@ public:
         AirAqi->setFont(font);
         AirAqi->setStyleSheet(QStringLiteral("color:#282A49"));
         AirAqi->setAlignment(Qt::AlignCenter);
+        AutoSwitch = new QPushButton(bottom);
+        AutoSwitch->setObjectName(QStringLiteral("AutoSwitch"));
+        AutoSwitch->setGeometry(QRect(60, 590, 371, 71));
+        AutoSwitch->setFont(font3);
+        AutoSwitch->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QStringLiteral(":/new/Led/Led/AI_OFF.png"), QSize(), QIcon::Normal, QIcon::On);
+        AutoSwitch->setIcon(icon4);
+        AutoSwitch->setIconSize(QSize(100, 50));
 
         retranslateUi(WindowSystem);
 
@@ -326,6 +346,7 @@ public:
         CurrentWindow->setText(QApplication::translate("WindowSystem", "0", nullptr));
         WeatherStatus_6->setText(QApplication::translate("WindowSystem", "\346\210\267\345\244\226\347\251\272\346\260\224\350\264\250\351\207\217\357\274\232", nullptr));
         AirAqi->setText(QApplication::translate("WindowSystem", "\344\274\230", nullptr));
+        AutoSwitch->setText(QString());
     } // retranslateUi
 
 };

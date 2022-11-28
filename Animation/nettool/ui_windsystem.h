@@ -28,23 +28,24 @@ public:
     QGroupBox *ButtonBox;
     QPushButton *StopMode;
     QPushButton *MidMode;
-    QPushButton *MixMode;
+    QPushButton *MaxMode;
     QPushButton *MinMode;
     QLabel *label_4;
     QPushButton *pushButton_2;
     QLabel *Pirture;
+    QPushButton *AutoSwitch;
 
     void setupUi(QDialog *WindSystem)
     {
         if (WindSystem->objectName().isEmpty())
             WindSystem->setObjectName(QStringLiteral("WindSystem"));
-        WindSystem->resize(371, 819);
+        WindSystem->resize(371, 917);
         WindSystem->setStyleSheet(QLatin1String("QDialog#WindSystem{\n"
 "	background-color:rgb(178,178,178,255);\n"
 "}"));
         bottom = new QFrame(WindSystem);
         bottom->setObjectName(QStringLiteral("bottom"));
-        bottom->setGeometry(QRect(10, 10, 351, 801));
+        bottom->setGeometry(QRect(10, 10, 351, 901));
         bottom->setStyleSheet(QLatin1String("QFrame#bottom\n"
 "{\n"
 "	background-color:#ffffff;\n"
@@ -67,7 +68,7 @@ public:
         label_3->setAlignment(Qt::AlignCenter);
         ButtonBox = new QGroupBox(bottom);
         ButtonBox->setObjectName(QStringLiteral("ButtonBox"));
-        ButtonBox->setGeometry(QRect(65, 330, 231, 461));
+        ButtonBox->setGeometry(QRect(65, 330, 231, 441));
         ButtonBox->setStyleSheet(QLatin1String("QGroupBox#ButtonBox{\n"
 "border:none;\n"
 "}"));
@@ -102,30 +103,28 @@ public:
 "}"));
         QIcon icon1;
         icon1.addFile(QStringLiteral(":/new/Wind/Wind/Mid_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon1.addFile(QStringLiteral(":/new/Wind/Wind/Mid_ON.png"), QSize(), QIcon::Normal, QIcon::On);
         icon1.addFile(QStringLiteral(":/new/Wind/Wind/Mid_OFF.png"), QSize(), QIcon::Disabled, QIcon::Off);
         MidMode->setIcon(icon1);
         MidMode->setIconSize(QSize(100, 50));
         MidMode->setCheckable(true);
         MidMode->setChecked(false);
         MidMode->setAutoExclusive(true);
-        MixMode = new QPushButton(ButtonBox);
-        MixMode->setObjectName(QStringLiteral("MixMode"));
-        MixMode->setGeometry(QRect(20, 350, 181, 81));
-        MixMode->setFont(font1);
-        MixMode->setStyleSheet(QLatin1String("QPushButton\n"
+        MaxMode = new QPushButton(ButtonBox);
+        MaxMode->setObjectName(QStringLiteral("MaxMode"));
+        MaxMode->setGeometry(QRect(20, 350, 181, 81));
+        MaxMode->setFont(font1);
+        MaxMode->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
 "	border-radius:15px;\n"
 "	background:#FFFFFF;\n"
 "}"));
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/new/Wind/Wind/High_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon2.addFile(QStringLiteral(":/new/Wind/Wind/High_ON.png"), QSize(), QIcon::Normal, QIcon::On);
-        MixMode->setIcon(icon2);
-        MixMode->setIconSize(QSize(100, 50));
-        MixMode->setCheckable(true);
-        MixMode->setChecked(false);
-        MixMode->setAutoExclusive(true);
+        MaxMode->setIcon(icon2);
+        MaxMode->setIconSize(QSize(100, 50));
+        MaxMode->setCheckable(true);
+        MaxMode->setChecked(false);
+        MaxMode->setAutoExclusive(true);
         MinMode = new QPushButton(ButtonBox);
         MinMode->setObjectName(QStringLiteral("MinMode"));
         MinMode->setGeometry(QRect(20, 130, 181, 81));
@@ -137,8 +136,6 @@ public:
 "}"));
         QIcon icon3;
         icon3.addFile(QStringLiteral(":/new/Wind/Wind/Low_OFF.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon3.addFile(QStringLiteral(":/new/Wind/Wind/Low_ON.png"), QSize(), QIcon::Normal, QIcon::On);
-        icon3.addFile(QStringLiteral(":/new/Wind/Wind/Mid_OFF.png"), QSize(), QIcon::Disabled, QIcon::Off);
         MinMode->setIcon(icon3);
         MinMode->setIconSize(QSize(100, 50));
         MinMode->setCheckable(true);
@@ -171,6 +168,23 @@ public:
         font2.setPointSize(50);
         Pirture->setFont(font2);
         Pirture->setAlignment(Qt::AlignCenter);
+        AutoSwitch = new QPushButton(bottom);
+        AutoSwitch->setObjectName(QStringLiteral("AutoSwitch"));
+        AutoSwitch->setGeometry(QRect(85, 790, 181, 81));
+        AutoSwitch->setFont(font1);
+        AutoSwitch->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background:#FFFFFF;\n"
+"}"));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/new/Led/Led/AI_ON.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/new/Led/Led/AI_OFF.png"), QSize(), QIcon::Normal, QIcon::On);
+        AutoSwitch->setIcon(icon5);
+        AutoSwitch->setIconSize(QSize(100, 50));
+        AutoSwitch->setCheckable(true);
+        AutoSwitch->setChecked(false);
+        AutoSwitch->setAutoExclusive(true);
 
         retranslateUi(WindSystem);
 
@@ -184,11 +198,12 @@ public:
         ButtonBox->setTitle(QString());
         StopMode->setText(QString());
         MidMode->setText(QString());
-        MixMode->setText(QString());
+        MaxMode->setText(QString());
         MinMode->setText(QString());
         label_4->setText(QApplication::translate("WindSystem", "\351\200\211\346\213\251", nullptr));
         pushButton_2->setText(QString());
         Pirture->setText(QString());
+        AutoSwitch->setText(QString());
     } // retranslateUi
 
 };
