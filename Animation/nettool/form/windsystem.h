@@ -24,7 +24,9 @@ public:
     int SingleFalg=1;
     //----智能模式
     int AutoFlag=0;
-    int location=0;//0----没人  1-----会议 2----吧台 3-----办公
+    int locationOffice=0;//0----没人  1---有人
+    int locationMissing=0;
+    int locationBar=0;
 
 signals:
     void SendClose();
@@ -52,7 +54,8 @@ private slots:
     void SetInstruction(int);
     void on_AutoSwitch_clicked();
     void Icon_Plan(int);
-
+    //----人体存在传感器
+    void InductiveLogic();
 public:
     void ShowSubUi();
     void Shadow();
@@ -60,6 +63,7 @@ public slots:
     void ReceiveData(const Wind_Data VarValue,int);
     void AirAutoTigger(int);
     void Auto_Sync(int);
+    void Location_Sync(int,int);
 
 
 private:

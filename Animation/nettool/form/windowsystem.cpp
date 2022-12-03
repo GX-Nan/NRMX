@@ -17,7 +17,6 @@ WindowSystem::WindowSystem(QWidget *parent) :
     AutoTime=new QTimer(this);
     connect(AutoTime,&QTimer::timeout,this,[=]{
         AutoMode();
-        qDebug()<<"innnn----AutoMode";
     });
     Button_Init();
     XprogressbarIfconfig();
@@ -270,23 +269,25 @@ void WindowSystem::CrawlActive(QMap<QString, QString> data )
 
 void WindowSystem::AirAutoTigger(int data)
 {
-    if (data==1&&location!=0) {
+    qDebug()<<"AutoTiggerData-------------------------:"<<data;
+    AQI=1;//測試
+    qDebug()<<"locationMissing:"<<locationMissing<<"locationBar:"<<locationBar<<"locationOffice:"<<locationOffice;
+    if (data==1&&(locationOffice!=0||locationBar!=0||locationMissing!=0)) {
+        qDebug()<<"有人存在这个房间里面======";
         if(AQI!=3){//户外空气良好--开窗户
-            if(AutoFlag==0){
+            qDebug()<<"户外空气质量好-----开启窗户";
+            if(AutoFlag==1){
                 AutoTime->start(1000);
-                AutoFlag=1;
             }
-            else if(AutoFlag==1){
+            else if(AutoFlag==0){
                 AutoTime->stop();
-                AutoFlag=0;
             }
         }else{
-            if(AutoFlag==0){
-                emit SendToWind(3);//户外空气差---开新风
+            qDebug()<<"户外空气质量差-----开启新风";
+            if(AutoFlag==1){
+                qDebug()<<"AutoFlag-----"<<AutoFlag;
+                emit SendToWind(1);//户外空气差---开新风
                 emit AutoMode_Sync(1);
-            }else{
-                emit SendToWind(0);
-                emit AutoMode_Sync(0);
             }
         }
     }else {//如果没人或者室内空气良好则保持？
@@ -305,6 +306,22 @@ void WindowSystem::Auto_Sync(int data)
         break;
     }
     ui->AutoSwitch->click();
+    qDebug()<<"AutoFlag:"<<AutoFlag;
+}
+
+void WindowSystem::Location_Sync(int sub, int value)
+{
+    switch (sub) {
+    case 1:
+        locationMissing=value;
+        break;
+    case 2:
+        locationBar=value;
+        break;
+    case 3:
+        locationOffice=value;
+        break;
+    }
 }
 
 
@@ -398,35 +415,36 @@ void WindowSystem::Image_Init()
 
 void WindowSystem::AutoMode()
 {
+    IndoorTemp=24;
     if(OutSideHum<=65){
-        if(IndoorTemp<=23&&IndoorTemp>=16){
-            if(Weather!=1){
+        if(IndoorTemp<=23&&IndoorTemp>=16){//在舒适的温度下---开窗户
+            if(Weather!=1){//雨天----关窗户
                 if(WindowStopFlag==0){
-                    ui->Device_Qslider->setValue(1);
-                    ui->WindowClose->click();
+                    ui->Device_Qslider->setValue(1);//暂时先是---第一个窗户
+                    on_WindowClose_clicked();
                     WindowStopFlag=1;
                 }
             }
-            else {
+            else {//非雨天----开窗户
                 if(WindowStopFlag==1){
-                    ui->Device_Qslider->setValue(0);
-                    ui->WindowClose->click();
+                    ui->Device_Qslider->setValue(1);
+                    on_WindowOpen_clicked();
                     WindowStopFlag=0;
                 }
             }
         }
-        else {
+        else {//在寒冷或者炎热的时候--关闭窗户
             if(WindowStopFlag==1){
-                ui->Device_Qslider->setValue(0);
-                ui->WindowClose->click();
+                ui->Device_Qslider->setValue(1);
+                on_WindowClose_clicked();
                 WindowStopFlag=0;
             }
         }
     }
-    else {//高于65关窗
+    else {//湿度-----高于65关窗
         if(WindowStopFlag==1){
-            ui->Device_Qslider->setValue(0);
-            ui->WindowClose->click();
+            ui->Device_Qslider->setValue(1);
+            on_WindowClose_clicked();
             WindowStopFlag=0;
         }
     }

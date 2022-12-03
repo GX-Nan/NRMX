@@ -315,7 +315,7 @@ void LightSystem::on_AiMode_clicked()
     if(AiMode_Falg==0){
         ui->AiMode->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
         ui->AiMode->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
-        AutoTime->start(1000);
+        AutoTime->start(10000);
         AiMode_Falg=1;
     }
     else {
@@ -742,17 +742,23 @@ void LightSystem::on_ChandChoice_clicked()
 void LightSystem::on_ChandeDown2_clicked()
 {
     ButtonStyle_Chandelier_2("ChandeDown2",1);
+    emit RadioBroadcast("ZB20402021");
+    emit SendToWx("ChanderierStation2",2);
 
 }
 
 void LightSystem::on_ChandeStop2_clicked()
 {
     ButtonStyle_Chandelier_2("ChandeStop2",1);
+    emit RadioBroadcast("ZB20402031");
+    emit SendToWx("ChanderierStation2",3);
 }
 
 void LightSystem::on_ChandeUp2_clicked()
 {
     ButtonStyle_Chandelier_2("ChandeUp2",1);
+    emit RadioBroadcast("ZB20402011");
+    emit SendToWx("ChanderierStation2",1);
 }
 
 
@@ -851,14 +857,14 @@ void LightSystem::on_ChandelierSwitch2_clicked()
         ButtonStyle_Button(ui->ChandelierSwitch2,1,25);
         ui->ChandelierSwitch2->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         status.InsertMessage("Chandelier2","1");
-        emit RadioBroadcast("ZB20402041");
+        emit RadioBroadcast("ZB20402051");
         emit SendToWx("Chandelier2",1);//微信
         break;
     case 1:
         ButtonStyle_Button(ui->ChandelierSwitch2,8,25);
         ui->ChandelierSwitch2->setStyleSheet("background-color: rgb(255, 255, 255);color:white; border-radius:15px;");
         status.InsertMessage("Chandelier2","0");
-        emit RadioBroadcast("ZB20402051");
+        emit RadioBroadcast("ZB20402041");
         emit SendToWx("Chandelier2",0);//微信
         break;
     }
@@ -1209,7 +1215,7 @@ void LightSystem::AutoMode()
 {
     QTime CurrentTime = QTime::currentTime();
     int Hour=CurrentTime.hour();
-    qDebug()<<"当前时间："<<Hour;
+    //    qDebug()<<"当前时间："<<Hour;
     if (Hour<12&&Hour>=7) {//上天
         qDebug()<<"上午"<<Hour;
         WorkTime=1;
@@ -1218,6 +1224,7 @@ void LightSystem::AutoMode()
         //--------色温
         ui->Color_All->setChecked(1);
         ui->Color_Slider->setValue(30);
+        Trigger_ColorQslider();
     }
     else if(Hour>=12&&Hour<14){//中午
         MiddayFalg=1;
@@ -1227,6 +1234,7 @@ void LightSystem::AutoMode()
         //--------色温
         ui->Color_All->setChecked(1);
         ui->Color_Slider->setValue(60);
+        Trigger_ColorQslider();
     }
     else if(Hour>=14&&Hour<20){//下午
         MiddayFalg=0;
@@ -1236,6 +1244,7 @@ void LightSystem::AutoMode()
         //--------色温
         ui->Color_All->setChecked(1);
         ui->Color_Slider->setValue(10);
+        Trigger_ColorQslider();
     }
     else {//下班
         WorkTime=0;
@@ -1244,72 +1253,116 @@ void LightSystem::AutoMode()
             status.InsertMessage("Chandelier1","5");
             ui->ChandelierSwitch1->click();
         }
+        //----亮度
         ui->Lux_All->setChecked(1);
         ui->Brightness_Slider->setValue(0);//关闭所有副灯
+        Trigger_BrightnessQslider();
         //--------色温
         ui->Color_All->setChecked(1);
         ui->Color_Slider->setValue(80);
+        Trigger_ColorQslider();
     }
 }
 
 void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感器输入亮度等级
 {
-    switch (location) {
-    case 0:
-        ui->Lux_All->setChecked(1);
-        ui->Brightness_Slider->setValue(0);
-        break;
-    case 1://会议 副灯 1/2/3
-        ui->Lux_All->setChecked(0);
+    //-------------------判断会议区是是否有人
+    if(locationMissing==1){
+
         if(MiddayFalg!=1){
             for(int i=1;i<=3;i++){
                 ui->Device_Slider->setValue(i);
+                Trigger_DeviceQslider();
                 ui->Brightness_Slider->setValue(100-IndoorLux/ControlParameters);
+                Trigger_BrightnessQslider();
             }
+            qDebug()<<"会议区--------------------innnn--不是中午";
         }
         else {
             for(int i=1;i<=3;i++){
                 ui->Device_Slider->setValue(i);
+                Trigger_DeviceQslider();
                 ui->Brightness_Slider->setValue(20);
+                Trigger_BrightnessQslider();
+            }
+            qDebug()<<"会议区--------------------innnn--是中午";
+        }
+    }else{
+        for(int i=1;i<=3;i++){
+            ui->Device_Slider->setValue(i);
+            Trigger_DeviceQslider();
+            ui->Brightness_Slider->setValue(0);
+            Trigger_BrightnessQslider();
+        }
+    }
+    //-------------------判断吧台是是否有人
+        if(locationBar==1){
+            qDebug()<<"吧台有人--------";
+            ui->Lux_All->setChecked(0);
+            if(MiddayFalg!=1){
+                //----吊灯
+                if(status.GetMessage("Chandelier1")!="0"){//如果现在不是开着的话，则先写入
+                    status.InsertMessage("Chandelier1","1");
+                    ui->ChandelierSwitch1->click();
+                }
+                //-----副灯
+                for(int i=5;i<=6;i++){//副灯
+                    ui->Device_Slider->setValue(i);
+                    Trigger_DeviceQslider();
+                    ui->Brightness_Slider->setValue(100-IndoorLux/ControlParameters);
+                    Trigger_BrightnessQslider();
+                }
+            }
+            else {
+                //----吊灯
+                if(status.GetMessage("Chandelier1")!="0"){//如果现在不是关着的话，则先写入
+                    status.InsertMessage("Chandelier1","1");
+                    ui->ChandelierSwitch1->click();
+                }
+                //-----副灯
+                for(int i=5;i<=6;i++){//副灯
+                    ui->Device_Slider->setValue(i);
+                    Trigger_DeviceQslider();
+                    ui->Brightness_Slider->setValue(20);
+                    Trigger_BrightnessQslider();
+                }
             }
         }
-        break;
-    case 2://吧台 吊灯--副灯 5/6
-        ui->Lux_All->setChecked(0);
-        if(MiddayFalg!=1){
+        else{
+            qDebug()<<"吧台没有人--------";
             //----吊灯
-            if(status.GetMessage("Chandelier1")!="4"){//如果现在不是开着的话，则先写入
-                status.InsertMessage("Chandelier1","4");
+            qDebug()<<"当前吊灯状态------"<<status.GetMessage("Chandelier1");
+            if(status.GetMessage("Chandelier1")!="0"){//如果现在不是开着的话，则先写入
+                status.InsertMessage("Chandelier1","1");
                 ui->ChandelierSwitch1->click();
             }
             //-----副灯
             for(int i=5;i<=6;i++){//副灯
                 ui->Device_Slider->setValue(i);
-                ui->Brightness_Slider->setValue(100-IndoorLux/ControlParameters);
+                Trigger_DeviceQslider();
+                ui->Brightness_Slider->setValue(0);
+                Trigger_BrightnessQslider();
             }
         }
-        else {
-            //----吊灯
-            if(status.GetMessage("Chandelier1")!="5"){//如果现在不是开着的话，则先写入
-                status.InsertMessage("Chandelier1","5");
-                ui->ChandelierSwitch1->click();
-            }
-            //-----副灯
-            for(int i=5;i<=6;i++){//副灯
-                ui->Device_Slider->setValue(i);
-                ui->Brightness_Slider->setValue(20);
-            }
-        }
-        break;
-    case 3://办公 副灯 4
+    //-------------------判断办公区是是否有人
+    if(locationOffice==1){
+        ui->Lux_All->setChecked(0);//取消所有的灯光的控制
         ui->Device_Slider->setValue(4);
+        Trigger_DeviceQslider();
         if(MiddayFalg!=1){
             ui->Brightness_Slider->setValue(100-IndoorLux/ControlParameters);
+            Trigger_BrightnessQslider();
         }
         else {
             ui->Brightness_Slider->setValue(20);
+            Trigger_BrightnessQslider();
         }
-        break;
+    }
+    else{
+        ui->Device_Slider->setValue(4);
+        Trigger_DeviceQslider();
+        ui->Brightness_Slider->setValue(0);
+        Trigger_BrightnessQslider();
     }
 }
 
@@ -1352,7 +1405,7 @@ void LightSystem::SpotLightLogic()
             }
             if(AllSpotStatus==0){
                 emit SendToWx("SpotLight_0",1);
-                emit RadioBroadcast("ZB20500011 ");
+                emit RadioBroadcast("ZB20500011");
                 AllSpotStatus=1;
             }
         }
@@ -1375,4 +1428,20 @@ void LightSystem::SpotLightLogic()
 void LightSystem::GetWeather(int Weather)
 {
     OutsideWeather=Weather;
+}
+
+void LightSystem::Location_Sync(int sub, int value)
+{
+    switch (sub) {
+    case 1:
+        locationMissing=value;
+        break;
+    case 2:
+        locationBar=value;
+        break;
+    case 3:
+        locationOffice=value;
+        break;
+    }
+    qDebug()<<"Light--sync"<<"locationMissing:"<<locationMissing<<"locationBar:"<<locationBar<<"locationOffice:"<<locationOffice;
 }

@@ -420,7 +420,10 @@ void frmMain::initConfig()//配置
     connect(WindowUi,&WindowSystem::AutoMode_Sync,WindUi,&WindSystem::Auto_Sync);//同步智能的按钮按下
     connect(WindUi,&WindSystem::AutoMode_Sync,WindowUi,&WindowSystem::Auto_Sync);//同上
     connect(Analysis_wind,&Analysis_Wind::SendToAir,AirUi,&AirSystem::GetIndoorAirQuality);
-
+    //-----------雷达
+    connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindUi,&WindSystem::Location_Sync);
+    connect(Analysis_wind,&Analysis_Wind::SendToLocation,LightUi,&LightSystem::Location_Sync);
+    connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindowUi,&WindowSystem::Location_Sync);
     //------------------
     connect(this,&frmMain::Show_SubUi,WindUi,&WindSystem::ShowSubUi);
 

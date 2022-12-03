@@ -99,7 +99,8 @@ public:
     int IndoorLux=0;
     QTimer *AutoTime;
     int OutsideWeather=0;//1---晴天 2---多云 3---下雨
-    int location=0; //0---没有人 1---会议 2----吧台 3----办公
+
+    int locationMissing=0,locationOffice=0,locationBar=0;//0---无人 1---有人
     int ControlParameters=6;//P---->1:6 参数
     int MiddayFalg=0;
     int WorkTime=0;
@@ -179,6 +180,7 @@ private slots:
 public slots:
     void Light_Status(int Function,int Sub,int Value);
     void GetWeather(int);
+    void Location_Sync(int,int);
 
 private:
     Ui::LightSystem *ui;

@@ -109,26 +109,20 @@ void WindSystem::ReceiveData(const Wind_Data VarValue,int Value)
 
 void WindSystem::AirAutoTigger(int data)
 {
-    if(AutoFlag==0){
+    //1.逻辑-
+    //2.判断是否开启
+    //3.那部分有人---然后再开那部分的风量口
+    if(AutoFlag==1){//----------?无法确定是否开了？
         switch(data){
         case 0:
-            ui->StopMode->click();
+            on_StopMode_clicked();
             break;
         case 1:
-            ui->MaxMode->click();
+           // qDebug()<<"开新风------";
+            on_MaxMode_clicked();
+            InductiveLogic();
             break;
         }
-        AutoFlag=1;
-    }else{
-        switch(data){
-        case 0:
-            ui->StopMode->click();
-            break;
-        case 1:
-            ui->MaxMode->click();
-            break;
-        }
-        AutoFlag=0;
     }
 }
 
@@ -144,6 +138,22 @@ void WindSystem::Auto_Sync(int data)
         ui->AutoSwitch->click();
         break;
     }
+}
+
+void WindSystem::Location_Sync(int sub, int value)
+{
+    switch (sub) {
+    case 1:
+        locationMissing=value;
+        break;
+    case 2:
+        locationBar=value;
+        break;
+    case 3:
+        locationOffice=value;
+        break;
+    }
+
 }
 
 
@@ -234,11 +244,13 @@ void WindSystem::on_AutoSwitch_clicked()
         ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_OFF.png"));
         ui->AutoSwitch->setStyleSheet("background-color: rgb(0, 0, 0);color:black; border-radius:15px;");
         ui->ButtonBox->setEnabled(0);
+        emit AutoMode_Sync(1);
         AutoFlag=1;
     }else{
         ui->AutoSwitch->setIcon(QIcon(":/new/Led/Led/AI_ON.png"));
         ui->AutoSwitch->setStyleSheet("background-color: rgb(255, 255, 255);color:black; border-radius:15px;");
         ui->ButtonBox->setEnabled(1);
+        emit AutoMode_Sync(0);
         AutoFlag=0;
     }
 }
@@ -270,5 +282,38 @@ void WindSystem::Icon_Plan(int Order)
         ui->MidMode->setIcon(QIcon(":/new/Wind/Wind/Mid_OFF.png"));
         ui->MaxMode->setIcon(QIcon(":/new/Wind/Wind/High_ON.png"));
         break;
+    }
+}
+
+void WindSystem::InductiveLogic()
+{
+    //2---90（打开）  4---180(关闭)
+    //-------吧台
+    if (locationBar==1) {
+        //开启
+        emit RadioBroadcast("ZB60201021");
+        emit RadioBroadcast("ZB60203021");
+    }
+    else{
+        emit RadioBroadcast("ZB60201041");
+        emit RadioBroadcast("ZB60203041");
+    }
+    //-----办公
+    if(locationOffice==1){
+        emit RadioBroadcast("ZB60202021");
+        emit RadioBroadcast("ZB60204021");
+    }
+    else{
+        emit RadioBroadcast("ZB60202041");
+        emit RadioBroadcast("ZB60204041");
+    }
+    //-------会议室
+    if(locationMissing==1){
+        emit RadioBroadcast("ZB60205021");
+        emit RadioBroadcast("ZB60206021");
+    }
+    else{
+        emit RadioBroadcast("ZB60205041");
+        emit RadioBroadcast("ZB60206041");
     }
 }

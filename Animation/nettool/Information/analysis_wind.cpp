@@ -73,6 +73,14 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     {
         Value.append(Data.at(b));
     }
+    //----设备位置-----
+    for(int i=6;i<=7;i++){
+        LocationSub.append(Data.at(i));
+    }
+    for(int i=8;i<=9;i++){
+        LocationStatus.append(Data.at(i));
+    }
+
     //------------------
     switch(Function.toInt())
     {
@@ -87,7 +95,7 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         break;
     case 4:
         Air.PM25=Value.toInt();
-        if(Value>=75){
+        if(Value.toInt()>=75){
             PM25Flag=1;
         }else {
             PM25Flag=0;
@@ -95,7 +103,8 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         break;
     case 5:
         Air.Co2=Value.toInt();
-        if(Value>=700){
+        qDebug()<<"Value.toInt():"<<Value.toInt();
+        if(Value.toInt()>=700){
             Co2Flag=1;
         }else {
             Co2Flag=0;
@@ -103,7 +112,7 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         break;
     case 6:
         Air.TVCO=Value.toInt();
-        if(Value>=2){
+        if(Value.toInt()>=2){
             TvcoFlag=1;
         }else {
             TvcoFlag=0;
@@ -111,7 +120,7 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         break;
     case 7:
         Air.HCHO=Value.toInt();
-        if(Value>=12){
+        if(Value.toInt()>=12){
             HCHOFlag=1;
         }else {
             HCHOFlag=0;
@@ -119,15 +128,25 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         break;
     case 8:
         Air.PM10=Value.toInt();
-        if(Value>=18){
+        if(Value.toInt()>=18){
             PM10Flag=1;
         }else {
             PM10Flag=0;
         }
         break;
+    case 9:
+        qDebug()<<"位置"<<LocationSub.toInt()<<"状态："<<LocationStatus.toInt();
+        emit SendToLocation(LocationSub.toInt(),LocationStatus.toInt());
+        LocationSub.clear();
+        LocationStatus.clear();
+        break;
     }
     emit AirQuality_Data(Air);//新风显示
     emit SendToAir(Air.Temp,Air.Hum);//给空调判断
+
+    //测试
+   // emit IndoorAirJudge(1);
+    qDebug()<<"Co2Flag:"<<Co2Flag;
     //-----先在这里判断室内是否需要通风透气---然后再判断是否要开窗户或者新风
     if(PM25Flag==1||PM10Flag==1||HCHOFlag==1||TvcoFlag==1||Co2Flag==1){
         emit IndoorAirJudge(1);

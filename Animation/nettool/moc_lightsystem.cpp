@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_LightSystem_t {
-    QByteArrayData data[64];
-    char stringdata0[1133];
+    QByteArrayData data[65];
+    char stringdata0[1147];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -94,7 +94,8 @@ QT_MOC_LITERAL(59, 1070, 19), // "AuxiliaryLightLogic"
 QT_MOC_LITERAL(60, 1090, 14), // "SpotLightLogic"
 QT_MOC_LITERAL(61, 1105, 12), // "Light_Status"
 QT_MOC_LITERAL(62, 1118, 3), // "Sub"
-QT_MOC_LITERAL(63, 1122, 10) // "GetWeather"
+QT_MOC_LITERAL(63, 1122, 10), // "GetWeather"
+QT_MOC_LITERAL(64, 1133, 13) // "Location_Sync"
 
     },
     "LightSystem\0SendClose\0\0RadioBroadcast\0"
@@ -127,7 +128,7 @@ QT_MOC_LITERAL(63, 1122, 10) // "GetWeather"
     "on_LedAll_clicked\0on_SpotAll_clicked\0"
     "AutoMode\0AuxiliaryLightLogic\0"
     "SpotLightLogic\0Light_Status\0Sub\0"
-    "GetWeather"
+    "GetWeather\0Location_Sync"
 };
 #undef QT_MOC_LITERAL
 
@@ -137,7 +138,7 @@ static const uint qt_meta_data_LightSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      52,   14, // methods
+      53,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -145,60 +146,61 @@ static const uint qt_meta_data_LightSystem[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  274,    2, 0x06 /* Public */,
-       3,    1,  275,    2, 0x06 /* Public */,
-       4,    2,  278,    2, 0x06 /* Public */,
+       1,    0,  279,    2, 0x06 /* Public */,
+       3,    1,  280,    2, 0x06 /* Public */,
+       4,    2,  283,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,  283,    2, 0x08 /* Private */,
-       6,    3,  284,    2, 0x08 /* Private */,
-      11,    3,  291,    2, 0x08 /* Private */,
-      13,    1,  298,    2, 0x08 /* Private */,
-      15,    1,  301,    2, 0x08 /* Private */,
-      16,    0,  304,    2, 0x08 /* Private */,
-      17,    0,  305,    2, 0x08 /* Private */,
-      18,    0,  306,    2, 0x08 /* Private */,
-      19,    0,  307,    2, 0x08 /* Private */,
-      20,    0,  308,    2, 0x08 /* Private */,
-      21,    2,  309,    2, 0x08 /* Private */,
-      24,    0,  314,    2, 0x08 /* Private */,
-      25,    1,  315,    2, 0x08 /* Private */,
-      26,    1,  318,    2, 0x08 /* Private */,
-      28,    0,  321,    2, 0x08 /* Private */,
-      29,    2,  322,    2, 0x08 /* Private */,
-      30,    2,  327,    2, 0x08 /* Private */,
-      31,    0,  332,    2, 0x08 /* Private */,
-      32,    0,  333,    2, 0x08 /* Private */,
-      33,    0,  334,    2, 0x08 /* Private */,
-      34,    0,  335,    2, 0x08 /* Private */,
-      35,    0,  336,    2, 0x08 /* Private */,
-      36,    0,  337,    2, 0x08 /* Private */,
-      37,    0,  338,    2, 0x08 /* Private */,
-      38,    2,  339,    2, 0x08 /* Private */,
-      39,    2,  344,    2, 0x08 /* Private */,
-      40,    0,  349,    2, 0x08 /* Private */,
-      41,    0,  350,    2, 0x08 /* Private */,
-      42,    0,  351,    2, 0x08 /* Private */,
-      43,    0,  352,    2, 0x08 /* Private */,
-      44,    0,  353,    2, 0x08 /* Private */,
-      45,    0,  354,    2, 0x08 /* Private */,
-      46,    0,  355,    2, 0x08 /* Private */,
-      47,    0,  356,    2, 0x08 /* Private */,
-      48,    0,  357,    2, 0x08 /* Private */,
-      49,    0,  358,    2, 0x08 /* Private */,
-      50,    0,  359,    2, 0x08 /* Private */,
-      51,    0,  360,    2, 0x08 /* Private */,
-      52,    0,  361,    2, 0x08 /* Private */,
-      53,    0,  362,    2, 0x08 /* Private */,
-      54,    0,  363,    2, 0x08 /* Private */,
-      55,    0,  364,    2, 0x08 /* Private */,
-      56,    0,  365,    2, 0x08 /* Private */,
-      57,    0,  366,    2, 0x08 /* Private */,
-      58,    0,  367,    2, 0x08 /* Private */,
-      59,    0,  368,    2, 0x08 /* Private */,
-      60,    0,  369,    2, 0x08 /* Private */,
-      61,    3,  370,    2, 0x0a /* Public */,
-      63,    1,  377,    2, 0x0a /* Public */,
+       5,    0,  288,    2, 0x08 /* Private */,
+       6,    3,  289,    2, 0x08 /* Private */,
+      11,    3,  296,    2, 0x08 /* Private */,
+      13,    1,  303,    2, 0x08 /* Private */,
+      15,    1,  306,    2, 0x08 /* Private */,
+      16,    0,  309,    2, 0x08 /* Private */,
+      17,    0,  310,    2, 0x08 /* Private */,
+      18,    0,  311,    2, 0x08 /* Private */,
+      19,    0,  312,    2, 0x08 /* Private */,
+      20,    0,  313,    2, 0x08 /* Private */,
+      21,    2,  314,    2, 0x08 /* Private */,
+      24,    0,  319,    2, 0x08 /* Private */,
+      25,    1,  320,    2, 0x08 /* Private */,
+      26,    1,  323,    2, 0x08 /* Private */,
+      28,    0,  326,    2, 0x08 /* Private */,
+      29,    2,  327,    2, 0x08 /* Private */,
+      30,    2,  332,    2, 0x08 /* Private */,
+      31,    0,  337,    2, 0x08 /* Private */,
+      32,    0,  338,    2, 0x08 /* Private */,
+      33,    0,  339,    2, 0x08 /* Private */,
+      34,    0,  340,    2, 0x08 /* Private */,
+      35,    0,  341,    2, 0x08 /* Private */,
+      36,    0,  342,    2, 0x08 /* Private */,
+      37,    0,  343,    2, 0x08 /* Private */,
+      38,    2,  344,    2, 0x08 /* Private */,
+      39,    2,  349,    2, 0x08 /* Private */,
+      40,    0,  354,    2, 0x08 /* Private */,
+      41,    0,  355,    2, 0x08 /* Private */,
+      42,    0,  356,    2, 0x08 /* Private */,
+      43,    0,  357,    2, 0x08 /* Private */,
+      44,    0,  358,    2, 0x08 /* Private */,
+      45,    0,  359,    2, 0x08 /* Private */,
+      46,    0,  360,    2, 0x08 /* Private */,
+      47,    0,  361,    2, 0x08 /* Private */,
+      48,    0,  362,    2, 0x08 /* Private */,
+      49,    0,  363,    2, 0x08 /* Private */,
+      50,    0,  364,    2, 0x08 /* Private */,
+      51,    0,  365,    2, 0x08 /* Private */,
+      52,    0,  366,    2, 0x08 /* Private */,
+      53,    0,  367,    2, 0x08 /* Private */,
+      54,    0,  368,    2, 0x08 /* Private */,
+      55,    0,  369,    2, 0x08 /* Private */,
+      56,    0,  370,    2, 0x08 /* Private */,
+      57,    0,  371,    2, 0x08 /* Private */,
+      58,    0,  372,    2, 0x08 /* Private */,
+      59,    0,  373,    2, 0x08 /* Private */,
+      60,    0,  374,    2, 0x08 /* Private */,
+      61,    3,  375,    2, 0x0a /* Public */,
+      63,    1,  382,    2, 0x0a /* Public */,
+      64,    2,  385,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -255,6 +257,7 @@ static const uint qt_meta_data_LightSystem[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   22,   62,   23,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
 
        0        // eod
 };
@@ -317,6 +320,7 @@ void LightSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 49: _t->SpotLightLogic(); break;
         case 50: _t->Light_Status((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 51: _t->GetWeather((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 52: _t->Location_Sync((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -381,13 +385,13 @@ int LightSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 52)
+        if (_id < 53)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 52;
+        _id -= 53;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 52)
+        if (_id < 53)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 52;
+        _id -= 53;
     }
     return _id;
 }

@@ -26,9 +26,12 @@ public:
     int Weather=0;
     int AutoFlag=0;
     int WindowStopFlag=0;
-    int location=0;
     int AQI=0;
     QTimer *AutoTime;
+    //--雷达
+    int locationOffice=0;//0----没人  1---有人
+    int locationMissing=0;
+    int locationBar=0;
     //------
     QMap<int,int>data;
 signals:
@@ -70,7 +73,7 @@ public slots:
     void CrawlActive(QMap<QString,QString>);
     void AirAutoTigger(int);
     void Auto_Sync(int);
-
+    void Location_Sync(int,int);
 
 private:
     Ui::WindowSystem *ui;

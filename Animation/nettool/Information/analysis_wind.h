@@ -40,6 +40,7 @@ public:
     ~Analysis_Wind();
     Wind_Data data;
     AirQuality Air;
+    QString LocationStatus,LocationSub;
 public slots:
     void Receive_Data(QMultiMap<int,QString> Data);
     void Handle_Data_Wind(QString Data);
@@ -52,6 +53,7 @@ signals:
     void IndoorAirJudge(int);
     void SendToAir(int,int);//发给空调 温度和湿度
     void SendToLight(int);//发给灯光 亮度 ---不过应该要分区域?
+    void SendToLocation(int,int);
 };
 
 #endif // ANALYSIS_WIND_H
