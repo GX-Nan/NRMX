@@ -70,12 +70,7 @@ void uart2_rx_task()
     uint8_t *data = (uint8_t *)malloc(RX_BUF_SIZE + 1);
     char SendData[12] = "ESP10";
     int Data;
-    int TargetStatus;//目标状态
-    int SportDistance = 0;//运动目标距离
-    int SportEnergy = 0;//运动目标能量值
-    int StaticDistance = 0;//静止目标距离
-    int StaticEnergy = 0;//静止目标能量值
-    int DetectionDistance=0;//探测距离
+
     char CharData[4];
     while (1)
     {
@@ -84,21 +79,56 @@ void uart2_rx_task()
         {
             data[rxBytes] = 0;
             // ESP_LOGI(RX_TASK_TAG, "Read %d bytes: '%s'", rxBytes, data);
-          //  ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);调试//---------------
-            printf("-----------------------------------------------------------------------------------------------------------------------------\r\n");
-            TargetStatus = data[8];//目标状态
-            printf("Status:%d\r\n",TargetStatus);
-            SportDistance=data[9]+data[10];//运动目标距离
-            printf("distance:%d\r\n", SportDistance);
-            SportEnergy=data[11];//运动目标能量
-            printf("SportEnergy:%d\r\n", SportEnergy);
-            StaticDistance=data[12]+data[13];
-            printf("StaticDistance:%d\r\n", StaticDistance);
-            StaticEnergy=data[14];
-            printf("StaticEnergy:%d\r\n", StaticEnergy);
-            DetectionDistance=data[16]+data[17];
-            printf("DetectionDistance:%d\r\n", DetectionDistance);
+            //  ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);调试//---------------
+            // printf("-----------------------------------------------------------------------------------------------------------------------------\r\n");
+            //------以下的数据暂时不使用
+            SportDistance = data[9] + data[10]; //运动目标距离
+            // printf("distance:%d\r\n", SportDistance);
+            SportEnergy = data[11]; //运动目标能量
+            // printf("SportEnergy:%d\r\n", SportEnergy);
+            StaticDistance = data[12] + data[13];
+            // printf("StaticDistance:%d\r\n", StaticDistance);
+            StaticEnergy = data[14];
+            //    printf("StaticEnergy:%d\r\n", StaticEnergy);
+            DetectionDistance = data[16] + data[17];
+            // printf("DetectionDistance:%d\r\n", DetectionDistance);
             //----转出来感觉不是16进制？
+
+            TargetStatus = data[8]; //目标状态
+                                    // printf("distance:%d\r\n", TargetStatus);
+            if (tcp_client.connected == 1)
+            {
+                if (TargetStatus != 0 || TargetStautsFlag == 3)
+                {
+                    //printf("SportEnergy:%d\r\n", SportEnergy);
+                    //printf("StaticEnergy:%d\r\n", StaticEnergy);
+                    testFlag = 0;
+                    if (SportEnergy > 0 && StaticEnergy >= 70 && EnergyFlag == 0)
+                    {
+                        write(tcp_client.socket_fd, "ESPB090101", 10);
+                        EnergyFlag = 1;
+                        printf("有人\r\n");
+                    }
+                    else if (SportEnergy == 0 && StaticEnergy < 70 && EnergyFlag == 1)
+                    {
+                        write(tcp_client.socket_fd, "ESPB090100", 10);
+                        EnergyFlag = 0;
+                        printf("无人\r\n");
+                    }
+                }
+                else if (TargetStatus == 0 || TargetStautsFlag == 3)
+                {
+                    if (testFlag == 0)
+                    {
+                        write(tcp_client.socket_fd, "ESPB090100", 10);
+                        testFlag = 1;
+                    }
+                }
+            }
+            else
+            {
+                TargetStautsFlag = 3;
+            }
         }
     }
     free(data);

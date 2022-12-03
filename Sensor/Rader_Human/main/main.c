@@ -48,8 +48,8 @@ void app_main(void)
     // portENTER_CRITICAL(&xTaskQueueMutex);//进入临界点
     Usart_main();
    // Infra_Red_Main();
-    // strcpy(tcp_client.ip, "192.168.1.105");//设置连接的服务器IP地址
-    // tcp_client.port = 6003;//设置连接的端口号
-    // tcp_client_select_task_init(&tcp_client,10,tcp_client_recv_data);
+    strcpy(tcp_client.ip, "192.168.1.109");//设置连接的服务器IP地址
+    tcp_client.port = 6000  ;//设置连接的端口号
+    tcp_client_select_task_init(&tcp_client,10,tcp_client_recv_data);
 
 }

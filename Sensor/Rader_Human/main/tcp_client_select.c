@@ -174,7 +174,6 @@ void tcp_client_select_task(void *arg)
                     printf("MessageJudge is:%s\r\n", pv_tcp_client_select_value->MessageJudge); //赋值给判断判断的数组
                     // printf("Sizeof Message:%d\r\n",sizeof(pv_tcp_client_select_value->MessageJudge));
                     printf("free_heap_size = %d\n", esp_get_free_heap_size());
-
                     // pv_tcp_client_select_value->CallBack(pv_tcp_client_select_value->read_buff,len);
                     // len = write(socket_fd, pv_tcp_client_select_value->read_buff, len);
                 }

@@ -12,7 +12,7 @@ void WIFI_EVENT_STA_DISCONNECTED_FUN(void)
     //事件标志组
     xEventGroupClearBits(EventGroupHandleWiFiEvent, EventBitsWiFiStaConnected);
     esp_wifi_connect();//连接热点
-   // ESP_LOGI(TAG,"connect to the AP fail");
+    ESP_LOGI(TAG,"connect to the AP fail");
 }
 
 /*有设备连接上ESP32的热点*/
