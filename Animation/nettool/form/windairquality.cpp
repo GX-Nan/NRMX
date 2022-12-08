@@ -50,7 +50,6 @@ void WindAirQuality::Xprogressbar_Init()
 
 void WindAirQuality::Xprogressbar_Update(AirQuality Data)
 {
-    qDebug()<<"Data.Co2:"<<Data.Co2;
     ui->Co2_Xprogress->setValue(Data.Co2);
     ui->HCHO_Xprogress->setValue(Data.HCHO);
     ui->TVCO_Xprogress->setValue(Data.TVCO);
@@ -62,7 +61,6 @@ void WindAirQuality::Xprogressbar_Update(AirQuality Data)
     ui->Tvco_Label->setText(QString::number(Data.TVCO)+"/mg");
     ui->Pm25_Label->setText(QString::number(Data.PM25)+"/mg");
     ui->Pm10_Label->setText(QString::number(Data.PM10)+"/mg");
-    qDebug()<<"test----------update";
 }
 
 void WindAirQuality::Image_Init()

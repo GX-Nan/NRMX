@@ -97,14 +97,16 @@ public:
     int LedStopFlag=0;//停止Led灯回传
     //------自动化数据
     int IndoorLux=0;
-    QTimer *AutoTime;
     int OutsideWeather=0;//1---晴天 2---多云 3---下雨
-
     int locationMissing=0,locationOffice=0,locationBar=0;//0---无人 1---有人
-    int ControlParameters=6;//P---->1:6 参数
+    int LuxMissing=0,LuxOffice=0,LuxBar=0;//三个地方的亮度
+    double ControlParameters=0.4;//P---->1:6 参数
     int MiddayFalg=0;
     int WorkTime=0;
     int AllSpotStatus=0;
+    int AutoFlag=0;
+    int LatestMeeting=0,LatestBar=0,LatestOffice=0;
+    QTimer *AutoTime;
 
 signals:
     void SendClose();
@@ -181,6 +183,7 @@ public slots:
     void Light_Status(int Function,int Sub,int Value);
     void GetWeather(int);
     void Location_Sync(int,int);
+    void Lux_Sync(int,int);
 
 private:
     Ui::LightSystem *ui;

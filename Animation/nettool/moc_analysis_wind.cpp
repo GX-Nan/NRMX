@@ -80,22 +80,22 @@ static const uint qt_meta_data_Analysis_Wind[] = {
        5,    1,   74,    2, 0x06 /* Public */,
        7,    1,   77,    2, 0x06 /* Public */,
        8,    2,   80,    2, 0x06 /* Public */,
-       9,    1,   85,    2, 0x06 /* Public */,
-      10,    2,   88,    2, 0x06 /* Public */,
+       9,    2,   85,    2, 0x06 /* Public */,
+      10,    2,   90,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    1,   93,    2, 0x0a /* Public */,
-      13,    1,   96,    2, 0x0a /* Public */,
-      14,    1,   99,    2, 0x0a /* Public */,
-      15,    1,  102,    2, 0x0a /* Public */,
-      17,    1,  105,    2, 0x0a /* Public */,
+      11,    1,   95,    2, 0x0a /* Public */,
+      13,    1,   98,    2, 0x0a /* Public */,
+      14,    1,  101,    2, 0x0a /* Public */,
+      15,    1,  104,    2, 0x0a /* Public */,
+      17,    1,  107,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    4,    2,
     QMetaType::Void, 0x80000000 | 6,    4,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
-    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
 
  // slots: parameters
@@ -118,7 +118,7 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 1: _t->AirQuality_Data((*reinterpret_cast< const AirQuality(*)>(_a[1]))); break;
         case 2: _t->IndoorAirJudge((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->SendToAir((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 4: _t->SendToLight((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->SendToLight((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 5: _t->SendToLocation((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 6: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
         case 7: _t->Handle_Data_Wind((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -158,7 +158,7 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             }
         }
         {
-            using _t = void (Analysis_Wind::*)(int );
+            using _t = void (Analysis_Wind::*)(int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Analysis_Wind::SendToLight)) {
                 *result = 4;
                 return;
@@ -239,9 +239,9 @@ void Analysis_Wind::SendToAir(int _t1, int _t2)
 }
 
 // SIGNAL 4
-void Analysis_Wind::SendToLight(int _t1)
+void Analysis_Wind::SendToLight(int _t1, int _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 

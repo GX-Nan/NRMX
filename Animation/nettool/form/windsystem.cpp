@@ -120,7 +120,6 @@ void WindSystem::AirAutoTigger(int data)
         case 1:
            // qDebug()<<"开新风------";
             on_MaxMode_clicked();
-            InductiveLogic();
             break;
         }
     }
@@ -152,6 +151,10 @@ void WindSystem::Location_Sync(int sub, int value)
     case 3:
         locationOffice=value;
         break;
+    }
+    if(AutoFlag==1){
+        qDebug()<<"新风----判断---是否有人---";
+        InductiveLogic();
     }
 
 }

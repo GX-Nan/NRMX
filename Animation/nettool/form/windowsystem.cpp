@@ -269,12 +269,11 @@ void WindowSystem::CrawlActive(QMap<QString, QString> data )
 
 void WindowSystem::AirAutoTigger(int data)
 {
-    qDebug()<<"AutoTiggerData-------------------------:"<<data;
-    AQI=1;//測試
-    qDebug()<<"locationMissing:"<<locationMissing<<"locationBar:"<<locationBar<<"locationOffice:"<<locationOffice;
+//    qDebug()<<"AutoTiggerData-------------------------:"<<data;
+    AQI=4;
     if (data==1&&(locationOffice!=0||locationBar!=0||locationMissing!=0)) {
         qDebug()<<"有人存在这个房间里面======";
-        if(AQI!=3){//户外空气良好--开窗户
+        if(AQI<=3){//户外空气良好--开窗户
             qDebug()<<"户外空气质量好-----开启窗户";
             if(AutoFlag==1){
                 AutoTime->start(1000);
@@ -283,15 +282,16 @@ void WindowSystem::AirAutoTigger(int data)
                 AutoTime->stop();
             }
         }else{
-            qDebug()<<"户外空气质量差-----开启新风";
+
             if(AutoFlag==1){
+                qDebug()<<"户外空气质量差-----开启新风";
                 qDebug()<<"AutoFlag-----"<<AutoFlag;
                 emit SendToWind(1);//户外空气差---开新风
                 emit AutoMode_Sync(1);
             }
         }
     }else {//如果没人或者室内空气良好则保持？
-
+        emit SendToWind(0);
     }
 }
 

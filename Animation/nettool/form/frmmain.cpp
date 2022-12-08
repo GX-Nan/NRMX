@@ -371,6 +371,7 @@ void frmMain::initConfig()//配置
     connect(WindUi,&WindSystem::Class_Update,Analysis_wind,&Analysis_Wind::Data_Update);
     connect(TaskTcpServer,&frmTcpServer::Esp_Data,Analysis_wind,&Analysis_Wind::Handle_Data_AirQuality);
     connect(Analysis_wind,&Analysis_Wind::AirQuality_Data,WindUi,&WindSystem::Xprogress_Update);
+
     //----Led
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_light,&Analysis_Light::Receive_Data);//Tcp链接数据分析
     connect(LightUi,&LightSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
@@ -424,6 +425,8 @@ void frmMain::initConfig()//配置
     connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindUi,&WindSystem::Location_Sync);
     connect(Analysis_wind,&Analysis_Wind::SendToLocation,LightUi,&LightSystem::Location_Sync);
     connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindowUi,&WindowSystem::Location_Sync);
+    //----亮度同步
+    connect(Analysis_wind,&Analysis_Wind::SendToLight,LightUi,&LightSystem::Lux_Sync);//同步亮度
     //------------------
     connect(this,&frmMain::Show_SubUi,WindUi,&WindSystem::ShowSubUi);
 

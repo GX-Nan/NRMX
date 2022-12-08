@@ -63,8 +63,10 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
 {
     QString Value;
     QString Function;
+    QString Head;
     int PM25Flag=0,Co2Flag=0,TvcoFlag=0,HCHOFlag=0,PM10Flag=0;
     //-----截取------------
+    Head=Data.at(3);
     for(int i=4;i<=5;i++)
     {
         Function.append(Data.at(i));
@@ -74,18 +76,19 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         Value.append(Data.at(b));
     }
     //----设备位置-----
-    for(int i=6;i<=7;i++){
-        LocationSub.append(Data.at(i));
-    }
-    for(int i=8;i<=9;i++){
-        LocationStatus.append(Data.at(i));
-    }
 
     //------------------
     switch(Function.toInt())
     {
     case 1:
         Air.Brightness=Value.toInt();
+        if(Head=="A"){
+            emit SendToLight(1,Air.Brightness);
+        }else if(Head=="B"){
+            emit SendToLight(2,Air.Brightness);
+        }else if(Head=="C"){
+            emit SendToLight(3,Air.Brightness);
+        }
         break;
     case 2:
         Air.Temp=Value.toInt();
@@ -135,6 +138,12 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         }
         break;
     case 9:
+        for(int i=6;i<=7;i++){
+            LocationSub.append(Data.at(i));
+        }
+        for(int i=8;i<=9;i++){
+            LocationStatus.append(Data.at(i));
+        }
         qDebug()<<"位置"<<LocationSub.toInt()<<"状态："<<LocationStatus.toInt();
         emit SendToLocation(LocationSub.toInt(),LocationStatus.toInt());
         LocationSub.clear();
@@ -144,14 +153,13 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     emit AirQuality_Data(Air);//新风显示
     emit SendToAir(Air.Temp,Air.Hum);//给空调判断
 
-    //测试
-   // emit IndoorAirJudge(1);
-    qDebug()<<"Co2Flag:"<<Co2Flag;
+    PM25Flag=1;
     //-----先在这里判断室内是否需要通风透气---然后再判断是否要开窗户或者新风
     if(PM25Flag==1||PM10Flag==1||HCHOFlag==1||TvcoFlag==1||Co2Flag==1){
         emit IndoorAirJudge(1);
     }else {
         emit IndoorAirJudge(0);
+
     }
 }
 
