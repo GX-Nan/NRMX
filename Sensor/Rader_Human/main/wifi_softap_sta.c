@@ -13,7 +13,8 @@
 
 
 /*配置模组连接的路由器*/
-#define ESP_WIFI_STA_SSID       "Fs"  //设置模块连接的无线名称
+// #define ESP_WIFI_STA_SSID       "Raspberry Pi 6B"  //设置模块连接的无线名称
+#define ESP_WIFI_STA_SSID       "Fs"  //设置模块连接
 #define ESP_WIFI_STA_PASS       "Fs212123567"    //无线密码
 
 

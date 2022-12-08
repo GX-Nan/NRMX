@@ -3,7 +3,7 @@
 
 // // static const char *TAG = "usart_function";
 
-static const int RX_BUF_SIZE = 1024;
+static const int RX_BUF_SIZE = 4096;
 
 #define TXD_PIN (GPIO_NUM_12)
 #define RXD_PIN (GPIO_NUM_13)
@@ -70,11 +70,12 @@ void uart2_rx_task()
     uint8_t *data = (uint8_t *)malloc(RX_BUF_SIZE + 1);
     char SendData[12] = "ESP10";
     int Data;
-
+    int test;
     char CharData[4];
     while (1)
     {
         const int rxBytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 10 / portTICK_RATE_MS);
+
         if (rxBytes > 0)
         {
             data[rxBytes] = 0;
@@ -95,33 +96,66 @@ void uart2_rx_task()
             //----转出来感觉不是16进制？
 
             TargetStatus = data[8]; //目标状态
-                                    // printf("distance:%d\r\n", TargetStatus);
+            printf("distance:%d\r\n", TargetStatus);
             if (tcp_client.connected == 1)
             {
-                if (TargetStatus != 0 || TargetStautsFlag == 3)
+                if(TargetStautsFlag==3){
+                    switch(EnergyFlag){
+                        case 0:
+                            write(tcp_client.socket_fd, "ESPB090100", 10);
+                            printf("接入时----无人\r\n");
+                            break;
+                        case 1:
+                            write(tcp_client.socket_fd, "ESPB090101", 10);
+                            printf("接入时----有人\r\n");
+                            break;
+                    }
+                    TargetStautsFlag=0;
+                }
+                if (TargetStatus != 0)
                 {
-                    //printf("SportEnergy:%d\r\n", SportEnergy);
-                    //printf("StaticEnergy:%d\r\n", StaticEnergy);
-                    testFlag = 0;
-                    if (SportEnergy > 0 && StaticEnergy >= 70 && EnergyFlag == 0)
+                    printf("distance:%d\r\n", TargetStatus);
+                    if (EnergyFlag == 0)
                     {
                         write(tcp_client.socket_fd, "ESPB090101", 10);
                         EnergyFlag = 1;
                         printf("有人\r\n");
                     }
-                    else if (SportEnergy == 0 && StaticEnergy < 70 && EnergyFlag == 1)
-                    {
-                        write(tcp_client.socket_fd, "ESPB090100", 10);
-                        EnergyFlag = 0;
-                        printf("无人\r\n");
-                    }
+                    printf("有人----EnergyFlag:%d\r\n", EnergyFlag);
+                    // if (SportEnergy > 0 && StaticEnergy >= 70 && EnergyFlag == 0)
+                    // {
+                    //     write(tcp_client.socket_fd, "ESPB090101", 10);
+                    //     EnergyFlag = 1;
+                    //     printf("有人\r\n");
+                    // }
+                    // else if (SportEnergy <= 0 && StaticEnergy < 70 && EnergyFlag == 1)
+                    // {
+                    //     vTaskDelay(3000 / portTICK_PERIOD_MS);                                                      //延时
+                    //     const int ReRxbytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 10 / portTICK_RATE_MS); //等10s之后就再抓一下
+                    //     data[ReRxbytes] = 0;
+                    //     SportEnergy = data[11];  //运动目标能量
+                    //     StaticEnergy = data[14]; //静止目标能量
+                    //     if (SportEnergy == 0 && StaticEnergy < 70)
+                    //     {
+                    //         write(tcp_client.socket_fd, "ESPB090100", 10);
+                    //         printf("无人\r\n");
+                    //         EnergyFlag = 0;
+                    //     }
+                    //     else if (SportEnergy > 0 && StaticEnergy >= 70)
+                    //     {
+                    //         write(tcp_client.socket_fd, "ESPB090101", 10);
+                    //         printf("有人\r\n");
+                    //     }
+                    // }
                 }
-                else if (TargetStatus == 0 || TargetStautsFlag == 3)
+                else if (TargetStatus == 0 )
                 {
-                    if (testFlag == 0)
+                    printf("无人--EnergyFlag:%d\r\n", EnergyFlag);
+                    if (EnergyFlag == 1)
                     {
                         write(tcp_client.socket_fd, "ESPB090100", 10);
-                        testFlag = 1;
+                        printf("无人\r\n");
+                        EnergyFlag = 0;
                     }
                 }
             }
