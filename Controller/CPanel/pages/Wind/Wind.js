@@ -42,10 +42,12 @@ function Page_Init(that) {
     var WindData = wx.getStorageSync('Wind')
 
     if (WindData != "") {
-        StopSend=true
+        StopSend = true
+        console.log(WindData)
         that.setData({
             WindSpeed: WindData[0].WindSpeed * 10,
             WindMode: WindData[0].WindMode,
+            Weather:WindData[0].Weather
         })
 
         if (that.data.WindSpeed != 0) {
@@ -83,13 +85,14 @@ function Page_Init(that) {
                     that.Button_Arround()
                     break;
             }
+            
         } else {
             that.ModeButton_Clear()
             that.setData({
                 WindSpeed_Text: "无"
-            }) 
+            })
         }
-        StopSend=false
+        StopSend = false
     }
 }
 Page({
@@ -164,6 +167,8 @@ Page({
         //-----------
         Solid_Background: "#ffffff",
         Solid_color: "#000000",
+        //------
+        Weather:0,
     },
     ModeButton_Clear: function () {
         this.setData({
@@ -240,10 +245,10 @@ Page({
             this.setData({
                 WindMode: 0
             })
-            SendData(6010104)
+            SendData("6010104")
         } else {
             this.Button_Color_Change(1)
-            SendData(6010107)
+            SendData("6010107")
         }
     },
     Button_Arround: function () { //8
@@ -253,10 +258,10 @@ Page({
             this.setData({
                 WindMode: 0
             })
-            SendData(6010104)
+            SendData("6010104")
         } else {
             this.Button_Color_Change(2)
-            SendData(6010108)
+            SendData("6010108")
         }
     },
     Button_Natural: function () { //5
@@ -265,10 +270,10 @@ Page({
             this.setData({
                 WindMode: 0
             })
-            SendData(6010104)
+            SendData("6010104")
         } else {
             this.Button_Color_Change(3)
-            SendData(6010105)
+            SendData("6010105")
         }
     },
     Button_Solid: function () { //6
@@ -277,10 +282,10 @@ Page({
             this.setData({
                 WindMode: 0
             })
-            SendData(6010104)
+            SendData("6010104")
         } else {
             this.Button_Color_Change(4)
-            SendData(6010106)
+            SendData("6010106")
         }
     },
     Button_Color_Change: function (e) {

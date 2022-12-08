@@ -221,7 +221,7 @@ Page({
                 Air_Switch_background: "#000000",
                 Air_Swtich_Color: "#ffffff"
             })
-            SendData(2020101)
+            SendData("2020101")
         } else {
             this.setData({ //关
                 Air_Switch_background: "#ffffff",
@@ -229,7 +229,7 @@ Page({
                 //-------------------
 
             })
-            SendData(2020100)
+            SendData("2020100")
         }
     },
     Low_Switch: function () {
@@ -248,7 +248,7 @@ Page({
                 Auto_Background: "#ffffff",
                 Auto_color: "#000000",
             })
-            SendData(2020102)
+            SendData("2020102")
         }
     },
     Mid_Switch: function () {
@@ -268,7 +268,7 @@ Page({
                 Auto_Background: "#ffffff",
                 Auto_color: "#000000",
             })
-            SendData(2020103)
+            SendData("2020103")
         }
     },
     High_Switch: function () {
@@ -288,7 +288,7 @@ Page({
                 Auto_Background: "#ffffff",
                 Auto_color: "#000000",
             })
-            SendData(2020104)
+            SendData("2020104")
         }
     },
     Auto_Switch: function () {
@@ -307,7 +307,7 @@ Page({
                 Auto_Background: "#000000",
                 Auto_color: "#ffffff",
             })
-            SendData(2020113)
+            SendData("2020113")
         }
     },
 
@@ -328,7 +328,7 @@ Page({
                 Heat_Background: "#ffffff",
                 Heat_color: "#000000",
             })
-            SendData(2020109)
+            SendData("2020109")
         }
     },
     Button_Wind: function () {
@@ -348,7 +348,7 @@ Page({
                 Heat_Background: "#ffffff",
                 Heat_color: "#000000",
             })
-            SendData(2020114)
+            SendData("2020114")
         }
     },
 
@@ -369,7 +369,7 @@ Page({
                 Heat_Background: "#000000",
                 Heat_color: "#ffffff",
             })
-            SendData(2020111)
+            SendData("2020111")
         }
     },
 
@@ -390,7 +390,7 @@ Page({
                 Heat_Background: "#ffffff",
                 Heat_color: "#000000",
             })
-            SendData(2020110)
+            SendData("2020110")
         }
     },
     Air_Temp: function (e) {

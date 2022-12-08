@@ -192,8 +192,7 @@ border:none;
      </property>
      <property name="icon">
       <iconset resource="../other/main.qrc">
-       <normaloff>:/new/Led/Led/All_Light_OFF.png</normaloff>
-       <normalon>:/new/Led/Led/AirSwitch-ON.png</normalon>:/new/Led/Led/All_Light_OFF.png</iconset>
+       <normaloff>:/new/Led/Led/All_Light_OFF.png</normaloff>:/new/Led/Led/All_Light_OFF.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -235,8 +234,7 @@ border:none;
      </property>
      <property name="icon">
       <iconset resource="../other/main.qrc">
-       <normaloff>:/new/Led/Led/AI_ON.png</normaloff>
-       <normalon>:/new/Led/Led/AI_OFF.png</normalon>:/new/Led/Led/AI_ON.png</iconset>
+       <normaloff>:/new/Led/Led/AI_ON.png</normaloff>:/new/Led/Led/AI_ON.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -282,6 +280,9 @@ border:none;
        <width>351</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>100</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -388,7 +389,7 @@ border:none;
       <rect>
        <x>290</x>
        <y>60</y>
-       <width>31</width>
+       <width>51</width>
        <height>29</height>
       </rect>
      </property>
@@ -404,7 +405,7 @@ border:none;
       <string notr="true">color:#282A49</string>
      </property>
      <property name="text">
-      <string>80</string>
+      <string>0</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -464,7 +465,7 @@ border:none;
       <rect>
        <x>290</x>
        <y>190</y>
-       <width>31</width>
+       <width>51</width>
        <height>29</height>
       </rect>
      </property>
@@ -480,7 +481,7 @@ border:none;
       <string notr="true">color:#282A49</string>
      </property>
      <property name="text">
-      <string>80</string>
+      <string>0</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -507,6 +508,9 @@ border:none;
      <property name="maximum">
       <number>6</number>
      </property>
+     <property name="pageStep">
+      <number>6</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -519,6 +523,9 @@ border:none;
        <width>351</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>100</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -614,7 +621,7 @@ border:none;
       <string notr="true">color:#282A49</string>
      </property>
      <property name="text">
-      <string>吊灯--0</string>
+      <string>吊灯--1</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>
@@ -630,7 +637,7 @@ border:none;
      <property name="geometry">
       <rect>
        <x>490</x>
-       <y>10</y>
+       <y>0</y>
        <width>51</width>
        <height>41</height>
       </rect>
@@ -665,7 +672,7 @@ border:none;
      <property name="currentIndex">
       <number>1</number>
      </property>
-     <widget class="QWidget" name="ChandelierFrame1">
+     <widget class="QWidget" name="ChandelierFrame2">
       <widget class="QPushButton" name="ChandelierSwitch2">
        <property name="geometry">
         <rect>
@@ -849,7 +856,7 @@ border:none;
        </widget>
       </widget>
      </widget>
-     <widget class="QWidget" name="ChandelierFrame2">
+     <widget class="QWidget" name="ChandelierFrame1">
       <widget class="QWidget" name="ChandeBottom" native="true">
        <property name="geometry">
         <rect>
@@ -1800,15 +1807,15 @@ border:none;
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SwitchButton</class>
-   <extends>QWidget</extends>
-   <header>switchbutton.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>XProgressBar</class>
    <extends>QWidget</extends>
    <header>xprogressbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SwitchButton</class>
+   <extends>QWidget</extends>
+   <header>switchbutton.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

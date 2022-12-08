@@ -63,7 +63,10 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
 {
     QString Value;
     QString Function;
+    QString Head;
+    int PM25Flag=0,Co2Flag=0,TvcoFlag=0,HCHOFlag=0,PM10Flag=0;
     //-----截取------------
+    Head=Data.at(3);
     for(int i=4;i<=5;i++)
     {
         Function.append(Data.at(i));
@@ -72,26 +75,92 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     {
         Value.append(Data.at(b));
     }
+    //----设备位置-----
+
     //------------------
     switch(Function.toInt())
     {
+    case 1:
+        Air.Brightness=Value.toInt();
+        if(Head=="A"){
+            emit SendToLight(1,Air.Brightness);
+        }else if(Head=="B"){
+            emit SendToLight(2,Air.Brightness);
+        }else if(Head=="C"){
+            emit SendToLight(3,Air.Brightness);
+        }
+        break;
+    case 2:
+        Air.Temp=Value.toInt();
+        break;
+    case 3:
+        Air.Hum=Value.toInt();
+        break;
     case 4:
         Air.PM25=Value.toInt();
+        if(Value.toInt()>=75){
+            PM25Flag=1;
+        }else {
+            PM25Flag=0;
+        }
         break;
     case 5:
-         Air.Co2=Value.toInt();
+        Air.Co2=Value.toInt();
+        qDebug()<<"Value.toInt():"<<Value.toInt();
+        if(Value.toInt()>=700){
+            Co2Flag=1;
+        }else {
+            Co2Flag=0;
+        }
         break;
     case 6:
         Air.TVCO=Value.toInt();
+        if(Value.toInt()>=2){
+            TvcoFlag=1;
+        }else {
+            TvcoFlag=0;
+        }
         break;
     case 7:
         Air.HCHO=Value.toInt();
+        if(Value.toInt()>=12){
+            HCHOFlag=1;
+        }else {
+            HCHOFlag=0;
+        }
         break;
     case 8:
         Air.PM10=Value.toInt();
+        if(Value.toInt()>=18){
+            PM10Flag=1;
+        }else {
+            PM10Flag=0;
+        }
+        break;
+    case 9:
+        for(int i=6;i<=7;i++){
+            LocationSub.append(Data.at(i));
+        }
+        for(int i=8;i<=9;i++){
+            LocationStatus.append(Data.at(i));
+        }
+        qDebug()<<"位置"<<LocationSub.toInt()<<"状态："<<LocationStatus.toInt();
+        emit SendToLocation(LocationSub.toInt(),LocationStatus.toInt());
+        LocationSub.clear();
+        LocationStatus.clear();
         break;
     }
-    emit AirQuality_Data(Air);
+    emit AirQuality_Data(Air);//新风显示
+    emit SendToAir(Air.Temp,Air.Hum);//给空调判断
+
+    PM25Flag=1;
+    //-----先在这里判断室内是否需要通风透气---然后再判断是否要开窗户或者新风
+    if(PM25Flag==1||PM10Flag==1||HCHOFlag==1||TvcoFlag==1||Co2Flag==1){
+        emit IndoorAirJudge(1);
+    }else {
+        emit IndoorAirJudge(0);
+
+    }
 }
 
 void Analysis_Wind::Data_Update(Wind_Data Lastest)
@@ -108,5 +177,5 @@ void Analysis_Wind::Wind_Decode(int Value)
     else {
         data.Mode=Value-4;
     }
-    emit Wind_UiData(data);
+    emit Wind_UiData(data,Value);
 }

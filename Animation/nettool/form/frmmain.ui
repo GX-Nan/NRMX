@@ -27,11 +27,14 @@
      <height>1111</height>
     </rect>
    </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
    <widget class="QWidget" name="Main">
     <widget class="QPushButton" name="SystemOptimization">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>140</x>
        <y>990</y>
        <width>181</width>
        <height>51</height>
@@ -67,7 +70,7 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>470</x>
        <y>850</y>
        <width>91</width>
        <height>91</height>
@@ -75,19 +78,6 @@
      </property>
      <property name="text">
       <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="UISreachIP">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>客户端界面</string>
      </property>
     </widget>
     <widget class="QGroupBox" name="TempGroupBox">
@@ -107,27 +97,100 @@
 }</string>
      </property>
      <property name="title">
-      <string>s's's's</string>
+      <string/>
      </property>
-    </widget>
-    <widget class="QPushButton" name="Server">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>90</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>服务器端</string>
-     </property>
+     <widget class="QLabel" name="InHum">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>55</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>60</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>350</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="HumiP">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>81</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HumiP</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>相 对
+湿 度</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QLabel" name="SystemScore">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>340</y>
+       <x>60</x>
+       <y>300</y>
        <width>671</width>
        <height>481</height>
       </rect>
@@ -151,7 +214,7 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>140</x>
        <y>850</y>
        <width>261</width>
        <height>41</height>
@@ -189,8 +252,116 @@
 }</string>
      </property>
      <property name="title">
-      <string>s's's's</string>
+      <string/>
      </property>
+     <widget class="QLabel" name="LuxP">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>81</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LuxP</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>亮 度</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Lux</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="InBrightness">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>55</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Lv1</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QGroupBox" name="Pm25GroupBox">
      <property name="geometry">
@@ -209,13 +380,99 @@
 }</string>
      </property>
      <property name="title">
-      <string>s's's's</string>
+      <string/>
      </property>
+     <widget class="QLabel" name="TempP">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>30</y>
+        <width>81</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TemP</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="InTemp">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>55</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>23</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>室 内
+温 度</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>°C</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QPushButton" name="HouseIntelligence">
      <property name="geometry">
       <rect>
-       <x>400</x>
+       <x>430</x>
        <y>990</y>
        <width>181</width>
        <height>51</height>
@@ -252,7 +509,7 @@
      <property name="geometry">
       <rect>
        <x>1710</x>
-       <y>410</y>
+       <y>390</y>
        <width>111</width>
        <height>451</height>
       </rect>
@@ -265,13 +522,99 @@
 }</string>
      </property>
      <property name="title">
-      <string>s's's's</string>
+      <string/>
      </property>
+     <widget class="QLabel" name="Pm25P">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>30</y>
+        <width>81</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pm2.5P</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>颗 粒
+浓 度</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="InPm25">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>91</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>55</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>24</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>140</x>
        <y>910</y>
        <width>271</width>
        <height>41</height>
@@ -290,6 +633,86 @@
      </property>
      <property name="text">
       <string>评价系统当前的耗能与安全</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="WhiteGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>610</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox#WhiteGroupBox
+{
+	border-radius:8px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="WhiteGroupBox2">
+     <property name="geometry">
+      <rect>
+       <x>1200</x>
+       <y>330</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox#WhiteGroupBox2
+{
+	border-radius:8px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="WhiteGroupBox3">
+     <property name="geometry">
+      <rect>
+       <x>1460</x>
+       <y>670</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox#WhiteGroupBox3
+{
+	border-radius:8px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="WhiteGroupBox4">
+     <property name="geometry">
+      <rect>
+       <x>1710</x>
+       <y>300</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox#WhiteGroupBox4
+{
+	border-radius:8px;
+	background:#FFFFFF;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
      </property>
     </widget>
    </widget>
@@ -479,7 +902,7 @@
       <property name="geometry">
        <rect>
         <x>5</x>
-        <y>220</y>
+        <y>480</y>
         <width>100</width>
         <height>100</height>
        </rect>
@@ -494,29 +917,17 @@ background-color: white;
  border-style: solid;</string>
       </property>
       <property name="text">
-       <string>Main</string>
+       <string/>
       </property>
-     </widget>
-     <widget class="QPushButton" name="GoControlPage">
-      <property name="geometry">
-       <rect>
-        <x>5</x>
-        <y>650</y>
-        <width>100</width>
-        <height>100</height>
-       </rect>
+      <property name="icon">
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Main/Main/Home.png</normaloff>:/new/Main/Main/Home.png</iconset>
       </property>
-      <property name="styleSheet">
-       <string notr="true">max-width:100px;
- max-height:100px;
- min-width:100px;
- min-height:100px;
-border-radius:50px;
-background-color: white;
- border-style: solid;</string>
-      </property>
-      <property name="text">
-       <string>Control</string>
+      <property name="iconSize">
+       <size>
+        <width>70</width>
+        <height>70</height>
+       </size>
       </property>
      </widget>
     </widget>
@@ -526,7 +937,7 @@ background-color: white;
        <x>250</x>
        <y>30</y>
        <width>731</width>
-       <height>1001</height>
+       <height>1031</height>
       </rect>
      </property>
      <property name="contextMenuPolicy">
@@ -566,13 +977,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Main/Main/DoorPage.png</normaloff>:/new/Main/Main/DoorPage.png</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>90</width>
+        <height>90</height>
        </size>
       </property>
      </widget>
@@ -602,13 +1013,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Main/Main/LightPage.png</normaloff>:/new/Main/Main/LightPage.png</iconset>
       </property>
       <property name="iconSize">
        <size>
         <width>100</width>
-        <height>50</height>
+        <height>100</height>
        </size>
       </property>
      </widget>
@@ -638,13 +1049,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Led/Led/AI_ON.png</normaloff>:/new/Led/Led/AI_ON.png</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>90</width>
+        <height>100</height>
        </size>
       </property>
      </widget>
@@ -674,13 +1085,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Main/Main/AirPage.png</normaloff>:/new/Main/Main/AirPage.png</iconset>
       </property>
       <property name="iconSize">
        <size>
         <width>100</width>
-        <height>50</height>
+        <height>100</height>
        </size>
       </property>
      </widget>
@@ -710,13 +1121,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Window/Window/Close.png</normaloff>:/new/Window/Window/Close.png</iconset>
       </property>
       <property name="iconSize">
        <size>
         <width>100</width>
-        <height>50</height>
+        <height>100</height>
        </size>
       </property>
      </widget>
@@ -746,13 +1157,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Wind/Wind/High_OFF.png</normaloff>:/new/Wind/Wind/High_OFF.png</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>80</width>
+        <height>100</height>
        </size>
       </property>
      </widget>
@@ -782,13 +1193,13 @@ background-color: white;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</normaloff>:/C:/Users/Alumer/Desktop/SystemOp.png</iconset>
+       <iconset resource="../other/main.qrc">
+        <normaloff>:/new/Main/Main/CurtainsPage.png</normaloff>:/new/Main/Main/CurtainsPage.png</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>100</width>
-        <height>50</height>
+        <width>80</width>
+        <height>80</height>
        </size>
       </property>
      </widget>
@@ -796,6 +1207,8 @@ background-color: white;
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../other/main.qrc"/>
+ </resources>
  <connections/>
 </ui>

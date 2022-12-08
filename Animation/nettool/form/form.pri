@@ -31,7 +31,11 @@ HEADERS += \
     $$PWD/windmode.h \
     $$PWD/windowsystem.h \
     $$PWD/windsystem.h \
-    $$PWD/xprogressbar.h
+    $$PWD/xprogressbar.h \
+    $$PWD/wxreceive.h \
+    $$PWD/wxsend.h \
+    $$PWD/pythreadstatelock.h \
+    $$PWD/weathercrawler.h
 
 SOURCES += \
     $$PWD/airsystem.cpp \
@@ -50,5 +54,14 @@ SOURCES += \
     $$PWD/windmode.cpp \
     $$PWD/windowsystem.cpp \
     $$PWD/windsystem.cpp \
-    $$PWD/xprogressbar.cpp
+    $$PWD/xprogressbar.cpp \
+    $$PWD/wxreceive.cpp \
+    $$PWD/wxsend.cpp \
+    $$PWD/pythreadstatelock.cpp \
+    $$PWD/weathercrawler.cpp
+
+DISTFILES += \
+    $$PWD/Receive.py \
+    $$PWD/Send.py \
+    $$PWD/Crawler.py
 

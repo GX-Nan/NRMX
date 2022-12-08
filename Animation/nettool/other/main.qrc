@@ -75,8 +75,18 @@
         <file>Window/Home.png</file>
         <file>Window/Humi.png</file>
         <file>Window/OutDoor.png</file>
+        <file>Window/Close_White.png</file>
+        <file>Window/Close.png</file>
+        <file>Window/Open_White.png</file>
+        <file>Window/Open.png</file>
+        <file>Window/Temp.png</file>
     </qresource>
     <qresource prefix="/new/Main">
         <file>Air/Back.png</file>
+        <file>Main/CurtainsPage.png</file>
+        <file>Main/LightPage.png</file>
+        <file>Main/DoorPage.png</file>
+        <file>Main/AirPage.png</file>
+        <file>Main/Home.png</file>
     </qresource>
 </RCC>

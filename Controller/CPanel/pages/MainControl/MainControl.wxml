@@ -6,7 +6,7 @@
   <text style="position: relative; left: 27rpx; top: -125rpx; height: 100px; font-size: 35rpx; font-weight: bold">灯光</text>
   <slider  value="{{AllAuxiliary_Bright}}" class="slider-light" bindchange="AuxiliaryLight_All" style="position: relative; width: 585rpx; height: 0rpx; display: block; box-sizing: border-box; left: 18rpx; top: -116rpx; background-color: rgb(187, 31, 31)"></slider>
 </view>
- 
+     
 <!-- 新风---------------------- -->  
 <view style="position: relative; width: 314rpx; background: #d3d3d3; height: 216rpx; left: 37rpx; top: 610rpx; display: block; box-sizing: border-box; border-radius: 15px; background-color: #ffff; box-shadow: 0px 1px 12px -6px black">
   <switch id="WindStatus"  bindchange="Switch_Wind" checked="{{WindStatus}}" style="position: relative; left: 204rpx; top: 25rpx"></switch>

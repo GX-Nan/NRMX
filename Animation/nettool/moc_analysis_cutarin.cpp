@@ -63,16 +63,16 @@ static const uint qt_meta_data_Analysis_Cutarin[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x06 /* Public */,
-       3,    1,   40,    2, 0x06 /* Public */,
+       1,    2,   39,    2, 0x06 /* Public */,
+       3,    1,   44,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   43,    2, 0x0a /* Public */,
-       7,    1,   46,    2, 0x0a /* Public */,
-       8,    1,   49,    2, 0x0a /* Public */,
+       4,    1,   47,    2, 0x0a /* Public */,
+       7,    1,   50,    2, 0x0a /* Public */,
+       8,    1,   53,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::QString,    2,
 
  // slots: parameters
@@ -89,7 +89,7 @@ void Analysis_Cutarin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         Analysis_Cutarin *_t = static_cast<Analysis_Cutarin *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->StatusSignals(); break;
+        case 0: _t->StatusSignals((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->BrightnessSignals((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 2: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
         case 3: _t->Handle_Data((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -99,7 +99,7 @@ void Analysis_Cutarin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Analysis_Cutarin::*)();
+            using _t = void (Analysis_Cutarin::*)(int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Analysis_Cutarin::StatusSignals)) {
                 *result = 0;
                 return;
@@ -152,9 +152,10 @@ int Analysis_Cutarin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Analysis_Cutarin::StatusSignals()
+void Analysis_Cutarin::StatusSignals(int _t1, int _t2)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1

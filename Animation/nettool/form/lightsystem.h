@@ -4,8 +4,8 @@
 #include <QDialog>
 #include <QLabel>
 #include <QDebug>
-#include <app.h>
-
+#include <QTime>
+#include<QTimer>
 
 class Status{
 
@@ -30,7 +30,9 @@ public:
         MessageLight.insert("LedMeet2","0");
         MessageLight.insert("Chandelier1","0");
         MessageLight.insert("Chandelier2","0");
-        qDebug()<<"Messagelight";
+    }
+    ~Status(){
+
     }
     void SetColor(int color)
     {
@@ -91,10 +93,25 @@ public:
     int AllLight_Status=0;
     int AllSpot_Status=0;
     int AllLed_Status=0;
+    int SpotStopFalg=0;//停止射灯回传
+    int LedStopFlag=0;//停止Led灯回传
+    //------自动化数据
+    int IndoorLux=0;
+    int OutsideWeather=0;//1---晴天 2---多云 3---下雨
+    int locationMissing=0,locationOffice=0,locationBar=0;//0---无人 1---有人
+    int LuxMissing=0,LuxOffice=0,LuxBar=0;//三个地方的亮度
+    double ControlParameters=0.4;//P---->1:6 参数
+    int MiddayFalg=0;
+    int WorkTime=0;
+    int AllSpotStatus=0;
+    int AutoFlag=0;
+    int LatestMeeting=0,LatestBar=0,LatestOffice=0;
+    QTimer *AutoTime;
+
 signals:
     void SendClose();
     void RadioBroadcast(QString);
-    void StopTcp(int);
+    void SendToWx(QString,int);
 private slots:
     void on_BackMain_clicked();
     void ButtonStyle_Label(QLabel* Name,int Offset,int BlurRadius);
@@ -111,6 +128,8 @@ private slots:
     void on_Device_Slider_valueChanged(int value);
     void Light_Switch(int Falg);
     void Image_Init();
+    void SpotInstructionSet(int,int);
+    void LedInstructionSet(int,int);
 
 
     void on_LedChoice_clicked();
@@ -154,9 +173,17 @@ private slots:
     void on_LedAll_clicked();
 
     void on_SpotAll_clicked();
+    //----自动化
+    void AutoMode();
+    void AuxiliaryLightLogic();
+    void SpotLightLogic();
+
 
 public slots:
     void Light_Status(int Function,int Sub,int Value);
+    void GetWeather(int);
+    void Location_Sync(int,int);
+    void Lux_Sync(int,int);
 
 private:
     Ui::LightSystem *ui;

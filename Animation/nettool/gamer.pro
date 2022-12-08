@@ -26,5 +26,9 @@ INCLUDEPATH += $$PWD/Information
 include ($$PWD/api/api.pri)
 include ($$PWD/form/form.pri)
 include(Information/Information.pro)
-DISTFILES +=
+DISTFILES += \
+    CallBack.py
+INCLUDEPATH +=/usr/include/python3.7
+INCLUDEPATH +=/usr/lib/python3/dist-packages
+LIBS += -L/usr/lib/python3.7/config-3.7m-arm-linux-gnueabihf -lpython3.7
 

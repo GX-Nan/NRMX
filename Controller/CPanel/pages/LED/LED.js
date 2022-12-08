@@ -41,7 +41,7 @@ function SendData(hardware_id) //发送指令
 function Page_Init(that) {
     var LightData = wx.getStorageSync('Light')
     var LedData = wx.getStorageSync('LedData')
-
+ 
     if (LightData != "") {
         that.setData({
             //-----------------------------------------------------------//Missing辅灯
@@ -520,7 +520,7 @@ Page({
         var data = e.detail.value ? 1 : 0
         var chanderData1 = "204010" + data
         var chanderData2 = "204020" + data
-        SendData(chanderData1)
+        SendData(chanderData1) 
         SendData(chanderData2)
         this.setData({
             Chandelier_All: data
@@ -533,7 +533,9 @@ Page({
             this.setData({
                 AuxiliaryLight_AllBright: 100,
             })
-            SendToRasp = "2030" + this.data.AuxiliaryLight_AllBright - 1
+            
+            SendToRasp = "20300" + "99"
+            console.log(SendToRasp)
         } else {
             this.setData({
                 AuxiliaryLight_AllBright: 0,

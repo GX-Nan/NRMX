@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AirSystem</class>
+ <widget class="QDialog" name="AirSystem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1086</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#AirSystem{
+background-color:rgb(178,178,178,255);
+	border:none;
+	border-radius:25px;
+}</string>
+  </property>
+  <widget class="QFrame" name="bottom">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>1070</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe 黑体 Std R</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#bottom
+{
+	background-color:#ffffff;
+ 
+	border:none;
+	border-radius:25px;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="AirSwitch">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>570</y>
+      <width>441</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 黑体 Std R</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+      <normaloff>:/new/Air/Air/AirSwitch.png</normaloff>
+      <normalon>:/new/Air/Air/AirSwitch-ON.png</normalon>:/new/Air/Air/AirSwitch.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QSlider" name="TempQslider">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>520</y>
+      <width>441</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>16</number>
+    </property>
+    <property name="maximum">
+     <number>31</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>450</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 黑体 Std R</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:#282A49</string>
+    </property>
+    <property name="text">
+     <string>空 调 温 度</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AirTemp">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>531</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 黑体 Std R</family>
+      <pointsize>280</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*border:5px solid black;
+border-radius:15px;
+</string>
+    </property>
+    <property name="text">
+     <string>18</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>430</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BackMain">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">max-width:50px;
+ max-height:50px;
+ min-width:50px;
+ min-height:50px;
+border-radius:25px;
+background-color: white;
+ border-style: solid;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+      <normaloff>:/new/Main/Air/Back.png</normaloff>:/new/Main/Air/Back.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QFrame" name="FunctionPanel">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>-10</y>
+      <width>421</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="SwitchButton" name="SwingUpDown" native="true">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>485</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="SwitchButton" name="SwingLeftRight" native="true">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>380</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>470</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>20</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>上下摆风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>230</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>15</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>空调模式</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="Group_Fan">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>570</y>
+       <width>361</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+background-color:#ffffff;
+border-radius:15px;</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="Fan_Low">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/Low_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/Low_ON.png</normalon>
+        <disabledon>:/new/Air/Air/Low_OFF.png</disabledon>
+        <activeon>:/new/Air/Air/Low_ON.png</activeon>:/new/Air/Air/Low_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Fan_Mid">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>20</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/Mid_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/Mid_ON.png</normalon>
+        <activeon>:/new/Air/Air/Mid_ON.png</activeon>:/new/Air/Air/Mid_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Fan_High">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/High_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/High_ON.png</normalon>:/new/Air/Air/High_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>370</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Adobe 黑体 Std R</family>
+       <pointsize>20</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#282A49</string>
+     </property>
+     <property name="text">
+      <string>左右摆风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="Group_Mode">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>270</y>
+       <width>351</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="Dry">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/Dry_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/Dry_ON.png</normalon>
+        <disabledon>:/new/Air/Air/Dry_OFF.png</disabledon>
+        <activeoff>:/new/Air/Air/Dry_OFF.png</activeoff>
+        <activeon>:/new/Air/Air/Dry_ON.png</activeon>
+        <selectedoff>:/new/Air/Air/Dry_OFF.png</selectedoff>
+        <selectedon>:/new/Air/Air/Dry_ON.png</selectedon>:/new/Air/Air/Dry_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Cold">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>10</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/Cold_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/Cold_ON.png</normalon>
+        <disabledon>:/new/Air/Air/Cold_OFF.png</disabledon>
+        <activeoff>:/new/Air/Air/Cold_OFF.png</activeoff>
+        <activeon>:/new/Air/Air/Cold_ON.png</activeon>
+        <selectedoff>:/new/Air/Air/Cold_OFF.png</selectedoff>
+        <selectedon>:/new/Air/Air/Cold_ON.png</selectedon>:/new/Air/Air/Cold_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Fan">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/Fan_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/Fan_ON.png</normalon>
+        <disabledon>:/new/Air/Air/Fan_OFF.png</disabledon>:/new/Air/Air/Fan_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Heat">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>10</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Berlin Sans FB Demi</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">max-width:60px;
+ max-height:60px;
+ min-width:60px;
+ min-height:60px;
+border-radius:30px;
+background-color: white;
+ border-style: solid;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc">
+        <normaloff>:/new/Air/Air/Heat_OFF.png</normaloff>
+        <normalon>:/new/Air/Air/Heat_ON.png</normalon>
+        <disabledon>:/new/Air/Air/Heat_OFF.png</disabledon>
+        <selectedoff>:/new/Air/Air/Heat_OFF.png</selectedoff>
+        <selectedon>:/new/Air/Air/Heat_ON.png</selectedon>:/new/Air/Air/Heat_OFF.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>44</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="AirMode">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>50</y>
+       <width>181</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#ffffff;
+border:none;
+border-radius:25px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>:/new/Air/Air/Mode.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="SwingUD_P">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>460</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mode</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="SwingLR_P">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>360</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mode</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SwitchButton</class>
+   <extends>QWidget</extends>
+   <header>switchbutton.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="D:/Raspberry/MasterControl/Code/NRMX/Animation/nettool/other/main.qrc"/>
+ </resources>
+ <connections/>
+</ui>

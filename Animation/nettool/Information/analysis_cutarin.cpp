@@ -13,9 +13,7 @@ Analysis_Cutarin::~Analysis_Cutarin()
 void Analysis_Cutarin::Receive_Data(QMultiMap<int, QString> Data)
 {
     QStringList StringList=Data.values(1);//选择键值----窗帘状态
-    /*
-    --6 新风
-*/
+
     QString HandleData;
     int Number =StringList.count();
     for(int i=0;i<Number;i++)
@@ -27,7 +25,6 @@ void Analysis_Cutarin::Receive_Data(QMultiMap<int, QString> Data)
 
 void Analysis_Cutarin::Handle_Data(QString Data)
 {
-    qDebug()<<"处理";
     QString Sub;
     QString Value;
     QString Function;
@@ -45,6 +42,10 @@ void Analysis_Cutarin::Handle_Data(QString Data)
         Value.append(Data.at(b));
     }
     //----得写转了多少 窗帘的状态是多少
+    qDebug()<<"Function---Curtain:"<<Function;
+    if(Function.toInt()==2){
+        emit StatusSignals(Sub.toInt(),Value.toInt());
+    }
 }
 
 void Analysis_Cutarin::Handle_Data_Esp(QString Data)

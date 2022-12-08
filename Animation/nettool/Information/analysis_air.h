@@ -44,7 +44,7 @@ public:
     int binary_search(int *arr,int p,int q,int ele);
     void Air_Decode(int Value);
 signals:
-    void Air_UiValue(const Data Data);
+    void Air_UiValue(const Data Data,int);
 };
 
 #endif // ANALYSIS_AIR_H

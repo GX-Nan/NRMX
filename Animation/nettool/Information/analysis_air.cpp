@@ -15,9 +15,7 @@ Analysis_Air::~Analysis_Air()
 void Analysis_Air::Receive_Data(QMultiMap<int, QString> Data)
 {
     QStringList DataStringList=Data.values(2);//选择键值
-    /*
-    --2 窗帘
-*/
+    qDebug()<<"DataStringList:"<<DataStringList;
     QString HandleData;
     int Number =DataStringList.count();
     for(int i=0;i<Number;i++)
@@ -94,7 +92,7 @@ int Analysis_Air::binary_search(int *arr,int p,int q,int ele)
  * Fan 0--自动 1--低档 2---中档 3---高档
  * Mode 0---自动 1--制冷 2--制热 3---除湿 4---送风
  */
-void  Analysis_Air::Air_Decode(int Value)
+void  Analysis_Air::Air_Decode(int Value)//之后放入本地数据库内？
 {
     if(Value<16){
         switch (Value) {
@@ -149,6 +147,6 @@ void  Analysis_Air::Air_Decode(int Value)
     else {
         data.Temp=Value;
     }
-    emit Air_UiValue(data);
+    emit Air_UiValue(data,Value);
 }
 

@@ -2,34 +2,14 @@
 #define WINDOWSYSTEM_H
 
 #include <QDialog>
-
 #include <analysis_window.h>
-
+#include <weathercrawler.h>
+#include <QMetaType>
+#include <QVariant>
+#include <QTimer>
 namespace Ui {
 class WindowSystem;
 }
-
-class StatusWindow{
-private:
-    QMap<QString,int> MessageCurtains;
-public:
-    StatusWindow(){
-        MessageCurtains.insert("1",0);
-        MessageCurtains.insert("2",0);
-    };
-    void MessageInsert(QString Key,int Value)
-    {
-       MessageCurtains.insert(Key,Value);
-    }
-    int GetMessage(QString Key)
-    {
-        return MessageCurtains.value(Key);
-    }
-    QList<int> Values()
-    {
-        return MessageCurtains.values();
-    }
-};
 
 class WindowSystem : public QDialog
 {
@@ -39,14 +19,31 @@ public:
     explicit WindowSystem(QWidget *parent = nullptr);
     ~WindowSystem();
     int WindowStatus=0;
-    QMap<int,int>data;
-    StatusWindow status;
-private:
     int SingleFalg=1;
+    //---自动
+    int IndoorTemp=0;
+    int OutSideHum=0;
+    int Weather=0;
+    int AutoFlag=0;
+    int WindowStopFlag=0;
+    int AQI=0;
+    QTimer *AutoTime;
+    //--雷达
+    int locationOffice=0;//0----没人  1---有人
+    int locationMissing=0;
+    int locationBar=0;
+    //------
+    QMap<int,int>data;
 signals:
     void SendClose();
     void RadioBroadcast(QString);
     void OutsideStatus(int,int,int);
+    void SendToWx(QString,int);
+    void SendWeather(int);
+    void SendAQI(int);
+    void SendTempHum(int,int);
+    void SendToWind(int);
+    void AutoMode_Sync(int);
 public:
     void Shadow();
 private slots:
@@ -62,13 +59,22 @@ private slots:
     void XprogressbarIfconfig();
     void ButtonStylePlan(int,int,int);
     void Image_Init();
-    void WindowsStatus(int value);
+    void AutoMode();
+    void on_AutoSwitch_clicked();
+    void Icon_Plan(int);
 
 public slots:
     void AirQuality_Status(int,int,int);
-    void Window_Status(int,int,int);
+    void Window_Status(int,int);
     void SetInstruction(int);
     void Button_Init();
+    void CrawlAir(QMap<QString,QString>);
+    void CrawlWeather(QMap<QString,QString>);
+    void CrawlActive(QMap<QString,QString>);
+    void AirAutoTigger(int);
+    void Auto_Sync(int);
+    void Location_Sync(int,int);
+
 private:
     Ui::WindowSystem *ui;
 };

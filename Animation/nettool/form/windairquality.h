@@ -6,6 +6,7 @@
 #include "analysis_wind.h"
 #include <QIcon>
 
+
 namespace Ui {
 class WindAirQuality;
 }

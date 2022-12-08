@@ -140,8 +140,7 @@ void TcpServer::writeData(const QString &ip, int port, const QString &data)
 
 void TcpServer::writeData(const QString &data)
 {
-    qDebug()<<"appppppppppppppp--2"<<App::StopReturn;
-    if(App::StopReturn==0){
+    if(App::StopReturn==false){
         foreach (TcpClient *client, clients) {
             client->sendData(data);
             qDebug()<<"发射成功";

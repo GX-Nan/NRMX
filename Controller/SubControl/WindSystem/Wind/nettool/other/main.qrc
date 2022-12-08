@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.ico</file>
+        <file>qt_zh_CN.qm</file>
+        <file>widgets.qm</file>
+        <file>Wind/High_OFF.png</file>
+        <file>Wind/High_ON.png</file>
+        <file>Wind/Low_OFF.png</file>
+        <file>Wind/Low_ON.png</file>
+        <file>Wind/Mid_OFF.png</file>
+        <file>Wind/Mid_ON.png</file>
+        <file>Wind/Natural_OFF.png</file>
+        <file>Wind/Natural_ON.png</file>
+        <file>Wind/Sea_OFF.png</file>
+        <file>Wind/Sea_ON.png</file>
+        <file>Wind/Solid_OFF.png</file>
+        <file>Wind/Solid_ON.png</file>
+        <file>Wind/Surround_OFF.png</file>
+        <file>Wind/Surround_ON.png</file>
+        <file>Wind/WindP.png</file>
+        <file>AirQulity/co2.png</file>
+        <file>AirQulity/HCHO.png</file>
+        <file>AirQulity/pm2.5.png</file>
+        <file>AirQulity/PM10.png</file>
+        <file>AirQulity/TVOC.png</file>
+        <file>AirQulity/So2.png</file>
+        <file>AirQulity/No2.png</file>
+    </qresource>
+</RCC>

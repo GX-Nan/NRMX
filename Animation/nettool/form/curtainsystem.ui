@@ -100,8 +100,8 @@ background-color: white;
    <widget class="QLabel" name="InsideBrightness">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>60</y>
+      <x>80</x>
+      <y>30</y>
       <width>481</width>
       <height>361</height>
      </rect>
@@ -148,8 +148,7 @@ background-color: white;
     </property>
     <property name="icon">
      <iconset resource="../other/main.qrc">
-      <normaloff>:/new/Curtain/Curtain/Up_OFF.png</normaloff>
-      <normalon>:/new/Curtain/Curtain/Up_ON.png</normalon>:/new/Curtain/Curtain/Up_OFF.png</iconset>
+      <normaloff>:/new/Curtain/Curtain/Up_OFF.png</normaloff>:/new/Curtain/Curtain/Up_OFF.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -164,7 +163,7 @@ background-color: white;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="Down">
+   <widget class="QPushButton" name="Stop">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -191,8 +190,7 @@ background-color: white;
     </property>
     <property name="icon">
      <iconset resource="../other/main.qrc">
-      <normaloff>:/new/Curtain/Curtain/Stop_OFF.png</normaloff>
-      <normalon>:/new/Curtain/Curtain/Stop_ON.png</normalon>:/new/Curtain/Curtain/Stop_OFF.png</iconset>
+      <normaloff>:/new/Curtain/Curtain/Stop_OFF.png</normaloff>:/new/Curtain/Curtain/Stop_OFF.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -207,7 +205,7 @@ background-color: white;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="Stop">
+   <widget class="QPushButton" name="Down">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -235,7 +233,6 @@ background-color: white;
     <property name="icon">
      <iconset resource="../other/main.qrc">
       <normaloff>:/new/Curtain/Curtain/Down_OFF.png</normaloff>
-      <normalon>:/new/Curtain/Curtain/Down_ON.png</normalon>
       <selectedon>:/new/Curtain/Curtain/Down_ON.png</selectedon>:/new/Curtain/Curtain/Down_OFF.png</iconset>
     </property>
     <property name="iconSize">
@@ -305,76 +302,6 @@ background-color: white;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_2">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>640</y>
-      <width>461</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>100</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>600</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Adobe 黑体 Std R</family>
-      <pointsize>20</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:#282A49</string>
-    </property>
-    <property name="text">
-     <string>扇叶：</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="CurtainStatus">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>600</y>
-      <width>71</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Adobe 黑体 Std R</family>
-      <pointsize>20</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:#282A49</string>
-    </property>
-    <property name="text">
-     <string>60%</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="CurrentNumber">
     <property name="geometry">
      <rect>
@@ -418,16 +345,6 @@ background-color: white;
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="SwitchButton" name="SwingLeftRight" native="true">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>500</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="CurrentNumber_2">
     <property name="geometry">
      <rect>
@@ -455,16 +372,50 @@ background-color: white;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="AutoSwitch">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>600</y>
+      <width>461</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 黑体 Std R</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../other/main.qrc">
+      <normaloff>:/new/Led/Led/AI_ON.png</normaloff>:/new/Led/Led/AI_ON.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>80</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>SwitchButton</class>
-   <extends>QWidget</extends>
-   <header>switchbutton.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="../other/main.qrc"/>
  </resources>

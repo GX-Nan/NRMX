@@ -14,7 +14,7 @@ frmMain::frmMain(QWidget *parent) : QWidget(parent,Qt::WindowTitleHint | Qt::Cus
     TcpTaskInit();
     initConfig();
     IPForm();
-    emit ServerListen();
+    emit ServerListen();//开监听
     qDebug()<<"主界面线程ID"<<QThread::currentThread();
 }
 
@@ -35,26 +35,26 @@ void frmMain::InterfaceUpdate()
     //动画----伸缩
     QPropertyAnimation *pScaleAnimation1 = new QPropertyAnimation(ui->Pm25GroupBox, "geometry");//
     pScaleAnimation1->setDuration(800);//设置时间
-    pScaleAnimation1->setStartValue(QRect(920, 30, 111, 451));//设置开始大小
-    pScaleAnimation1->setEndValue(QRect(920, 110, 111, 451));//设置结束大小
+    pScaleAnimation1->setStartValue(QRect(950, 30, 111, 451));//设置开始大小
+    pScaleAnimation1->setEndValue(QRect(950, 120, 111, 451));//设置结束大小
     pScaleAnimation1->setEasingCurve(QEasingCurve::OutQuad);
 
     QPropertyAnimation *pScaleAnimation2 = new QPropertyAnimation(ui->TempGroupBox, "geometry");//
     pScaleAnimation2->setDuration(800);//设置时间
-    pScaleAnimation2->setStartValue(QRect(1170, 40, 111, 451));//设置开始大小
-    pScaleAnimation2->setEndValue(QRect(1170, 410, 111, 451));//设置结束大小
+    pScaleAnimation2->setStartValue(QRect(1200, 800, 111, 451));//设置开始大小
+    pScaleAnimation2->setEndValue(QRect(1200, 420, 111, 451));//设置结束大小
     pScaleAnimation2->setEasingCurve(QEasingCurve::OutQuad);
 
     QPropertyAnimation *pScaleAnimation3 = new QPropertyAnimation(ui->HumidityGroupBox, "geometry");//
     pScaleAnimation3->setDuration(800);//设置时间
-    pScaleAnimation3->setStartValue(QRect(1430, 40, 111, 451));//设置开始大小
-    pScaleAnimation3->setEndValue(QRect(1430, 170, 111, 451));//设置结束大小
+    pScaleAnimation3->setStartValue(QRect(1460, 40, 111, 451));//设置开始大小
+    pScaleAnimation3->setEndValue(QRect(1460, 180, 111, 451));//设置结束大小
     pScaleAnimation3->setEasingCurve(QEasingCurve::OutQuad);
 
     QPropertyAnimation *pScaleAnimation4 = new QPropertyAnimation(ui->LuxGroupBox, "geometry");//
     pScaleAnimation4->setDuration(800);//设置时间
-    pScaleAnimation4->setStartValue(QRect(1680, 40, 111, 451));//设置开始大小
-    pScaleAnimation4->setEndValue(QRect(1680, 400, 111, 451));//设置结束大小
+    pScaleAnimation4->setStartValue(QRect(1710, 800, 111, 451));//设置开始大小
+    pScaleAnimation4->setEndValue(QRect(1710, 390, 111, 451));//设置结束大小
     pScaleAnimation4->setEasingCurve(QEasingCurve::OutQuad);
 
 
@@ -67,8 +67,27 @@ void frmMain::InterfaceUpdate()
     m_group->start();
 
 
-    QRectF rectangle1(10.0, 100.0, 80.0, 80.0);
-    //QRectF rectangle1(10, 10, 50, 50);
+    //QRectF rectangle1(10.0, 100.0, 80.0, 80.0);
+    //----贴图--温度
+    QString filePath = ":/new/Window/Window/Temp.png";//图标位置自行调整
+    QIcon icon = QIcon(filePath);
+    QPixmap TempP = icon.pixmap(icon.actualSize(QSize(80, 80)));//size自行调整
+    ui->TempP->setPixmap(TempP);
+    //----贴图--湿度
+    QString HumiPath = ":/new/Window/Window/Humi.png";//图标位置自行调整
+    QIcon Humi = QIcon(HumiPath);
+    QPixmap HumiP = Humi.pixmap(icon.actualSize(QSize(80, 80)));//size自行调整
+    ui->HumiP->setPixmap(HumiP);
+    //----贴图--光照
+    QString LuxPath = ":/new/Led/Led/Brightness.png";//图标位置自行调整
+    QIcon Lux = QIcon(LuxPath);
+    QPixmap LuxP = Lux.pixmap(icon.actualSize(QSize(80, 80)));//size自行调整
+    ui->LuxP->setPixmap(LuxP);
+    //----贴图--Pm2.5
+    QString Pm25Path = ":/new/AirQulity/AirQulity/pm2.5.png";//图标位置自行调整
+    QIcon Pm25 = QIcon(Pm25Path);
+    QPixmap Pm25P = Pm25.pixmap(icon.actualSize(QSize(80, 80)));//size自行调整
+    ui->Pm25P->setPixmap(Pm25P);
 
 }
 
@@ -137,6 +156,31 @@ void frmMain::Shadow()
     ButtonBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
     ButtonBox->setBlurRadius(25);
     ui->ButtonBox->setGraphicsEffect(ButtonBox);
+
+    QGraphicsDropShadowEffect *WhiteGroupBox = new QGraphicsDropShadowEffect(this);
+    WhiteGroupBox->setOffset(8);
+    WhiteGroupBox->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    WhiteGroupBox->setBlurRadius(25);
+    ui->WhiteGroupBox->setGraphicsEffect(WhiteGroupBox);
+
+
+    QGraphicsDropShadowEffect *WhiteGroupBox2 = new QGraphicsDropShadowEffect(this);
+    WhiteGroupBox2->setOffset(8);
+    WhiteGroupBox2->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    WhiteGroupBox2->setBlurRadius(25);
+    ui->WhiteGroupBox2->setGraphicsEffect(WhiteGroupBox2);
+
+    QGraphicsDropShadowEffect *WhiteGroupBox3 = new QGraphicsDropShadowEffect(this);
+    WhiteGroupBox3->setOffset(8);
+    WhiteGroupBox3->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    WhiteGroupBox3->setBlurRadius(25);
+    ui->WhiteGroupBox3->setGraphicsEffect(WhiteGroupBox3);
+
+    QGraphicsDropShadowEffect *WhiteGroupBox4 = new QGraphicsDropShadowEffect(this);
+    WhiteGroupBox4->setOffset(8);
+    WhiteGroupBox4->setColor(/*Qt::gray*/QColor(43, 43, 43));
+    WhiteGroupBox4->setBlurRadius(25);
+    ui->WhiteGroupBox4->setGraphicsEffect(WhiteGroupBox4);
 }
 
 bool frmMain::eventFilter(QObject *obj, QEvent *event)
@@ -235,13 +279,15 @@ void frmMain::IPForm()
     App::TcpListenPort=6000;
 }
 
+
+
 void frmMain::MainBackground()
 {
     QPainter painter(ui->Main);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush(QColor(41,43,74));//
     painter.setPen(Qt::NoPen);//设置no pen
-    painter.drawEllipse(-100,-400,700,700);
+    painter.drawEllipse(-120,-400,700,700);
 
     painter.setBrush(QColor(255,192,0));//
     painter.drawEllipse(1400,-300,800,800);
@@ -284,6 +330,9 @@ void frmMain::initConfig()//配置
     Analysis_light=new Analysis_Light(this);
     Analysis_window=new Analysis_Window(this);
     Analysis_cutarin=new Analysis_Cutarin(this);
+    //-----------wx
+    WxMsg=new WxReceive();
+    WxSd=new WxSend();
     //---添加幕布
     QPalette palette = shade->palette();
     palette.setColor(QPalette::Window,QColor(125,125,125,150));
@@ -314,7 +363,7 @@ void frmMain::initConfig()//配置
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_air,&Analysis_Air::Receive_Data);//Tcp链接数据分析
     connect(Analysis_air,&Analysis_Air::Air_UiValue,AirUi,&AirSystem::ReceiveData);//数据分析链接分控
     connect(AirUi,&AirSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
-    connect(AirUi,&AirSystem::Class_Update,Analysis_air,&Analysis_Air::Data_Update);
+//    connect(AirUi,&AirSystem::Class_Update,Analysis_air,&Analysis_Air::Data_Update);
     //---Wind
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_wind,&Analysis_Wind::Receive_Data);//Tcp链接数据分析
     connect(Analysis_wind,&Analysis_Wind::Wind_UiData,WindUi,&WindSystem::ReceiveData);//数据分析链接分控
@@ -322,42 +371,82 @@ void frmMain::initConfig()//配置
     connect(WindUi,&WindSystem::Class_Update,Analysis_wind,&Analysis_Wind::Data_Update);
     connect(TaskTcpServer,&frmTcpServer::Esp_Data,Analysis_wind,&Analysis_Wind::Handle_Data_AirQuality);
     connect(Analysis_wind,&Analysis_Wind::AirQuality_Data,WindUi,&WindSystem::Xprogress_Update);
+
     //----Led
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_light,&Analysis_Light::Receive_Data);//Tcp链接数据分析
     connect(LightUi,&LightSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
-    connect(LightUi,&LightSystem::StopTcp,TaskTcpServer,[=](int value){
-        TaskTcpServer->StopTcp=value;
-    });
     connect(Analysis_light,&Analysis_Light::StatusSignals,LightUi,&LightSystem::Light_Status);
     //----Window-------------
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_window,&Analysis_Window::Receive_Data);//Tcp链接数据分析
     connect(WindowUi,&WindowSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
     connect(Analysis_window,&Analysis_Window::AirQuality_Data,WindowUi,&WindowSystem::AirQuality_Status);
     connect(Analysis_window,&Analysis_Window::Window_Data,WindowUi,&WindowSystem::Window_Status);
+    connect(WindowUi,&WindowSystem::SendWeather,LightUi,&LightSystem::GetWeather);
     //--Curtain----
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_cutarin,&Analysis_Cutarin::Receive_Data);//Tcp链接数据分析
     connect(CurtainUi,&CurtainSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
     connect(TaskTcpServer,&frmTcpServer::Esp_Data,Analysis_cutarin,&Analysis_Cutarin::Handle_Data_Esp);
     connect(Analysis_cutarin,&Analysis_Cutarin::BrightnessSignals,CurtainUi,&CurtainSystem::BrightnessShow);
-
+    connect(Analysis_cutarin,&Analysis_Cutarin::StatusSignals,CurtainUi,&CurtainSystem::Ui_Update);
+    //----WxReceive---
+    QThread *WxReTask =new QThread();
+    connect(this,&frmMain::OneNetStart,WxMsg,&WxReceive::KeepCrawl);
+    WxMsg->moveToThread(WxReTask);
+    WxReTask->start();
+    connect(WxMsg,&WxReceive::Light_Status,LightUi,&LightSystem::Light_Status);
+    //---
+    connect(WxMsg,&WxReceive::Air_Status,Analysis_air,&Analysis_Air::Air_Decode);
+    //------
+    connect(WxMsg,&WxReceive::Curtain_Status,CurtainUi,&CurtainSystem::Ui_Update);
+    //-----
+    connect(WxMsg,&WxReceive::Window_Status,WindowUi,&WindowSystem::Window_Status);
+    //----
+    connect(WxMsg,&WxReceive::Wind_Status,Analysis_wind,&Analysis_Wind::Wind_Decode);
+    //-----WxSend-----
+    QThread *WxSeTask =new QThread();
+    connect(this,&frmMain::SendToOneNet,WxSd,&WxSend::SendData);
+    WxSd->moveToThread(WxSeTask);
+    WxSeTask->start();
+    //----------------------
+    emit OneNetStart();//开启抓取从微信传过来的数据
+    //------与子界面发射
+    connect(AirUi,&AirSystem::SendToWx,WxSd,&WxSend::SendData);
+    connect(CurtainUi,&CurtainSystem::SendToWx,WxSd,&WxSend::SendData);
+    connect(LightUi,&LightSystem::SendToWx,WxSd,&WxSend::SendData);
+    connect(WindUi,&WindSystem::SendToWx,WxSd,&WxSend::SendData);
+    connect(WindowUi,&WindowSystem::SendToWx,WxSd,&WxSend::SendData);
+    //-------空气智能触发
+    connect(Analysis_wind,&Analysis_Wind::IndoorAirJudge,WindowUi,&WindowSystem::AirAutoTigger);//发到windowsystem里面与户外判断
+    connect(WindowUi,&WindowSystem::SendToWind,WindUi,&WindSystem::AirAutoTigger);//window部分判断然后控制新风开关
+    connect(WindowUi,&WindowSystem::AutoMode_Sync,WindUi,&WindSystem::Auto_Sync);//同步智能的按钮按下
+    connect(WindUi,&WindSystem::AutoMode_Sync,WindowUi,&WindowSystem::Auto_Sync);//同上
+    connect(Analysis_wind,&Analysis_Wind::SendToAir,AirUi,&AirSystem::GetIndoorAirQuality);
+    //-----------雷达
+    connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindUi,&WindSystem::Location_Sync);
+    connect(Analysis_wind,&Analysis_Wind::SendToLocation,LightUi,&LightSystem::Location_Sync);
+    connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindowUi,&WindowSystem::Location_Sync);
+    //----亮度同步
+    connect(Analysis_wind,&Analysis_Wind::SendToLight,LightUi,&LightSystem::Lux_Sync);//同步亮度
+    //------------------
     connect(this,&frmMain::Show_SubUi,WindUi,&WindSystem::ShowSubUi);
 
 }
 
-void frmMain::on_UISreachIP_clicked()
+void frmMain::on_UISreachIP_clicked()//用于分控的主动找主控的--现在不怎么需要所以就先毙掉
 {
-    UiIPSreach *uiipsreach=new UiIPSreach(this);//设置父类为主窗口 ---当主窗口析构的时候子界面也会析构
-    uiipsreach->setModal(true);//设置为半模式窗口
-    uiipsreach->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
-    uiipsreach->show();
+
+//    UiIPSreach *uiipsreach=new UiIPSreach(this);//设置父类为主窗口 ---当主窗口析构的时候子界面也会析构
+//    uiipsreach->setModal(true);//设置为半模式窗口
+//    uiipsreach->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
+//    uiipsreach->show();
 }
 
 
-void frmMain::on_Server_clicked()
+void frmMain::on_Server_clicked()//写的服务器启动界面--可以不使用
 {
-    uiTcpServer*uitcpserver=new uiTcpServer(this);
-    uitcpserver->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
-    uitcpserver->show();
+//    uiTcpServer*uitcpserver=new uiTcpServer(this);
+//    uitcpserver->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
+//    uitcpserver->show();
 }
 
 void frmMain::on_GoMain_clicked()

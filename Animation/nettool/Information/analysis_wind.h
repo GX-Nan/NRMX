@@ -28,6 +28,9 @@ public:
     int Co2=0;
     int TVCO=0;
     int HCHO=0;
+    int Temp=0;
+    int Hum=0;
+    int Brightness=0;
 };
 class Analysis_Wind : public QObject
 {
@@ -37,6 +40,7 @@ public:
     ~Analysis_Wind();
     Wind_Data data;
     AirQuality Air;
+    QString LocationStatus,LocationSub;
 public slots:
     void Receive_Data(QMultiMap<int,QString> Data);
     void Handle_Data_Wind(QString Data);
@@ -44,8 +48,12 @@ public slots:
     void Data_Update(Wind_Data Lastest);
     void Wind_Decode(int Value);
 signals:
-    void Wind_UiData(const Wind_Data Data);
+    void Wind_UiData(const Wind_Data Data,int);
     void AirQuality_Data(const AirQuality Data);
+    void IndoorAirJudge(int);
+    void SendToAir(int,int);//发给空调 温度和湿度
+    void SendToLight(int,int);//发给灯光 亮度 ---不过应该要分区域?
+    void SendToLocation(int,int);
 };
 
 #endif // ANALYSIS_WIND_H

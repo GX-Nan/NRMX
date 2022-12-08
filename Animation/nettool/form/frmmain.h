@@ -15,6 +15,10 @@
 #include"airsystem.h"
 #include"lightsystem.h"
 #include"windowsystem.h"
+#include "wxreceive.h"
+#include "wxsend.h"
+#include "weathercrawler.h"
+
 
 namespace Ui {
 class frmMain;
@@ -43,11 +47,11 @@ public:
     Analysis_Light *Analysis_light=nullptr;
     Analysis_Window *Analysis_window=nullptr;
     Analysis_Cutarin *Analysis_cutarin=nullptr;
-    int test=0;
-
-
-
-
+    WxReceive *WxMsg=nullptr;
+    WxSend *WxSd=nullptr;
+    //-------
+    WeatherCrawler *Crawler=nullptr;
+    //-------
     void InterfaceUpdate();//界面更新
     void paintEvent(QPaintEvent*) override;//画图
     void Shadow();
@@ -56,8 +60,6 @@ public:
     void ControlPage();//控制界面背景
     void TcpTaskInit();
     void IPForm();
-
-
 
 private slots:
     void on_tabWidget_currentChanged(int index);
@@ -81,6 +83,9 @@ signals:
     void SendData();
     void ServerListen();
     void ServerClose();
+    void OneNetStart();
+    void SendToOneNet(QString,int);
+    void StartCrawl();
 protected:
 
 private:

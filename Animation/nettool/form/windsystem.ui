@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>371</width>
-    <height>819</height>
+    <height>917</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      <x>10</x>
      <y>10</y>
      <width>351</width>
-     <height>801</height>
+     <height>901</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -75,7 +75,7 @@
       <x>65</x>
       <y>330</y>
       <width>231</width>
-      <height>461</height>
+      <height>441</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -160,7 +160,6 @@ border:none;
      <property name="icon">
       <iconset resource="../other/main.qrc">
        <normaloff>:/new/Wind/Wind/Mid_OFF.png</normaloff>
-       <normalon>:/new/Wind/Wind/Mid_ON.png</normalon>
        <disabledoff>:/new/Wind/Wind/Mid_OFF.png</disabledoff>:/new/Wind/Wind/Mid_OFF.png</iconset>
      </property>
      <property name="iconSize">
@@ -179,7 +178,7 @@ border:none;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="HighMode">
+    <widget class="QPushButton" name="MaxMode">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -206,8 +205,7 @@ border:none;
      </property>
      <property name="icon">
       <iconset resource="../other/main.qrc">
-       <normaloff>:/new/Wind/Wind/High_OFF.png</normaloff>
-       <normalon>:/new/Wind/Wind/High_ON.png</normalon>:/new/Wind/Wind/High_OFF.png</iconset>
+       <normaloff>:/new/Wind/Wind/High_OFF.png</normaloff>:/new/Wind/Wind/High_OFF.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -252,9 +250,7 @@ border:none;
      </property>
      <property name="icon">
       <iconset resource="../other/main.qrc">
-       <normaloff>:/new/Wind/Wind/Low_OFF.png</normaloff>
-       <normalon>:/new/Wind/Wind/Low_ON.png</normalon>
-       <disabledoff>:/new/Wind/Wind/Mid_OFF.png</disabledoff>:/new/Wind/Wind/Low_OFF.png</iconset>
+       <normaloff>:/new/Wind/Wind/Low_OFF.png</normaloff>:/new/Wind/Wind/Low_OFF.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -351,6 +347,52 @@ background-color: white;
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AutoSwitch">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>790</y>
+      <width>181</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe 黑体 Std R</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton
+{
+	border-radius:15px;
+	background:#FFFFFF;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../other/main.qrc">
+      <normaloff>:/new/Led/Led/AI_ON.png</normaloff>
+      <normalon>:/new/Led/Led/AI_OFF.png</normalon>:/new/Led/Led/AI_ON.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

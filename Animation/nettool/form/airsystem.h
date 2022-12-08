@@ -7,6 +7,7 @@
 #include "app.h"
 #include <QTimer>
 #include <analysis_air.h>
+
 namespace Ui {
 class AirSystem;
 }
@@ -22,11 +23,18 @@ public:
     Data data;
 private:
     int Falg_Update=0;
-    int Falg_AirSwitch=1;
+    int Flag_AirSwitch=0;
+    int StopFalg=0;
+    //AutoMode
+    int IndoorTemp=0;
+    int IndoorHum=0;
+    QTimer *AutoTime;
+    int AutoFlag=0;
+
 
 public slots:
     //-----UiData
-    void ReceiveData(const Data VarValue);
+    void ReceiveData(const Data VarValue,int);
     void ButtonClear(int Switch);
     void Ui_Update();
     void SwitchButton_U_D(int Falg);
@@ -34,10 +42,11 @@ public slots:
     void SetInstruction(int Order);
     void Trigger_TempQslider();
     void Implement();
+    void GetIndoorAirQuality(int,int);
 signals:
     void SendClose();
     void RadioBroadcast(QString);
-    void Class_Update(Data data);
+    void SendToWx(QString,int);
 
 private slots:
     void on_BackMain_clicked();
@@ -54,6 +63,10 @@ private slots:
     void ButtonStyle_Label(QLabel* Name,int Offset,int BlurRadius);
     void StyleSheet(int,int,int,int);
     void Image_Init();
+    void AutoMode();
+    void on_AutoSwitch_clicked();
+    void Icon_FanPlan(int);
+    void Icon_ModePlan(int);
 
 private:
     Ui::AirSystem *ui;

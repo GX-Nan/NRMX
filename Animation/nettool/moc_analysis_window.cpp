@@ -68,17 +68,17 @@ static const uint qt_meta_data_Analysis_Window[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    3,   44,    2, 0x06 /* Public */,
-       3,    3,   51,    2, 0x06 /* Public */,
+       1,    2,   44,    2, 0x06 /* Public */,
+       3,    3,   49,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   58,    2, 0x0a /* Public */,
-       7,    1,   61,    2, 0x0a /* Public */,
-       8,    1,   64,    2, 0x0a /* Public */,
-       9,    3,   67,    2, 0x0a /* Public */,
+       4,    1,   56,    2, 0x0a /* Public */,
+       7,    1,   59,    2, 0x0a /* Public */,
+       8,    1,   62,    2, 0x0a /* Public */,
+       9,    3,   65,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
 
  // slots: parameters
@@ -96,7 +96,7 @@ void Analysis_Window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         Analysis_Window *_t = static_cast<Analysis_Window *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->Window_Data((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 0: _t->Window_Data((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 1: _t->AirQuality_Data((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 2: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
         case 3: _t->Handle_Data((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -107,7 +107,7 @@ void Analysis_Window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Analysis_Window::*)(int , int , int );
+            using _t = void (Analysis_Window::*)(int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Analysis_Window::Window_Data)) {
                 *result = 0;
                 return;
@@ -162,9 +162,9 @@ int Analysis_Window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Analysis_Window::Window_Data(int _t1, int _t2, int _t3)
+void Analysis_Window::Window_Data(int _t1, int _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
