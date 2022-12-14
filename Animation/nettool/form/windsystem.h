@@ -27,6 +27,7 @@ public:
     int locationOffice=0;//0----没人  1---有人
     int locationMissing=0;
     int locationBar=0;
+    int StopSend=0;
 
 signals:
     void SendClose();

@@ -87,7 +87,7 @@ public:
         InsideBrightness->setGeometry(QRect(80, 30, 481, 361));
         QFont font;
         font.setFamily(QString::fromUtf8("Adobe \351\273\221\344\275\223 Std R"));
-        font.setPointSize(250);
+        font.setPointSize(160);
         font.setBold(true);
         font.setWeight(75);
         InsideBrightness->setFont(font);

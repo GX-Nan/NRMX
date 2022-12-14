@@ -139,7 +139,7 @@ void CurtainSystem::SetInstruction(int Order)
             AllCurtainsFalg=0;
             Timer->start(800);
         }
-        emit SendToWx(WxData,0);
+        emit SendToWx(WxData,0); 
         break;
     case 4:
         if(ui->CurrentNumber->text()!="0"){
@@ -165,7 +165,7 @@ void CurtainSystem::ReceiveData(QString)//貌似没有用
 
 void CurtainSystem::BrightnessShow(QString Value)//室内光照强度
 {
-    ui->InsideBrightness->setText(Value);
+    ui->InsideBrightness->setText(QString::number(Value.toInt()));
 }
 
 void CurtainSystem::Ui_Update(int Sub, int Value)

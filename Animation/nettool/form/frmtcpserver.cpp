@@ -115,11 +115,11 @@ void frmTcpServer::sendData(const QString &ip, int port, const QString &data)
 
 void frmTcpServer::receiveData(const QString &ip, int port, const QString &data)
 {
-    qDebug()<<"服务器线程ID"<<QThread::currentThread();
+   // qDebug()<<"服务器线程ID"<<QThread::currentThread();
 //    App::StopReturn=true;
-    qDebug()<<"App::StopReturn:"<<App::StopReturn;
+//    qDebug()<<"App::StopReturn:"<<App::StopReturn;
     QString str = QString("[%1:%2] %3").arg(ip).arg(port).arg(data);
-   // QVector<QString>(Manage);
+
     QString QStringData=data;
     QStringData=QStringData.remove(QChar('\n'),Qt::CaseInsensitive);//消除空格
     QMultiMap<int,QString>(System);

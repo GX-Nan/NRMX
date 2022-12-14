@@ -41,12 +41,16 @@ public:
     Wind_Data data;
     AirQuality Air;
     QString LocationStatus,LocationSub;
+    int LocationMeeting,LocationBar,LocationOffice;
+    int LocationMeetingL,LocationMeetingR;
+    int AirControlFlag=0;
 public slots:
     void Receive_Data(QMultiMap<int,QString> Data);
     void Handle_Data_Wind(QString Data);
     void Handle_Data_AirQuality(QString Data);
     void Data_Update(Wind_Data Lastest);
     void Wind_Decode(int Value);
+    void LocationAnalysis(QString,int);
 signals:
     void Wind_UiData(const Wind_Data Data,int);
     void AirQuality_Data(const AirQuality Data);
@@ -54,6 +58,7 @@ signals:
     void SendToAir(int,int);//发给空调 温度和湿度
     void SendToLight(int,int);//发给灯光 亮度 ---不过应该要分区域?
     void SendToLocation(int,int);
+
 };
 
 #endif // ANALYSIS_WIND_H
