@@ -134,7 +134,7 @@ public:
         BackMain->setIconSize(QSize(50, 50));
         CurtainNumber = new QLabel(bottom);
         CurtainNumber->setObjectName(QStringLiteral("CurtainNumber"));
-        CurtainNumber->setGeometry(QRect(50, 50, 371, 281));
+        CurtainNumber->setGeometry(QRect(70, 70, 371, 281));
         QFont font;
         font.setFamily(QStringLiteral("PibotoLt"));
         font.setPointSize(170);

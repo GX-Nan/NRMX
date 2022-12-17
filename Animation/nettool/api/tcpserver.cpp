@@ -143,7 +143,6 @@ void TcpServer::writeData(const QString &data)
     if(App::StopReturn==false){
         foreach (TcpClient *client, clients) {
             client->sendData(data);
-            qDebug()<<"发射成功";
         }
     }
 

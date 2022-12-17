@@ -232,7 +232,7 @@ void frmMain::TcpTaskInit()
     connect(this,&frmMain::ServerClose,TaskTcpServer,&frmTcpServer::ListenClose);
     connect(TaskTcpServer,&frmTcpServer::TextAppend,this,[=](QString Data)
     {
-        qDebug()<<"Rece Msg:"<<Data;
+        //qDebug()<<"Rece Msg:"<<Data;
     });
     //    connect(TaskTcpServer,&frmTcpServer::TextAppend,this,[=](QString Msg)
     //    {

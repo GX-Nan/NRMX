@@ -109,7 +109,7 @@ background-color: white;
     <property name="font">
      <font>
       <family>Adobe 黑体 Std R</family>
-      <pointsize>250</pointsize>
+      <pointsize>160</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>

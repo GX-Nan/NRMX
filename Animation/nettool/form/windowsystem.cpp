@@ -269,7 +269,7 @@ void WindowSystem::CrawlActive(QMap<QString, QString> data )
 
 void WindowSystem::AirAutoTigger(int data)
 {
-//    qDebug()<<"AutoTiggerData-------------------------:"<<data;
+    qDebug()<<"AutoTiggerData--window-------------------------:"<<data;
     AQI=4;
     if (data==1&&(locationOffice!=0||locationBar!=0||locationMissing!=0)) {
         qDebug()<<"有人存在这个房间里面======";
@@ -282,7 +282,6 @@ void WindowSystem::AirAutoTigger(int data)
                 AutoTime->stop();
             }
         }else{
-
             if(AutoFlag==1){
                 qDebug()<<"户外空气质量差-----开启新风";
                 qDebug()<<"AutoFlag-----"<<AutoFlag;
@@ -291,6 +290,7 @@ void WindowSystem::AirAutoTigger(int data)
             }
         }
     }else {//如果没人或者室内空气良好则保持？
+        qDebug()<<"沒有人在辦公室";
         emit SendToWind(0);
     }
 }

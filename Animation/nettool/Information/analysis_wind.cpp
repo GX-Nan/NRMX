@@ -140,27 +140,27 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     case 9:
         for(int i=6;i<=7;i++){
             LocationSub.append(Data.at(i));
-        }
+        }//?----用于同一个地方多个传感器的状态
         for(int i=8;i<=9;i++){
             LocationStatus.append(Data.at(i));
         }
+        LocationAnalysis(Head,LocationStatus.toInt());
         qDebug()<<"位置"<<LocationSub.toInt()<<"状态："<<LocationStatus.toInt();
-        emit SendToLocation(LocationSub.toInt(),LocationStatus.toInt());
-        LocationSub.clear();
-        LocationStatus.clear();
         break;
     }
     emit AirQuality_Data(Air);//新风显示
     emit SendToAir(Air.Temp,Air.Hum);//给空调判断
-
     PM25Flag=1;
     //-----先在这里判断室内是否需要通风透气---然后再判断是否要开窗户或者新风
     if(PM25Flag==1||PM10Flag==1||HCHOFlag==1||TvcoFlag==1||Co2Flag==1){
         emit IndoorAirJudge(1);
-    }else {
+        qDebug()<<"innnn---開";
+    }else if(PM25Flag==0&&PM10Flag==0&&HCHOFlag==0&&TvcoFlag==0&&Co2Flag==0) {//测试测试
         emit IndoorAirJudge(0);
-
+        qDebug()<<"innnn---关";
     }
+    LocationSub.clear();
+    LocationStatus.clear();
 }
 
 void Analysis_Wind::Data_Update(Wind_Data Lastest)
@@ -178,4 +178,29 @@ void Analysis_Wind::Wind_Decode(int Value)
         data.Mode=Value-4;
     }
     emit Wind_UiData(data,Value);
+}
+
+void Analysis_Wind::LocationAnalysis(QString sub, int data)
+{
+    if(sub=="A"){
+        switch(LocationSub.toInt()){
+        case 1:
+            LocationMeetingL=data;
+            break;
+        case 2:
+            LocationMeetingR=data;
+            break;
+        }
+        if(LocationMeetingR==1||LocationMeetingL==1){
+            emit SendToLocation(1,1);
+        }else {
+            emit SendToLocation(1,0);
+        }
+    }else if(sub=="B"){
+        LocationBar=data;
+        emit SendToLocation(2,data);
+    }else if(sub=="C"){
+        LocationOffice=data;
+        emit SendToLocation(3,data);
+    }
 }

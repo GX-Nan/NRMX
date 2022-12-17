@@ -99,13 +99,14 @@ public:
     int IndoorLux=0;
     int OutsideWeather=0;//1---晴天 2---多云 3---下雨
     int locationMissing=0,locationOffice=0,locationBar=0;//0---无人 1---有人
-    int LuxMissing=0,LuxOffice=0,LuxBar=0;//三个地方的亮度
+    int LuxMissing=0,LuxBarAndOffice=0;//两个地方的亮度
     double ControlParameters=0.4;//P---->1:6 参数
     int MiddayFalg=0;
     int WorkTime=0;
     int AllSpotStatus=0;
     int AutoFlag=0;
-    int LatestMeeting=0,LatestBar=0,LatestOffice=0;
+    int LatestMeeting=0,LatestBarAndOffice=0;
+    int StopTest=0;
     QTimer *AutoTime;
 
 signals:

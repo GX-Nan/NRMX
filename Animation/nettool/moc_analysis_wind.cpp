@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Analysis_Wind_t {
-    QByteArrayData data[19];
-    char stringdata0[235];
+    QByteArrayData data[20];
+    char stringdata0[252];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -49,7 +49,8 @@ QT_MOC_LITERAL(14, 174, 22), // "Handle_Data_AirQuality"
 QT_MOC_LITERAL(15, 197, 11), // "Data_Update"
 QT_MOC_LITERAL(16, 209, 7), // "Lastest"
 QT_MOC_LITERAL(17, 217, 11), // "Wind_Decode"
-QT_MOC_LITERAL(18, 229, 5) // "Value"
+QT_MOC_LITERAL(18, 229, 5), // "Value"
+QT_MOC_LITERAL(19, 235, 16) // "LocationAnalysis"
 
     },
     "Analysis_Wind\0Wind_UiData\0\0Wind_Data\0"
@@ -58,7 +59,7 @@ QT_MOC_LITERAL(18, 229, 5) // "Value"
     "SendToLocation\0Receive_Data\0"
     "QMultiMap<int,QString>\0Handle_Data_Wind\0"
     "Handle_Data_AirQuality\0Data_Update\0"
-    "Lastest\0Wind_Decode\0Value"
+    "Lastest\0Wind_Decode\0Value\0LocationAnalysis"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +69,7 @@ static const uint qt_meta_data_Analysis_Wind[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -76,19 +77,20 @@ static const uint qt_meta_data_Analysis_Wind[] = {
        6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   69,    2, 0x06 /* Public */,
-       5,    1,   74,    2, 0x06 /* Public */,
-       7,    1,   77,    2, 0x06 /* Public */,
-       8,    2,   80,    2, 0x06 /* Public */,
-       9,    2,   85,    2, 0x06 /* Public */,
-      10,    2,   90,    2, 0x06 /* Public */,
+       1,    2,   74,    2, 0x06 /* Public */,
+       5,    1,   79,    2, 0x06 /* Public */,
+       7,    1,   82,    2, 0x06 /* Public */,
+       8,    2,   85,    2, 0x06 /* Public */,
+       9,    2,   90,    2, 0x06 /* Public */,
+      10,    2,   95,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    1,   95,    2, 0x0a /* Public */,
-      13,    1,   98,    2, 0x0a /* Public */,
-      14,    1,  101,    2, 0x0a /* Public */,
-      15,    1,  104,    2, 0x0a /* Public */,
-      17,    1,  107,    2, 0x0a /* Public */,
+      11,    1,  100,    2, 0x0a /* Public */,
+      13,    1,  103,    2, 0x0a /* Public */,
+      14,    1,  106,    2, 0x0a /* Public */,
+      15,    1,  109,    2, 0x0a /* Public */,
+      17,    1,  112,    2, 0x0a /* Public */,
+      19,    2,  115,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    4,    2,
@@ -104,6 +106,7 @@ static const uint qt_meta_data_Analysis_Wind[] = {
     QMetaType::Void, QMetaType::QString,    4,
     QMetaType::Void, 0x80000000 | 3,   16,
     QMetaType::Void, QMetaType::Int,   18,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
 
        0        // eod
 };
@@ -125,6 +128,7 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 8: _t->Handle_Data_AirQuality((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 9: _t->Data_Update((*reinterpret_cast< Wind_Data(*)>(_a[1]))); break;
         case 10: _t->Wind_Decode((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->LocationAnalysis((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -199,13 +203,13 @@ int Analysis_Wind::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

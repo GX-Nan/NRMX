@@ -115,11 +115,18 @@ void WindSystem::AirAutoTigger(int data)
     if(AutoFlag==1){//----------?无法确定是否开了？
         switch(data){
         case 0:
-            on_StopMode_clicked();
+            qDebug()<<"开新风------关";
+            if(StopSend==1){
+                 on_StopMode_clicked();
+                 StopSend=0;
+            }
             break;
         case 1:
-           // qDebug()<<"开新风------";
-            on_MaxMode_clicked();
+            qDebug()<<"开新风------开";
+            if(StopSend==0){
+                 on_MaxMode_clicked();
+                 StopSend=1;
+            }
             break;
         }
     }
