@@ -261,7 +261,7 @@ void LightSystem::Trigger_DeviceQslider()
     int Color=test.GetColor();
     ui->Brightness_Slider->setValue(Lux);
     ui->Color_Slider->setValue(Color);
-//    qDebug()<<"Current:"<<CurrentLed<<"lux:"<<Lux<<"Color:"<<Color;
+    //    qDebug()<<"Current:"<<CurrentLed<<"lux:"<<Lux<<"Color:"<<Color;
 }
 
 
@@ -325,6 +325,7 @@ void LightSystem::on_AiMode_clicked()
         qDebug()<<"innn-----aimode-flag--off";
         AiMode_Falg=0;
     }
+    AutoMode();
 }
 
 void LightSystem::InstructionSet(int Function, int Value)
@@ -1274,12 +1275,11 @@ void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感
     int Result;
     int Difference;
     //-------------------判断会议区是是否有人
-    if(locationMissing==1){
+    if(locationMeeting==1){
 
         if(MiddayFalg!=1){
             //            if(LuxMissing<=460){
-            if(LuxMissing<=460){
-                qDebug()<<"innnnn---chandelier2---";
+            if(LuxMissing<=260){
                 if(status.GetMessage("Chandelier2")!="1"){//如果现在不是关着的话，则先写入
                     status.InsertMessage("Chandelier2","0");
                     // on_ChandelierSwitch2_clicked();
@@ -1289,7 +1289,7 @@ void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感
             for(int i=1;i<=3;i++){
                 ui->Device_Slider->setValue(i);
                 Trigger_DeviceQslider();
-                Difference=460-LuxMissing;
+                Difference=260-LuxMissing;
                 Result=Difference/0.8;
                 LatestMeeting=LatestMeeting+Result;
                 ui->Brightness_Slider->setValue(LatestMeeting);
@@ -1331,28 +1331,26 @@ void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感
         qDebug()<<"吧台有人--------";
         ui->Lux_All->setChecked(0);
         if(MiddayFalg!=1){
-            qDebug()<<"当前吊灯状态------"<<status.GetMessage("Chandelier1");
-            if(status.GetMessage("Chandelier1")!="1"){//如果现在不是开着的话，则先写入
-                status.InsertMessage("Chandelier1","0");
-                ui->ChandelierSwitch1->click();
-            }
+            qDebug()<<"当前吧台吊灯状态------"<<status.GetMessage("Chandelier1");
+
+            status.InsertMessage("Chandelier1","0");
+            ui->ChandelierSwitch1->click();
         }
         else {
-            qDebug()<<"当前吊灯状态------"<<status.GetMessage("Chandelier1");
-            if(status.GetMessage("Chandelier1")!="0"){//如果现在不是开着的话，则先写入
-                status.InsertMessage("Chandelier1","1");
-                ui->ChandelierSwitch1->click();
-            }
+            qDebug()<<"当前吧台吊灯状态------"<<status.GetMessage("Chandelier1");
+
+            status.InsertMessage("Chandelier1","1");
+            ui->ChandelierSwitch1->click();
         }
     }
     else{
         qDebug()<<"吧台没有人--------";
         //----吊灯
-        qDebug()<<"当前吊灯状态------"<<status.GetMessage("Chandelier1");
-        if(status.GetMessage("Chandelier1")!="0"){//如果现在不是开着的话，则先写入
-            status.InsertMessage("Chandelier1","1");
-            ui->ChandelierSwitch1->click();
-        }
+        qDebug()<<"当前吧台吊灯状态------"<<status.GetMessage("Chandelier1");
+
+        status.InsertMessage("Chandelier1","1");
+        ui->ChandelierSwitch1->click();
+
     }
     //-------------------判断办公区是是否有人
     if(locationOffice==1){
@@ -1362,9 +1360,9 @@ void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感
         if(MiddayFalg!=1){
             Difference=212-LuxBarAndOffice;
             Result=Difference/0.4;
-            qDebug()<<"LatestBarAndOffice--1:"<<LatestBarAndOffice;
+            //            qDebug()<<"LatestBarAndOffice--1:"<<LatestBarAndOffice;
             LatestBarAndOffice=LatestBarAndOffice+Result;
-            qDebug()<<"LatestBarAndOffice----2:"<<LatestBarAndOffice;
+            //            qDebug()<<"LatestBarAndOffice----2:"<<LatestBarAndOffice;
             ui->Brightness_Slider->setValue(LatestBarAndOffice);
             Trigger_BrightnessQslider();
         }
@@ -1388,9 +1386,9 @@ void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感
             for(int i=5;i<=6;i++){//副灯
                 ui->Device_Slider->setValue(i);
                 Trigger_DeviceQslider();
-//                Difference=212-LuxBarAndOffice;
-//                Result=Difference/0.4;
-//                LatestBarAndOffice=LatestBarAndOffice+Result;
+                //                Difference=212-LuxBarAndOffice;
+                //                Result=Difference/0.4;
+                //                LatestBarAndOffice=LatestBarAndOffice+Result;
                 ui->Brightness_Slider->setValue(LatestBarAndOffice);
                 Trigger_BrightnessQslider();
             }
@@ -1415,8 +1413,19 @@ void LightSystem::AuxiliaryLightLogic()//先判断有无人----->再判断传感
             Trigger_BrightnessQslider();
         }
     }
-    LatestBarAndOffice=0;
-    LatestMeeting=0;
+    if(LatestBarAndOffice<0){
+        LatestBarAndOffice=0;
+    }
+    else if(LatestBarAndOffice>100) {
+        LatestBarAndOffice=100;
+    }
+    if(LatestMeeting<0){
+        LatestMeeting=0;
+    }
+    else if(LatestMeeting>100){
+        LatestMeeting=100;
+    }
+
 
 }
 
@@ -1466,7 +1475,7 @@ void LightSystem::Location_Sync(int sub, int value)
 {
     switch (sub) {
     case 1:
-        locationMissing=value;
+        locationMeeting=value;
         break;
     case 2:
         locationBar=value;
@@ -1475,20 +1484,20 @@ void LightSystem::Location_Sync(int sub, int value)
         locationOffice=value;
         break;
     }
-    if(locationMissing==1||locationBar==1||locationOffice==1){
+    if(locationMeeting==1||locationBar==1||locationOffice==1){
         AutoMode();
-//        if(StopTest==0){
-//            AutoTime->start(10000);
-//            StopTest=1;
-//        }
+        //        if(StopTest==0){
+        //            AutoTime->start(10000);
+        //            StopTest=1;
+        //        }
     }
-    else if(locationMissing==0&&locationBar==0&&locationOffice==0){
+    else if(locationMeeting==0&&locationBar==0&&locationOffice==0){
         AutoMode();
-//        if(StopTest==1){
-//            AutoTime->stop();
-//        }
+        //        if(StopTest==1){
+        //            AutoTime->stop();
+        //        }
     }
-    qDebug()<<"Light--sync"<<"locationMissing:"<<locationMissing<<"locationBar:"<<locationBar<<"locationOffice:"<<locationOffice;
+    qDebug()<<"Light--sync"<<"locationMeeting:"<<locationMeeting<<"locationBar:"<<locationBar<<"locationOffice:"<<locationOffice;
 }
 
 void LightSystem::Lux_Sync(int sub, int value)

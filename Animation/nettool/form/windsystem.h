@@ -25,9 +25,12 @@ public:
     //----智能模式
     int AutoFlag=0;
     int locationOffice=0;//0----没人  1---有人
-    int locationMissing=0;
+    int locationMeeting=0;
     int locationBar=0;
     int StopSend=0;
+    int StopAiTime=0;
+    QTimer*StopTime;
+    int Time;
 
 signals:
     void SendClose();
@@ -39,6 +42,7 @@ signals:
     void SendToWx(QString,int);
     void ModeCtrl(int);//控制模式
     void AutoMode_Sync(int);
+    void WindLock(int);
 
 
 
@@ -57,6 +61,8 @@ private slots:
     void Icon_Plan(int);
     //----人体存在传感器
     void InductiveLogic();
+    //----ai等待
+    void AiWindWait();
 public:
     void ShowSubUi();
     void Shadow();

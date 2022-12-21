@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WindowSystem_t {
-    QByteArrayData data[42];
-    char stringdata0[572];
+    QByteArrayData data[43];
+    char stringdata0[582];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -72,7 +72,8 @@ QT_MOC_LITERAL(37, 509, 12), // "CrawlWeather"
 QT_MOC_LITERAL(38, 522, 11), // "CrawlActive"
 QT_MOC_LITERAL(39, 534, 13), // "AirAutoTigger"
 QT_MOC_LITERAL(40, 548, 9), // "Auto_Sync"
-QT_MOC_LITERAL(41, 558, 13) // "Location_Sync"
+QT_MOC_LITERAL(41, 558, 13), // "Location_Sync"
+QT_MOC_LITERAL(42, 572, 9) // "Wind_Sync"
 
     },
     "WindowSystem\0SendClose\0\0RadioBroadcast\0"
@@ -90,7 +91,7 @@ QT_MOC_LITERAL(41, 558, 13) // "Location_Sync"
     "SetInstruction\0Button_Init\0CrawlAir\0"
     "QMap<QString,QString>\0CrawlWeather\0"
     "CrawlActive\0AirAutoTigger\0Auto_Sync\0"
-    "Location_Sync"
+    "Location_Sync\0Wind_Sync"
 };
 #undef QT_MOC_LITERAL
 
@@ -100,7 +101,7 @@ static const uint qt_meta_data_WindowSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      34,   14, // methods
+      35,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -108,42 +109,43 @@ static const uint qt_meta_data_WindowSystem[] = {
        9,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  184,    2, 0x06 /* Public */,
-       3,    1,  185,    2, 0x06 /* Public */,
-       4,    3,  188,    2, 0x06 /* Public */,
-       5,    2,  195,    2, 0x06 /* Public */,
-       6,    1,  200,    2, 0x06 /* Public */,
-       7,    1,  203,    2, 0x06 /* Public */,
-       8,    2,  206,    2, 0x06 /* Public */,
-       9,    1,  211,    2, 0x06 /* Public */,
-      10,    1,  214,    2, 0x06 /* Public */,
+       1,    0,  189,    2, 0x06 /* Public */,
+       3,    1,  190,    2, 0x06 /* Public */,
+       4,    3,  193,    2, 0x06 /* Public */,
+       5,    2,  200,    2, 0x06 /* Public */,
+       6,    1,  205,    2, 0x06 /* Public */,
+       7,    1,  208,    2, 0x06 /* Public */,
+       8,    2,  211,    2, 0x06 /* Public */,
+       9,    1,  216,    2, 0x06 /* Public */,
+      10,    1,  219,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    0,  217,    2, 0x08 /* Private */,
-      12,    3,  218,    2, 0x08 /* Private */,
-      17,    0,  225,    2, 0x08 /* Private */,
-      18,    0,  226,    2, 0x08 /* Private */,
-      19,    0,  227,    2, 0x08 /* Private */,
-      20,    3,  228,    2, 0x08 /* Private */,
-      21,    1,  235,    2, 0x08 /* Private */,
-      23,    0,  238,    2, 0x08 /* Private */,
-      24,    0,  239,    2, 0x08 /* Private */,
-      25,    0,  240,    2, 0x08 /* Private */,
-      26,    3,  241,    2, 0x08 /* Private */,
-      27,    0,  248,    2, 0x08 /* Private */,
-      28,    0,  249,    2, 0x08 /* Private */,
-      29,    0,  250,    2, 0x08 /* Private */,
-      30,    1,  251,    2, 0x08 /* Private */,
-      31,    3,  254,    2, 0x0a /* Public */,
-      32,    2,  261,    2, 0x0a /* Public */,
-      33,    1,  266,    2, 0x0a /* Public */,
-      34,    0,  269,    2, 0x0a /* Public */,
-      35,    1,  270,    2, 0x0a /* Public */,
-      37,    1,  273,    2, 0x0a /* Public */,
-      38,    1,  276,    2, 0x0a /* Public */,
-      39,    1,  279,    2, 0x0a /* Public */,
-      40,    1,  282,    2, 0x0a /* Public */,
-      41,    2,  285,    2, 0x0a /* Public */,
+      11,    0,  222,    2, 0x08 /* Private */,
+      12,    3,  223,    2, 0x08 /* Private */,
+      17,    0,  230,    2, 0x08 /* Private */,
+      18,    0,  231,    2, 0x08 /* Private */,
+      19,    0,  232,    2, 0x08 /* Private */,
+      20,    3,  233,    2, 0x08 /* Private */,
+      21,    1,  240,    2, 0x08 /* Private */,
+      23,    0,  243,    2, 0x08 /* Private */,
+      24,    0,  244,    2, 0x08 /* Private */,
+      25,    0,  245,    2, 0x08 /* Private */,
+      26,    3,  246,    2, 0x08 /* Private */,
+      27,    0,  253,    2, 0x08 /* Private */,
+      28,    0,  254,    2, 0x08 /* Private */,
+      29,    0,  255,    2, 0x08 /* Private */,
+      30,    1,  256,    2, 0x08 /* Private */,
+      31,    3,  259,    2, 0x0a /* Public */,
+      32,    2,  266,    2, 0x0a /* Public */,
+      33,    1,  271,    2, 0x0a /* Public */,
+      34,    0,  274,    2, 0x0a /* Public */,
+      35,    1,  275,    2, 0x0a /* Public */,
+      37,    1,  278,    2, 0x0a /* Public */,
+      38,    1,  281,    2, 0x0a /* Public */,
+      39,    1,  284,    2, 0x0a /* Public */,
+      40,    1,  287,    2, 0x0a /* Public */,
+      41,    2,  290,    2, 0x0a /* Public */,
+      42,    1,  295,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -182,6 +184,7 @@ static const uint qt_meta_data_WindowSystem[] = {
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void, QMetaType::Int,    2,
 
        0        // eod
 };
@@ -226,6 +229,7 @@ void WindowSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 31: _t->AirAutoTigger((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 32: _t->Auto_Sync((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 33: _t->Location_Sync((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 34: _t->Wind_Sync((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -321,13 +325,13 @@ int WindowSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 34)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 34;
+        _id -= 35;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 34)
+        if (_id < 35)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 34;
+        _id -= 35;
     }
     return _id;
 }

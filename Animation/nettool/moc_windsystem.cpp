@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WindSystem_t {
-    QByteArrayData data[41];
-    char stringdata0[466];
+    QByteArrayData data[43];
+    char stringdata0[486];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,47 +46,50 @@ QT_MOC_LITERAL(11, 100, 10), // "AirQuality"
 QT_MOC_LITERAL(12, 111, 8), // "SendToWx"
 QT_MOC_LITERAL(13, 120, 8), // "ModeCtrl"
 QT_MOC_LITERAL(14, 129, 13), // "AutoMode_Sync"
-QT_MOC_LITERAL(15, 143, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(16, 167, 11), // "ButtonStyle"
-QT_MOC_LITERAL(17, 179, 12), // "QPushButton*"
-QT_MOC_LITERAL(18, 192, 4), // "Name"
-QT_MOC_LITERAL(19, 197, 6), // "Offset"
-QT_MOC_LITERAL(20, 204, 10), // "BlurRadius"
-QT_MOC_LITERAL(21, 215, 19), // "on_StopMode_clicked"
-QT_MOC_LITERAL(22, 235, 18), // "on_MinMode_clicked"
-QT_MOC_LITERAL(23, 254, 18), // "on_MidMode_clicked"
-QT_MOC_LITERAL(24, 273, 18), // "on_MaxMode_clicked"
-QT_MOC_LITERAL(25, 292, 15), // "ButtonStylePlan"
-QT_MOC_LITERAL(26, 308, 10), // "Image_Init"
-QT_MOC_LITERAL(27, 319, 14), // "BackgroundPlan"
-QT_MOC_LITERAL(28, 334, 1), // "i"
-QT_MOC_LITERAL(29, 336, 2), // "i2"
-QT_MOC_LITERAL(30, 339, 2), // "i3"
-QT_MOC_LITERAL(31, 342, 2), // "i4"
-QT_MOC_LITERAL(32, 345, 14), // "SetInstruction"
-QT_MOC_LITERAL(33, 360, 21), // "on_AutoSwitch_clicked"
-QT_MOC_LITERAL(34, 382, 9), // "Icon_Plan"
-QT_MOC_LITERAL(35, 392, 14), // "InductiveLogic"
-QT_MOC_LITERAL(36, 407, 11), // "ReceiveData"
-QT_MOC_LITERAL(37, 419, 8), // "VarValue"
-QT_MOC_LITERAL(38, 428, 13), // "AirAutoTigger"
-QT_MOC_LITERAL(39, 442, 9), // "Auto_Sync"
-QT_MOC_LITERAL(40, 452, 13) // "Location_Sync"
+QT_MOC_LITERAL(15, 143, 8), // "WindLock"
+QT_MOC_LITERAL(16, 152, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(17, 176, 11), // "ButtonStyle"
+QT_MOC_LITERAL(18, 188, 12), // "QPushButton*"
+QT_MOC_LITERAL(19, 201, 4), // "Name"
+QT_MOC_LITERAL(20, 206, 6), // "Offset"
+QT_MOC_LITERAL(21, 213, 10), // "BlurRadius"
+QT_MOC_LITERAL(22, 224, 19), // "on_StopMode_clicked"
+QT_MOC_LITERAL(23, 244, 18), // "on_MinMode_clicked"
+QT_MOC_LITERAL(24, 263, 18), // "on_MidMode_clicked"
+QT_MOC_LITERAL(25, 282, 18), // "on_MaxMode_clicked"
+QT_MOC_LITERAL(26, 301, 15), // "ButtonStylePlan"
+QT_MOC_LITERAL(27, 317, 10), // "Image_Init"
+QT_MOC_LITERAL(28, 328, 14), // "BackgroundPlan"
+QT_MOC_LITERAL(29, 343, 1), // "i"
+QT_MOC_LITERAL(30, 345, 2), // "i2"
+QT_MOC_LITERAL(31, 348, 2), // "i3"
+QT_MOC_LITERAL(32, 351, 2), // "i4"
+QT_MOC_LITERAL(33, 354, 14), // "SetInstruction"
+QT_MOC_LITERAL(34, 369, 21), // "on_AutoSwitch_clicked"
+QT_MOC_LITERAL(35, 391, 9), // "Icon_Plan"
+QT_MOC_LITERAL(36, 401, 14), // "InductiveLogic"
+QT_MOC_LITERAL(37, 416, 10), // "AiWindWait"
+QT_MOC_LITERAL(38, 427, 11), // "ReceiveData"
+QT_MOC_LITERAL(39, 439, 8), // "VarValue"
+QT_MOC_LITERAL(40, 448, 13), // "AirAutoTigger"
+QT_MOC_LITERAL(41, 462, 9), // "Auto_Sync"
+QT_MOC_LITERAL(42, 472, 13) // "Location_Sync"
 
     },
     "WindSystem\0SendClose\0\0Clear\0Enable\0"
     "Falg\0RadioBroadcast\0Class_Update\0"
     "Wind_Data\0data\0Xprogress_Update\0"
     "AirQuality\0SendToWx\0ModeCtrl\0AutoMode_Sync\0"
-    "on_pushButton_2_clicked\0ButtonStyle\0"
-    "QPushButton*\0Name\0Offset\0BlurRadius\0"
-    "on_StopMode_clicked\0on_MinMode_clicked\0"
-    "on_MidMode_clicked\0on_MaxMode_clicked\0"
-    "ButtonStylePlan\0Image_Init\0BackgroundPlan\0"
-    "i\0i2\0i3\0i4\0SetInstruction\0"
-    "on_AutoSwitch_clicked\0Icon_Plan\0"
-    "InductiveLogic\0ReceiveData\0VarValue\0"
-    "AirAutoTigger\0Auto_Sync\0Location_Sync"
+    "WindLock\0on_pushButton_2_clicked\0"
+    "ButtonStyle\0QPushButton*\0Name\0Offset\0"
+    "BlurRadius\0on_StopMode_clicked\0"
+    "on_MinMode_clicked\0on_MidMode_clicked\0"
+    "on_MaxMode_clicked\0ButtonStylePlan\0"
+    "Image_Init\0BackgroundPlan\0i\0i2\0i3\0i4\0"
+    "SetInstruction\0on_AutoSwitch_clicked\0"
+    "Icon_Plan\0InductiveLogic\0AiWindWait\0"
+    "ReceiveData\0VarValue\0AirAutoTigger\0"
+    "Auto_Sync\0Location_Sync"
 };
 #undef QT_MOC_LITERAL
 
@@ -96,42 +99,44 @@ static const uint qt_meta_data_WindSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      26,   14, // methods
+      28,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       9,       // signalCount
+      10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  144,    2, 0x06 /* Public */,
-       3,    0,  145,    2, 0x06 /* Public */,
-       4,    1,  146,    2, 0x06 /* Public */,
-       6,    1,  149,    2, 0x06 /* Public */,
-       7,    1,  152,    2, 0x06 /* Public */,
-      10,    1,  155,    2, 0x06 /* Public */,
-      12,    2,  158,    2, 0x06 /* Public */,
-      13,    1,  163,    2, 0x06 /* Public */,
-      14,    1,  166,    2, 0x06 /* Public */,
+       1,    0,  154,    2, 0x06 /* Public */,
+       3,    0,  155,    2, 0x06 /* Public */,
+       4,    1,  156,    2, 0x06 /* Public */,
+       6,    1,  159,    2, 0x06 /* Public */,
+       7,    1,  162,    2, 0x06 /* Public */,
+      10,    1,  165,    2, 0x06 /* Public */,
+      12,    2,  168,    2, 0x06 /* Public */,
+      13,    1,  173,    2, 0x06 /* Public */,
+      14,    1,  176,    2, 0x06 /* Public */,
+      15,    1,  179,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      15,    0,  169,    2, 0x08 /* Private */,
-      16,    3,  170,    2, 0x08 /* Private */,
-      21,    0,  177,    2, 0x08 /* Private */,
-      22,    0,  178,    2, 0x08 /* Private */,
-      23,    0,  179,    2, 0x08 /* Private */,
-      24,    0,  180,    2, 0x08 /* Private */,
-      25,    4,  181,    2, 0x08 /* Private */,
-      26,    0,  190,    2, 0x08 /* Private */,
-      27,    4,  191,    2, 0x08 /* Private */,
-      32,    1,  200,    2, 0x08 /* Private */,
-      33,    0,  203,    2, 0x08 /* Private */,
-      34,    1,  204,    2, 0x08 /* Private */,
-      35,    0,  207,    2, 0x08 /* Private */,
-      36,    2,  208,    2, 0x0a /* Public */,
-      38,    1,  213,    2, 0x0a /* Public */,
-      39,    1,  216,    2, 0x0a /* Public */,
-      40,    2,  219,    2, 0x0a /* Public */,
+      16,    0,  182,    2, 0x08 /* Private */,
+      17,    3,  183,    2, 0x08 /* Private */,
+      22,    0,  190,    2, 0x08 /* Private */,
+      23,    0,  191,    2, 0x08 /* Private */,
+      24,    0,  192,    2, 0x08 /* Private */,
+      25,    0,  193,    2, 0x08 /* Private */,
+      26,    4,  194,    2, 0x08 /* Private */,
+      27,    0,  203,    2, 0x08 /* Private */,
+      28,    4,  204,    2, 0x08 /* Private */,
+      33,    1,  213,    2, 0x08 /* Private */,
+      34,    0,  216,    2, 0x08 /* Private */,
+      35,    1,  217,    2, 0x08 /* Private */,
+      36,    0,  220,    2, 0x08 /* Private */,
+      37,    0,  221,    2, 0x08 /* Private */,
+      38,    2,  222,    2, 0x0a /* Public */,
+      40,    1,  227,    2, 0x0a /* Public */,
+      41,    1,  230,    2, 0x0a /* Public */,
+      42,    2,  233,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -143,22 +148,24 @@ static const uint qt_meta_data_WindSystem[] = {
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Int,    2,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 17, QMetaType::Int, QMetaType::Int,   18,   19,   20,
+    QMetaType::Void, 0x80000000 | 18, QMetaType::Int, QMetaType::Int,   19,   20,   21,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,   28,   29,   30,   31,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,   29,   30,   31,   32,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 8, QMetaType::Int,   37,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 8, QMetaType::Int,   39,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
@@ -181,23 +188,25 @@ void WindSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->SendToWx((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 7: _t->ModeCtrl((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 8: _t->AutoMode_Sync((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 9: _t->on_pushButton_2_clicked(); break;
-        case 10: _t->ButtonStyle((*reinterpret_cast< QPushButton*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 11: _t->on_StopMode_clicked(); break;
-        case 12: _t->on_MinMode_clicked(); break;
-        case 13: _t->on_MidMode_clicked(); break;
-        case 14: _t->on_MaxMode_clicked(); break;
-        case 15: _t->ButtonStylePlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 16: _t->Image_Init(); break;
-        case 17: _t->BackgroundPlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 18: _t->SetInstruction((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 19: _t->on_AutoSwitch_clicked(); break;
-        case 20: _t->Icon_Plan((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 21: _t->InductiveLogic(); break;
-        case 22: _t->ReceiveData((*reinterpret_cast< const Wind_Data(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 23: _t->AirAutoTigger((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 24: _t->Auto_Sync((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 25: _t->Location_Sync((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 9: _t->WindLock((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->on_pushButton_2_clicked(); break;
+        case 11: _t->ButtonStyle((*reinterpret_cast< QPushButton*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 12: _t->on_StopMode_clicked(); break;
+        case 13: _t->on_MinMode_clicked(); break;
+        case 14: _t->on_MidMode_clicked(); break;
+        case 15: _t->on_MaxMode_clicked(); break;
+        case 16: _t->ButtonStylePlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 17: _t->Image_Init(); break;
+        case 18: _t->BackgroundPlan((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 19: _t->SetInstruction((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 20: _t->on_AutoSwitch_clicked(); break;
+        case 21: _t->Icon_Plan((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 22: _t->InductiveLogic(); break;
+        case 23: _t->AiWindWait(); break;
+        case 24: _t->ReceiveData((*reinterpret_cast< const Wind_Data(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 25: _t->AirAutoTigger((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 26: _t->Auto_Sync((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 27: _t->Location_Sync((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -265,6 +274,13 @@ void WindSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
                 return;
             }
         }
+        {
+            using _t = void (WindSystem::*)(int );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&WindSystem::WindLock)) {
+                *result = 9;
+                return;
+            }
+        }
     }
 }
 
@@ -293,13 +309,13 @@ int WindSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 26)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 26;
+        _id -= 28;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 26)
+        if (_id < 28)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 26;
+        _id -= 28;
     }
     return _id;
 }
@@ -363,6 +379,13 @@ void WindSystem::AutoMode_Sync(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
+}
+
+// SIGNAL 9
+void WindSystem::WindLock(int _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 9, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

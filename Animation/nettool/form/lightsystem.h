@@ -98,7 +98,7 @@ public:
     //------自动化数据
     int IndoorLux=0;
     int OutsideWeather=0;//1---晴天 2---多云 3---下雨
-    int locationMissing=0,locationOffice=0,locationBar=0;//0---无人 1---有人
+    int locationMeeting=0,locationOffice=0,locationBar=0;//0---无人 1---有人
     int LuxMissing=0,LuxBarAndOffice=0;//两个地方的亮度
     double ControlParameters=0.4;//P---->1:6 参数
     int MiddayFalg=0;

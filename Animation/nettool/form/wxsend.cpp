@@ -43,7 +43,7 @@ void WxSend::Python_Init()
         qDebug() << "Send---IsInitialized: error";
     }
     PyRun_SimpleString("import sys");//导入.py文件---导入搜索的库
-    PyRun_SimpleString("sys.path.append('/home/pi/Desktop/9.28/nettool/form/')");//添加python模块路径
+    PyRun_SimpleString("sys.path.append('/home/pi/Desktop/Main/nettool/form/')");//添加python模块路径
 
     PyEval_ReleaseThread(PyThreadState_Get());
 }

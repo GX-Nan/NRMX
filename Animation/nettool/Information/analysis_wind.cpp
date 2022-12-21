@@ -64,7 +64,7 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     QString Value;
     QString Function;
     QString Head;
-    int PM25Flag=0,Co2Flag=0,TvcoFlag=0,HCHOFlag=0,PM10Flag=0;
+
     //-----截取------------
     Head=Data.at(3);
     for(int i=4;i<=5;i++)
@@ -98,41 +98,45 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
         break;
     case 4:
         Air.PM25=Value.toInt();
-        if(Value.toInt()>=75){
+        if(Air.PM25>=75){
             PM25Flag=1;
+            qDebug()<<"innnn---PM25---超标";
         }else {
             PM25Flag=0;
         }
         break;
     case 5:
         Air.Co2=Value.toInt();
-        qDebug()<<"Value.toInt():"<<Value.toInt();
-        if(Value.toInt()>=700){
+        if(Air.Co2>=700){
             Co2Flag=1;
+            qDebug()<<"innnn---Co2---超标";
         }else {
             Co2Flag=0;
         }
         break;
     case 6:
         Air.TVCO=Value.toInt();
-        if(Value.toInt()>=2){
+        if(Air.TVCO>=216){ //<0.6mg/m3 平方 120m2*3
             TvcoFlag=1;
+            qDebug()<<"innnn---TVCO---超标";
         }else {
             TvcoFlag=0;
         }
         break;
-    case 7:
+    case 7://<0.1mg/m3 平方 120m2*3
         Air.HCHO=Value.toInt();
-        if(Value.toInt()>=12){
+        if(Air.HCHO>=36){
             HCHOFlag=1;
+            qDebug()<<"innnn---HCHO---超标";
         }else {
             HCHOFlag=0;
         }
         break;
-    case 8:
+    case 8://<0.15mg/m3 平方 120m2*3
         Air.PM10=Value.toInt();
-        if(Value.toInt()>=18){
+        if(Air.PM10>=54){
             PM10Flag=1;
+            qDebug()<<"innnn---PM10---超标";
         }else {
             PM10Flag=0;
         }
@@ -150,11 +154,11 @@ void Analysis_Wind::Handle_Data_AirQuality(QString Data)
     }
     emit AirQuality_Data(Air);//新风显示
     emit SendToAir(Air.Temp,Air.Hum);//给空调判断
-    PM25Flag=1;
+//    PM25Flag=1;
     //-----先在这里判断室内是否需要通风透气---然后再判断是否要开窗户或者新风
     if(PM25Flag==1||PM10Flag==1||HCHOFlag==1||TvcoFlag==1||Co2Flag==1){
         emit IndoorAirJudge(1);
-        qDebug()<<"innnn---開";
+//        qDebug()<<"innnn---開";
     }else if(PM25Flag==0&&PM10Flag==0&&HCHOFlag==0&&TvcoFlag==0&&Co2Flag==0) {//测试测试
         emit IndoorAirJudge(0);
         qDebug()<<"innnn---关";

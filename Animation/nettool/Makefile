@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = gamer1.0.0
-DISTDIR = /home/pi/Desktop/9.28/nettool/.tmp/gamer1.0.0
+DISTDIR = /home/pi/Desktop/Main/nettool/.tmp/gamer1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -L/usr/lib/python3.7/config-3.7m-arm-linux-gnueabihf -lpython3.7 -L/usr/lib/arm-linux-gnueabihf -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Core -lGLESv2 -lpthread -latomic 
@@ -1145,7 +1145,7 @@ moc_quiwidget.cpp: head.h \
 		api/quiwidget.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include api/quiwidget.h -o moc_quiwidget.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include api/quiwidget.h -o moc_quiwidget.cpp
 
 moc_tcpserver.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtNetwork/QtNetwork \
 		/usr/include/arm-linux-gnueabihf/qt5/QtNetwork/QtNetworkDepends \
@@ -1658,7 +1658,7 @@ moc_tcpserver.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtNetwork/QtNetwork \
 		api/tcpserver.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include api/tcpserver.h -o moc_tcpserver.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include api/tcpserver.h -o moc_tcpserver.cpp
 
 moc_airsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -2178,7 +2178,7 @@ moc_airsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/airsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/airsystem.h -o moc_airsystem.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/airsystem.h -o moc_airsystem.cpp
 
 moc_curtainsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -2292,10 +2292,12 @@ moc_curtainsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTimer \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtimer.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasictimer.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qdatetime.h \
 		form/curtainsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/curtainsystem.h -o moc_curtainsystem.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/curtainsystem.h -o moc_curtainsystem.cpp
 
 moc_doorsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -2404,7 +2406,7 @@ moc_doorsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/doorsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/doorsystem.h -o moc_doorsystem.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/doorsystem.h -o moc_doorsystem.cpp
 
 moc_frmmain.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
@@ -2945,11 +2947,11 @@ moc_frmmain.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/doorsystem.h \
 		form/curtainsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QMap \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/airsystem.h \
 		form/switchbutton.h \
 		form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/windowsystem.h \
 		form/weathercrawler.h \
 		/usr/include/python3.7/Python.h \
@@ -3031,7 +3033,7 @@ moc_frmmain.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/frmmain.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/frmmain.h -o moc_frmmain.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/frmmain.h -o moc_frmmain.cpp
 
 moc_frmtcpclient.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
@@ -3312,7 +3314,7 @@ moc_frmtcpclient.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/frmtcpclient.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/frmtcpclient.h -o moc_frmtcpclient.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/frmtcpclient.h -o moc_frmtcpclient.cpp
 
 moc_frmtcpserver.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
@@ -3837,7 +3839,7 @@ moc_frmtcpserver.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/frmtcpserver.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/frmtcpserver.h -o moc_frmtcpserver.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/frmtcpserver.h -o moc_frmtcpserver.cpp
 
 moc_lightsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -3955,7 +3957,7 @@ moc_lightsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/lightsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/lightsystem.h -o moc_lightsystem.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/lightsystem.h -o moc_lightsystem.cpp
 
 moc_qlistwidgetmouse.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
@@ -4084,7 +4086,7 @@ moc_qlistwidgetmouse.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget
 		form/qlistwidgetmouse.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/qlistwidgetmouse.h -o moc_qlistwidgetmouse.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/qlistwidgetmouse.h -o moc_qlistwidgetmouse.cpp
 
 moc_serversreach.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -4139,7 +4141,7 @@ moc_serversreach.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		form/serversreach.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/serversreach.h -o moc_serversreach.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/serversreach.h -o moc_serversreach.cpp
 
 moc_switchbutton.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
@@ -4247,7 +4249,7 @@ moc_switchbutton.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/switchbutton.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/switchbutton.h -o moc_switchbutton.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/switchbutton.h -o moc_switchbutton.cpp
 
 moc_uiTcpClient.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -4768,7 +4770,7 @@ moc_uiTcpClient.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/uiTcpClient.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/uiTcpClient.h -o moc_uiTcpClient.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/uiTcpClient.h -o moc_uiTcpClient.cpp
 
 moc_uitcpserver.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -5295,7 +5297,7 @@ moc_uitcpserver.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/uitcpserver.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/uitcpserver.h -o moc_uitcpserver.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/uitcpserver.h -o moc_uitcpserver.cpp
 
 moc_windairquality.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -5417,7 +5419,7 @@ moc_windairquality.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/windairquality.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windairquality.h -o moc_windairquality.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windairquality.h -o moc_windairquality.cpp
 
 moc_windmode.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -5527,7 +5529,7 @@ moc_windmode.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/windmode.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windmode.h -o moc_windmode.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windmode.h -o moc_windmode.cpp
 
 moc_windowsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -5726,7 +5728,7 @@ moc_windowsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/windowsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windowsystem.h -o moc_windowsystem.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windowsystem.h -o moc_windowsystem.cpp
 
 moc_windsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdialog.h \
@@ -5850,7 +5852,7 @@ moc_windsystem.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QDialog \
 		form/windsystem.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windsystem.h -o moc_windsystem.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/windsystem.h -o moc_windsystem.cpp
 
 moc_xprogressbar.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QProgressBar \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qprogressbar.h \
@@ -5960,7 +5962,7 @@ moc_xprogressbar.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QProgressBa
 		form/xprogressbar.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/xprogressbar.h -o moc_xprogressbar.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/xprogressbar.h -o moc_xprogressbar.cpp
 
 moc_wxreceive.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -6552,7 +6554,7 @@ moc_wxreceive.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		form/wxreceive.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/wxreceive.h -o moc_wxreceive.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/wxreceive.h -o moc_wxreceive.cpp
 
 moc_wxsend.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -6696,7 +6698,7 @@ moc_wxsend.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		form/wxsend.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/wxsend.h -o moc_wxsend.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/wxsend.h -o moc_wxsend.cpp
 
 moc_weathercrawler.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -6851,7 +6853,7 @@ moc_weathercrawler.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		form/weathercrawler.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/weathercrawler.h -o moc_weathercrawler.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include form/weathercrawler.h -o moc_weathercrawler.cpp
 
 moc_analysis_air.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -7368,7 +7370,7 @@ moc_analysis_air.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		Information/analysis_air.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_air.h -o moc_analysis_air.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_air.h -o moc_analysis_air.cpp
 
 moc_analysis_cutarin.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -7442,7 +7444,7 @@ moc_analysis_cutarin.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		Information/analysis_cutarin.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_cutarin.h -o moc_analysis_cutarin.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_cutarin.h -o moc_analysis_cutarin.cpp
 
 moc_analysis_door.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -7516,7 +7518,7 @@ moc_analysis_door.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		Information/analysis_door.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_door.h -o moc_analysis_door.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_door.h -o moc_analysis_door.cpp
 
 moc_analysis_light.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -7590,7 +7592,7 @@ moc_analysis_light.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		Information/analysis_light.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_light.h -o moc_analysis_light.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_light.h -o moc_analysis_light.cpp
 
 moc_analysis_wind.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -7664,7 +7666,7 @@ moc_analysis_wind.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		Information/analysis_wind.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_wind.h -o moc_analysis_wind.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_wind.h -o moc_analysis_wind.cpp
 
 moc_analysis_window.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
@@ -7738,7 +7740,7 @@ moc_analysis_window.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QObject \
 		Information/analysis_window.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/9.28/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool -I/home/pi/Desktop/9.28/nettool/api -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/home/pi/Desktop/9.28/nettool/form -I/home/pi/Desktop/9.28/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_window.h -o moc_analysis_window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Desktop/Main/nettool/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool -I/home/pi/Desktop/Main/nettool/api -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/home/pi/Desktop/Main/nettool/form -I/home/pi/Desktop/Main/nettool/Information -I/usr/include/python3.7 -I/usr/lib/python3/dist-packages -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include Information/analysis_window.h -o moc_analysis_window.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -7856,111 +7858,7 @@ ui_airsystem.h: form/airsystem.ui \
 	/usr/lib/qt5/bin/uic form/airsystem.ui -o ui_airsystem.h
 
 ui_curtainsystem.h: form/curtainsystem.ui \
-		/usr/lib/qt5/bin/uic \
-		form/switchbutton.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgetsglobal.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qglobal.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qconfig-bootstrapped.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qconfig.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtcore-config.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qsystemdetection.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qprocessordetection.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcompilerdetection.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtypeinfo.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qsysinfo.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qlogging.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qflags.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qatomic.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasicatomic.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qatomic_bootstrap.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qgenericatomic.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qatomic_cxx11.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qatomic_msvc.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qglobalstatic.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qmutex.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qnumeric.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgets-config.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobjectdefs.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qnamespace.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobjectdefs_impl.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs_win.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstring.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qchar.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbytearray.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qrefcount.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qarraydata.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstringliteral.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstringalgorithms.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstringview.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstringbuilder.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qlist.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qalgorithms.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qiterator.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qhashfunctions.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qpair.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbytearraylist.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstringlist.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qregexp.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qstringmatcher.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcoreevent.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qscopedpointer.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qmetatype.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcontainerfwd.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobject_impl.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qmargins.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qpaintdevice.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qrect.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qsize.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qpoint.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qpalette.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qcolor.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qrgb.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qrgba64.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qbrush.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qmatrix.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qpolygon.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qregion.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qdatastream.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qiodevice.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qline.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtransform.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qpainterpath.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qimage.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qpixelformat.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qpixmap.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qsharedpointer.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qshareddata.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qhash.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qsharedpointer_impl.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qfont.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qfontmetrics.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qfontinfo.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qsizepolicy.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qcursor.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qkeysequence.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qevent.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qvariant.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qmap.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qdebug.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtextstream.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qlocale.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qset.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qcontiguouscache.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qurl.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qurlquery.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qfile.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qfiledevice.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qvector2d.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h
+		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic form/curtainsystem.ui -o ui_curtainsystem.h
 
 ui_doorsystem.h: form/doorsystem.ui \
@@ -7973,10 +7871,10 @@ ui_frmmain.h: form/frmmain.ui \
 
 ui_lightsystem.h: form/lightsystem.ui \
 		/usr/lib/qt5/bin/uic \
-		form/switchbutton.h \
 		form/xprogressbar.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
+		form/switchbutton.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QProgressBar \
+		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qprogressbar.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgetsglobal.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qglobal.h \
@@ -8002,6 +7900,8 @@ ui_lightsystem.h: form/lightsystem.ui \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgets-config.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobjectdefs.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qnamespace.h \
@@ -8078,8 +7978,8 @@ ui_lightsystem.h: form/lightsystem.ui \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qfiledevice.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qvector2d.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QProgressBar \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qprogressbar.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
+		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgetsglobal.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qglobal.h \
@@ -8105,8 +8005,6 @@ ui_lightsystem.h: form/lightsystem.ui \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgets-config.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
-		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qobjectdefs.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qnamespace.h \
@@ -9096,11 +8994,11 @@ main.o: main.cpp form/frmmain.h \
 		form/doorsystem.h \
 		form/curtainsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QMap \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/airsystem.h \
 		form/switchbutton.h \
 		form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/windowsystem.h \
 		form/weathercrawler.h \
 		/usr/include/python3.7/Python.h \
@@ -11349,6 +11247,8 @@ curtainsystem.o: form/curtainsystem.cpp form/curtainsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTimer \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qtimer.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qbasictimer.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/qdatetime.h \
 		ui_curtainsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QGraphicsDropShadowEffect \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgraphicseffect.h
@@ -12004,11 +11904,11 @@ frmmain.o: form/frmmain.cpp form/frmmain.h \
 		form/doorsystem.h \
 		form/curtainsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QMap \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/airsystem.h \
 		form/switchbutton.h \
 		form/lightsystem.h \
 		/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
-		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QTime \
 		form/windowsystem.h \
 		form/weathercrawler.h \
 		/usr/include/python3.7/Python.h \

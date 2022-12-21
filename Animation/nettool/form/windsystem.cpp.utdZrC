@@ -20,7 +20,6 @@ WindSystem::WindSystem(QWidget *parent) :
     Image_Init();
     Shadow();
     StopTime=new QTimer(this);
-    connect(StopTime,&QTimer::timeout,this,&WindSystem::AiWindWait);
 }
 
 WindSystem::~WindSystem()
@@ -114,28 +113,22 @@ void WindSystem::AirAutoTigger(int data)
     //1.逻辑-
     //2.判断是否开启
     //3.那部分有人---然后再开那部分的风量口
-    qDebug()<<"查看状态---"<<StopSend;
     if(AutoFlag==1){//----------?无法确定是否开了？
-        if(StopAiTime==0){
-            switch(data){
-            case 0:
-                qDebug()<<"开新风------关";
-                if(StopSend==1){
-                    on_StopMode_clicked();
-                    StopSend=0;
-                }
-                break;
-            case 1:
-                qDebug()<<"开新风------开";
-                if(StopSend==0){
-                    on_MaxMode_clicked();
-                    StopTime->start(50000);
-                    emit WindLock(1);
-                    StopSend=1;
-                }
-                StopAiTime=1;
-                break;
+        switch(data){
+        case 0:
+            qDebug()<<"开新风------关";
+            if(StopSend==1){
+                 on_StopMode_clicked();
+                 StopSend=0;
             }
+            break;
+        case 1:
+            qDebug()<<"开新风------开";
+            if(StopSend==0){
+                 on_MaxMode_clicked();
+                 StopSend=1;
+            }
+            break;
         }
     }
 }
@@ -167,7 +160,7 @@ void WindSystem::Location_Sync(int sub, int value)
         locationOffice=value;
         break;
     }
-    if(StopSend==1){
+    if(AutoFlag==1){
         qDebug()<<"新风----判断---是否有人---";
         InductiveLogic();
     }
@@ -336,21 +329,7 @@ void WindSystem::InductiveLogic()
     }
 }
 
-void WindSystem::AiWindWait()
+void WindSystem::AiWindStop()
 {
-    qDebug()<<"Timer等待-----新风";
-    if(StopSend==1){
-        if(Time==0){
-            qDebug()<<"加1-----新风";
-            Time=Time+1;
-        }else{
-            qDebug()<<"结束等待-----新风";
-            emit WindLock(0);
-            StopAiTime=0;
-            StopTime->stop();
-            Time=0;
-        }
-    }
+
 }
-
-

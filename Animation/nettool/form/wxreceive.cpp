@@ -60,7 +60,7 @@ void WxReceive::Python_Init()
     //导入.py文件
     //添加python模块路径
     PyRun_SimpleString("import sys");
-    PyRun_SimpleString("sys.path.append('/home/pi/Desktop/9.28/nettool/form/')");
+    PyRun_SimpleString("sys.path.append('/home/pi/Desktop/Main/nettool/form/')");
 
     PyEval_ReleaseThread(PyThreadState_Get());
 }

@@ -44,6 +44,7 @@ public:
     int LocationMeeting,LocationBar,LocationOffice;
     int LocationMeetingL,LocationMeetingR;
     int AirControlFlag=0;
+    int PM25Flag=0,Co2Flag=0,TvcoFlag=0,HCHOFlag=0,PM10Flag=0;
 public slots:
     void Receive_Data(QMultiMap<int,QString> Data);
     void Handle_Data_Wind(QString Data);

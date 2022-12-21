@@ -427,6 +427,8 @@ void frmMain::initConfig()//配置
     connect(Analysis_wind,&Analysis_Wind::SendToLocation,WindowUi,&WindowSystem::Location_Sync);
     //----亮度同步
     connect(Analysis_wind,&Analysis_Wind::SendToLight,LightUi,&LightSystem::Lux_Sync);//同步亮度
+    //----窗户处逻辑与新风的锁
+    connect(WindUi,&WindSystem::WindLock,WindowUi,&WindowSystem::Wind_Sync);
     //------------------
     connect(this,&frmMain::Show_SubUi,WindUi,&WindSystem::ShowSubUi);
 

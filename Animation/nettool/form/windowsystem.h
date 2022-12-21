@@ -28,9 +28,11 @@ public:
     int WindowStopFlag=0;
     int AQI=0;
     QTimer *AutoTime;
+    int WindStopFlag=0;
+    int WindLock=0;
     //--雷达
     int locationOffice=0;//0----没人  1---有人
-    int locationMissing=0;
+    int locationMeeting=0;
     int locationBar=0;
     //------
     QMap<int,int>data;
@@ -74,6 +76,7 @@ public slots:
     void AirAutoTigger(int);
     void Auto_Sync(int);
     void Location_Sync(int,int);
+    void Wind_Sync(int);
 
 private:
     Ui::WindowSystem *ui;
