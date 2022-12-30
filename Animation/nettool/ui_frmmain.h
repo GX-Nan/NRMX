@@ -473,7 +473,7 @@ public:
 
         retranslateUi(frmMain);
 
-        Bottom->setCurrentIndex(1);
+        Bottom->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(frmMain);

@@ -8,7 +8,8 @@ CurtainSystem::CurtainSystem(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+    //this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+   // this->setAttribute(Qt::WA_AcceptTouchEvents,true);
     Timer=new QTimer(this);
     connect(Timer,&QTimer::timeout,this,&CurtainSystem::AllCurtains);
     AutoTimer=new QTimer(this);

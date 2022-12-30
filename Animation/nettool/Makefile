@@ -3030,6 +3030,9 @@ moc_frmmain.cpp: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QWidget \
 		form/pythreadstatelock.h \
 		form/wxreceive.h \
 		form/wxsend.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QTouchEvent \
+		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QTouchDevice \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QPoint \
 		form/frmmain.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -9077,6 +9080,9 @@ main.o: main.cpp form/frmmain.h \
 		form/pythreadstatelock.h \
 		form/wxreceive.h \
 		form/wxsend.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QTouchEvent \
+		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QTouchDevice \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QPoint \
 		api/quiwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
@@ -11987,6 +11993,9 @@ frmmain.o: form/frmmain.cpp form/frmmain.h \
 		form/pythreadstatelock.h \
 		form/wxreceive.h \
 		form/wxsend.h \
+		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QTouchEvent \
+		/usr/include/arm-linux-gnueabihf/qt5/QtGui/QTouchDevice \
+		/usr/include/arm-linux-gnueabihf/qt5/QtCore/QPoint \
 		ui_frmmain.h \
 		api/quiwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o frmmain.o form/frmmain.cpp

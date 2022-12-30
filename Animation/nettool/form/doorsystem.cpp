@@ -8,7 +8,7 @@ DoorSystem::DoorSystem(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+    //this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
    // this->setAttribute(Qt::WA_TranslucentBackground);
     Shawdow();
 }

@@ -8,8 +8,9 @@ WindSystem::WindSystem(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+    //this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
     // this->setAttribute(Qt::WA_TranslucentBackground);
+    this->setAttribute(Qt::WA_AcceptTouchEvents,true);
     AirSubUi=new WindAirQuality(this);
     ModeSubUi=new WindMode(this);
     connect(this,&WindSystem::Enable,ModeSubUi,&WindMode::Enable);

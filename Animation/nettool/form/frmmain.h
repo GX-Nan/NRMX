@@ -18,6 +18,11 @@
 #include "wxreceive.h"
 #include "wxsend.h"
 #include "weathercrawler.h"
+#include <QTouchEvent>
+#include<QTouchDevice>
+#include <QPointF>
+#include <QPoint>
+
 
 
 namespace Ui {
@@ -90,6 +95,8 @@ protected:
 
 private:
     Ui::frmMain *ui;
+
+
 };
 
 

@@ -8,9 +8,9 @@ WindowSystem::WindowSystem(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+   // this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
     // this->setAttribute(Qt::WA_TranslucentBackground);
-
+    //this->setAttribute(Qt::WA_AcceptTouchEvents,true);
     Shadow();
 
     connect(ui->Device_Qslider,&QSlider::sliderReleased,this,&WindowSystem::Tigger_Device);
@@ -183,20 +183,35 @@ void WindowSystem::Window_Status(int Sub , int Value)
 {
     ui->Device_Qslider->setValue(Sub);
     qDebug()<<"窗户：---"<<Sub<<"操作："<<Value;
-    switch(Value)
-    {
-    case 1:
-        ui->WindowOpen->click();
-        break;
-    case 2:
-        ui->WindowClose->click();
-        break;
-    case 3:
-        ui->WindowStop->click();
-        break;
+    if(Sub!=0){
+        switch(Value)
+        {
+        case 1:
+            ui->WindowOpen->click();
+            break;
+        case 2:
+            ui->WindowClose->click();
+            break;
+        case 3:
+            ui->WindowStop->click();
+            break;
+        }
+        data.insert(Sub,Value);
+    }else{
+        switch(Value){
+        case 0:
+            AutoFlag=1;
+            ui->AutoSwitch->click();
+            emit AutoMode_Sync(0);
+            break;
+        case 1:
+            AutoFlag=0;
+            ui->AutoSwitch->click();
+            emit AutoMode_Sync(1);
+            break;
+        }
     }
 
-    data.insert(Sub,Value);
 }
 
 void WindowSystem::SetInstruction(int Order)

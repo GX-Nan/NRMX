@@ -9,6 +9,7 @@ frmMain::frmMain(QWidget *parent) : QWidget(parent,Qt::WindowTitleHint | Qt::Cus
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+    this->setAttribute(Qt::WA_AcceptTouchEvents);
     InterfaceUpdate();
     Shadow();
     TcpTaskInit();
@@ -206,10 +207,10 @@ bool frmMain::eventFilter(QObject *obj, QEvent *event)
             return QObject::eventFilter(obj,event);
         }
     }
-   else if(obj==ui->Main && event->type()==QEvent::Paint)
+    else if(obj==ui->Main && event->type()==QEvent::Paint)
     {
-       MainBackground();
-       qDebug()<<"innn----2";
+        MainBackground();
+        qDebug()<<"innn----2";
     }
 }
 
@@ -340,6 +341,7 @@ void frmMain::initConfig()//配置
     shade->setPalette(palette);
     shade->hide();
     shade->raise();
+    shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
     //-------添加关闭子窗口的信号
     connect(WindUi,&WindSystem::SendClose,this,[=]{
         shade->hide();
@@ -363,7 +365,7 @@ void frmMain::initConfig()//配置
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_air,&Analysis_Air::Receive_Data);//Tcp链接数据分析
     connect(Analysis_air,&Analysis_Air::Air_UiValue,AirUi,&AirSystem::ReceiveData);//数据分析链接分控
     connect(AirUi,&AirSystem::RadioBroadcast,TaskTcpServer,&frmTcpServer::RadioBroadcast);
-//    connect(AirUi,&AirSystem::Class_Update,Analysis_air,&Analysis_Air::Data_Update);
+    //    connect(AirUi,&AirSystem::Class_Update,Analysis_air,&Analysis_Air::Data_Update);
     //---Wind
     connect(TaskTcpServer,&frmTcpServer::Server_Receive_Data,Analysis_wind,&Analysis_Wind::Receive_Data);//Tcp链接数据分析
     connect(Analysis_wind,&Analysis_Wind::Wind_UiData,WindUi,&WindSystem::ReceiveData);//数据分析链接分控
@@ -437,18 +439,18 @@ void frmMain::initConfig()//配置
 void frmMain::on_UISreachIP_clicked()//用于分控的主动找主控的--现在不怎么需要所以就先毙掉
 {
 
-//    UiIPSreach *uiipsreach=new UiIPSreach(this);//设置父类为主窗口 ---当主窗口析构的时候子界面也会析构
-//    uiipsreach->setModal(true);//设置为半模式窗口
-//    uiipsreach->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
-//    uiipsreach->show();
+    //    UiIPSreach *uiipsreach=new UiIPSreach(this);//设置父类为主窗口 ---当主窗口析构的时候子界面也会析构
+    //    uiipsreach->setModal(true);//设置为半模式窗口
+    //    uiipsreach->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
+    //    uiipsreach->show();
 }
 
 
 void frmMain::on_Server_clicked()//写的服务器启动界面--可以不使用
 {
-//    uiTcpServer*uitcpserver=new uiTcpServer(this);
-//    uitcpserver->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
-//    uitcpserver->show();
+    //    uiTcpServer*uitcpserver=new uiTcpServer(this);
+    //    uitcpserver->setAttribute(Qt::WA_DeleteOnClose);//设置子窗口属性，在子窗口关闭之后，释放子窗口的资源(释放指针).
+    //    uitcpserver->show();
 }
 
 void frmMain::on_GoMain_clicked()
@@ -470,7 +472,6 @@ void frmMain::on_CurtainSystem_clicked()
 {
     if(shade->isHidden())
     {
-        shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
         shade->show();
         CurtainUi->show();
     }
@@ -483,7 +484,7 @@ void frmMain::on_DoorSystem_clicked()
 {
     if(shade->isHidden())
     {
-        shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
+
         shade->show();
         DoorUi->show();
     }
@@ -496,7 +497,7 @@ void frmMain::on_WindSystem_clicked()
 {
     if(shade->isHidden())
     {
-        shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
+
         shade->show();
         WindUi->show();
         emit Show_SubUi();
@@ -510,7 +511,7 @@ void frmMain::on_LightSystem_clicked()
 {
     if(shade->isHidden())
     {
-        shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
+
         shade->show();
         LightUi->show();
     }
@@ -523,7 +524,7 @@ void frmMain::on_AirSystem_clicked()
 {
     if(shade->isHidden())
     {
-        shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
+
         shade->show();
         AirUi->show();
     }
@@ -536,9 +537,10 @@ void frmMain::on_WindowSystem_clicked()
 {
     if(shade->isHidden())
     {
-        shade->setGeometry(0,0,this->width(),ui->Bottom->y()+ui->Bottom->height());
+
         shade->show();
         WindowUi->show();
+
         WindowUi->move(400,150);
         emit Show_Window_SubUi();
     }
@@ -546,3 +548,6 @@ void frmMain::on_WindowSystem_clicked()
         shade->hide();
     }
 }
+
+
+

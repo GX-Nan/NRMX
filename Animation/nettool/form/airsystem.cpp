@@ -8,7 +8,8 @@ AirSystem::AirSystem(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint | Qt::CustomizeWindowHint);
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+   // this->setWindowFlags(Qt::FramelessWindowHint | Qt::Tool);
+   // this->setAttribute(Qt::WA_AcceptTouchEvents,true);
     Switch_Ifconfig();
     Shawdow();
     qRegisterMetaType<Data>("Data");
@@ -94,16 +95,16 @@ void AirSystem::ReceiveData(Data VarValue,int Value)//从分控接受后--界面
     //        }
     //        ButtonClear(3);
     //    }
-    qDebug()<<"Air---station";
+    qDebug()<<"Air---station"<<Value;
     if(Value<16){
         switch (Value) {
         case 0:
-            if(Flag_AirSwitch==0){
+            if(Flag_AirSwitch==1){
                 ui->AirSwitch->click();
             }
             break;
         case 1:
-            if(Flag_AirSwitch==1){
+            if(Flag_AirSwitch==0){
                 ui->AirSwitch->click();
             }
             break;
