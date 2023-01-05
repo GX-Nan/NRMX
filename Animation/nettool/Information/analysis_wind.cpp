@@ -52,10 +52,14 @@ void Analysis_Wind::Handle_Data_Wind(QString Data)
         {
             Wind_Decode(Value.toInt());
         }
-        else if(Sub.toInt()==0)//自动交互
+        else if(Sub.toInt()==2)//风口位置
         {
 
         }
+    }
+    else if(Function.toInt()==2){
+        qDebug()<<"风口位置-----------------------";
+        emit SendToTuyere(Data);
     }
 }
 

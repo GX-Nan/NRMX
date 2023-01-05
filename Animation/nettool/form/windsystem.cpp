@@ -175,6 +175,12 @@ void WindSystem::Location_Sync(int sub, int value)
 
 }
 
+void WindSystem::Tuyere_Sync(QString data)
+{
+    qDebug()<<"Tuyere----data:"<<data;
+    emit RadioBroadcast(data);
+}
+
 
 
 void WindSystem::on_StopMode_clicked()

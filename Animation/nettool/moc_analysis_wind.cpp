@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Analysis_Wind_t {
-    QByteArrayData data[20];
-    char stringdata0[252];
+    QByteArrayData data[21];
+    char stringdata0[265];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,21 +42,22 @@ QT_MOC_LITERAL(7, 69, 14), // "IndoorAirJudge"
 QT_MOC_LITERAL(8, 84, 9), // "SendToAir"
 QT_MOC_LITERAL(9, 94, 11), // "SendToLight"
 QT_MOC_LITERAL(10, 106, 14), // "SendToLocation"
-QT_MOC_LITERAL(11, 121, 12), // "Receive_Data"
-QT_MOC_LITERAL(12, 134, 22), // "QMultiMap<int,QString>"
-QT_MOC_LITERAL(13, 157, 16), // "Handle_Data_Wind"
-QT_MOC_LITERAL(14, 174, 22), // "Handle_Data_AirQuality"
-QT_MOC_LITERAL(15, 197, 11), // "Data_Update"
-QT_MOC_LITERAL(16, 209, 7), // "Lastest"
-QT_MOC_LITERAL(17, 217, 11), // "Wind_Decode"
-QT_MOC_LITERAL(18, 229, 5), // "Value"
-QT_MOC_LITERAL(19, 235, 16) // "LocationAnalysis"
+QT_MOC_LITERAL(11, 121, 12), // "SendToTuyere"
+QT_MOC_LITERAL(12, 134, 12), // "Receive_Data"
+QT_MOC_LITERAL(13, 147, 22), // "QMultiMap<int,QString>"
+QT_MOC_LITERAL(14, 170, 16), // "Handle_Data_Wind"
+QT_MOC_LITERAL(15, 187, 22), // "Handle_Data_AirQuality"
+QT_MOC_LITERAL(16, 210, 11), // "Data_Update"
+QT_MOC_LITERAL(17, 222, 7), // "Lastest"
+QT_MOC_LITERAL(18, 230, 11), // "Wind_Decode"
+QT_MOC_LITERAL(19, 242, 5), // "Value"
+QT_MOC_LITERAL(20, 248, 16) // "LocationAnalysis"
 
     },
     "Analysis_Wind\0Wind_UiData\0\0Wind_Data\0"
     "Data\0AirQuality_Data\0AirQuality\0"
     "IndoorAirJudge\0SendToAir\0SendToLight\0"
-    "SendToLocation\0Receive_Data\0"
+    "SendToLocation\0SendToTuyere\0Receive_Data\0"
     "QMultiMap<int,QString>\0Handle_Data_Wind\0"
     "Handle_Data_AirQuality\0Data_Update\0"
     "Lastest\0Wind_Decode\0Value\0LocationAnalysis"
@@ -69,28 +70,29 @@ static const uint qt_meta_data_Analysis_Wind[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    2,   74,    2, 0x06 /* Public */,
-       5,    1,   79,    2, 0x06 /* Public */,
-       7,    1,   82,    2, 0x06 /* Public */,
-       8,    2,   85,    2, 0x06 /* Public */,
-       9,    2,   90,    2, 0x06 /* Public */,
-      10,    2,   95,    2, 0x06 /* Public */,
+       1,    2,   79,    2, 0x06 /* Public */,
+       5,    1,   84,    2, 0x06 /* Public */,
+       7,    1,   87,    2, 0x06 /* Public */,
+       8,    2,   90,    2, 0x06 /* Public */,
+       9,    2,   95,    2, 0x06 /* Public */,
+      10,    2,  100,    2, 0x06 /* Public */,
+      11,    1,  105,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      11,    1,  100,    2, 0x0a /* Public */,
-      13,    1,  103,    2, 0x0a /* Public */,
-      14,    1,  106,    2, 0x0a /* Public */,
-      15,    1,  109,    2, 0x0a /* Public */,
-      17,    1,  112,    2, 0x0a /* Public */,
-      19,    2,  115,    2, 0x0a /* Public */,
+      12,    1,  108,    2, 0x0a /* Public */,
+      14,    1,  111,    2, 0x0a /* Public */,
+      15,    1,  114,    2, 0x0a /* Public */,
+      16,    1,  117,    2, 0x0a /* Public */,
+      18,    1,  120,    2, 0x0a /* Public */,
+      20,    2,  123,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3, QMetaType::Int,    4,    2,
@@ -99,13 +101,14 @@ static const uint qt_meta_data_Analysis_Wind[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void, QMetaType::QString,    2,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 12,    4,
+    QMetaType::Void, 0x80000000 | 13,    4,
     QMetaType::Void, QMetaType::QString,    4,
     QMetaType::Void, QMetaType::QString,    4,
-    QMetaType::Void, 0x80000000 | 3,   16,
-    QMetaType::Void, QMetaType::Int,   18,
+    QMetaType::Void, 0x80000000 | 3,   17,
+    QMetaType::Void, QMetaType::Int,   19,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    2,    2,
 
        0        // eod
@@ -123,12 +126,13 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 3: _t->SendToAir((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 4: _t->SendToLight((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 5: _t->SendToLocation((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 6: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
-        case 7: _t->Handle_Data_Wind((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->Handle_Data_AirQuality((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 9: _t->Data_Update((*reinterpret_cast< Wind_Data(*)>(_a[1]))); break;
-        case 10: _t->Wind_Decode((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->LocationAnalysis((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 6: _t->SendToTuyere((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 7: _t->Receive_Data((*reinterpret_cast< QMultiMap<int,QString>(*)>(_a[1]))); break;
+        case 8: _t->Handle_Data_Wind((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->Handle_Data_AirQuality((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 10: _t->Data_Update((*reinterpret_cast< Wind_Data(*)>(_a[1]))); break;
+        case 11: _t->Wind_Decode((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->LocationAnalysis((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -175,6 +179,13 @@ void Analysis_Wind::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
                 return;
             }
         }
+        {
+            using _t = void (Analysis_Wind::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Analysis_Wind::SendToTuyere)) {
+                *result = 6;
+                return;
+            }
+        }
     }
 }
 
@@ -203,13 +214,13 @@ int Analysis_Wind::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 13)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 13;
     }
     return _id;
 }
@@ -254,6 +265,13 @@ void Analysis_Wind::SendToLocation(int _t1, int _t2)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void Analysis_Wind::SendToTuyere(QString _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

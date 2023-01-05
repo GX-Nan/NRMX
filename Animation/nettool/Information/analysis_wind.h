@@ -59,6 +59,7 @@ signals:
     void SendToAir(int,int);//发给空调 温度和湿度
     void SendToLight(int,int);//发给灯光 亮度 ---不过应该要分区域?
     void SendToLocation(int,int);
+    void SendToTuyere(QString);
 
 };
 

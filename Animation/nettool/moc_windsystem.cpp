@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WindSystem_t {
-    QByteArrayData data[43];
-    char stringdata0[486];
+    QByteArrayData data[44];
+    char stringdata0[498];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -73,7 +73,8 @@ QT_MOC_LITERAL(38, 427, 11), // "ReceiveData"
 QT_MOC_LITERAL(39, 439, 8), // "VarValue"
 QT_MOC_LITERAL(40, 448, 13), // "AirAutoTigger"
 QT_MOC_LITERAL(41, 462, 9), // "Auto_Sync"
-QT_MOC_LITERAL(42, 472, 13) // "Location_Sync"
+QT_MOC_LITERAL(42, 472, 13), // "Location_Sync"
+QT_MOC_LITERAL(43, 486, 11) // "Tuyere_Sync"
 
     },
     "WindSystem\0SendClose\0\0Clear\0Enable\0"
@@ -89,7 +90,7 @@ QT_MOC_LITERAL(42, 472, 13) // "Location_Sync"
     "SetInstruction\0on_AutoSwitch_clicked\0"
     "Icon_Plan\0InductiveLogic\0AiWindWait\0"
     "ReceiveData\0VarValue\0AirAutoTigger\0"
-    "Auto_Sync\0Location_Sync"
+    "Auto_Sync\0Location_Sync\0Tuyere_Sync"
 };
 #undef QT_MOC_LITERAL
 
@@ -99,7 +100,7 @@ static const uint qt_meta_data_WindSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
+      29,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -107,36 +108,37 @@ static const uint qt_meta_data_WindSystem[] = {
       10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  154,    2, 0x06 /* Public */,
-       3,    0,  155,    2, 0x06 /* Public */,
-       4,    1,  156,    2, 0x06 /* Public */,
-       6,    1,  159,    2, 0x06 /* Public */,
-       7,    1,  162,    2, 0x06 /* Public */,
-      10,    1,  165,    2, 0x06 /* Public */,
-      12,    2,  168,    2, 0x06 /* Public */,
-      13,    1,  173,    2, 0x06 /* Public */,
-      14,    1,  176,    2, 0x06 /* Public */,
-      15,    1,  179,    2, 0x06 /* Public */,
+       1,    0,  159,    2, 0x06 /* Public */,
+       3,    0,  160,    2, 0x06 /* Public */,
+       4,    1,  161,    2, 0x06 /* Public */,
+       6,    1,  164,    2, 0x06 /* Public */,
+       7,    1,  167,    2, 0x06 /* Public */,
+      10,    1,  170,    2, 0x06 /* Public */,
+      12,    2,  173,    2, 0x06 /* Public */,
+      13,    1,  178,    2, 0x06 /* Public */,
+      14,    1,  181,    2, 0x06 /* Public */,
+      15,    1,  184,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      16,    0,  182,    2, 0x08 /* Private */,
-      17,    3,  183,    2, 0x08 /* Private */,
-      22,    0,  190,    2, 0x08 /* Private */,
-      23,    0,  191,    2, 0x08 /* Private */,
-      24,    0,  192,    2, 0x08 /* Private */,
-      25,    0,  193,    2, 0x08 /* Private */,
-      26,    4,  194,    2, 0x08 /* Private */,
-      27,    0,  203,    2, 0x08 /* Private */,
-      28,    4,  204,    2, 0x08 /* Private */,
-      33,    1,  213,    2, 0x08 /* Private */,
-      34,    0,  216,    2, 0x08 /* Private */,
-      35,    1,  217,    2, 0x08 /* Private */,
-      36,    0,  220,    2, 0x08 /* Private */,
-      37,    0,  221,    2, 0x08 /* Private */,
-      38,    2,  222,    2, 0x0a /* Public */,
-      40,    1,  227,    2, 0x0a /* Public */,
-      41,    1,  230,    2, 0x0a /* Public */,
-      42,    2,  233,    2, 0x0a /* Public */,
+      16,    0,  187,    2, 0x08 /* Private */,
+      17,    3,  188,    2, 0x08 /* Private */,
+      22,    0,  195,    2, 0x08 /* Private */,
+      23,    0,  196,    2, 0x08 /* Private */,
+      24,    0,  197,    2, 0x08 /* Private */,
+      25,    0,  198,    2, 0x08 /* Private */,
+      26,    4,  199,    2, 0x08 /* Private */,
+      27,    0,  208,    2, 0x08 /* Private */,
+      28,    4,  209,    2, 0x08 /* Private */,
+      33,    1,  218,    2, 0x08 /* Private */,
+      34,    0,  221,    2, 0x08 /* Private */,
+      35,    1,  222,    2, 0x08 /* Private */,
+      36,    0,  225,    2, 0x08 /* Private */,
+      37,    0,  226,    2, 0x08 /* Private */,
+      38,    2,  227,    2, 0x0a /* Public */,
+      40,    1,  232,    2, 0x0a /* Public */,
+      41,    1,  235,    2, 0x0a /* Public */,
+      42,    2,  238,    2, 0x0a /* Public */,
+      43,    1,  243,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -169,6 +171,7 @@ static const uint qt_meta_data_WindSystem[] = {
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void, QMetaType::QString,    2,
 
        0        // eod
 };
@@ -207,6 +210,7 @@ void WindSystem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 25: _t->AirAutoTigger((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 26: _t->Auto_Sync((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 27: _t->Location_Sync((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 28: _t->Tuyere_Sync((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -309,13 +313,13 @@ int WindSystem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 29)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 29;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 28)
+        if (_id < 29)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 28;
+        _id -= 29;
     }
     return _id;
 }

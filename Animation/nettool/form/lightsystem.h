@@ -106,7 +106,7 @@ public:
     int AllSpotStatus=0;
     int AutoFlag=0;
     int LatestMeeting=0,LatestBarAndOffice=0;
-    int StopTest=0;
+    int MeetingLogicFlag=0,BarLogicFlag=0,OfficeLogicFlag=0,PublicArea=0,TimeColorFlag;
     QTimer *AutoTime;
 
 signals:

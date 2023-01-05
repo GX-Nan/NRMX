@@ -71,6 +71,7 @@ public slots:
     void AirAutoTigger(int);
     void Auto_Sync(int);
     void Location_Sync(int,int);
+    void Tuyere_Sync(QString);
 
 
 private:
